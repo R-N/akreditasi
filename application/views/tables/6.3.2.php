@@ -34,7 +34,7 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class=""><a href="<?=base_url();?>6/3/2/GP/1"><?=$row;?></a></td>
+				<td class=""><a href="<?=base_url();?>6/3/2/LP/1"><?=$row;?></a></td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>

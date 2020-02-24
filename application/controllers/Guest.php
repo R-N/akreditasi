@@ -146,7 +146,7 @@ class Guest extends CI_Controller {
 		$data = base_data("3.1");
 		$rows1 = array("TS-4", "TS-3", "TS-2", "TS-1", "TS");
 		$rows2 = array("TS-4", "TS-3", "TS-2", "TS-1", "TS");
-		$rows3 = array();
+		$rows3 = array("asd");
 		$rows4 = array("TS-6", "TS-5", "TS-4", "TS-3", "TS-2", "TS-1", "TS");
 		$data["contents"] = array(
 			card(
@@ -342,8 +342,10 @@ class Guest extends CI_Controller {
 	public function page_4_4(){
 		$data = base_data("4.4");
 		$rows1 = array(
+			"asd"
 		);
 		$rows2 = array(
+			"asd"
 		);
 		$data["contents"] = array(
 			card(
@@ -448,6 +450,7 @@ class Guest extends CI_Controller {
 			"Mobile Technology"
 		);
 		$rows4 = array(
+			 "asd"
 		);
 		$data["contents"] = array(
 			accordion("kompetensi", array(
@@ -506,6 +509,7 @@ class Guest extends CI_Controller {
 	public function page_5_3(){
 		$data = base_data("5.3");
 		$rows1 = array(
+			"asd"
 		);
 		$data["contents"] = array(
 			accordion("mekan-materi", array(
@@ -721,8 +725,10 @@ class Guest extends CI_Controller {
 			"Satu ruang untuk 1 dosen (bukan pejabat struktural)"
 		);
 		$rows2 = array(
+			"asd"
 		);
 		$rows3 = array(
+			"asd"
 		);
 		$data["contents"] = array(
 			card(
@@ -943,8 +949,10 @@ class Guest extends CI_Controller {
 	public function page_7_3(){
 		$data = base_data("7.3");
 		$rows1 = array(
+			"asd"
 		);
 		$rows2 = array(
+			"asd"
 		);
 		$data["contents"] = array(
 			card(
@@ -978,6 +986,227 @@ class Guest extends CI_Controller {
 			))
 		);
 			
+		$this->load->view("page.php", $data);
+	}
+	
+	public function page_3_1_1_LIS($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Ikut Seleksi";
+		$data["page_id"] = "3.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_1_MB($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Mahasiswa Baru";
+		$data["page_id"] = "3.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_1_LM($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "3.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LM.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_1_LL($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Lulusan";
+		$data["page_id"] = "3.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.1 LL.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_2_LIS($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Ikut Seleksi";
+		$data["page_id"] = "3.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_2_MB($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Mahasiswa Baru";
+		$data["page_id"] = "3.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_2_LM($trf, $ts){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "3.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LM.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_3_1_4_LM($ts1, $ts2){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "3.1.4";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LM.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_4_6_1_LTK($jenis, $pend){
+		$data = base_data("4.6");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "4.6.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/4.6.1 LTK.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_5_1_2_1_SJMK($jenis){
+		$data = base_data("5.1");
+		$data["page_title"] = "Sub Jenis Mata Kuliah";
+		$data["page_id"] = "5.1.2.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/5.1.2.1 SJMK.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_5_1_2_1_MK($subjenis){
+		$data = base_data("5.1");
+		$data["page_title"] = "Mata Kuliah";
+		$data["page_id"] = "5.1.2.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/5.1.2.2.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_5_4_1_LM($dosen){
+		$data = base_data("5.4");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "5.4.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LM.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_5_5_1_LM($dosen){
+		$data = base_data("5.5");
+		$data["page_title"] = "List Mahasiswa";
+		$data["page_id"] = "5.5.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LM.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_6_3_2_LP($jenis){
+		$data = base_data("6.3");
+		$data["page_title"] = "List Prasarana";
+		$data["page_id"] = "6.3.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/6.3.2 LP.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_6_4_1_1_LP($jenis){
+		$data = base_data("6.4");
+		$data["page_title"] = "List Pustaka";
+		$data["page_id"] = "6.4.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/6.4.1.1 LP.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_6_4_1_2_LJ($jurnal){
+		$data = base_data("6.4");
+		$data["page_title"] = "List Jurnal";
+		$data["page_id"] = "6.4.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/6.4.1.2 LJ.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_7_1_1_LPDT($sumber, $ts){
+		$data = base_data("7.1");
+		$data["page_title"] = "List Penelitian Dosen Tetap";
+		$data["page_id"] = "7.1.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/7.1.1 LPDT.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_7_1_2_LP(){
+		$data = base_data("7.1");
+		$data["page_title"] = "List Penelitian";
+		$data["page_id"] = "7.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/7.1.2 LP.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_7_1_2_LTA($penelitian){
+		$data = base_data("7.1");
+		$data["page_title"] = "List Tugas Akhir";
+		$data["page_id"] = "7.1.2";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/7.1.2 LTA.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_7_2_1_LKPKM($sumber, $ts){
+		$data = base_data("7.2");
+		$data["page_title"] = "List Kegiatan PKM";
+		$data["page_id"] = "7.2.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/7.2.1 LKPKM.php", array("rows"=>$rows), true)))
+		);
 		$this->load->view("page.php", $data);
 	}
 	

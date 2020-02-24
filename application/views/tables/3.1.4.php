@@ -38,7 +38,7 @@
 					for($j = 0; $j < 7; ++$j){
 						if($j >= $i){
 				?>
-							<td class=""><a href="<?=base_url();?>3/1/4/LM/reg/6/6">0</a></td>
+							<td class=""><a href="<?=base_url();?>3/1/4/LM/6/6">0</a></td>
 				<?php
 						}else{
 				?>

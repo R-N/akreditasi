@@ -18,7 +18,7 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

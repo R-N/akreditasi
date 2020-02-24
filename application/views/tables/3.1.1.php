@@ -54,13 +54,13 @@
 				<td class=""><?=$row;?></td>
 				<td class="">0</td>
 				<td class=""><a href="<?=base_url();?>3/1/1/LIS/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LIS/nonnor/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LIS/trf/1">0</a></td>
 				<td class=""><a href="<?=base_url();?>3/1/1/MB/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/MB/nonnor/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/MB/trf/1">0</a></td>
 				<td class=""><a href="<?=base_url();?>3/1/1/LM/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LM/nonnor/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LM/trf/1">0</a></td>
 				<td class=""><a href="<?=base_url();?>3/1/1/LL/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LL/nonnor/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LL/trf/1">0</a></td>
 				<td class="">0</td>
 				<td class="">0</td>
 				<td class="">0</td>

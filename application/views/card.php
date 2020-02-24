@@ -8,14 +8,15 @@
 			]
 		}
 	],
-	$accordion
+	$accordion,
+	$half
 -->
 <?php
 	$i = 0;
 	$card_id = $card_id . "-card";
 ?>
 <div class="row mb-4">
-	<div class="col">
+	<div class="<?=(!empty($half) && half) ? "col-6" : "col";?>">
 		<div class="card shadow" id="<?=$card_id;?>">
 			<?php 
 			foreach($sections as $section) { 

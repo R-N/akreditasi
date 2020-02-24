@@ -9,10 +9,13 @@
 	$css,
 	$js
 -->
+<?php
+	if(!empty($page_id) && strlen($page_id) > 1) $page_title = $page_id . " " . $page_title;
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
+    <title><?=$page_title;?> - Akreditasi SI UINSA</title>
 	<?php $this->view("common_css"); ?>
 	<?php 
 		if(!empty($css)){

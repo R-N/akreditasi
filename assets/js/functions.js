@@ -25,9 +25,18 @@ $(document).ready(function(){
         let $table0 = $(this);
         let $table = getTable($table0);
         let option = {}
+		ordering = true;
         dom = $table0.data("dom");
         if(!dom) dom = '<Bfr>t<ip>';
+		if($table0.is(".simple")){
+			if($table0.is(".export"))
+				dom = "Bt";
+			else
+				dom = "t";
+			ordering = false;
+		}
         option.dom = dom;
+		option.ordering = ordering;
         if($table0.is(".export")){
             option.buttons = {
                 buttons: [
@@ -77,11 +86,18 @@ $(document).ready(function(){
                             func = footSum;
                         }
                     }
+					
+					column = api.column( col, {page: paging});
+                    data = column.data();
                     
                     val = api
                         .column( col, {page: paging})
                         .data()
                         .reduce(func, 0 );
+						
+					if(op == "avg"){
+						val = val / Math.max(data.length, 1);
+					}
                     
                     strVal = val;
                     format = $el.data("format");

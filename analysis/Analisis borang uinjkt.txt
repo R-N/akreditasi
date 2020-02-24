@@ -1,0 +1,643 @@
+Dokumen Akreditasi [MENU, PAGE]
+	Collapse
+		Dokumen Evaluasi Diri [LINK, DRIVE]
+		Dokumen Borang [LINK, DRIVE]
+Standar 1 [MENU]
+	Visi Misi dan Tujuan [SUBMENU, PAGE]
+		Collapse
+		 - Visi
+		 - Misi
+		 - Tujuan
+		 - Milestone
+Standar 2 [MENU]
+	Akreditasi Program Studi [SUBMENU, PAGE]
+		Tabel 2.4.6: Jumlah program studi yang ada dan status akreditasi BAN-PT
+		Cols
+			Status Akreditasi
+			Jumlah
+				Akademik
+					S1 [JUMLAH, LINK, 2.4.6 LP]
+					S2 [JUMLAH, LINK, 2.4.6 LP]
+					S3 [JUMLAH, LINK, 2.4.6 LP]
+				Profesi
+					SP2 [JUMLAH, LINK, 2.4.6 LP]
+					SP1 [JUMLAH, LINK, 2.4.6 LP]
+					Profesi [JUMLAH, LINK, 2.4.6 LP]
+			 .  Vokasi
+					D4 [JUMLAH, LINK, 2.4.6 LP]
+					D3 [JUMLAH, LINK, 2.4.6 LP]
+					D2 [JUMLAH, LINK, 2.4.6 LP]
+					D1 [JUMLAH, LINK, 2.4.6 LP]
+			Total
+		Rows
+			Terakreditasi A
+			Terakreditasi B
+			Terakreditasi C
+			Akreditasi Kadaluwarsa
+			Belum Terakreditasi
+			Jumlah
+		Pages
+			2.4.6 LP : List Prodi
+			Tabel Data Prodi $Jenjang dan $Akreditasi
+			Cols
+				Strata
+				Fakultas
+				Prodi
+				No SK [STR]
+				Skor
+				Daluarsa
+				SK [LINK, FILE]
+				Sertifikat [LINK, FILE]
+Standar 3 [MENU]
+	Profile Mahasiswa [SUBMENU, PAGE]
+		Tabel 3.1.5: PROFIL MAHASISWA
+		Cols
+			Tahun Akademik
+			Daya Tampung
+			Jumlah Calon Mahasiswa
+				Ikut Seleksi [JUMLAH, LINK, 3.1.5 IS]
+				Lulus Seleksi [JUMLAH, LINK, 3.1.5 IS]
+			Jumlah Mahasiswa baru
+				Reguler Bukan Transfer [JUMLAH, LINK, 3.1.5 IS]
+				Transfer [JUMLAH, LINK, 3.1.5 IS]
+			Jumlah Total Mahasiswa (Student Body)
+				Reguler Bukan Transfer [JUMLAH, LINK, 3.1.5 SB]
+				Transfer [JUMLAH, LINK, 3.1.5 SB]
+		Row Groups
+			Program Akademik (S1, S2, S3)
+			Program Profesi (Profesi, SP1, SP2)
+		Rows
+			TS-4
+			TS-3
+			TS-2
+			TS-1
+			TS
+			Jumlah TS
+		Footer
+			TOTAL MAHASISWA PADA TS
+			Cols
+				Jumlah Total Mahasiswa (Student Body)
+					Reguler Bukan Transfer [JUMLAH, LINK, 3.1.5 SB]
+					Transfer [JUMLAH, LINK, 3.1.5 SB]
+		Pages
+			3.1.5 IS : Ikut Seleksi
+			Tabel
+			Cols
+				Jenjang
+				Jenis Seleksi
+				Jumlah [JUMLAH, LINK, 3.1.5 LIS]
+			Pages
+				3.1.5 LIS : List Ikut Seleksi
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					No Ujian
+			3.1.5 SB : Student Body
+			Tabel
+			Cols
+				Jenjang
+				Fakultas
+				Prodi
+				Jumlah [JUMLAH, LINK, 3.1.5 LSB]
+			Pages
+				3.1.5 LSB : List Student Body
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					NIM
+	Profile Mahasiswa dan Lulusan [SUBMENU, PAGE]
+		Tabel 3.2.1a : Jumlah mahassiwa dan lulusan program pendidikan S1 tujuh tahun terakhir
+		Cols
+			TS-6 [LINK, 3.2.1 GM]
+			TS-5 [LINK, 3.2.1 GM]
+			TS-4 [LINK, 3.2.1 GM]
+			TS-3 [LINK, 3.2.1 GM]
+			TS-2 [LINK, 3.2.1 GM]
+			TS-1 [LINK, 3.2.1 GM]
+			TS [LINK, 3.2.1 GM]
+			Jumlah Lulusan s.d. TS [LINK, 3.2.1 GL]
+		Rows
+			TS-6
+			TS-5
+			TS-4
+			TS-3
+			TS-2
+			TS-1
+			TS
+		Tabel 3.2.1b : Jumlah mahassiwa dan lulusan program pendidikan S2 lima tahun terakhir
+		Cols
+			TS-4 [LINK, 3.2.1 GM]
+			TS-3 [LINK, 3.2.1 GM]
+			TS-2 [LINK, 3.2.1 GM]
+			TS-1 [LINK, 3.2.1 GM]
+			TS [LINK, 3.2.1 GM]
+			Jumlah Lulusan s.d. TS [LINK, 3.2.1 GL]
+		Rows
+			TS-4
+			TS-3
+			TS-2
+			TS-1
+			TS
+		Tabel 3.2.1a : Jumlah mahassiwa dan lulusan program pendidikan S1 tujuh tahun terakhir
+		Cols
+			TS-5 [LINK, 3.2.1 GM]
+			TS-4 [LINK, 3.2.1 GM]
+			TS-3 [LINK, 3.2.1 GM]
+			TS-2 [LINK, 3.2.1 GM]
+			TS-1 [LINK, 3.2.1 GM]
+			TS [LINK, 3.2.1 GM]
+			Jumlah Lulusan s.d. TS [LINK, 3.2.1 GL]
+		Rows
+			TS-5
+			TS-4
+			TS-3
+			TS-2
+			TS-1
+			TS
+		Pages
+			3.2.1 GM : Group Mahasiswa
+			Tabel
+			Cols
+				Jenjang
+				Fakultas
+				Prodi
+				Jumlah [LINK, 3.2.1 LM]
+			Pages
+				3.2.1 LM : List Mahasiswa
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					NIM
+			3.2.1 GL : Group Lulusan
+			Tabel
+			Cols
+				Jenjang
+				Fakultas
+				Prodi
+				Jumlah [LINK, 3.2.1 LL]
+			Pages
+				3.2.1 LL : List Lulusan
+				Tabel
+				Cols
+					NIM
+					Nama [LINK, PROFILLULUSAN]
+					Jenis Kelamin
+					Wisuda [INT]
+					IPK
+	Prestasi Mahasiswa [SUBMENU]
+		SKPI [SUBMENU, PAGE]
+			Tabel SKPI
+			Cols
+				Nama Kegiatan
+				Tahun Penyelenggaraan
+				Wilayah / Propinsi [CHECKMARK]
+				Nasional Internasional [CHECKMARK]
+				Internasional [CHECKMARK]
+				Prestasi [JUDUL, LINK, 3 DSKPI]
+			Pages
+				3 DSKPI : Detail SKPI
+				Card Info Prestasi Mhs
+					Foto Mhs
+					Nama Mhs
+					NIM
+					Nama Kegiatan
+					Judul Prestasi
+					Tanggal Prestasi
+				Card Bukti Prestasi $NamaMhs [LINK, THISPAGE]
+					Bukti Prestasi [IMAGEPREVIEW]
+		Prestasi Mahasiswa [SUBMENU, PAGE]
+			Tabel 3.1.11 : Prestasi MAHASISWA
+			Cols
+				Nama Kegiatan
+				Tahu Penyelenggaraan
+				Wilayah / Propinsi [CHECKMARK]
+				Nasional [CHECKMARK]
+				Internasional [CHECKMARK]
+				Prestasi yang Dicapai [JUDUL, LINK, 3.1.11 DPM]
+			Pages
+				3.1.11 DPM : Detail Prestasi Mahasiswa
+				Card Info Prestasi Mhs
+					Foto Mhs
+					Nama Mhs
+					NIM
+					Nama Kegiatan
+					Judul Prestasi
+					Tanggal Prestasi
+				Card Bukti Prestasi $NamaMhs [LINK, THISPAGE]
+					Bukti Prestasi [IMAGEPREVIEW]
+	Masa Studi dan IPK Lulusan [SUBMENU, PAGE]
+		Tabel 3.2.2 Masa Studi dan IPK Lulusan
+		Cols
+			Program Studi
+			Rata-rata Masa Studi Lulusan (Tahun) pada
+				TS-2 [DECIMAL, LINK, 3.2.2 GMS]
+				TS-1 [DECIMAL, LINK, 3.2.2 GMS]
+				TS [DECIMAL, LINK, 3.2.2 GMS]
+			Rata-rata IPK Lulusan pada
+				TS-2 [IPK]
+				TS-1 [IPK]
+				TS [IPK]
+		Rows
+			Doktor (S3)
+			Magister (S2)
+			Sarjana (S1)
+		Pages
+			3.2.2 GMS : Grup Masa Studi
+			Tabel
+			Cols
+				Fakultas
+				Prodi
+				Jumlah [JUMLAH, LINK, 3.2.2 LMS]
+			Pages
+				3.2.2 List Masa Studi
+				Tabel
+				Cols
+					NIM
+					Nama [LINK, PROFILLULUSAN]
+					Jenis Kelamin
+					Wisuda [INT]
+					No Ijazah [STR]
+	Studi Pelacakan Lulusan [SUBMENU, PAGE]
+		Tabel 3.2.4 : Studi Pelacakan Lulusan
+		Cols
+			Tahun
+			Jumlah Lulusan Pada Tahun
+			Jumlah Lulusan yang Memberi Respon
+		Rows
+			TS-4
+			TS-3
+			TS-2
+			TS-1
+			TS
+		Footer
+			Total
+	Layanan kepada Mahasiswa [SUBMENU, PAGE]
+		Tabel 3.1.8 : Layanan Kepada MAHASISWA
+		Cols
+			Jenis Pelayanan Kepada Mahasiswa
+			Uraian Kegiatan [LINK, UNIQUE]
+			Frekuensi Pelaksanaan [ENUM]
+			Jumlah Mahasiswa
+Standar 4 [MENU]
+	Dosen Tetap Institusi [SUBMENU, PAGE]
+		Tabel 4.3.1 : Dosen Tetap Institusi
+		Cols
+			Pendidikan
+			Gelar Akademik
+				Guru Besar [JUMLAH, LINK, 4.3.1 LDTI]
+				Lektor Kepala [JUMLAH, LINK, 4.3.1 LDTI]
+				Lektor [JUMLAH, LINK, 4.3.1 LDTI]
+				Asisten Ahli [JUMLAH, LINK, 4.3.1 LDTI]
+				Tenaga Pengajar [JUMLAH, LINK, 4.3.1 LDTI]
+			Total
+		Rows
+			S3/SP2
+			S2/SP1
+			Profesi/S1/D4
+		Footer
+			Total
+		Pages
+			4.3.1 LDTI : List Dosen Tetap Institusi
+			Tabel
+			Cols
+				NIP
+				Nama [LINK, PROFILSTAFF]
+				Jabatan [ENUM]
+				Status [ENUM]
+				Fakultas
+				Jurusan
+	Dosen Tidak Tetap Institusi [SUBMENU, PAGE]
+		Tabel 4.3.2 : Dosen Tidak Tetap Institusi
+		Copy dosen tetap 
+		dosen tetap bisa non pns
+		ketetapan dosen field sendiri
+	Kegiatan Peningkatan Dosen [SUBMENU, PAGE]
+		Tabel 4.4 : Kegiatan peningkatan sumber daya manusia (dosen)
+		Cols
+			Kegiatan Peningkatan kompetensi
+			Jumlah yang Ditugaskan pada
+				TS-2 [JUMLAH, LINK, 4.4 LKPD]
+				TS-1 [JUMLAH, LINK, 4.4 LKPD]
+				TS [JUMLAH, LINK, 4.4 LKPD]
+			Total
+		Rows
+			Tanpa Gelar
+			S3/Sp2
+			S2/Sp1
+		Footer
+			Total
+		Pages
+			4.4 LKPD : List Kegiatan Peningkatan Dosen
+			Tabel
+			Cols
+				NIP
+				Nama
+				Jabatan
+				Status
+				Fakultas
+				Jurusan
+	Tenaga Kependidikan [SUBMENU, PAGE]
+		Tabel 4.5.1 Tenaga Kependidikan
+		Cols
+			Jenis Tenaga Kependidikan
+			S3 [JUMLAH, LINK, 4.5.1 LTK]
+			S2 [JUMLAH, LINK, 4.5.1 LTK]
+			S1 [JUMLAH, LINK, 4.5.1 LTK]
+			D4 [JUMLAH, LINK, 4.5.1 LTK]
+			D3 [JUMLAH, LINK, 4.5.1 LTK]
+			D2 [JUMLAH, LINK, 4.5.1 LTK]
+			D1 [JUMLAH, LINK, 4.5.1 LTK]
+		Rows
+			Pustakawan
+			Laboran/Teknisi/Analis/Operator/Programer
+			Administrasi
+			Lainnya
+		Footer
+			Total
+		Pages
+			4.5.1 LTK : List Tenaga Kependidikan
+			Tabel
+			Cols
+				NIP
+				Nama [LINK, PROFILSTAFF]
+				Jabatan [ENUM]
+				Status [ENUM]
+				Unit
+Standar 5 [MENU]
+	Kurikulum [SUBMENU, PAGE]
+		Card Kurikulum Fakultas
+		Collapse
+			$$Fakultas
+				Tabel
+				Cols
+					Program Studi [LINK, 5 KP]
+				Pages
+					5 KP : Kurikulum Prodi
+					Card Capaian Pembelajaran Prodi $Prodi
+						Tabel
+						Cols
+							Kategori
+							Isi
+					Card Kurikulum Prodi $prodi
+						Collapse
+							$$tahun
+								Tabel
+								Cols
+									Kode MK
+									Nama MK
+									SKS
+									Semester
+Standar 6 [MENU]
+	Penerimaan Dana [SUBMENU, PAGE]
+		Tabel 6.1.4 : Penerimaan Dana
+		Cols
+			Sumber Dana
+			Jenis Dana
+			Jumlah Dana (juta rupiah)
+				TS-2 [DECIMAL]
+				TS-1 [DECIMAL]
+				TS [DECIMAL]
+			Jumlah (juta rupiah) [DECIMAL]
+	Penggunaan Dana [SUBMENU, PAGE]
+		Tabel 6.1.5 : Penggunaan Dana
+		Copy penerimaan dana
+	Dana Untuk Kegiatan Penelitian [SUBMENU, PAGE]
+		Tabel 6.1.6 : Dana Penelitian
+		Cols
+			Sumber Dana
+			Besar Dana (juta Rupiah)
+				TS-2 [DECIMAL]
+				TS-1 [DECIMAL]
+				TS [DECIMAL]
+			Jumlah (juta rupiah) [DECIMAL]
+		Rows
+			Institusi sendiri/yayasan
+			Kemdiknas/Kementerian lain terkait
+			Lembaga/institusi di luar Kemdiknas/Kementerian lain terkait
+			Lembaga/institusi luar negeri
+		Footer
+			Total
+	Dana Untuk Kegiatan PkM [SUBMENU, PAGE]
+		Tabel 6.1.7 : Dana Pelayanan / Pengabdian Kepada Masyarakat
+		Copy Dana Penelitian
+	Lahan Perguruan Tinggi [SUBMENU, PAGE]
+		Tabel 6.2.2 : Lahan Perguruan Tinggi
+		Cols
+			Lokasi Lahan (Nama dan nomor Jalan, Kota, Propinsi)
+			Status Penguasaan/Kepemilikan Lahan [ENUM]
+			Penggunaan Lahan [ENUM?]
+			Luas Lahan [INT]
+			Lampiran
+	Prasarana [SUBMENU, PAGE]
+		Tabel 6.2.3 : Prasarana untuk Kegiatan Akademik dan Non-Akademik
+		Cols
+			Jenis Prasarana [LINK, 6.2.3 GP]
+			Jumlah Unit
+			Total Luas (m2)
+			Kepemilikan
+				Milik Sendiri
+				Sewa/Pinjam/Kerjasama
+			Kondisi
+				Terawat
+				Tidak Terawat
+		Pages
+			6.2.3 GP : Group Prasarana
+				Tabel
+				Cols
+					Gedung
+					Kode [STR]
+					Nama
+					Kapasitas [INT]
+					Luas (m2) [INT]
+					Milik [ENUM]
+					Kondisi [ENUM]
+	Aksesibilitas Data [SUBMENU, PAGE]
+		Tabel 6.3.7 : Aksesibilitas Data
+		Cols
+			Jenis Data [LINK, UNIQUE]
+			Sistem Pengolahan Data
+				Secara Manual [CHECKMARK]
+				Dengan komputer Tanpa Jaringan [CHECKMARK]
+				Dengan Komputer Jaringan Lokal (Intranet) [CHECKMARK]
+				Dengan Komputer Jaringan Luas (Internet) [CHECKMARK]
+Standar 7 [MENU]
+	Penelitian Dosen Teteap [SUBMENU, PAGE]
+		Tabel 7.1.2 : Penelitian Dosen Tetap
+		Cols
+			Sumber Pembiayaan
+			Jumlah Judul Penelitian
+				TS-2 [JUMLAH, LINK, 7.1.2 LPDT]
+				TS-1 [JUMLAH, LINK, 7.1.2 LPDT]
+				TS [JUMLAH, LINK, 7.1.2 LPDT]
+			Total
+		Rows
+			Pembiayaan sendiri oleh peneliti
+			PT/yayasan yang bersangkutan
+			Kemdiknas/Kemenag
+			Institusi dalam negeri di luar Kemdiknas/Kemenag
+			Institusi luar negeri
+		Footer
+			Total
+		Pages
+			7.1.2 LPDT : List Penelitian Dosen Tetap
+				Tabel
+				Cols
+					Judul
+					Tahun
+					Sumber Dana [ENUM]
+					NIP
+					Nama [LINK, PROFILSTAFF]
+	Judul Artikel / Karya Dosen Tetap [SUBMENU, PAGE]
+		Tabel 7.1.3 : Artikel Ilmiah/Karya Ilmiah/Karya Seni/Buku
+		Cols
+			Jenis Karya
+			Jumlah Judul
+				TS-2 [JUMLAH, LINK, 7.1.3 LJ]
+				TS-1 [JUMLAH, LINK, 7.1.3 LJ]
+				TS [JUMLAH, LINK, 7.1.3 LJ]
+			Total
+		Rows
+			Jurnal ilmiah terakreditasi DIKTI
+			Jurnal ilmiah internasional
+			Buku tingkat nasional
+			Buku tingkat internasional
+			Karya seni tingkat nasional
+			Karya seni tingkat internasional
+			Karya sastra tingkat nasional
+			Karya sastra tingkat internasional
+		Footer
+			Total
+		Pages
+			7.1.3 LJ : List Jurnal
+				Tabel
+				Cols
+					Judul
+					Tahun
+					Jurnal
+					NIP
+					Nama [LINK, PROFILSTAFF]
+	Sitasi [SUBMENU, PAGE]
+		Card Tabel Data Butir 7.1.4 Sitasi
+			$jumlah Artikel [LINK, SCHOLAR]
+	Hak Atas Kekayaan Intelektual [SUBMENU, PAGE]
+		Tabel 7.1.5 : Paten / HaKI / Karya yang Mendapat Penghargaan Nasional/Internasional
+		Cols
+			Nama Karya
+			Bentuk Penghargaan
+				Paten
+				HaKI
+				Nasional/Internasional
+			Tahun Perolehan
+			Pendukung
+	Kegiatan Pengabdian Kepada Masyarakat [SUBMENU, PAGE]
+		Tabel 7.2.2 : Kegiatan PkM
+		Cols
+			Sumber Pembiayaan [ENUM]
+			Jumlah Judul Penelitian
+				TS-2 [JUMLAH, LINK, 7.2.2 LKPKM]
+				TS-1 [JUMLAH, LINK, 7.2.2 LKPKM]
+				TS [JUMLAH, LINK, 7.2.2 LKPKM]
+			Total
+		Rows
+			Pembiayaan sendiri oleh peneliti
+			PT/yayasan yang bersangkutan
+			Kemdiknas/Kemenag
+			Institusi dalam negeri di luar Kemdiknas/Kemenag
+			Institusi luar negeri
+		Footer
+			Total
+		Pages
+			7.2.2 LKPKM : List Kegiatan PkM
+				Tabel
+				Cols
+					Judul
+					Tahun
+					Sumber Dana [ENUM]
+					Peran
+					NIP
+					Nama [LINK, PROFILSTAFF]
+	Kerjasama Dalam negeri [SUBMENU, PAGE]
+		Tabel 7.3.2 : Kerjasama Dalam Negeri
+		Cols
+			Nama Instansi
+			Jenis Kegiatan
+			Kurun Waktu Kerjasama
+				Mulai
+				Berakhir
+			Manfaat yang Telah Diperoleh
+	Kerjasama Luar Negeri [SUBMENU, PAGE]
+		Tabel 7.3.3 : Kerjasama Luar Negeri
+		Copy kerjasama dalam negeri
+Other Pages
+	PROFILLULUSAN
+	PROFILSTAFF
+		Card Profil Staff
+			Foto Staff
+			Nama
+			NIP
+			Jenis Kelamin
+			Status
+			Jabatan
+			Unit
+			Fakultas
+			Prodi
+			Bidang Ilmu
+			Alamat Email
+			Profil Blog
+			Profil Sinta
+			Pangkat/Golru
+			Pendidikan Terakhir
+		Tabbed Pane
+			Pendidikan
+				Tabel
+				Cols
+					Jenjang
+					Nama
+					Gelar Akademik
+					Tanggal Ijazah
+			Penelitian
+				Tabel
+				Cols
+					Judul
+					Jabatan
+					Tahun
+					Sumber Dana
+					Tingkat
+					Pendukung
+			Pengabdian
+				Tabel
+				Cols
+					Judul
+					Jabatan
+					Tahun
+					Sumber Dana
+					Tingkat
+					Pendukung
+			Penghargaan
+			Karya
+			Jurnal
+				Tabel
+				Cols
+					Judul
+					Jurnal
+					Tahun
+					Volume
+					ISSN
+					Tingkat
+					Pendukung
+			Buku
+			Kegiatan
+			Riwayat Mengajar
+				Tabel
+				Cols
+					Tahun Akademik
+					Semester
+					Mata Kuliah
+					SKS
+					Kelas
+					Fakultas
+					Prodi
+					

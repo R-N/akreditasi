@@ -1,0 +1,764 @@
+Dokumen Akreditasi [MENU, PAGE]
+	Collapse
+		Dokumen Evaluasi Diri [LINK, DRIVE]
+		Dokumen Borang [LINK, DRIVE]
+Standar 1 [MENU]
+	1.1 Visi Misi dan Tujuan [SUBMENU, PAGE]
+		Card Visi, Misi, Tujuan, dan Sasaran serta Strategi
+			Collapse
+				Penyusunan
+				Visi
+				Misi
+				Tujuan
+				Sasaran dan Strategi
+	1.2 Sosialisasi [SUBMENU, PAGE]
+		Card Sosialisasi
+Standar 2 [MENU]
+	2.1 Sistem Tata Pamong
+		Card penjelasan
+		Card dokumen pendukung
+	2.2 Kepemimpinan
+		Card
+	2.3 Sistem Pengelolaan
+		Card Penjelasan
+		Card Dokumen Pendukung
+	2.4 Penjaminan Mutu
+		Card penjelasan
+		Card dokumen pendukung
+	2.5 Umpan Balik
+		Tabel 2.5 : Umpan Balik
+		Cols
+			Umpan Balik Dari (1)
+			Isi Umpan Balik (2)
+			Tindak Lanjut (3)
+	2.6 Keberlanjutan
+		Card
+			Collapse
+				a. Upaya untuk peningkatan animo calon mahasiswa
+				b. Upaya peningkatan mutu manajemen
+				c. Upaya untuk peningkatan mutu lulusan
+				d. Upaya untuk pelaksanaan dan hasil kerjasama kemitraan
+				e. Upaya dan prestasi memperoleh dana hibah kompetitif
+Standar 3 [MENU]
+	Profil Mahasiswa dan Lulusan [SUBMENU, PAGE]
+		Tabel 3.1.1: Data mahasiswa reguler dan lulusannya dalam 5 tahun terakhir
+			Cols
+				Copy 3.1.2 Cols
+				Jumlah Lulusan
+					Reguler Bukan Transfer (9) [JUMLAH, LINK, 3.1.1 LL]
+					Transfer (10) [JUMLAH, LINK, 3.1.1 LL]
+				IPK Lulusan Reguler
+					Min (11)
+					Rat (12)
+					Mak (13)
+				Persen Lulusan Reguler dgn IPK:
+					< 2.75 (14)
+					2.75-3.50 (15)
+					> 3.50 (16)
+			Copy 3.1.2 Rows, Footer
+			Pages
+				Copy 3.1.2 Pages
+				3.1.1 LL : List Lulusan
+				Tabel
+				Cols
+					NIM
+					Nama [LINK, PROFILLULUSAN]
+					Jenis Kelamin
+					Wisuda [INT]
+					IPK
+		Tabel 3.1.2: Data mahasiswa reguler dan lulusannya dalam 5 tahun terakhir
+			Cols
+				Tahun Akademik (1)
+				Daya Tampung (2)
+				Jumlah Calon Mahasiswa
+					Ikut Seleksi (3) [JUMLAH, LINK, 3.1.2 LIS]
+					Lulus Seleksi (4) [JUMLAH, LINK, 3.1.2 LIS]
+				Jumlah Mahasiswa baru
+					Reguler Bukan Transfer (5) [JUMLAH, LINK, 3.1.2 LIS]
+					Transfer (6) [JUMLAH, LINK, 3.1.2 LIS]
+				Jumlah Total Mahasiswa (Student Body)
+					Reguler Bukan Transfer (7) [JUMLAH, LINK, 3.1.2 LSB]
+					Transfer (8) [JUMLAH, LINK, 3.1.2 LSB]
+			Row Groups
+				Program Akademik (S1, S2, S3)
+				Program Profesi (Profesi, SP1, SP2)
+			Rows
+				TS-4
+				TS-3
+				TS-2
+				TS-1
+				TS
+			Footer
+				Jumlah Col 2-10
+			Pages
+				3.1.2 LIS : List Ikut Seleksi
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					No Ujian
+				3.1.2 LSB : List Student Body
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					NIM
+		Tabel 3.1.3 : Prestasi/reputasi mahasiswa dalam tiga tahun terakhir di bidang akademik dan non-akademik
+			Cols
+				No (1)
+				Nama Kegiatan dan Waktu Penyelenggaraan (2)
+				Tingkat (Lokal, Wilayah, Nasional, atau Internasional) (3)
+				Prestasi yang Dicapai (4) [JUDUL, LINK, 3.1.11 DPM]
+			Pages
+				3.1.11 DPM : Detail Prestasi Mahasiswa
+				Card Info Prestasi Mhs
+					Foto Mhs
+					Nama Mhs
+					NIM
+					Nama Kegiatan
+					Judul Prestasi
+					Tanggal Prestasi
+				Card Bukti Prestasi $NamaMhs [LINK, THISPAGE]
+					Bukti Prestasi [IMAGEPREVIEW]
+		Tabel 3.1.4 : Jumlah mahasiswa reguler tujuh tahun terakhir
+			Cols
+				Tahun Masuk
+				Jumlah Mahasiswa Reguler per Angkatan pada Tahun (tidak memasukkan mahasiswa transfer)
+					TS-6 [LINK, 3.1.4 LM]
+					TS-5 [LINK, 3.1.4 LM]
+					TS-4 [LINK, 3.1.4 LM]
+					TS-3 [LINK, 3.1.4 LM]
+					TS-2 [LINK, 3.1.4 LM]
+					TS-1 [LINK, 3.1.4 LM]
+					TS [LINK, 3.1.4 LM]
+				Jumlah Lulusan s.d. TS [LINK, 3.1.1 LL]
+			Rows
+				TS-6
+				TS-5
+				TS-4
+				TS-3
+				TS-2
+				TS-1
+				TS
+			Special Cells (row x col)
+				(a) = TS-6 x TS-6
+				(b) = TS-6 x TS
+				(c) = TS-6 x Jumlah Lulusan s.d. TS
+				(d) = TS-3 x TS-3
+				(e) = TS-3 x TS
+				(f) = TS-3 x Jumlah Lulusan s.d. TS
+			Pages
+				3.1.4 LM : List Mahasiswa
+				Tabel
+				Cols
+					Nama
+					Jenis Kelamin
+					NIM
+				Copy 3.1.1 LL
+		Card dokumen pendukung
+	3.2 Layanan Kepada Mahasiswa [SUBMENU, PAGE]
+		Tabel 3.2 : Layanan Kepada MAHASISWA
+			Cols
+				No (1)
+				Jenis Pelayanan kepada Mahsiswa (2)
+				Bentuk Kegiatan, Pelaksanaan dan Hasilnya (3)
+			Rows
+				Bimbingan dan konseling
+				Minat dan bakat (ekstrakurikuler)
+				Pembinaan soft skills
+				Beasiswa
+				Kesehatan
+		Card dokumen pendukung
+	3.3 Evaluasi Lulusan [SUBMENU, PAGE]
+		Card uraian metode, proses, dan mekanisme studi pelacakan lulusan
+		Tabel 3.3.1 : Evaluasi kinerja lulusan oleh pihak pengguna lulusan
+			Cols
+				Jenis Kemampuan
+				Tanggapan Pihak Pengguna (%)
+					Sangat Baik [DECIMAL]
+					Baik [DECIMAL]
+					Cukup [DECIMAL]
+					Kurang [DECIMAL]
+				Rencana Tindak Lanjut oleh Program Studi
+			Rows
+				Integritas (etika dan moral)
+				Keahlian berdasarkan bidang ilmu (profesionalisme)
+				Bahasa Inggris
+				Penggunaan Teknologi Informasi
+				Komunikasi
+				Pengembangan Diri
+			Footer
+				Total
+			Dokumen pendukung
+		Card 3.3.2 Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama (bulan)
+		Card 3.3.3 Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya (%)
+	3.4 Himpunan Alumni [SUBMENU, PAGE]
+		Card uraian himpunan alumni
+Standar 4 [MENU]
+	4.1 Sistem Seleksi dan Pengembangan [SUBMENU, PAGE]
+		Card penjelasan
+		Card dokumen pendukung
+	4.2 Monitoring dan Evaluasi [SUBMENU, PAGE]
+		Card penjelasan
+		Card dokumen pendukung
+	4.3 Dosen Tetap [SUBMENU, PAGE]
+		Tabel 4.3.1 : Dosen Tetap yang bidang keahliannya sesuai dengan bidang PS
+			Cols
+				No (1)
+				Nama Dosen Tetap (2) [LINK, PROFILSTAFF]
+				NIDN (Nomor Induk Dosen Nasional) (3)
+				Tanggal Lahir (4)
+				Jabatan Akademik (5) [ENUM]
+				Sertifikasi (6) [BOOL, FILE]
+				S1
+					Gelar (7) [FILE]
+					PT Asal (8)
+					Bidang Keahlian (9)
+				S2
+					Gelar (10) [FILE]
+					PT Asal (11)
+					Bidang Keahlian (12)
+				S3
+					Gelar (13) [FILE]
+					PT Asal (14)
+					Bidang Keahlian (15)
+		Tabel 4.3.2 : Dosen Tidak Tetap Institusi
+			Copy 4.3.1 
+			dosen tetap bisa non pns
+			ketetapan dosen field sendiri
+		Tabel 4.3.3 : Aktivitas dosen tetap yang bidang keahliannya sesuai dengan PS dinyatakan dalam sks rata-rata per semester pada satu tahun akademik terakhir, diisi dengan perhitungan sesuai SK Dirjen DIKTI no. 48 tahun 1983 (12 sks setara dengan 36 jam kerja per minggu)			
+			Cols
+				No (1)
+				Nama Dosen Tetap (2) [LINK, PROFILSTAFF]
+				sks Pengajaran Pada
+					PS Sendiri (3)
+					PS Lain, PT Sendiri (4)
+					PT Lain (5)
+				sks Penelitian (6)
+				sks Pengabdian pad Masy (7)
+				sks Manajemen
+					PT Sendiri (8)
+					PT Lain (9)
+				Jumlah sks (10)
+		Tabel 4.3.4 : Aktivitas mengajar dosen tetap yang bidang keahliannya sesuai dengan PS, dalam satu tahun akademik terakhir di PS
+			Cols
+				No (1)
+				Nama Dosen Tetap (sesuai Tabel B-4.3.1) (2)
+				Kode Mata Kuliah (3)
+				Nama Mata Kuliah (4)
+				Jumlah sks (5)
+				Jumlah Pertemuan
+					Direncanakan (6)
+					Dilaksanakan (7)
+		Tabel 4.3.5 : aktivitas mengajar dosen tetap yang bidang keahliannya di luar PS,  dalam satu tahun akademik terakhir di PS
+			Copy 4.3.4 tapi (sesuai Tabel B-4.3.2) (2)
+	4.4 Dosen Tidak Tetap [SUBMENU, PAGE]
+		Tabel 4.4.1 : Data dosen tidak tetap pada PS
+			Copy 4.3.1
+		Tabel 4.4.2 : aktivitas mengajar dosen tidak tetap pada satu tahun terakhir di PS ini pada tabel berikut
+			Copy 4.3.4 tapi (sesuai Tabel B-4.4.1) (2)
+	4.5 Upaya Peningkatan Sumber Daya Manusia [SUBMENU, PAGE]
+		Tabel 4.5.1 : Kegiatan tenaga ahli/pakar sebagai pembicara dalam seminar/pelatihan, pembicara tamu, dsb, dari luar PT sendiri, tidak termasuk dosen tidak tetap			
+			Cols
+				No (1)
+				Nama Tenaga Ahli/Pakar (2) [LINK, PROFILSTAFF]
+				Instansi/Jabatan (3)
+				Nama dan Judul Kegiatan (4)
+				Tahun Pelaksanaan (5)
+		Tabel 4.5.2 : Peningkatan kemampuan dosen tetap melalui program tugas belajar dalam bidang yang sesuai dengan bidang PS						
+			Cols
+				No (1)
+				Nama Dosen Tetap (2) [LINK, PROFILSTAFF]
+				Jenjang Pendidikan (3)
+				Bidang Studi (4)
+				Perguruan Tinggi (5)
+				Negara (6)
+				Tahun Pelaksanaan (7)	
+		Tabel 4.5.3 : Kegiatan dosen tetap yang bidang keahliannya sesuai dengan PS dalam seminar ilmiah/lokakarya/penataran/workshop/ pagelaran/ pameran/peragaan yang tidak hanya melibatkan dosen PT sendiri
+			Cols
+				No (1)
+				Nama Dosen Tetap (2) [LINK, PROFILSTAFF]
+				Jenis Kegiatan (3) [FILE]
+				Tempat (4)
+				Tahun (5)
+				Sebagai **
+					Penyaji (6) [CHECKMARK]
+					Peserta (7) [CHECKMARK]
+		Tabel 4.5.4 : Pencapaian prestasi/reputasi dosen, misalnya prestasi dalam pendidikan, penelitian dan pelayanan/pengabdian kepada masyarakat
+			Cols
+				No (1)
+				Nama Dosen (2) [LINK, PROFILSTAFF]
+				Prestasi yang Dicapai (3) [FILE]
+				Tahun Pencapaian (5)
+				Tingkat **
+					Internasional (6) [CHECKMARK]
+					Nasional (7) [CHECKMARK]
+					Lokal (8) [CHECKMARK]
+		Tabel 4.5.5 : Keikutsertaan dosen tetap dalam organisasi keilmuan atau organisasi profesi.
+			Cols
+				No (1)
+				Nama Dosen (2) [LINK, PROFILSTAFF]
+				Nama Organisasi Keilmuan atau Organisasi Profesi (3) [FILE]
+				Kurun Waktu
+					Tahun Awal (4)
+					Tahun Akhir (5)
+				Tingkat *
+					Internasional (6) [CHECKMARK]
+					Nasional (7) [CHECKMARK]
+					Lokal (8) [CHECKMARK]
+	Tenaga Kependidikan [SUBMENU, PAGE]
+		Tabel 4.6.1 Tenaga Kependidikan
+			Cols
+				No (1)
+				Jenis Tenaga Kependidikan (2)
+				Jumlah Tenaga Kependidikan dengan
+					S3 (3) [JUMLAH, LINK, 4.6.1 LTK]
+					S2 (4) [JUMLAH, LINK, 4.6.1 LTK]
+					S1 (5) [JUMLAH, LINK, 4.6.1 LTK]
+					D4 (6) [JUMLAH, LINK, 4.6.1 LTK]
+					D3 (7) [JUMLAH, LINK, 4.6.1 LTK]
+					D2 (8) [JUMLAH, LINK, 4.6.1 LTK]
+					D1 (9) [JUMLAH, LINK, 4.6.1 LTK]
+					SMA/SMK (10) [JUMLAH, LINK, 4.6.1 LTK]
+				Unit Kerja (11)
+			Rows
+				Pustakawan *
+				Laboran/Teknisi/Analis/Operator/Programer
+				Administrasi
+				Lainnya
+			Footer
+				Total
+			Pages
+				4.6.1 LTK : List Tenaga Kependidikan
+				Tabel
+				Cols
+					NIP
+					Nama [LINK, PROFILSTAFF]
+					Jabatan [ENUM]
+					Status [ENUM]
+					Unit
+					Lampiran [FILE]
+		Card 4.6.2 Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan
+Standar 5 [MENU]
+	5.1 Kurikulum [SUBMENU, PAGE]
+		Card 5.1.1 Kompetensi
+			Collapse
+				5.1.1.1 Uraian kompetensi utama lulusan
+				5.1.1.2 Uraian kompetensi pendukung lulusan
+				5.1.1.3 Uraian kompetensi lainnya/pilihan lulusan
+		Tabel 5.1.2.1 Jumlah sks PS (minimum untuk kelulusan)
+			Cols
+				No (1)
+				Jenis Mata Kuliah (2)
+				SKS (3) [TOTAL, LINK, 5.1.2.1 SJMK]
+				Keterangan (4) : Terdiri dari x (y SKS), ..
+			Rows
+				Mata Kuliah Wajib
+				Mata Kuliah Pilihan
+			Footer
+				Total
+			Pages
+				5.1.2.1 SJMK : Sub Jenis Mata Kuliah
+					Tabel
+					Cols
+						No
+						Sub Jenis Mata Kuliah
+						SKS (3) [TOTAL, LINK, 5.1.2.1 MK]
+					Pages
+						5.1.2.1 MK : Mata Kuliah
+						Copy 5.1.2.2
+		Tabel 5.1.2.2 : Struktur kurikulum berdasarkan urutan mata kuliah (MK) semester demi semester
+			Cols
+				Smt (1)
+				Kode MK (2)
+				Nama Mata Kuliah (3)
+				Bobot sks (4)
+				sks MK dlm Kurikulum
+					Inti ** (5) [CHECKMARK]
+					Institusional (6) [CHECKMARK]
+				Bobot Tugas *** (7) [CHECKMARK]
+				Kelengkapan ****
+					Deskripsi (8) [CHECKMARK, LINK, UNIQUE?]
+					Silabus (9) [CHECKMARK, LINK, UNIQUE]
+					SAP (10) [CHECKMARK, LINK, UNIQUE]
+					Unit/Jur/Fak Penyelenggara (11) [ENUM]
+		Tabel 5.1.3 : Mata kuliah pilihan yang dilaksanakan dalam tiga tahun terakhir
+			Cols
+				Semester (1)
+				Kode MK (2)
+				Nama Mata Kuliah (pilihan)
+				Bobot sks (4)
+				Bobot Tugas * (5) [CHECKMARK]
+				Unit/Jur/Fak Penyelenggara [ENUM]
+		Tabel 5.1.4 : Substansi praktikum/praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu
+			Cols
+				No (1)
+				Nama Praktikum/Praktek (2)
+				Isi Praktikum/Praktek
+					Judul/Modul (3)
+					Jam Pelaksanaan (4) [TIME?] 
+	5.2 Peninjauan Kurikulum [SUBMENU, PAGE]
+		Card proses peninjauan kurikulum
+			Collapse?
+				Mekanisme
+				Pihak yang dilibatkan
+				Dokumen pendukung
+		Tabel 5.2 : Hasil Peninjauan Kurikulum
+			Cols
+				No (1)
+				No. MK (2)
+				Nama MK (3)
+				MK Baru/Lama/Hapus (4) [ENUM?]
+				Perubahan Pada
+					Silabus/SAP (5) [CHECKMARK?]
+					Buku Ajar (6) [CHECKMARK?]
+				Alasan Peninjauan (7)
+				Atas usulan/Masukan dari (8)
+				Berlaku mulai Sem./Th. (9)
+	5.3 Pelaksanaan Proses Pembelajaran [SUBMENU, PAGE]
+		Card 5.3.1 Mekanisme Penyusunan Materi Kuliah dan Monitoring Perkuliahan
+			Collapse?
+				Mekanisme penyusunan materi
+				Mekanisme monitoring kehadiran dosen dan mahasiswa
+				Mekanisme monitoring materi kuliah
+				Dokumen Pendukung
+		Card 5.3.2 Lampiran contoh soal ujian dalam 1 tahun terakhir untuk 5 mata kuliah keahlian berikut silabusnya
+	5.4 SSistem Pembimbingan Akademik [SUBMENU, PAGE]
+		Tabel 5.4.1 : Nama dosen pembimbing akademik dan jumlah mahasiswa yang dibimbingnya
+			Cols
+				No (1)
+				Nama Dosen Pembimbing Akademik (2) [LINK, PROFILSTAFF]
+				Jumlah Mahasiswa Bimbingan (3) [JUMLAH, LINK, 3.1.1 LSB]
+				Rata-rata Banyaknya Pertemuan/mhs/semester (4) [INT?]
+			Pages
+				Copy 3.1.1 LSB
+		Tabel 5.4.2 Proses pembimbingan akademik
+			Cols
+				No (1)
+				Hal (2)
+				Penjelasan (3)
+			Rows (Hal)
+				Tujuan Pembimbingan
+				Pelaksanaan pembimbingan
+				Masalah yang dibicarakan dalam pembimbingan
+				Kesultian dalam pembimbingan dan upaya untuk mengatasinya
+				Manfaat yang diperoleh mahasiswa dari pembimbingan
+	5.5 PEMBIMBINGAN TUGAS AKHIR/SKRIPSI [SUBMENU, PAGE]
+		Card 5.5.1 rata-rata bimbingan
+			Rata-rata banyaknya mahasiswa per dosen pembimbing TA
+			Rata-rata jumlah pertemuan dosen-mahasiswa untuk menyelesaiakan TA
+		Tabel 5.5.1 : Daftar nama dosen pembimbing dan jumlah mahasiswa
+			Cols
+				No (1)
+				Nama Dosen Pembimbing (2) [LINK, PROFILSTAFF]
+				Jumlah Mahasiswa (3) [JUMLAH, LINK, 3.1.1 LSB]
+			Pages
+				Copy 3.1.1 LSB
+		Card 5.5.1 panduan pembimbingan TA
+			Collapse?
+				penjelasan cara sosialisasi dan pelaksanaan panduan pembimbingan TA
+				Dokumen Pendukung
+		Card 5.5.2 PENYELESAIAN TUGAS AKHIR ATAU SKRIPSI
+			Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir (bulan) [INT?]
+			Menurut kurikulum tugas akhir direncanakan (semester) [INT]
+			Dokumen Pendukung
+	5.6 UPAYA PERBAIKAN PEMBELAJARAN [SUBMENU, PAGE]
+		Tabel 5.6 Upaya perbaikan pembelajaran serta hasil yang telah dilakukan dan dicapai dalam tiga tahun terakhir dan hasilnya
+			Cols
+				Butir (1)
+				Upaya Perbaikan
+					Tindakan (2)
+					Hasil (3)
+			Rows
+				Materi
+				Metode Pembelajaran
+				Penggunaan Teknologi Pembelajaran
+				Cara-cara evaluasi
+	5.7 Upaya Peningkatan Suasana Akademik [SUBMENU, PAGE]
+		Card penjelasan
+			Collapse
+				Kebijakan tentang suasana akademik
+				Ketersediaan dan jenis prasaran, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika
+				Program dan kegiatan di dalam dan di luar proses pembelajaran
+				Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen
+				Pengembangan perilaku kecendikiawanan
+Standar 6 [MENU]
+	6.1 Pengelolaan Dana [SUBMENU, PAGE]
+		Card 
+			Collapse?
+				Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana
+				Dokumen pendukung
+	6.2 Perolehan dan Alokasi Dana [SUBMENU, PAGE]
+		Tabel 6.2.1.1 : Perolehan Dana
+			Cols
+				Sumber Dana [ENUM]
+				Jenis Dana
+				Jumlah Dana (juta rupiah)
+					TS-2 [DECIMAL]
+					TS-1 [DECIMAL]
+					TS [DECIMAL]
+			Row groups (Sumber Dana)
+				PT Sendiri
+				Yayasan
+				Diknas
+				Sumber Lain
+			Footer
+				Total
+		Tabel 6.2.1.2 : Penggunaan dana
+			Cols
+				No
+				Jenis Penggunaan
+				Penggunaan (Juta Rupiah)
+					TS-2 [DECIMAL]
+					TS-1 [DECIMAL]
+					TS [DECIMAL]
+			Rows
+				Pendidikan
+				Penelitian
+				Pengabdian kepada Masyarakat
+				Investasi Prasarana
+				Investasi Sarana
+				Investasi SDM
+				Lain-lain
+		Tabel 6.2.2 : dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahliannya sesuai dengan program studi
+			Cols
+				Tahun (1)
+				Judul Penelitian (2) [FILE]
+				Sumber dan Jenis Dana (3) [ENUM]
+				Jumlah Dana * (dalam juta) (4) [DECIMAL]
+			Footer
+				Total
+			Dokumen pendukung
+		Tabel 6.2.3 : dana yang diperoleh dari/untuk kegiatan pelayanan/pengabdian kepada masyarakat pada tiga tahun terakhir
+			Cols
+				Tahun (1)
+				Judul Kegiatan Pelayanan/Pengabdian kepada Masyarakat (2)
+				Sumber dan Jenis Dana (3) [ENUM]
+				Jumlah Dana (dalam juta) (4) [DECIMAL]
+			Footer
+				Total
+	6.3 Prasarana [SUBMENU, PAGE]
+		Tabel 6.3.1 : data ruang kerja dosen tetap yang bidang keahliannya sesuai dengan PS
+			Cols
+				Ruang Kerja Dosen
+				Jumlah Ruang
+				Jumlah Luas (m2)
+			Rows
+				Satu ruagn untuk lebih dari 4 dosen
+				Satu ruang untuk 3-4 dosen
+				Satu ruang untuk 2 dosen
+				Satu ruang untuk 1 dosen (bukan pejabat struktural)
+			Footer
+				Total
+		Tabel 6.3.2 : data prasarana (tidak meliputi ruang dosen)
+			Cols
+				No (1)
+				Jenis Prasarana (2) [LINK, 6.3.2 GP]
+				Jumlah Unit (3)
+				Total Luas (m2) (4)
+				Kepemilikan
+					SD (5) [JUMLAH]
+					SW (6) [JUMLAH]
+				Kondisi
+					Terawat (7) [JUMLAH]
+					Tidak Terawat (8) [JUMLAH]
+				Utilisasi (Jam/minggu) (9)
+			Pages
+				6.3.2 GP : Group Prasarana
+					Tabel
+					Cols
+						Gedung
+						Kode [STR]
+						Nama
+						Kapasitas [INT]
+						Luas (m2) [INT]
+						Milik [ENUM]
+						Kondisi [ENUM]
+						Utilisasi (Jam/minggu)?
+		Tabel 6.3.3 : data prasarana lain yang menunjang 
+			Cols copy 6.3.2
+				Last col:
+					Unit Pengelola (9)
+			Pages copy 6.3.2
+	6.4 Sarana Pelaksanaan Kegiatan Akademik [SUBMENU, PAGE]
+		Tabel 6.4.1.1 : Rekapitulasi Jumlah Ketersediaan Pustaka yang Relevan dengan Bidang PS
+			Cols
+				Jenis Pustaka
+				Jumlah Judul [LINK, 6.4.1.1 LP?]
+				Jumlah Copy
+			Rows
+				Buku Teks
+				Jurnal nasional yang terakreditasi
+				Jurnal internasional
+				Prosiding
+				Skripsi
+				Tesis
+				Disertasi
+			Footer
+				Total
+			Pages
+				6.4.1.1 LP : List Pustaka
+					Tabel
+					Cols
+						No
+						Judul Pustaka [FILE?]
+						Jenis Pustaka
+						Jumlah Copy
+			Dokumen pendukung?
+		Tabel 6.4.1.2 : Jurnal/prosiding seminar yang tersedia/yang diterima secara teratur (lengkap), termasuk e-journal, terbitan 3 tahun terakhir
+			Cols
+				Jenis [ENUM?]
+				No (1)
+				Nama Jurnal (2)
+				Rincian Nomor dan Tahun (3) [ITEMS]
+				Jumlah (4) [LINK, 6.4.1.2 LJ]
+			Row groups (Jenis)
+				Jurnal Terakreditasi DIKTI
+				Jurnal Internasional
+			Pages
+				6.4.1.2 LJ : List Jurnal
+					No
+					Judul [LINK, UNIQUE?]
+					Jurnal
+					Nomor dan Tahun
+		Table 6.4.2 : Sumber pustaka di lembaga lain yang bisa diakses dosen/mhs PS
+			Cols
+				No
+				Sumber Pustaka
+		Table 6.4.3 : peralatan utama yang digunakan di laboratorium untuk proses pembelajaran
+			Cols
+				No (1)
+				Nama Laboratorium (2)
+				Jenis Peralatan Utama (3)
+				Jumlah Unit (4)
+				Kepemilikan
+					SD (5)
+					SW (6)
+			Kondisi
+				Terawat (7)
+				Tidak Terawat (8)
+			Rata-rata waktu penggunaan (jam/minggu) (9)
+	6.5 Sistem Informasi [SUBMENU, PAGE]
+		Card 6.5.1 
+			Collapse?
+				Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran
+				Dokumen pendukung
+		Tabel 6.5.2 Aksesibilitas Tiap Jenis DATA
+			Cols
+				No (1)
+				Jenis Data (2) [LINK, UNIQUE]
+				Sistem Pengolahan Data
+					Secara Manual (3) [CHECKMARK]
+					Dengan Komputer Tanpa Jaringan (4) [CHECKMARK]
+					Dengan Komputer Jaringan Lokal (LAN) (5) [CHECKMARK]
+					Dengan Komputer Jaringan Luas (WAN) (6) [CHECKMARK]
+			Rows (Jenis Data)
+				Mahasiswa
+				Kartu Rencana Studi (KRS)
+				Jadwal Mata Kuliah
+				Nilai Mata Kuliah
+				Transkrip Akademik
+				Lulusan
+				Dosen
+				Pegawai
+				Keuangan
+				Inventaris
+				Perpustakaan
+Standar 7 [MENU]
+	7.1 PENELITIAN DOSEN TETAP [SUBMENU, PAGE]
+		Tabel 7.1.1 : Judul penelitian sesuai dengan bidang keilmuan PS, yang dilakukan oleh dosen tetap yang bidang keahliannya sesuai dengan PS selama tiga tahun terakhir
+			Cols
+				Sumber Pembiayaan
+				TS-2 [JUMLAH, LINK, 7.1.1 LPDT]
+				TS-1 [JUMLAH, LINK, 7.1.1 LPDT]
+				TS [JUMLAH, LINK, 7.1.1 LPDT]
+			Rows (Sumber Pembiayaan)
+				Pembiayaan sendiri oleh peneliti
+				PT yang bersangkutan
+				Depdiknas
+				Institusi dalam negeri di luar Depdiknas
+				Institusi luar negeri
+			Pages
+				7.1.1 LPDT : List Penelitian Dosen Tetap
+					Tabel
+					Cols
+						Judul [FILE?]
+						Tahun
+						Sumber Dana [ENUM]
+						NIP
+						Nama [LINK, PROFILSTAFF]
+			Dokumen Pendukung?
+		Card 7.1.2 Mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun
+			Ada tidaknya
+			Jumlah yang melakukan tugas akhir dan ikut serta [JUMLAH, LINK, 7.1.2 LP]
+			Jumlah yang melakukan tugas akhir
+			[JUMLAH, LINK, 7.1.2 LTA]
+			Pages
+				7.1.2 LP : List Penelitian
+					Cols
+						No
+						NIP
+						Nama Dosen [LINK, PROFILSTAFF]
+						Judul Penelitian [LINK?]
+						Tahun
+						Jumlah Mhs [JUMLAH, LINK, 7.1.2 LTA]
+				7.1.2 LTA : List Tugas Akhir
+					Cols
+						No
+						NIM
+						Nama Mhs
+						Tahun
+						Judul TA
+			Dokumen Pendukung
+		Tabel 7.1.3 : Tuliskan judul artikel ilmiah/karya ilmiah/karya seni/buku yang dihasilkan selama tiga tahun terakhir oleh dosen tetap yang bidang keahliannya sesuai dengan PS
+			Cols
+				No (1)
+				Judul (2) [LINK, UNIQUE?]
+				Nama-nama Dosen (3) [LINK, PROFILSTAFF]
+				Dihasilkan/Dipublikasikan Pada (4) [STR/LINK]
+				Tahun Penyajian / Publikasi (5)
+				Banyaknya Dosen?
+					Lokal (6) [CHECKMARK]
+					Nasional (7) [CHECKMARK]
+					Internasional (8) [CHECKMARK]
+		Tabel 7.1.4 :  karya dosen dan atau mahasiswa Program Studi yang telah memperoleh/sedang memproses perlindungan Hak atas Kekayaan Intelektual (HaKI) selama tiga tahun terakhir
+			Cols
+				No (1)
+				Karya * (2) [FILE]
+	7.2 KEGIATAN PELAYANAN/PENGABDIAN KEPADA MASYARAKAT (PKM) [SUBMENU, PAGE]
+		Tabel 7.2.1 : jumlah kegiatan Pelayanan/Pengabdian kepada Masyarakat (*) yang sesuai dengan bidang keilmuan PS selama tiga tahun terakhir yang dilakukan oleh dosen tetap yang bidang keahliannya sesuai dengan PS
+			Cols
+				Sumber Dana Kegiatan Pelayanan/Pengabdian kepada Masyarakat
+				TS-2 [JUMLAH, LINK, 7.2.1 LKPKM]
+				TS-1 [JUMLAH, LINK, 7.2.1 LKPKM]
+				TS [JUMLAH, LINK, 7.2.1 LKPKM]
+			Rows
+				Pembiayaan sendiri oleh dosen
+				PT yang bersangkutan
+				Depdiknas
+				Institusi dalam negeri di luar Depdiknas
+				Institusi luar negeri
+			Pages
+				7.2.1 LKPKM : List Kegiatan PkM
+					Tabel
+					Cols
+						Judul [FILE]
+						Tahun
+						Sumber Dana [ENUM]
+						Peran
+						NIP
+						Nama [LINK, PROFILSTAFF]
+		Card penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian
+		Dokumen pendukung
+	7.3 Kegiatan Kerjasama dengan Instansi Lain [SUBMENU, PAGE]
+		Tabel 7.3.1 : Kerjasama Dalam Negeri
+			Cols
+				No (1)
+				Nama Instansi (2)
+				Jenis Kegiatan (3) [FILE]
+				Kurun Waktu Kerjasama
+					Mulai (4)
+					Berakhir (5)
+				Manfaat yang Telah Diperoleh (6)
+		Tabel 7.3.2
+			Cols copy 7.3.1

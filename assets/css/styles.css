@@ -1,0 +1,60 @@
+.nav-item .nav-link.active {
+  /*background-color: #2653D4;*/
+  border-left: 2px solid white;
+}
+
+.nav-item .nav-link[aria-expanded="true"] {
+  background-color: #2653D4;
+  /*border-left: 2px solid white;*/
+}
+
+.nav-item.collapse.show .nav-link {
+  /*border-left: 2px solid white;*/
+  background-color: #2653D4;
+}
+
+.nav-item.collapsing .nav-link {
+  /*border-left: 2px solid white;*/
+  background-color: #2653D4;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.nav.no-border .nav-item {
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.nav.hover.nav-item:hover, .nav.hover .nav-item *:hover {
+  background-color: #F8F9FC;
+}
+
+table .shrink {
+  width: 1px;
+  white-space: nowrap;
+}
+
+.dt-buttons {
+  display: inline-block;
+}
+
+.dataTables_filter {
+  display: inline-block;
+  float: right;
+}
+
+.dataTables_info {
+  display: inline-block;
+}
+
+.dataTables_paginate {
+  display: inline-block;
+  float: right;
+}
+
+.clickable {
+  cursor: pointer;
+}

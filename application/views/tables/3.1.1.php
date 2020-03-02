@@ -8,17 +8,17 @@
 				<th class="" colspan="2">Jumlah Mahasiswa Baru</th>
 				<th class="" colspan="2">Jumlah Total Mahasiswa</th>
 				<th class="" colspan="2">Jumlah Lulusan</th>
-				<th class="" colspan="3">IPK Lulusan noruler</th>
-				<th class="" colspan="3">Persen Lulusan noruler dgn IPK:</th>
+				<th class="" colspan="3">IPK Lulusan Reguler</th>
+				<th class="" colspan="3">Persen Lulusan Reguler dgn IPK:</th>
 			</tr>
 			<tr>
 				<th class="">Ikut Seleksi</th>
 				<th class="">Lulus Seleksi</th>
-				<th class="">noruler Bukan Transfer</th>
+				<th class="">Reguler Bukan Transfer</th>
 				<th class="">Transfer</th>
-				<th class="">noruler Bukan Transfer</th>
+				<th class="">Reguler Bukan Transfer</th>
 				<th class="">Transfer</th>
-				<th class="">noruler Bukan Transfer</th>
+				<th class="">Reguler Bukan Transfer</th>
 				<th class="">Transfer</th>
 				<th class="">Min</th>
 				<th class="">Rat</th>
@@ -53,14 +53,14 @@
 			<tr>
 				<td class=""><?=$row;?></td>
 				<td class="">0</td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LIS/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LIS/trf/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/MB/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/MB/trf/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LM/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LM/trf/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LL/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/1/LL/trf/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/IS/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/IS/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/MB/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/MB/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LM/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LM/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LL/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/1/LL/1/1">0</a></td>
 				<td class="">0</td>
 				<td class="">0</td>
 				<td class="">0</td>

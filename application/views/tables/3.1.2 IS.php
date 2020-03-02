@@ -2,9 +2,8 @@
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="">No</th>
-				<th class="">Judul</th>
-				<th class="">Nomor dan Tahun</th>
+				<th class="">Jenis Seleksi</th>
+				<th class="">Jumlah</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -13,10 +12,15 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/LIS/0/1">0</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td>Jumlah</td>
+				<td class="footer-callback" data-operation="sum" data-column="1"></td>
+			</tr>
+		</tfoot>
 	</table>
 </div>

@@ -11,9 +11,9 @@
 			<tr>
 				<th class="">Ikut Seleksi</th>
 				<th class="">Lulus Seleksi</th>
-				<th class="">noruler Bukan Transfer</th>
+				<th class="">Non- Reguler</th>
 				<th class="">Transfer</th>
-				<th class="">noruler Bukan Transfer</th>
+				<th class="">Non- Reguler</th>
 				<th class="">Transfer</th>
 			</tr>
 			<tr>
@@ -34,12 +34,12 @@
 			<tr>
 				<td class=""><?=$row;?></td>
 				<td class="">0</td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LIS/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LIS/trf/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/MB/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/MB/trf/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LM/nor/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LM/trf/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/IS/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/IS/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/MB/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/MB/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/LM/0/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>3/1/2/LM/1/1">0</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

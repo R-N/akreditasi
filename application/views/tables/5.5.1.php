@@ -19,7 +19,7 @@
 			<tr>
 				<td class=""></td>
 				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="<?=base_url();?>5/5/1/LM/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>5/5/1/LTA/1">0</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

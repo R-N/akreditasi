@@ -40,5 +40,13 @@
 			}
 			?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">Jumlah (TODO)</td>
+				<td class="footer-callback" data-operation="sum" data-column="2"></td>
+				<td class="footer-callback" data-operation="sum" data-column="3"></td>
+				<td class="footer-callback" data-operation="sum" data-column="4"></td>
+			</tr>
+		</tfoot>
 	</table>
 </div>

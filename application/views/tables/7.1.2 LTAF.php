@@ -3,8 +3,10 @@
 		<thead>
 			<tr>
 				<th class="">No</th>
-				<th class="">Judul</th>
-				<th class="">Nomor dan Tahun</th>
+				<th class="">NIM</th>
+				<th class="">Nama Mhs</th>
+				<th class="">Tahun</th>
+				<th class="">Judul TA</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -13,8 +15,10 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
 				<td class=""></td>
+				<td class=""></td>
+				<td class=""></td>
+				<td class=""><?=$row;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

@@ -5,7 +5,6 @@
 				<th class="">No</th>
 				<th class="">Judul</th>
 				<th class="">Tahun</th>
-				<th class="">Sumber Dana</th>
 				<th class="">Peran</th>
 				<th class="">NIP</th>
 				<th class="">Nama</th>
@@ -18,7 +17,6 @@
 			<tr>
 				<td class=""></td>
 				<td class=""><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>

@@ -4,7 +4,6 @@
 			<tr>
 				<th class="">No</th>
 				<th class="">Judul Pustaka</th>
-				<th class="">Jenis Pustaka</th>
 				<th class="">Jumlah Copy</th>
 			</tr>
 		</thead>
@@ -15,7 +14,6 @@
 			<tr>
 				<td class=""></td>
 				<td class=""><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
 				<td class=""></td>
 			</tr>
 			<?php } ?>

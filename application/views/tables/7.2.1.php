@@ -19,10 +19,10 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1"><?=$row;?></a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row;?></td>
+				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
+				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

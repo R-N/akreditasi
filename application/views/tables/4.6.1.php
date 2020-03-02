@@ -46,7 +46,7 @@
 				<td class=""><a href="<?=base_url();?>4/6/1/LTK/1/1">0</a></td>
 				<td class=""><a href="<?=base_url();?>4/6/1/LTK/1/1">0</a></td>
 				<td class=""><a href="<?=base_url();?>4/6/1/LTK/1/1">0</a></td>
-				<td class="">0</td>
+				<td class="">Perpustakaan</td>
 			</tr>
 			<?php } ?>
 		</tbody>
@@ -61,7 +61,6 @@
 				<td class="footer-callback" data-operation="sum" data-column="7"></td>
 				<td class="footer-callback" data-operation="sum" data-column="8"></td>
 				<td class="footer-callback" data-operation="sum" data-column="9"></td>
-				<td class="footer-callback" data-operation="sum" data-column="10"></td>
 			</tr>
 		</tfoot>
 	</table>

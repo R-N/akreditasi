@@ -16,6 +16,21 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`akreditasi` /*!40100 DEFAULT CHARACTER 
 
 USE `akreditasi`;
 
+/*Table structure for table `cards` */
+
+CREATE TABLE `cards` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent` varchar(8) NOT NULL,
+  `no` int(11) NOT NULL,
+  `title` varchar(128) NOT NULL,
+  `text` varchar(1024) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `parent_lists` (`parent`),
+  CONSTRAINT `parent_cards` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+/*Data for the table `cards` */
+
 /*Table structure for table `dokumen_pendukung` */
 
 CREATE TABLE `dokumen_pendukung` (
@@ -64,6 +79,15 @@ insert  into `ids`(`id`,`name`) values
 ('1.1 SS',''),
 ('1.1 T',''),
 ('1.1 V',''),
+('1.1.2',''),
+('1.1.3',''),
+('1.1.4',''),
+('1.1.5.1',''),
+('1.1.5.1.1',''),
+('1.1.5.1.2',''),
+('1.1.5.1.3',''),
+('1.1.5.1.4',''),
+('1.1.5.1.5',''),
 ('1.2',''),
 ('2.1',''),
 ('2.2',''),
@@ -185,6 +209,35 @@ insert  into `jenis_jurnal`(`jenis`) values
 ('Jurnal Internasional'),
 ('Jurnal Terakreditasi DIKTI');
 
+/*Table structure for table `lists` */
+
+CREATE TABLE `lists` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent` varchar(16) NOT NULL,
+  `no` int(11) NOT NULL,
+  `text` varchar(1024) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `parent_lists` (`parent`),
+  CONSTRAINT `parent_lists` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+/*Data for the table `lists` */
+
+insert  into `lists`(`id`,`parent`,`no`,`text`) values 
+(1,'1.1.3',1,'Menyelenggarakan Program Studi Sistem Informasi yang unggul dengan mengintegrasikan ilmu pengetahuan dan teknologi dengan nilai keislaman.'),
+(2,'1.1.3',2,'Mengembangkan riset integratif di bidang Sistem Informasi yang inovatif, berwawasan hijau, dan peka terhadap perkembangan untuk dukungan sistem informasi pada bidang manajemen, teknologi dan sistem cerdas.'),
+(3,'1.1.3',3,'Membangun kepercayaan masyarakat melalui pengabdian berbasis riset sistem informasi dan mengembangkan kerjasama dengan lembaga-lembaga lokal, nasional dan internasional.'),
+(4,'1.1.4',1,'Menghasilkan lulusan yang unggul dalam bidang Sistem Informasi yang mampu memberikan kontribusi bagi masyarakat.'),
+(5,'1.1.4',2,'Menghasilkan lulusan yang profesional dalam bidang sistem informasi dan memiliki daya saing di tingkat regional, nasional, dan internasional.'),
+(6,'1.1.4',3,'Meningkatkan kinerja riset yang mengandung integrasi ilmu keislaman dengan kajian sistem informasi'),
+(7,'1.1.4',4,'Memberikan kontribusi program studi pada masyarakat melalui pengabdian masyarakat berbasis riset'),
+(8,'1.1.4',5,'Mewujudkan tata kelola program studi yang bersih dan sehat'),
+(9,'1.1.4',6,'Menghasilkan karya ilmiah di tingkat nasional dan internasional'),
+(10,'1.1.4',7,'Menghasilkan lulusan sistem informasi yang memiliki akhlakul karimah, ketajaman analisis, jiwa kepemimpinan, jiwa technopreneur, kreatif dan komunikatif serta berkontribusi dalam pemanfaatan sistem informasi untuk pemberdayaan masyarakat sesuai kearifan lokal.'),
+(16,'1.1.5.1.1',1,'Penguatan internal prodi.'),
+(17,'1.1.5.1.1',2,'Peningkatan kualitas SDM.'),
+(18,'1.1.5.1.1',3,'Meningkatkan mutu penelitian dan pengabdian kepada masyarakat.');
+
 /*Table structure for table `paragraf` */
 
 CREATE TABLE `paragraf` (
@@ -200,8 +253,7 @@ CREATE TABLE `paragraf` (
 /*Data for the table `paragraf` */
 
 insert  into `paragraf`(`id`,`parent`,`title`,`text`) values 
-(1,'1.1','Penyusunan','Penyusunan'),
-(2,'1.1','Visi','Visi'),
+(2,'1.1.2','Visi','\"Menjadi Program Studi Sistem Informasi yang unggul dan kompetitif\"'),
 (3,'1.1','Misi','Misi'),
 (4,'1.1','Tujuan','Tujuan'),
 (5,'1.1','Sasaran dan Strategi','Sasaran dan Strategi'),
@@ -248,24 +300,23 @@ insert  into `paragraf`(`id`,`parent`,`title`,`text`) values
 /*Table structure for table `pendidikan` */
 
 CREATE TABLE `pendidikan` (
-  `id` tinyint(2) NOT NULL AUTO_INCREMENT,
-  `nama` char(3) NOT NULL,
+  `pendidikan` char(3) NOT NULL,
   `tingkat` tinyint(2) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`pendidikan`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `pendidikan` */
 
-insert  into `pendidikan`(`id`,`nama`,`tingkat`) values 
-(1,'SMA',1),
-(2,'SMK',1),
-(3,'D1',2),
-(4,'D2',3),
-(5,'D3',4),
-(6,'D4',5),
-(7,'S1',5),
-(8,'S2',6),
-(9,'S3',7);
+insert  into `pendidikan`(`pendidikan`,`tingkat`) values 
+('D1',2),
+('D2',3),
+('D3',4),
+('D4',5),
+('S1',5),
+('S2',6),
+('S3',7),
+('SMA',1),
+('SMK',1);
 
 /*Table structure for table `pengolahan_data` */
 
@@ -552,13 +603,44 @@ CREATE TABLE `tabel_3_1_3` (
 /*Table structure for table `tabel_3_1_4` */
 
 CREATE TABLE `tabel_3_1_4` (
-  `tahun` int(11) NOT NULL,
   `angkatan` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`tahun`,`angkatan`)
+  `jumlah_lulusan` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`angkatan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_4` */
+
+/*Table structure for table `tabel_3_1_4_0` */
+
+CREATE TABLE `tabel_3_1_4_0` (
+  `angkatan` int(4) NOT NULL,
+  `tahun` int(4) NOT NULL,
+  `jumlah` int(11) DEFAULT '0',
+  PRIMARY KEY (`angkatan`,`tahun`),
+  KEY `tahun_3_1_4_0` (`tahun`),
+  CONSTRAINT `angkatan_3_1_4_0` FOREIGN KEY (`angkatan`) REFERENCES `tabel_3_1_4` (`angkatan`) ON UPDATE CASCADE,
+  CONSTRAINT `tahun_3_1_4_0` FOREIGN KEY (`tahun`) REFERENCES `tabel_3_1_4` (`angkatan`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_3_1_4_0` */
+
+/*Table structure for table `tabel_3_1_4_ll` */
+
+CREATE TABLE `tabel_3_1_4_ll` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `angkatan` int(4) NOT NULL,
+  `nim` char(9) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `laki` tinyint(1) NOT NULL,
+  `wisuda` int(11) NOT NULL,
+  `ipk` decimal(10,0) NOT NULL,
+  `id_alumni` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `tahun_3_1_1_ll` (`angkatan`),
+  CONSTRAINT `angkatan_3_1_4_ll` FOREIGN KEY (`angkatan`) REFERENCES `tabel_3_1_4` (`angkatan`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_3_1_4_ll` */
 
 /*Table structure for table `tabel_3_1_4_lm` */
 
@@ -570,7 +652,10 @@ CREATE TABLE `tabel_3_1_4_lm` (
   `laki` tinyint(1) NOT NULL,
   `nim` char(9) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `tahun_3_1_1_lm` (`tahun`)
+  KEY `tahun_3_1_1_lm` (`tahun`),
+  KEY `tahun_3_1_4_lm` (`tahun`,`angkatan`),
+  KEY `tahun_3_1_4_lm2` (`angkatan`,`tahun`),
+  CONSTRAINT `tahun_3_1_4_lm2` FOREIGN KEY (`angkatan`, `tahun`) REFERENCES `tabel_3_1_4_0` (`angkatan`, `tahun`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_4_lm` */
@@ -673,7 +758,8 @@ CREATE TABLE `tabel_4_3_3` (
   `sks_pt_lain` decimal(10,0) NOT NULL DEFAULT '0',
   `sks_penelitian` decimal(10,0) NOT NULL DEFAULT '0',
   `sks_pengabdian` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_manajemen` decimal(10,0) NOT NULL DEFAULT '0',
+  `sks_man_sendiri` decimal(10,0) NOT NULL DEFAULT '0',
+  `sks_man_lain` decimal(10,0) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -770,7 +856,9 @@ CREATE TABLE `tabel_4_5_2` (
   `pt` varchar(32) NOT NULL,
   `negara` varchar(32) NOT NULL,
   `tahun` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `pend_4_5_2` (`pendidikan`),
+  CONSTRAINT `pend_4_5_2` FOREIGN KEY (`pendidikan`) REFERENCES `pendidikan` (`pendidikan`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_2` */
@@ -850,7 +938,7 @@ insert  into `tabel_4_6_1`(`id`,`jenis_tk`,`unit`,`S3`,`S2`,`S1`,`D4`,`D3`,`D2`,
 CREATE TABLE `tabel_4_6_1_ltk` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` tinyint(1) NOT NULL,
-  `pendidikan` tinyint(2) NOT NULL,
+  `pendidikan` char(3) NOT NULL,
   `nip` varchar(18) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `jabatan` tinyint(2) NOT NULL,
@@ -864,7 +952,7 @@ CREATE TABLE `tabel_4_6_1_ltk` (
   KEY `pend_4_6_1_ltk` (`pendidikan`),
   CONSTRAINT `jabatan_4_6_1_ltk` FOREIGN KEY (`jabatan`) REFERENCES `jabatan_tk` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `jenis_4_6_1_ltk` FOREIGN KEY (`jenis`) REFERENCES `tabel_4_6_1` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `pend_4_6_1_ltk` FOREIGN KEY (`pendidikan`) REFERENCES `pendidikan` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `pend_4_6_1_ltk` FOREIGN KEY (`pendidikan`) REFERENCES `pendidikan` (`pendidikan`) ON UPDATE CASCADE,
   CONSTRAINT `status_4_6_1_ltk` FOREIGN KEY (`status`) REFERENCES `status_tk` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `unit_4_6_1_ltk` FOREIGN KEY (`unit`) REFERENCES `unit_tk` (`id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

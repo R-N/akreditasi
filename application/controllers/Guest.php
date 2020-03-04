@@ -9,6 +9,7 @@ class Guest extends CI_Controller {
 
 
 		//$this->load->library('grocery_CRUD');
+		$this->load->model('M_Guest');
 		setlocale(LC_ALL, 'id_ID');
 	}
 
@@ -38,9 +39,9 @@ class Guest extends CI_Controller {
 				"visi-misi", 
 				array(
 					_content("Penyusunan", "Penyusunan"),
-					_content("Visi", "Visi"),
-					_content("Misi", "Misi"),
-					_content("Tujuan", "Tujuan"),
+					fragment("1.1.2", "Visi", $this->M_Guest->get_paragraf("1.1.2")),
+					fragment("1.1.3", "Misi", array("rows"=>$this->M_Guest->fetch_list("1.1.3"))),
+					fragment("1.1.4", "Tujuan", array("rows"=>$this->M_Guest->fetch_list("1.1.4"))),
 					_content("Sasaran dan Strategi", "Sasaran dan Strategi")
 				)
 			)
@@ -1159,6 +1160,17 @@ class Guest extends CI_Controller {
 		);
 		$this->load->view("page.php", $data);
 	}
+	public function page_3_1_4_LL($angkatan){
+		$data = base_data("3.1");
+		$data["page_title"] = "List Lulusan";
+		$data["page_id"] = "3.1.4";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.1 LL.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
 	public function page_4_6_1_LTK($jenis, $pend){
 		$data = base_data("4.6");
 		$data["page_title"] = "List Tenaga Kerja";
@@ -1227,6 +1239,17 @@ class Guest extends CI_Controller {
 		);
 		$this->load->view("page.php", $data);
 	}
+	public function page_6_3_1_LR($jenis){
+		$data = base_data("6.3");
+		$data["page_title"] = "List Ruang";
+		$data["page_id"] = "6.3.1";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/6.3.1 LR.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
 	public function page_6_3_2_LP($jenis){
 		$data = base_data("6.3");
 		$data["page_title"] = "List Prasarana";
@@ -1235,6 +1258,17 @@ class Guest extends CI_Controller {
 		$rows = array("asd");
 		$data["contents"] = array(
 			card("tabel", _content("Tabel", $this->load->view("tables/6.3.2 LP.php", array("rows"=>$rows), true)))
+		);
+		$this->load->view("page.php", $data);
+	}
+	public function page_6_3_3_LP($jenis){
+		$data = base_data("6.3");
+		$data["page_title"] = "List Prasarana";
+		$data["page_id"] = "6.3.3";
+		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
+		$rows = array("asd");
+		$data["contents"] = array(
+			card("tabel", _content("Tabel", $this->load->view("tables/6.3.3 LP.php", array("rows"=>$rows), true)))
 		);
 		$this->load->view("page.php", $data);
 	}

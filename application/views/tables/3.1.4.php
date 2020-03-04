@@ -48,7 +48,7 @@
 					}
 					if ($i < 4){
 				?>
-					<td class="">0</td>
+					<td class=""><a href="<?=base_url();?>3/1/4/LL/6">0</a></td>
 				<?php
 					}
 				?>

@@ -7,6 +7,7 @@
 				<th class="">Nama Mhs</th>
 				<th class="">Tahun</th>
 				<th class="">Judul TA</th>
+				<th class="">Pembimbing</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,6 +20,7 @@
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""><?=$row;?></td>
+				<td class=""><a href="#">Pembimbing</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

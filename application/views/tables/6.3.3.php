@@ -33,8 +33,8 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
 				<td class=""></td>
+				<td class=""><a href="<?=base_url();?>6/3/3/LP/1"><?=$row;?></a></td>
 				<td class=""></td>
 				<td class=""></td>
 				<td class=""></td>

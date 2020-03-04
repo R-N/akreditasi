@@ -38,11 +38,12 @@ class Guest extends CI_Controller {
 			accordion(
 				"visi-misi", 
 				array(
-					_content("Penyusunan", "Penyusunan"),
+					//_content("Penyusunan", "Penyusunan"),
 					fragment("1.1.2", "Visi", $this->M_Guest->get_paragraf("1.1.2")),
 					fragment("1.1.3", "Misi", array("rows"=>$this->M_Guest->fetch_list("1.1.3"))),
 					fragment("1.1.4", "Tujuan", array("rows"=>$this->M_Guest->fetch_list("1.1.4"))),
-					_content("Sasaran dan Strategi", "Sasaran dan Strategi")
+					fragment("1.1.5.1","Milestones")
+					//_content("Sasaran dan Strategi", "Sasaran dan Strategi")
 				)
 			)
 		);

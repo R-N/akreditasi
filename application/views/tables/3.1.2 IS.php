@@ -1,4 +1,4 @@
-<div class="table-responsive datatable fixed export auto-number">
+<div class="table-responsive datatable fixed export ">
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -11,8 +11,8 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LIS/0/1">0</a></td>
+				<td class=""><?=$row;?></td>
+				<td class=""><a href="<?=$url;?>/1">0</a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

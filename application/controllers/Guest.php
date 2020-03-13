@@ -1001,7 +1001,10 @@ class Guest extends CI_Controller {
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
 		$rows = array("asd");
 		$data["contents"] = array(
-			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array("rows"=>$rows), true)))
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array(
+				"rows"=>$rows,
+				"url"=>base_url("3/1/1/LIS/{$lulus}/{$ts}")
+			), true)))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -1019,7 +1022,12 @@ class Guest extends CI_Controller {
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
 		$rows = array("asd");
 		$data["contents"] = array(
-			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array("rows"=>$rows), true)))
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 LIS.php", array(
+				"rows"=>$rows,
+				"lulus"=>$lulus,
+				"ts"=>$ts,
+				"jalur"=>$jalur
+			), true)))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -1031,7 +1039,10 @@ class Guest extends CI_Controller {
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
 		$rows = array("asd");
 		$data["contents"] = array(
-			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array("rows"=>$rows), true)))
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array(
+				"rows"=>$rows,
+				"url"=>base_url("3/1/1/LMB/{$trf}/{$ts}")
+			), true)))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -1086,7 +1097,10 @@ class Guest extends CI_Controller {
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
 		$rows = array("asd");
 		$data["contents"] = array(
-			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array("rows"=>$rows), true)))
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array(
+				"rows"=>$rows,
+				"url"=>base_url("3/1/2/LIS/{$lulus}/{$ts}")
+			), true)))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -1115,7 +1129,10 @@ class Guest extends CI_Controller {
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
 		$rows = array("asd");
 		$data["contents"] = array(
-			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array("rows"=>$rows), true)))
+			card("tabel", _content("Tabel", $this->load->view("tables/3.1.2 IS.php", array(
+				"rows"=>$rows,
+				"url"=>base_url("3/1/2/LMB/{$trf}/{$ts}")
+			), true)))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -1355,6 +1372,6 @@ class Guest extends CI_Controller {
 	}
 	
 	public function index(){
-		$this->example();
+		redirect(base_url("0"));
 	}
 }

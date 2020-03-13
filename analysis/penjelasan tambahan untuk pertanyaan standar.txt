@@ -1,0 +1,4 @@
+Penjelasan tambahan untuk pertanyaan standar
+7.1.1 LPDT = 7.1.1 list penelitian dosen tetap yang terhitung dalam tabel 7.1.1
+7.1.2 LP = 7.1.2 list penelitian dosen yang melibatkan mhs TA yang jumlahnya disebutkan dalam 7.1.2 dan terdapat pada tabel pada 7.1.2 di dokumen borang halaman 387
+7.1.2 LTA = 7.1.2 list tugas akhir yang jumlahnya disebutkan dalam 7.1.2, baik yang dilibatkan dalam penelitian dosen maupun tidak

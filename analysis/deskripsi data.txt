@@ -1,0 +1,107 @@
+Data Tabel:
+3.1.1 LIS = List Ikut Seleksi masuk prodi SI
+	Nama
+	Jenis Kelamin
+	No. Ujian
+	Jalur seleksi
+	Lulus: Lulus/Tidak Lulus
+	Tahun ikut seleksi: TS-4/TS-3/TS-2/TS-1/TS
+3.1.1 LMB = List Mahasiswa Baru Reguler prodi SI
+	Nama
+	Jenis Kelamin
+	No. Ujian
+	Jalur seleksi
+	Transfer: Transfer/Bukan Transfer
+	Tahun masuk: TS-4/TS-3/TS-2/TS-1/TS
+3.1.1 LM = List Mahasiswa Reguler prodi SI
+	Nama
+	Jenis Kelamin
+	NIM
+	Transfer: Transfer/Bukan Transfer
+	Tahun data: TS-4/TS-3/TS-2/TS-1/TS
+3.1.1 LL = List Lulusan Reguler prodi SI
+	Nama
+	Jenis Kelamin
+	NIM
+	Wisuda ke- (int)
+	IPK
+	Link profil lulusan
+	Transfer: Transfer/Bukan Transfer
+	Tahun lulus: TS-4/TS-3/TS-2/TS-1/TS
+3.1.4 LM = List Mahasiswa Reguler per Angkatan pada tahun TS-x
+	Nama
+	Jenis Kelamin
+	NIM
+	Tahun Akademik: TS-6/TS-5/TS-4/TS-3/TS-2/TS-1/TS
+	Tahun Angkatan: TS-6/TS-5/TS-4/TS-3/TS-2/TS-1/TS
+	Tahun Lulus?: TS-6/TS-5/TS-4/TS-3/TS-2/TS-1/TS
+3.1.4 LL = List Lulusan Reguler pada tahun TS-x
+	Nama
+	Jenis Kelamin
+	NIM
+	Wisuda ke- (int)
+	IPK
+	Link profil lulusan
+	Tahun Lulus: TS-6/TS-5/TS-4/TS-3/TS-2/TS-1/TS
+5.4.1 LM = List mahasiswa dosen wali
+	Nama dosen wali
+	Nama mhs
+	Jenis kelamin mhs
+	NIM
+5.5.1 LTA = List tugas akhir
+	Nama dosen pembimbing
+	NIM
+	Nama mhs
+	Tahun TA
+	Judul TA
+6.3.1 LP = List (prasarana) ruang dosen
+	Gedung
+	Nama
+	Kapasitas (int)
+	Luas (m^2)
+	Jumlah dosen
+6.3.2 LP = List Prasarana SATUAN selain ruang dosen
+	Jenis Prasarana
+	Gedung
+	Nama prasarana
+	Kapasitas (int)
+	Luas (m2)
+	Milik: Sendiri/Sewa
+	Kondisi: Terawat/Tidak terawat
+	Utilisasi (Jam/minggu)
+6.3.3 LP = List Prasarana SATUAN lainnya
+	Jenis Prasarana
+	Gedung
+	Nama prasarana
+	Kapasitas (int)
+	Luas (m2)
+	Milik: Sendiri/Sewa
+	Kondisi: Terawat/Tidak terawat
+	Unit pengelola
+6.4.1.1 LP = List pustaka
+	Jenis Pustaka: Buku Teks/Disertasi/Jurnal internasional/Jurnal nasional yang terakreditasi/Prosiding/Skripsi/Tesis
+	Judul pustaka
+	Link/lampiran pustaka
+	Jumlah copy
+6.4.1.2 LJ = List jurnal 
+	Nama jurnal
+	Volume
+	Nomor
+	Tahun
+	Link/lampiran
+7.1.2 LPDT = List penelitian dosen tetap:
+	Judul
+	Tahun
+	NIP
+	Nama
+	Link lecturer
+	Lampiran
+	TS: TS-2/TS-1/TS
+	Sumber pembiayaan: Depdiknas/Institusi dalam negeri di luar Depdiknas/Institusi luar negeri/Pembiayaan sendiri oleh peneliti/PT yang bersangkutan
+7.1.2 LTA = List tugas akhir mahasiswa tiga tahun terakhir
+	NIM
+	Nama mhs
+	Tahun TA
+	Judul TA
+	Nama dosen pembimbing
+	Link lecturer dosen pembimbing

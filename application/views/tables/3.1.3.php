@@ -20,9 +20,13 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class="">Nama Kegiatan</td>
-				<td class=""></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
+				<td class=""><?=$row["kegiatan"];?></td>
+				<td class=""><?=$row["tingkat"];?></td>
+				<td class="">
+					<?php if(empty($row["url_bukti"])) { echo $row["prestasi"]; } else { ?>
+					<a href="#"><?=$row["prestasi"];?>></a>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>

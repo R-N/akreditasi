@@ -10,6 +10,13 @@ class M_Guest extends CI_Model {
 		$sql =  "SET lc_time_names = 'id_ID';";
 		$query = $this->db->query($sql);
 	}
+	
+	function fetch_mhs_angkatan_tahun($angkatan, $ts){
+		$limit =  $ts - $angkatan + 1;
+		$sql = "SELECT * FROM tabel_3_1_4_0 WHERE angkatan=? AND tahun>=? ORDER BY tahun LIMIT {$limit}";
+		$query = $this->db->query($sql, array($angkatan, $angkatan));
+		return $query->result_array();
+	}
 
 	function fetch_table($table_name, $orderby = 'id', $ordertype="ASC"){
 		$sql =  "SELECT * FROM {$table_name}";

@@ -9,6 +9,7 @@ class Guest extends CI_Controller {
 
 
 		//$this->load->library('grocery_CRUD');
+		$this->ts = 2018;
 		$this->load->model('M_Guest');
 		setlocale(LC_ALL, 'id_ID');
 	}
@@ -191,22 +192,48 @@ class Guest extends CI_Controller {
 	}
 	public function page_3_1(){
 		$data = base_data("3.1");
-		$rows1 = array("TS-4", "TS-3", "TS-2", "TS-1", "TS");
-		$rows2 = array("TS-4", "TS-3", "TS-2", "TS-1", "TS");
-		$rows3 = array("asd");
-		$rows4 = array("TS-6", "TS-5", "TS-4", "TS-3", "TS-2", "TS-1", "TS");
+		$rows1 = $this->M_Guest->fetch_table("tabel_3_1_1", "tahun");
+		$rows2 = $this->M_Guest->fetch_table("tabel_3_1_2", "tahun");
+		$rows3 = $this->M_Guest->fetch_table("tabel_3_1_3");
+		$rows4 = $this->M_Guest->fetch_table("tabel_3_1_4", "angkatan");
+		$i = 0;
+		foreach($rows4 as $row){
+			$mhss = $this->M_Guest->fetch_mhs_angkatan_tahun($row["angkatan"], $this->ts);
+			$rows4[$i]["mhs"] = $mhss;
+			++$i;
+		}
 		$data["contents"] = array(
 			card(
 				"mhs-reguler", 
 				array(
-					_content("3.1.1 Data mahasiswa reguler dan lulusannya", $this->load->view("tables/3.1.1.php", array("rows"=>$rows1),true)),
+					_content(
+						"3.1.1 Data mahasiswa reguler dan lulusannya", 
+						$this->load->view(
+							"tables/3.1.1.php", 
+							array(
+								"ts"=>$this->ts,
+								"rows"=>$rows1
+							),
+							true
+						)
+					),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("3.1.1")))
 				)
 			),
 			card(
 				"mhs-non-reguler", 
 				array(
-					_content("3.1.2 Data mahasiswa non-reguler", $this->load->view("tables/3.1.2.php", array("rows"=>$rows2),true))
+					_content(
+						"3.1.2 Data mahasiswa non-reguler", 
+						$this->load->view(
+							"tables/3.1.2.php", 
+							array(
+								"ts"=>$this->ts,
+								"rows"=>$rows2
+							),
+							true
+						)
+					)
 				)
 			),
 			card(
@@ -219,7 +246,17 @@ class Guest extends CI_Controller {
 			card(
 				"jumlah-mhs-reguler", 
 				array(
-					_content("3.1.4 Jumlah mahasiswa reguler  ", $this->load->view("tables/3.1.4.php", array("rows"=>$rows4),true))
+					_content(
+						"3.1.4 Jumlah mahasiswa reguler", 
+						$this->load->view(
+							"tables/3.1.4.php", 
+							array(
+								"ts"=>$this->ts,
+								"rows"=>$rows4
+							),
+							true
+						)
+					)
 				)
 			),
 		);

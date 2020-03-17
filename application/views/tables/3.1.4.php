@@ -2,7 +2,7 @@
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th class="" rowspan="2">Tahun Akademik</th>
+				<th class="" rowspan="2">Tahun Masuk</th>
 				<th class="" colspan="7">Jumlah Mahasiswa Reguler per Angkatan pada Tahun</th>
 				<th class="" rowspan="2">Jumlah Lulusan s.d. TS (dari Mahasiswa Reguler)</th>
 			</tr>
@@ -33,25 +33,36 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
+				<td class="">TS<?php  $t = $row["angkatan"]-$ts; echo $t == 0 ? "" : "{$t}"; ?></td>
 				<?php
 					for($j = 0; $j < 7; ++$j){
+				?>
+					<td class="">
+					<?php
 						if($j >= $i){
-				?>
-							<td class=""><a href="<?=base_url();?>3/1/4/LM/6/6">0</a></td>
-				<?php
+							$k = $j-$i;
+							if(empty($row["mhs"][$k]) || $row["mhs"][$k]["jumlah"]==0){ echo 0; } else {
+					?>
+								<a href="<?=base_url();?>3/1/4/LM/<?=$row["angkatan"]?>/<?=$row["mhs"][$k]["tahun"];?>"><?=$row["mhs"][$k]["jumlah"];?></a>
+					<?php
+							}
 						}else{
+					?>
+								
+					<?php } ?>
+					</td>
+				<?php } ?>
+				<td class="">
+				<?php
+					if ($i < 4){
+						if($row["jumlah_lulusan"]==0){ echo 0; } else {
 				?>
-							<td class=""></td>
+							<a href="<?=base_url();?>3/1/4/LL/<?=$row["angkatan"];?>"><?=$row["jumlah_lulusan"];?></a>
 				<?php
 						}
 					}
-					if ($i < 4){
 				?>
-					<td class=""><a href="<?=base_url();?>3/1/4/LL/6">0</a></td>
-				<?php
-					}
-				?>
+				</td>
 			</tr>
 			<?php 
 				++$i;

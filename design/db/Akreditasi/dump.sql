@@ -37,18 +37,56 @@ CREATE TABLE `dokumen_pendukung` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent` varchar(16) NOT NULL,
   `no` int(11) NOT NULL DEFAULT '1',
-  `nama` varchar(256) NOT NULL,
+  `name` varchar(256) NOT NULL,
   `url` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_dokumen_pendukung` (`parent`),
   CONSTRAINT `parent_dokumen_pendukung` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 /*Data for the table `dokumen_pendukung` */
 
-insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`nama`,`url`) values 
-(1,'0',1,'Dokumen Evaluasi Diri','https://www.google.com/'),
-(2,'0',1,'Dokumen Borang','https://www.google.com/');
+insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`name`,`url`) values 
+(1,'0',3,'Dokumen Evaluasi Diri','https://drive.google.com/open?id=1DVpzu20ngo4nr2sFkrjDwvs7apJ-i6YO'),
+(2,'0',1,'Dokumen Borang 3A - Prodi Sistem Informasi','https://drive.google.com/open?id=1GsL43N2QkG3FLA7eqmyiW3biZTLfi6-c'),
+(4,'0',2,'Dokumen Borang 3B - Fakultas Saintek','https://drive.google.com/open?id=1wjBNT0-RpXvefE_PsZhcDcnv9qmzTpmn'),
+(6,'0',4,'Excel','https://drive.google.com/open?id=1sS8Rr344iauHHZiusVWKzFFGTQUbVIRh'),
+(7,'2.1',1,'Dokumen tentang aturan etika dosen, etika mahasiswa, etika tenaga kependidikan, sistem penghargaan dan sanksi, serta pedoman dan prosedur pelayanan.',''),
+(13,'2.3',1,'Dokumen pendukung sistem pengelolaan prodi',''),
+(14,'2.4',1,'Dokumen tentang jaminan mutu',''),
+(15,'2.5',1,'Dokumen (kuesioner dan hasil) kajian proses pembelajaran melalui umpan balik dari dosen, mahasiswa, alumni, dan pengguna lulusan.',''),
+(18,'3.1.1',1,'Daftar lulusan dalam lima tahun terakhir (termasuk IPK)',''),
+(20,'3.2',1,'Dokumen pendukung pelayanan kepada mahasiswa.',''),
+(21,'3.3.1',1,'Dokumen (kuesioner dan hasil) kinerja lulusan oleh pihak pengguna.',''),
+(22,'3.4',1,'Laporan kegiatan himpunan alumni.',''),
+(23,'4.1',1,'Pedoman tertulis tentang sistem seleksi, perekrutan, penempatan, pengembangan, retensi dan pemberhentian dosen dan tenaga kependidikan.',''),
+(25,'4.2',1,'Pedoman tertulis tentang monitoring dan evaluasi, serta rekam jejak kinerja akademik dosen dan tenaga kependidikan.',''),
+(26,'4.2',1,'Bukti tentang kinerja dosen di bidang pendidikan, penelitian, pelayanan/pengabdian kepada masyarakat',''),
+(27,'4.3.1',1,'Fotokopi ijazah dan sertifikat pendidik dosen tetap yang bidang keahliannya sesuai dengan PS.',''),
+(28,'4.3.2',1,'Fotokopi ijazah dan sertifikat pendidik dosen tetap yang bidang keahliannya di luar bidang PS.',''),
+(29,'4.4.1',1,'Fotokopi ijazah dan sertifikat pendidik dosen tidak tetap.',''),
+(30,'4.5.3',1,'Bukti kegiatan dosen tetap dalam seminar ilmiah/ lokakarya/ penataran/ workshop/ pagelaran/pameran/peragaan.',''),
+(31,'4.5.4',1,'Bukti pencapaian prestasi/reputasi dosen.',''),
+(32,'4.5.5',1,'Fotocopi bukti keikutsertaan dosen tetap dalam organisasi keilmuan/profesi.',''),
+(33,'4.6.1',1,'Fotokopi ijazah dan sertifikat tenaga kependidikan.',''),
+(34,'5.1.2.2',1,'Silabus dan SAP tiap mata kuliah.',''),
+(35,'5.1.4',1,'Modul praktikum/praktek untuk setiap kegiatan praktikum/praktek.',''),
+(36,'5.2',1,'Dokumen pendukung kegiatan peninjauan kurikulum.',''),
+(37,'5.3.1',1,'Dokumen pendukung monitoring perkuliahan.',''),
+(38,'5.5.1',1,'Panduan pembimbingan tugas akhir.',''),
+(39,'5.5.2',1,'Dokumen pendukung untuk memperoleh data rata-rata lama studi mahasiswa.',''),
+(40,'6.1',1,'Notulen rapat/ bukti keterlibatan PS dalam perencanaan anggaran dan pengelolaan dana.',''),
+(41,'6.2.2',1,'Kontrak penelitian.',''),
+(42,'6.4.1',1,'Daftar pustaka yang relevan dengan PS, yang dipilah berdasarkan kategorinya.',''),
+(43,'6.5.1',1,'Daftar software yang berlisensi, petunjuk pemanfaatan SIM.',''),
+(44,'7.1.1',1,'Hasil penelitian (rekapitulasi judul dan dokumen laporan penelitian) yang jumlah judulnya ada dalam borang.',''),
+(45,'7.1.4',1,'Surat paten HaKI atau keterangan sejenis.',''),
+(46,'7.1.2',1,'Daftar nama mahasiswa, dosen dan judul tugas akhir  yang  dilibatkan dalam penelitian dosen.',''),
+(47,'7.2.1',1,'Hasil pelayanan/pengabdian kepada masyarakat (rekapitulasi judul dan dokumen laporan PkM) yang jumlah judulnya ada dalam borang.',''),
+(48,'7.3.1',1,'Dokumen pendukung kegiatan kerjasama dengan instansi dalam negeri',''),
+(49,'7.3.2',1,'Dokumen pendukung kegiatan kerjasama dengan instansi luar negeri',''),
+(50,'5.3.2',1,'Lampiran contoh soal ujian',''),
+(52,'3.1.3',1,'Bukti prestasi*','');
 
 /*Table structure for table `dosen` */
 
@@ -106,6 +144,10 @@ insert  into `ids`(`id`,`name`,`parent`) values
 ('2.5','','2'),
 ('2.6','','2'),
 ('3','',NULL),
+('3.1','','3'),
+('3.1.1','','3.1'),
+('3.1.3','','3.1'),
+('3.2','','3'),
 ('3.3','','3'),
 ('3.3.1','','3.3'),
 ('3.3.2','','3.3'),
@@ -114,6 +156,8 @@ insert  into `ids`(`id`,`name`,`parent`) values
 ('4','',NULL),
 ('4.1','','4'),
 ('4.2','','4'),
+('4.2.1','','4.2'),
+('4.2.2','','4.2'),
 ('4.3','','4'),
 ('4.3.1','','4.3'),
 ('4.3.2','','4.3'),
@@ -432,6 +476,21 @@ insert  into `sumber_dana_pengabdian`(`sumber`) values
 ('Mandiri'),
 ('PT');
 
+/*Table structure for table `sumber_umpan_balik` */
+
+CREATE TABLE `sumber_umpan_balik` (
+  `sumber` varchar(16) NOT NULL,
+  PRIMARY KEY (`sumber`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `sumber_umpan_balik` */
+
+insert  into `sumber_umpan_balik`(`sumber`) values 
+('Alumni'),
+('Dosen'),
+('Mahasiswa'),
+('Pengguna Lulusan');
+
 /*Table structure for table `tabel_2_5` */
 
 CREATE TABLE `tabel_2_5` (
@@ -439,16 +498,29 @@ CREATE TABLE `tabel_2_5` (
   `dari` varchar(16) NOT NULL,
   `isi` varchar(1024) NOT NULL,
   `tindak_lanjut` varchar(1024) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `sumber_umpan_balik` (`dari`),
+  CONSTRAINT `sumber_umpan_balik` FOREIGN KEY (`dari`) REFERENCES `sumber_umpan_balik` (`sumber`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_2_5` */
 
 insert  into `tabel_2_5`(`id`,`dari`,`isi`,`tindak_lanjut`) values 
-(1,'Alumni','',''),
-(2,'Dosen','',''),
-(3,'Mahasiswa','',''),
-(4,'Pengguna Lulusan','','');
+(1,'Dosen','Kurikulum perlu selalu disesuaikan dengan tuntutan dunia kerja.','Review kurikulum tahun 2018 khususnya pada kompetensi utama mengalami perubahan pada mata kuliah skill.'),
+(2,'Dosen','Perangkat pembelajaran yang tidak lengkap.','Peninjauan ulang silabus Prodi Sistem Informasi dan kontrol terhadap kinerja dosen dalam menyiapkan SAP, modul, handout, dan lainnya pada forum rapat dosen'),
+(3,'Dosen','Rendahnya keterampilan mahasiswa dalam melakukan penelitian.','Melakukan pembinaan penelitian secara khusus untuk mahasiswa dengan mengadakan kelompok penelitian dibawah bimbingan dosen.'),
+(4,'Dosen','Praktikum dan praktik lapangan mahasiswa yang masih lemah.','Mendesain ulang program paktikum mahasiswa.'),
+(5,'Dosen','Kurangnya sarana pembelajaran (LCD, kebersihan ruangan, meja dosen tidak ada, white board yang kotor, board maker yang tidak tersedia, penghapus), ruang kuliah dengan bangku kuliah yang tidak teratur, ruangan yang panas.','Selalu melakukan monitoring dan koordinasi dengan pihak Wakil Dekan II untuk melengkapi fasilitas pembelajaran dan pihak kebersihan untuk meningkatkan kebersihan dan kondusifitas sarana & prasarana dalam proses belajar mengajar.'),
+(6,'Mahasiswa','Penilaian kinerja dosen dalam pembelajaran.','Menyampaikan kritik mahasiswa kepada dosen melalui rapat dan dialog secara individual disertai dengan surat hasil evaluasi.'),
+(7,'Mahasiswa','Pengaduan mahasiswa terhadap kedisiplinan dosen.','Monitoring kecukupan tatap muka perkuliahan  dosen dan hasilnya disampaikan dalam surat hasil evaluasi.'),
+(8,'Mahasiswa','Umpan balik dari mahasiswa terhadap dosen yang tidak menyiapkan perangkat perkuliahan.','Memberikan silabi mata kuliah, setiap awal semester kepada masing-masing dosen dan memonitor dosen untuk menyiapkan SAP.'),
+(9,'Mahasiswa','Buku penunjang perkuliahan yang kurang','Pengusulan tambahan buku ke Perpustakaan'),
+(11,'Alumni','Informasi tuntutan dunia kerja yang terkait dengan Prodi Pendidikan Sistem Informasi.','Proses dilaksanakannya publikasi dunia kerja melalui webprodi.'),
+(12,'Alumni','Perlu adanya media komunikasi antara PS dan alumni.','Pembuatan web PS Sistem Informasi (http://mpi.uinsby.ac.id), Pemanfaatan media sosial dan alumni center'),
+(13,'Alumni','Proses pembelajaran lebih inovatif baik dari segi materi dan metode.','Review kurikulum dan workshop peningkatan mutu dosen.'),
+(14,'Pengguna Lulusan','Perlunya membekali lulusan dengan kompetensi kepribadian, softskill sesuai dengan perkembangan teknologi.','Memunculkan mata kuliah seperti Sistem Informasi,manajemen mutu, manajemen sarana prasarana sebagai mata kuliah wajib.'),
+(15,'Pengguna Lulusan','Aktif dalam organisasi keilmuan Prodi Sistem Informasi.','Prodi terdaftar sebagai anggota APMAPI (Asosisasi Prodi Manajemen/Administrasi Pendidikan Indoneisa).'),
+(16,'Pengguna Lulusan','Peningkatan kemampuan keagamaan untuk membentuk kepribadian lulusan.','Pelaksanaan program penalaran Islam Indonesia untuk mahasiswa semester 1 dan 2 dan program ma’had.');
 
 /*Table structure for table `tabel_3_1_1` */
 
@@ -463,16 +535,23 @@ CREATE TABLE `tabel_3_1_1` (
   `mhs_trf` int(11) NOT NULL DEFAULT '0',
   `lulus_reg` int(11) NOT NULL DEFAULT '0',
   `lulus_trf` int(11) NOT NULL DEFAULT '0',
-  `ipk_min` decimal(10,0) NOT NULL DEFAULT '0',
-  `ipk_rat` decimal(10,0) NOT NULL DEFAULT '0',
-  `ipk_mak` decimal(10,0) NOT NULL DEFAULT '0',
-  `persen_low` decimal(10,0) NOT NULL DEFAULT '0',
-  `persen_mid` decimal(10,0) NOT NULL DEFAULT '0',
-  `persen_high` decimal(10,0) NOT NULL DEFAULT '0',
+  `ipk_min` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `ipk_rat` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `ipk_mak` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `persen_low` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `persen_mid` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `persen_high` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`tahun`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_1` */
+
+insert  into `tabel_3_1_1`(`tahun`,`daya_tampung`,`calon_ikut`,`calon_lulus`,`maba_reg`,`maba_trf`,`mhs_reg`,`mhs_trf`,`lulus_reg`,`lulus_trf`,`ipk_min`,`ipk_rat`,`ipk_mak`,`persen_low`,`persen_mid`,`persen_high`) values 
+(2014,25,1657,28,25,0,25,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000),
+(2015,35,1054,37,37,0,62,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000),
+(2016,80,1150,81,78,0,140,0,0,0,0.000,0.000,0.000,0.000,0.000,0.000),
+(2017,80,1324,81,69,0,205,0,15,0,3.310,3.500,3.670,0.000,42.860,57.140),
+(2018,80,696,81,73,0,262,0,14,0,3.300,3.500,3.650,0.000,44.440,55.560);
 
 /*Table structure for table `tabel_3_1_1_lis` */
 
@@ -488,7 +567,7 @@ CREATE TABLE `tabel_3_1_1_lis` (
   KEY `tahun_3_1_1_lis` (`tahun`),
   KEY `jalur_3_1_1_lis` (`jalur`),
   CONSTRAINT `jalur_3_1_1_lis` FOREIGN KEY (`jalur`) REFERENCES `jalur_seleksi` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `tahun_3_1_1_lis` FOREIGN KEY (`tahun`) REFERENCES `tabel_3_1_1` (`tahun`) ON UPDATE CASCADE
+  CONSTRAINT `tahun_3_1_1_lis` FOREIGN KEY (`tahun`) REFERENCES `tabel_3_1_1` (`tahun`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_1_lis` */
@@ -502,11 +581,11 @@ CREATE TABLE `tabel_3_1_1_ll` (
   `nama` varchar(50) NOT NULL,
   `laki` tinyint(1) NOT NULL,
   `wisuda` int(11) NOT NULL,
-  `ipk` decimal(10,0) NOT NULL,
+  `ipk` decimal(6,3) NOT NULL,
   `id_alumni` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `tahun_3_1_1_ll` (`tahun`),
-  CONSTRAINT `tahun_3_1_1_ll` FOREIGN KEY (`tahun`) REFERENCES `tabel_3_1_1` (`tahun`) ON UPDATE CASCADE
+  CONSTRAINT `tahun_3_1_1_ll` FOREIGN KEY (`tahun`) REFERENCES `tabel_3_1_1` (`tahun`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_1_ll` */
@@ -560,6 +639,13 @@ CREATE TABLE `tabel_3_1_2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_2` */
+
+insert  into `tabel_3_1_2`(`tahun`,`daya_tampung`,`calon_ikut`,`calon_lulus`,`maba_reg`,`maba_trf`,`mhs_reg`,`mhs_trf`) values 
+(2014,0,0,0,0,0,0,0),
+(2015,0,0,0,0,0,0,0),
+(2016,0,0,0,0,0,0,0),
+(2017,0,0,0,0,0,0,0),
+(2018,0,0,0,0,0,0,0);
 
 /*Table structure for table `tabel_3_1_2_lis` */
 
@@ -617,16 +703,40 @@ CREATE TABLE `tabel_3_1_2_lmb` (
 /*Table structure for table `tabel_3_1_3` */
 
 CREATE TABLE `tabel_3_1_3` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kegiatan` varchar(256) NOT NULL,
-  `tingkat` tinyint(4) NOT NULL,
+  `tingkat` varchar(16) NOT NULL,
   `prestasi` varchar(256) NOT NULL,
+  `url_bukti` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tingkat_kegiatan_3_1_3` (`tingkat`),
-  CONSTRAINT `tingkat_kegiatan_3_1_3` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `tingkat_kegiatan_3_1_3` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`tingkat`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_3` */
+
+insert  into `tabel_3_1_3`(`id`,`kegiatan`,`tingkat`,`prestasi`,`url_bukti`) values 
+(1,'Leadership Camp Bank Indonesia (11-13 November 2016, Bogor, Indonesia)','Nasional','Peraih beasiswa dan peserta',''),
+(2,'15th Anniversary International Thai Culture Camp 2017 (18-23 Januari 2017, FAA Chulalongkorn University, Bangkok, Thailand)','Internasional','Mewakili Indonesia',''),
+(3,'EDNA GENESIS Young Moslem Entrepreneur\r\nCompetition 2016','Lokal','Grand Finalis',''),
+(5,'Lomba Hackathon PT. Telkom','Lokal','Participant',''),
+(6,'Desain Grafis “Lomba Logo Dinas Pangan”','Nasional','',''),
+(8,'Bisnis “Yang Muslim Enterpreneur”','Lokal','Peserta',''),
+(9,'Debat Bahasa Arab','Lokal','Peserta',''),
+(11,'Workshop Javacode Together ITS','Lokal','11 Besar Developer game',''),
+(12,'New Year Dance Cover Competition 2016','Lokal','Peserta',''),
+(13,'Event Hunter Indonesia Cup','Nasional','Peserta',''),
+(14,'Hackathon','Internasional','Peserta',''),
+(18,'BMX Street Beginer Class','Regional','Juara 2',''),
+(19,'Lomba Merakit Robot Di ROBOTA FAMILY Workshop 3','Regional','Peserta',''),
+(21,'Speaker Bekraf Developer Day (Surabaya Day) ','Regional','Pemateri',''),
+(24,'Workshop Mage ITS 2017','Regional','Pemateri',''),
+(25,'IndonesiaNext 2016','Nasional','Peserta',''),
+(26,'ICT 2018 (Creative Cevelopment Competition)','Nasional','Juara 2',''),
+(27,'Edna genesis YOUNG MOSLEM ENTREPRENEUR COMPETITION (Bisnis Plan) 2018','Nasional','Juara 1',''),
+(28,'Edna genesis YOUNG MOSLEM ENTREPRENEUR COMPETITION (Bisnis Plan) 2018','Nasional','Juara 3',''),
+(29,'Gemastik 11 2018','Nasional','Peserta',''),
+(30,'3rd Southeast Asia Creative Camp: Internet of Things Online Workshop 2018','Nasional','Peserta','');
 
 /*Table structure for table `tabel_3_1_4` */
 
@@ -637,6 +747,15 @@ CREATE TABLE `tabel_3_1_4` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_1_4` */
+
+insert  into `tabel_3_1_4`(`angkatan`,`jumlah_lulusan`) values 
+(2012,0),
+(2013,0),
+(2014,20),
+(2015,9),
+(2016,0),
+(2017,0),
+(2018,0);
 
 /*Table structure for table `tabel_3_1_4_0` */
 
@@ -652,6 +771,36 @@ CREATE TABLE `tabel_3_1_4_0` (
 
 /*Data for the table `tabel_3_1_4_0` */
 
+insert  into `tabel_3_1_4_0`(`angkatan`,`tahun`,`jumlah`) values 
+(2012,2012,0),
+(2012,2013,0),
+(2012,2014,0),
+(2012,2015,0),
+(2012,2016,0),
+(2012,2017,0),
+(2012,2018,0),
+(2013,2013,0),
+(2013,2014,0),
+(2013,2015,0),
+(2013,2016,0),
+(2013,2017,0),
+(2013,2018,0),
+(2014,2014,25),
+(2014,2015,25),
+(2014,2016,24),
+(2014,2017,8),
+(2014,2018,4),
+(2015,2015,37),
+(2015,2016,36),
+(2015,2017,35),
+(2015,2018,22),
+(2016,2016,78),
+(2016,2017,77),
+(2016,2018,77),
+(2017,2017,69),
+(2017,2018,68),
+(2018,2018,73);
+
 /*Table structure for table `tabel_3_1_4_ll` */
 
 CREATE TABLE `tabel_3_1_4_ll` (
@@ -661,7 +810,7 @@ CREATE TABLE `tabel_3_1_4_ll` (
   `nama` varchar(50) NOT NULL,
   `laki` tinyint(1) NOT NULL,
   `wisuda` int(11) NOT NULL,
-  `ipk` decimal(10,0) NOT NULL,
+  `ipk` decimal(6,3) NOT NULL,
   `id_alumni` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `tahun_3_1_1_ll` (`angkatan`),
@@ -711,23 +860,23 @@ insert  into `tabel_3_2`(`id`,`jenis`,`penjelasan`) values
 CREATE TABLE `tabel_3_3_1` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `kemampuan` varchar(64) NOT NULL,
-  `sangat_baik` decimal(10,0) NOT NULL DEFAULT '0',
-  `baik` decimal(10,0) NOT NULL DEFAULT '0',
-  `cukup` decimal(10,0) NOT NULL DEFAULT '0',
-  `kurang` decimal(10,0) NOT NULL DEFAULT '0',
+  `sangat_baik` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `baik` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `cukup` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `kurang` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_3_1` */
 
 insert  into `tabel_3_3_1`(`id`,`kemampuan`,`sangat_baik`,`baik`,`cukup`,`kurang`) values 
-(1,'Integritas (etika dan moral)',0,0,0,0),
-(2,'Keahlian berdasarkan bidang ilmu (profesionalisme)',0,0,0,0),
-(3,'Bahasa Inggris',0,0,0,0),
-(4,'Penggunaan Teknologi Informasi',0,0,0,0),
-(5,'Komunikasi',0,0,0,0),
-(6,'Kerjasama Tim',0,0,0,0),
-(7,'Pengembangan Diri',0,0,0,0);
+(1,'Integritas (etika dan moral)',0.000,0.000,0.000,0.000),
+(2,'Keahlian berdasarkan bidang ilmu (profesionalisme)',0.000,0.000,0.000,0.000),
+(3,'Bahasa Inggris',0.000,0.000,0.000,0.000),
+(4,'Penggunaan Teknologi Informasi',0.000,0.000,0.000,0.000),
+(5,'Komunikasi',0.000,0.000,0.000,0.000),
+(6,'Kerjasama Tim',0.000,0.000,0.000,0.000),
+(7,'Pengembangan Diri',0.000,0.000,0.000,0.000);
 
 /*Table structure for table `tabel_4_3_1` */
 
@@ -781,13 +930,13 @@ CREATE TABLE `tabel_4_3_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
   `id_lecturer` int(11) NOT NULL,
-  `sks_ps_sendiri` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_ps_lain` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_pt_lain` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_penelitian` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_pengabdian` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_man_sendiri` decimal(10,0) NOT NULL DEFAULT '0',
-  `sks_man_lain` decimal(10,0) NOT NULL DEFAULT '0',
+  `sks_ps_sendiri` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_ps_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_pt_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_penelitian` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_pengabdian` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_man_sendiri` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sks_man_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -912,10 +1061,10 @@ CREATE TABLE `tabel_4_5_4` (
   `nama_dosen` varchar(50) NOT NULL,
   `prestasi` varchar(128) NOT NULL,
   `tahun` int(4) NOT NULL,
-  `tingkat` tinyint(4) NOT NULL,
+  `tingkat` varchar(16) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tingkat prestasi` (`tingkat`),
-  CONSTRAINT `tingkat prestasi` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`id`)
+  CONSTRAINT `tingkat_kegiatan_4_5_4` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`tingkat`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_4` */
@@ -928,10 +1077,10 @@ CREATE TABLE `tabel_4_5_5` (
   `organisasi` varchar(50) NOT NULL,
   `tahun_awal` int(4) NOT NULL,
   `tahun_akhir` int(4) NOT NULL,
-  `tingkat` tinyint(4) NOT NULL,
+  `tingkat` varchar(16) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tingkat_organisasi_dosen_tetap` (`tingkat`),
-  CONSTRAINT `tingkat_organisasi_dosen_tetap` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `tingkat_kegiatan_4_5_5` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`tingkat`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_5` */
@@ -1093,7 +1242,7 @@ CREATE TABLE `tabel_5_4_1` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_pembimbing` varchar(50) NOT NULL,
   `jumlah_mhs` int(11) NOT NULL DEFAULT '0',
-  `rata_pertemuan` decimal(10,0) NOT NULL DEFAULT '0',
+  `rata_pertemuan` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1187,9 +1336,9 @@ CREATE TABLE `tabel_6_2_1_1` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sumber_dana` varchar(16) NOT NULL,
   `jenis_dana` varchar(32) NOT NULL,
-  `jumlah_ts_2` decimal(10,0) NOT NULL DEFAULT '0',
-  `jumlah_ts_1` decimal(10,0) NOT NULL DEFAULT '0',
-  `jumlah_ts` decimal(10,0) NOT NULL DEFAULT '0',
+  `jumlah_ts_2` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `jumlah_ts_1` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `jumlah_ts` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`),
   KEY `sumber_dana_diperoleh` (`sumber_dana`),
   CONSTRAINT `sumber_dana_diperoleh` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana` (`sumber_dana`) ON UPDATE CASCADE
@@ -1198,34 +1347,34 @@ CREATE TABLE `tabel_6_2_1_1` (
 /*Data for the table `tabel_6_2_1_1` */
 
 insert  into `tabel_6_2_1_1`(`id`,`sumber_dana`,`jenis_dana`,`jumlah_ts_2`,`jumlah_ts_1`,`jumlah_ts`) values 
-(1,'PT Sendiri','Rupiah Murni',0,0,0),
-(2,'PT Sendiri','Penerimaan Negara Bukan Pajak (P',0,0,0),
-(3,'Sumber Lain','Bantuan Penelitian',0,0,0),
-(6,'Sumber Lain','Bantuan Pengabdian Masyarakat',0,0,0),
-(7,'Sumber Lain','IDB (Lab Integrasi)',0,0,0),
-(8,'Sumber Lain','Hibah Pendampingan Jurnal (DIKTI',0,0,0);
+(1,'PT Sendiri','Rupiah Murni',0.000,0.000,0.000),
+(2,'PT Sendiri','Penerimaan Negara Bukan Pajak (P',0.000,0.000,0.000),
+(3,'Sumber Lain','Bantuan Penelitian',0.000,0.000,0.000),
+(6,'Sumber Lain','Bantuan Pengabdian Masyarakat',0.000,0.000,0.000),
+(7,'Sumber Lain','IDB (Lab Integrasi)',0.000,0.000,0.000),
+(8,'Sumber Lain','Hibah Pendampingan Jurnal (DIKTI',0.000,0.000,0.000);
 
 /*Table structure for table `tabel_6_2_1_2` */
 
 CREATE TABLE `tabel_6_2_1_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis_penggunaan` varchar(32) NOT NULL,
-  `penggunaan_ts_2` decimal(10,0) NOT NULL DEFAULT '0',
-  `penggunaan_ts_1` decimal(10,0) NOT NULL DEFAULT '0',
-  `penggunaan_ts` decimal(10,0) NOT NULL DEFAULT '0',
+  `penggunaan_ts_2` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `penggunaan_ts_1` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `penggunaan_ts` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_2_1_2` */
 
 insert  into `tabel_6_2_1_2`(`id`,`jenis_penggunaan`,`penggunaan_ts_2`,`penggunaan_ts_1`,`penggunaan_ts`) values 
-(1,'Pendidikan',0,0,0),
-(2,'Penelitian',0,0,0),
-(3,'Pengabdian kepada Masyarakat',0,0,0),
-(4,'Investasi Prasarana',0,0,0),
-(5,'Investasi Sarana',0,0,0),
-(6,'Investasi SDM',0,0,0),
-(7,'Lain-lain',0,0,0);
+(1,'Pendidikan',0.000,0.000,0.000),
+(2,'Penelitian',0.000,0.000,0.000),
+(3,'Pengabdian kepada Masyarakat',0.000,0.000,0.000),
+(4,'Investasi Prasarana',0.000,0.000,0.000),
+(5,'Investasi Sarana',0.000,0.000,0.000),
+(6,'Investasi SDM',0.000,0.000,0.000),
+(7,'Lain-lain',0.000,0.000,0.000);
 
 /*Table structure for table `tabel_6_2_2` */
 
@@ -1234,7 +1383,7 @@ CREATE TABLE `tabel_6_2_2` (
   `tahun` int(11) NOT NULL,
   `judul_penelitian` varchar(256) NOT NULL,
   `sumber_dana` varchar(8) NOT NULL,
-  `jumlah_dana` decimal(10,0) NOT NULL,
+  `jumlah_dana` decimal(6,3) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sumber_dana_6_2_2` (`sumber_dana`),
   CONSTRAINT `sumber_dana_6_2_2` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana_penelitian` (`sumber`)
@@ -1249,7 +1398,7 @@ CREATE TABLE `tabel_6_2_3` (
   `tahun` int(11) NOT NULL,
   `judul_pengabdian` varchar(256) NOT NULL,
   `sumber_dana` varchar(16) NOT NULL,
-  `jumlah_dana` decimal(10,0) NOT NULL,
+  `jumlah_dana` decimal(6,3) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sumber_dana_6_2_3` (`sumber_dana`),
   CONSTRAINT `sumber_dana_6_2_3` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana_pengabdian` (`sumber`) ON UPDATE CASCADE
@@ -1263,17 +1412,17 @@ CREATE TABLE `tabel_6_3_1` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `ruang` varchar(64) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(10,0) NOT NULL DEFAULT '0',
+  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_3_1` */
 
 insert  into `tabel_6_3_1`(`id`,`ruang`,`jumlah`,`luas`) values 
-(1,'Satu ruang untuk 1 dosen (bukan pejabat struktural)',0,0),
-(2,'Satu ruang untuk 2 dosen',0,0),
-(3,'Satu ruang untuk 3-4 dosen',0,0),
-(4,'Satu ruang untuk lebih dari 4 dosen',0,0);
+(1,'Satu ruang untuk 1 dosen (bukan pejabat struktural)',0,0.000),
+(2,'Satu ruang untuk 2 dosen',0,0.000),
+(3,'Satu ruang untuk 3-4 dosen',0,0.000),
+(4,'Satu ruang untuk lebih dari 4 dosen',0,0.000);
 
 /*Table structure for table `tabel_6_3_2` */
 
@@ -1281,10 +1430,10 @@ CREATE TABLE `tabel_6_3_2` (
   `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(10,0) NOT NULL DEFAULT '0',
+  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(1) NOT NULL DEFAULT '0',
   `terawat` tinyint(1) NOT NULL DEFAULT '1',
-  `utilisasi` decimal(10,0) NOT NULL DEFAULT '0',
+  `utilisasi` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1299,10 +1448,10 @@ CREATE TABLE `tabel_6_3_2_lp` (
   `kode` varchar(32) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `kapasitas` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(10,0) NOT NULL DEFAULT '0',
+  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(1) NOT NULL DEFAULT '0',
   `terawat` tinyint(1) NOT NULL DEFAULT '1',
-  `utilisasi` decimal(10,0) NOT NULL DEFAULT '0',
+  `utilisasi` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`no`),
   KEY `jenis_6_3_2_lp` (`jenis`),
   CONSTRAINT `jenis_6_3_2_lp` FOREIGN KEY (`jenis`) REFERENCES `tabel_6_3_2` (`id`) ON UPDATE CASCADE
@@ -1316,7 +1465,7 @@ CREATE TABLE `tabel_6_3_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(10,0) NOT NULL DEFAULT '0',
+  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(4) NOT NULL DEFAULT '0',
   `terawat` tinyint(4) NOT NULL DEFAULT '1',
   `unit` varchar(50) NOT NULL,
@@ -1606,18 +1755,18 @@ CREATE TABLE `tabel_7_3_2` (
 /*Table structure for table `tingkat_kegiatan` */
 
 CREATE TABLE `tingkat_kegiatan` (
-  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `tingkat` varchar(16) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`tingkat`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tingkat_kegiatan` */
 
-insert  into `tingkat_kegiatan`(`id`,`tingkat`) values 
-(1,'Lokal'),
-(2,'Wilayah'),
-(3,'Nasional'),
-(4,'Internasional');
+insert  into `tingkat_kegiatan`(`tingkat`) values 
+('Internasional'),
+('Lokal'),
+('Nasional'),
+('Regional'),
+('Wilayah');
 
 /*Table structure for table `unit_mk` */
 
@@ -1652,7 +1801,7 @@ CREATE TABLE `values` (
   `parent` varchar(16) NOT NULL,
   `no` int(11) NOT NULL DEFAULT '1',
   `name` varchar(32) NOT NULL,
-  `value` decimal(10,0) NOT NULL,
+  `value` decimal(6,3) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `value_parent_id` (`parent`),
   CONSTRAINT `value_parent_id` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE NO ACTION
@@ -1661,26 +1810,26 @@ CREATE TABLE `values` (
 /*Data for the table `values` */
 
 insert  into `values`(`id`,`parent`,`no`,`name`,`value`) values 
-(2,'1.2.2.1',1,'Sangat Paham',6),
-(3,'1.2.2.1',2,'Paham',4),
-(4,'1.2.2.1',3,'Cukup Paham',13),
-(5,'1.2.2.1',4,'Kurang Paham',0),
-(6,'1.2.2.1',5,'Tidak Paham',0),
-(7,'1.2.2.2',1,'Sangat Paham',11),
-(8,'1.2.2.2',2,'Paham',78),
-(9,'1.2.2.2',3,'Cukup Paham',11),
-(10,'1.2.2.2',4,'Kurang Paham',0),
-(11,'1.2.2.2',5,'Tidak Paham',0),
-(12,'1.2.2.3',1,'Sangat Paham',7),
-(13,'1.2.2.3',2,'Paham',86),
-(14,'1.2.2.3',3,'Cukup Paham',6),
-(15,'1.2.2.3',4,'Kurang Paham',1),
-(16,'1.2.2.3',5,'Tidak Paham',0),
-(17,'1.2.2.4',1,'Sangat Paham',20),
-(18,'1.2.2.4',2,'Paham',70),
-(19,'1.2.2.4',3,'Cukup Paham',10),
-(20,'1.2.2.4',4,'Kurang Paham',0),
-(21,'1.2.2.4',5,'Tidak Paham',0);
+(2,'1.2.2.1',1,'Sangat Paham',6.000),
+(3,'1.2.2.1',2,'Paham',4.000),
+(4,'1.2.2.1',3,'Cukup Paham',13.000),
+(5,'1.2.2.1',4,'Kurang Paham',0.000),
+(6,'1.2.2.1',5,'Tidak Paham',0.000),
+(7,'1.2.2.2',1,'Sangat Paham',11.000),
+(8,'1.2.2.2',2,'Paham',78.000),
+(9,'1.2.2.2',3,'Cukup Paham',11.000),
+(10,'1.2.2.2',4,'Kurang Paham',0.000),
+(11,'1.2.2.2',5,'Tidak Paham',0.000),
+(12,'1.2.2.3',1,'Sangat Paham',7.000),
+(13,'1.2.2.3',2,'Paham',86.000),
+(14,'1.2.2.3',3,'Cukup Paham',6.000),
+(15,'1.2.2.3',4,'Kurang Paham',1.000),
+(16,'1.2.2.3',5,'Tidak Paham',0.000),
+(17,'1.2.2.4',1,'Sangat Paham',20.000),
+(18,'1.2.2.4',2,'Paham',70.000),
+(19,'1.2.2.4',3,'Cukup Paham',10.000),
+(20,'1.2.2.4',4,'Kurang Paham',0.000),
+(21,'1.2.2.4',5,'Tidak Paham',0.000);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

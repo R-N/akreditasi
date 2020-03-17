@@ -32,14 +32,38 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
-				<td class="">0</td>
-				<td class=""><a href="<?=base_url();?>3/1/2/IS/0/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/IS/1/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/MB/0/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/MB/1/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LM/0/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>3/1/2/LM/1/1">0</a></td>
+				<td class="">TS<?php  $t = $row["tahun"]-$ts; echo $t == 0 ? "" : "{$t}"; ?></td>
+				<td class=""><?=$row["daya_tampung"];?></td>
+				<td class="">
+					<?php if ($row["calon_ikut"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/IS/0/<?=$row["tahun"];?>"><?=$row["calon_ikut"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if ($row["calon_lulus"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/IS/1/<?=$row["tahun"];?>"><?=$row["calon_lulus"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if ($row["maba_reg"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/MB/0/<?=$row["tahun"];?>"><?=$row["maba_reg"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if ($row["maba_trf"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/MB/1/<?=$row["tahun"];?>"><?=$row["maba_trf"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if ($row["mhs_reg"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/LM/0/<?=$row["tahun"];?>"><?=$row["mhs_reg"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if ($row["mhs_trf"] == 0) { echo 0; } else { ?>
+					<a href="<?=base_url();?>3/1/2/LM/1/<?=$row["tahun"];?>"><?=$row["mhs_trf"];?></a>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>

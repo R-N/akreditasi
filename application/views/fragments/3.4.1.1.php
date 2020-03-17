@@ -1,0 +1,1 @@
+<p>Salah satu bentuk partisipasi alumni dalam mendukung program studi yaitu dengan memberikan sumbangan dana. Pemberian sumbangan ini dilakukan secara insidental, misalnya pada saat acara-acara dies natalis, seminar nasional maupun internasional, acara dies natalis Universitas/Fakultas.</p>

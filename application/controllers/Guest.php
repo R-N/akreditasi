@@ -343,10 +343,39 @@ class Guest extends CI_Controller {
 	public function page_3_4(){
 		$data = base_data("3.4");
 		$data["contents"] = array(
-			paragraph(
-				"himpunan-alumni", 
-				"Uraian himpunan alumni", 
-				"Uraian himpunan alumni"
+			accordion(
+				"aktivitas-alumni",
+				array(
+					fragment(
+						"3.4.1.1", 
+						"3.4.1.1 Aktivitas Alumni: Sumbangan Dana"
+					),
+					fragment(
+						"3.4.1.2", 
+						"3.4.1.2 Aktivitas Alumni: Sumbangan Fasilitas"
+					),
+					fragment(
+						"3.4.1.3", 
+						"3.4.1.3 Aktivitas Alumni: Masukan untuk perbaikan proses pembelajaran"
+					),
+					fragment(
+						"3.4.1.4", 
+						"3.4.1.4 Aktivitas Alumni: Pengembangan Jejaring"
+					)
+				)
+			),
+			accordion(
+				"hasil-alumni",
+				array(
+					fragment(
+						"3.4.2.1", 
+						"3.4.2.1 Hasil Kegiatan Alumni: Bidang Akademik"
+					),
+					fragment(
+						"3.4.2.2", 
+						"3.4.2.2 Hasil Kegiatan Alumni: Bidang Non-Akademik"
+					),
+				)
 			)
 		);
 		$this->load->view("page.php", $data);

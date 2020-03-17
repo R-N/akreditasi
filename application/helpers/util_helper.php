@@ -53,6 +53,17 @@ function _link($text, $url="#"){
 function _links($items){
 	return get_instance()->load->view("links", array("items"=>$items), true);
 }
+
+function _link_db($rows){
+	$ret = array();
+	foreach($rows as $row){
+		array_push($ret, _link($row["name"], $row["url"]));
+	}
+	return $ret;
+}
+function _links_db($rows){
+	return get_instance()->load->view("links", array("items"=>_link_db($rows)), true);
+}
 function _fragment($id, $data=array()){
 	return get_instance()->load->view(
 		"fragments/{$id}.php",

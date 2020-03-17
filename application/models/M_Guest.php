@@ -11,7 +11,7 @@ class M_Guest extends CI_Model {
 		$query = $this->db->query($sql);
 	}
 
-	function fetch_table($table_name, $orderby = '', $ordertype="ASC"){
+	function fetch_table($table_name, $orderby = 'id', $ordertype="ASC"){
 		$sql =  "SELECT * FROM {$table_name}";
 		if($orderby){
 			$sql = "{$sql} ORDER BY {$orderby} {$ordertype}";
@@ -31,7 +31,7 @@ class M_Guest extends CI_Model {
 		return $query->result_array();
 	}
 	function fetch_dokumen($parent){
-		$sql =  "SELECT * FROM dokumen_pendukung dp, ids WHERE dp.parent=? AND ids.id=dp.parent ORDER BY dp.id;";
+		$sql =  "SELECT dp.name, dp.url FROM dokumen_pendukung dp, ids WHERE dp.parent=? AND ids.id=dp.parent ORDER BY dp.no;";
 		$query = $this->db->query($sql, array($parent));
 		return $query->result_array();
 	}

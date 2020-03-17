@@ -16,10 +16,7 @@ class Guest extends CI_Controller {
 	public function page_0(){
 		$data = base_data("0");
 		$data["contents"] = array(
-			menu("dok-akreditasi", "Dokumen Akreditasi", array(
-				_link("Dokumen Evaluasi Diri", base_url()),
-				_link("Dokumen Borang", base_url())
-			))
+			menu("dok-akreditasi", "Dokumen Akreditasi", _link_db($this->M_Guest->fetch_dokumen("0")))
 		);
 			
 		$this->load->view("page.php", $data);
@@ -39,7 +36,7 @@ class Guest extends CI_Controller {
 			accordion(
 				"visi-misi", 
 				array(
-					_paragraph("1.1.1 Penyusunan", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?"),
+					_paragraph("1.1.1 Penyusunan [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?"),
 					_paragraph("1.1.2 Visi", 
 						$this->M_Guest->get_string("1.1.2")["text"], 
 						"Visi Program Studi Sistem Informasi berdasarkan rumusan terakhir adalah sebagai berikut:"
@@ -56,7 +53,7 @@ class Guest extends CI_Controller {
 					fragment("1.1.5.1.2", "1.1.5.1.2 Milestones", array(
 						"milestones"=>$this->M_Guest->fetch_milestones("1.1.5.1.2")
 					)),
-					_paragraph("1.1.5.1.3 Strategi", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?")
+					_paragraph("1.1.5.1.3 Strategi [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?")
 				)
 			)
 		);
@@ -92,11 +89,11 @@ class Guest extends CI_Controller {
 			card(
 				"tata-pamong", 
 				array(
-					_content("Sistem Tata Pamong", "Sistem Tata Pamong"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content(
+						"2.1 Sistem Tata Pamong [TODO]", 
+						"Mungkin bagan struktur organisasi aja? Mungkin sama pemilihannya? Daftar prinsip tanpa penjelasan atau dengan penjelasan singkat?"
+					),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("2.1")))
 				)
 			)
 		);
@@ -105,7 +102,11 @@ class Guest extends CI_Controller {
 	public function page_2_2(){
 		$data = base_data("2.2");
 		$data["contents"] = array(
-			paragraph("kepemimpinan", "Kepemimpinan", "Kepemimpinan")
+			paragraph(
+				"kepemimpinan", 
+				"2.2 Kepemimpinan [TODO]", 
+				"Mungkin ringkasan tiap jenis kepemimpinan? Tabel tiap kepemimpinan apa perlu?"
+			)
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -115,11 +116,11 @@ class Guest extends CI_Controller {
 			card(
 				"pengelolaan", 
 				array(
-					_content("Pengelolaan", "Pengelolaan"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content(
+						"2.3 Pengelolaan [TODO]", 
+						"Ringkasan tiap bagian (planning, organizing)? SOP anggaran? Hal-hal terkait staffing? Daftar kegiatan leading? Daftar aktivitas controlling?"
+					),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("2.3")))
 				)
 			)
 		);
@@ -131,11 +132,11 @@ class Guest extends CI_Controller {
 			card(
 				"jaminan-mutu", 
 				array(
-					_content("Penjaminan Mutu", "Penjaminan Mutu"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content(
+						"Penjaminan Mutu [TODO]", 
+						"Struktur organisasi LPM? Ringkasan tiap bagian? Grafik-grafik kepuasan? Grafik kok banyak yang hitam?"
+					),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("2.4")))
 				)
 			)
 		);
@@ -144,7 +145,7 @@ class Guest extends CI_Controller {
 
 	public function page_2_5(){
 		$data = base_data("2.5");
-		$rows = array("Dosen", "Mahasiswa", "Alumni", "Pengguna Lulusan");
+		$rows = $this->M_Guest->fetch_table("tabel_2_5");
 		$data["contents"] = array(
 			card(
 				"umpan-balik", 
@@ -162,11 +163,26 @@ class Guest extends CI_Controller {
 			accordion(
 				"keberlanjutan", 
 				array(
-					_content("Upaya untuk peningkatan animo calon mahasiswa", "Upaya untuk peningkatan animo calon mahasiswa"),
-					_content("Upaya peningkatan mutu manajemen", "Upaya peningkatan mutu manajemen"),
-					_content("Upaya untuk peningkatan mutu lulusan", "Upaya untuk peningkatan mutu lulusan"),
-					_content("Upaya untuk pelaksanaan dan hasil kerjasama kemitraan", "Upaya untuk pelaksanaan dan hasil kerjasama kemitraan"),
-					_content("Upaya dan prestasi memperoleh dana hibah kompetitif", "Upaya dan prestasi memperoleh dana hibah kompetitif")
+					_content(
+						"a. Upaya untuk peningkatan animo calon mahasiswa [TODO]", 
+						"Ringkasan? Atau full tanpa gambar?"
+					),
+					_content(
+						"b. Upaya peningkatan mutu manajemen [TODO]", 
+						"Ringkasan? Atau full tanpa gambar?"
+					),
+					_content(
+						"c. Upaya untuk peningkatan mutu lulusan [TODO]", 
+						"Ringkasan? Atau full tanpa gambar?"
+					),
+					_content(
+						"d. Upaya untuk pelaksanaan dan hasil kerjasama kemitraan [TODO]", 
+						"Ringkasan? Atau full tanpa gambar? Tabel kerja sama (2.10)?"
+					),
+					_content(
+						"e. Upaya dan prestasi memperoleh dana hibah kompetitif [TODO]", 
+						"Ringkasan? Atau full tanpa gambar? Tabel dana hibah (2.11)?"
+					)
 				)
 			)
 		);
@@ -183,7 +199,8 @@ class Guest extends CI_Controller {
 			card(
 				"mhs-reguler", 
 				array(
-					_content("3.1.1 Data mahasiswa reguler dan lulusannya", $this->load->view("tables/3.1.1.php", array("rows"=>$rows1),true))
+					_content("3.1.1 Data mahasiswa reguler dan lulusannya", $this->load->view("tables/3.1.1.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("3.1.1")))
 				)
 			),
 			card(
@@ -195,7 +212,8 @@ class Guest extends CI_Controller {
 			card(
 				"prestasi-mhs", 
 				array(
-					_content("3.1.3 Prestasi/reputasi mahasiswa ", $this->load->view("tables/3.1.3.php", array("rows"=>$rows3),true))
+					_content("3.1.3 Prestasi/reputasi mahasiswa ", $this->load->view("tables/3.1.3.php", array("rows"=>$rows3),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("3.1.3")))
 				)
 			),
 			card(
@@ -204,10 +222,6 @@ class Guest extends CI_Controller {
 					_content("3.1.4 Jumlah mahasiswa reguler  ", $this->load->view("tables/3.1.4.php", array("rows"=>$rows4),true))
 				)
 			),
-			menu("pendukung", "Dokumen Pendukung", array(
-				_link("Google", "http://google.com"),
-				_link("Youtube", "http://youtube.com")
-			))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -225,12 +239,9 @@ class Guest extends CI_Controller {
 				"layanan-mhs", 
 				array(
 					_content("3.2 Layanan kepada Mahasiswa", $this->load->view("tables/3.2.php", array("rows"=>$rows),true))
-				)
-			),
-			menu("pendukung", "Dokumen Pendukung", array(
-				_link("Google", "http://google.com"),
-				_link("Youtube", "http://youtube.com")
-			))
+				),
+				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.2")))
+			)
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -255,12 +266,7 @@ class Guest extends CI_Controller {
 				"umpan-balik", 
 				array(
 					_content("3.3.1 Evaluasi Kinerja lulusan oleh Pihak Pengguna Lulusan", $this->load->view("tables/3.3.1.php", array("rows"=>$rows),true)),
-					_content("Dokumen Pendukung",
-						_links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-						))
-					)
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("3.3.1")))
 				)
 			),
 			paragraph(
@@ -294,10 +300,7 @@ class Guest extends CI_Controller {
 				"seleksi-pengembangan", 
 				array(
 					_content("Sistem Seleksi dan Pengembangan", "Sistem Seleksi dan Pengembangan"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.1")))
 				)
 			)
 		);
@@ -310,10 +313,7 @@ class Guest extends CI_Controller {
 				"monitoring-eval", 
 				array(
 					_content("Monitoring dan Evaluasi", "Monitoring dan Evaluasi"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.2")))
 				)
 			)
 		);
@@ -340,13 +340,15 @@ class Guest extends CI_Controller {
 			card(
 				"dosen-tetap-sesuai", 
 				array(
-					_content("4.3.1 Dosen Tetap yang bidang keahliannya sesuai dengan bidang PS", $this->load->view("tables/4.3.1.php", array("rows"=>$rows1),true))
+					_content("4.3.1 Dosen Tetap yang bidang keahliannya sesuai dengan bidang PS", $this->load->view("tables/4.3.1.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.3.1")))
 				)
 			),
 			card(
 				"dosen-tetap-luar", 
 				array(
-					_content("4.3.2 Dosen tetap yang bidang keahliannya di luar bidang PS", $this->load->view("tables/4.3.1.php", array("rows"=>$rows2),true))
+					_content("4.3.2 Dosen tetap yang bidang keahliannya di luar bidang PS", $this->load->view("tables/4.3.1.php", array("rows"=>$rows2),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.3.2")))
 				)
 			),
 			card(
@@ -427,19 +429,22 @@ class Guest extends CI_Controller {
 			card(
 				"seminar-dosen-tetap-luas", 
 				array(
-					_content("4.5.3 Kegiatan dosen tetap yang bidang keahliannya sesuai dengan PS dalam seminar ilmiah/lokakarya/penataran/workshop/ pagelaran/ pameran/peragaan yang tidak hanya melibatkan dosen PT sendiri", $this->load->view("tables/4.5.3.php", array("rows"=>$rows3),true))
+					_content("4.5.3 Kegiatan dosen tetap yang bidang keahliannya sesuai dengan PS dalam seminar ilmiah/lokakarya/penataran/workshop/ pagelaran/ pameran/peragaan yang tidak hanya melibatkan dosen PT sendiri", $this->load->view("tables/4.5.3.php", array("rows"=>$rows3),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.5.3")))
 				)
 			),
 			card(
 				"prestasi-dosen", 
 				array(
-					_content("4.5.4 Pencapaian prestasi/reputasi dosen, misalnya prestasi dalam pendidikan, penelitian dan pelayanan/pengabdian kepada masyarakat", $this->load->view("tables/4.5.4.php", array("rows"=>$rows4),true))
+					_content("4.5.4 Pencapaian prestasi/reputasi dosen, misalnya prestasi dalam pendidikan, penelitian dan pelayanan/pengabdian kepada masyarakat", $this->load->view("tables/4.5.4.php", array("rows"=>$rows4),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.5.4")))
 				)
 			),
 			card(
 				"organisasi-dosen", 
 				array(
-					_content("4.5.5 Keikutsertaan dosen tetap dalam organisasi keilmuan atau organisasi profesi", $this->load->view("tables/4.5.5.php", array("rows"=>$rows5),true))
+					_content("4.5.5 Keikutsertaan dosen tetap dalam organisasi keilmuan atau organisasi profesi", $this->load->view("tables/4.5.5.php", array("rows"=>$rows5),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.5.5")))
 				)
 			)
 		);
@@ -457,7 +462,8 @@ class Guest extends CI_Controller {
 			card(
 				"statistik-tenaga-kependidikan", 
 				array(
-					_content("4.6.1 Tenaga kependidikan  yang ada di PS, Jurusan, Fakultas atau PT yang melayani mahasiswa PS", $this->load->view("tables/4.6.1.php", array("rows"=>$rows1),true))
+					_content("4.6.1 Tenaga kependidikan  yang ada di PS, Jurusan, Fakultas atau PT yang melayani mahasiswa PS", $this->load->view("tables/4.6.1.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.6.1")))
 				)
 			),
 			paragraph(
@@ -498,7 +504,8 @@ class Guest extends CI_Controller {
 			card(
 				"struktur-kurikulum", 
 				array(
-					_content("5.1.2.2 Struktur kurikulum berdasarkan urutan mata kuliah (MK) semester demi semester", $this->load->view("tables/5.1.2.2.php", array("rows"=>$rows2),true))
+					_content("5.1.2.2 Struktur kurikulum berdasarkan urutan mata kuliah (MK) semester demi semester", $this->load->view("tables/5.1.2.2.php", array("rows"=>$rows2),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.1.2.2")))
 				)
 			),
 			card(
@@ -510,7 +517,8 @@ class Guest extends CI_Controller {
 			card(
 				"praktek", 
 				array(
-					_content("5.1.4 Substansi praktikum/praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu ", $this->load->view("tables/5.1.4.php", array("rows"=>$rows3),true))
+					_content("5.1.4 Substansi praktikum/praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu ", $this->load->view("tables/5.1.4.php", array("rows"=>$rows3),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.1.4")))
 				)
 			)
 		);
@@ -526,10 +534,7 @@ class Guest extends CI_Controller {
 			accordion("kompetensi", array(
 				_content("Mekanisme", "Mekanisme"),
 				_content("Pihak yang dilibatkan", "Pihak yang dilibatkan"),
-				_content("Dokumen pendukung", _links(array(
-					_link("Google", "http://google.com"),
-					_link("Youtube", "http://youtube.com")
-				)))
+				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.2")))
 			)),
 			card(
 				"jumlah-sks-ps", 
@@ -550,15 +555,9 @@ class Guest extends CI_Controller {
 				_content("5.3.1 Mekanisme penyusunan materi", "Mekanisme penyusunan materi"),
 				_content("5.3.1 Mekanisme monitoring kehadiran dosen dan mahasiswa", "Mekanisme monitoring kehadiran dosen dan mahasiswa"),
 				_content("5.3.1 Mekanisme monitoring materi kuliah", "Mekanisme monitoring materi kuliah"),
-				_content("5.3.1 Dokumen pendukung", _links(array(
-					_link("Google", "http://google.com"),
-					_link("Youtube", "http://youtube.com")
-				)))
+				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.3.1")))
 			)),
-			menu("menu", "5.3.2 Lampiran contoh soal ujian", array(
-				_link("Google", "http://google.com"),
-				_link("Youtube", "http://youtube.com")
-			))
+			menu("menu", "5.3.2 Lampiran contoh soal ujian", _link_db($this->M_Guest->fetch_dokumen("5.3.2")))
 		);
 		$this->load->view("page.php", $data);
 	}
@@ -611,20 +610,14 @@ class Guest extends CI_Controller {
 				"panduan-bimbingan", 
 				array(
 					_content("5.5.1 Panduan pembimbingan TA", "Panduan pembimbingan TA"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.5.1")))
 				)
 			),
 			card(
 				"penyelesaian-ta", 
 				array(
 					_content("5.5.2 PENYELESAIAN TUGAS AKHIR ATAU SKRIPSI", "Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir: 0<br>Menurut kurikulum tugas akhir direncanakan (semester): 0"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.5.2")))
 				)
 			),
 		);
@@ -668,10 +661,7 @@ class Guest extends CI_Controller {
 				"pengelolaan-dana", 
 				array(
 					_content("Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana", "Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana"),
-					_content("Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.1")))
 				)
 			),
 		);
@@ -738,7 +728,8 @@ class Guest extends CI_Controller {
 			card(
 				"dana-penelitian", 
 				array(
-					_content("6.2.2 Dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahliannya sesuai dengan program studi", $this->load->view("tables/6.2.2.php", array("rows"=>$rows3),true))
+					_content("6.2.2 Dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahliannya sesuai dengan program studi", $this->load->view("tables/6.2.2.php", array("rows"=>$rows3),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.2.2")))
 				)
 			),
 			card(
@@ -824,7 +815,8 @@ class Guest extends CI_Controller {
 			card(
 				"jumlah-pustaka", 
 				array(
-					_content("6.4.1.1 Rekapitulasi Jumlah Ketersediaan Pustaka yang Relevan dengan Bidang PS", $this->load->view("tables/6.4.1.1.php", array("rows"=>$rows1),true))
+					_content("6.4.1.1 Rekapitulasi Jumlah Ketersediaan Pustaka yang Relevan dengan Bidang PS", $this->load->view("tables/6.4.1.1.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.4.1")))
 				)
 			),
 			card(
@@ -868,10 +860,7 @@ class Guest extends CI_Controller {
 				"sistem-informasi", 
 				array(
 					_content("6.5.1 Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran", "Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran"),
-					_content("6.5.1 Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.5.1")))
 				)
 			),
 			card(
@@ -903,10 +892,7 @@ class Guest extends CI_Controller {
 				"penelitian-dosen-tetap", 
 				array(
 					_content("7.1.1 Judul penelitian sesuai dengan bidang keilmuan PS, yang dilakukan oleh dosen tetap yang bidang keahliannya sesuai dengan PS selama tiga tahun terakhir", $this->load->view("tables/7.1.1.php", array("rows"=>$rows1),true)),
-					_content("7.1.1 Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.1.1")))
 				)
 			),
 			card(
@@ -917,10 +903,7 @@ class Guest extends CI_Controller {
 						"Adakah mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun terakhir? Ada"
 						. '<br>Jika ada, banyaknya mahasiswa PS yang ikut serta dalam penelitian dosen adalah <a href="' . base_url("7/1/2/LP") . '">5</a> orang, dari <a href="' . base_url("7/1/2/LTA") . '">19</a> mahasiswa yang menjalankan tugas akhir melalui skripsi'
 					),
-					_content("7.1.2 Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.1.2")))
 				)
 			),
 			card(
@@ -932,7 +915,8 @@ class Guest extends CI_Controller {
 			card(
 				"karya-dosen-haki", 
 				array(
-					_content("7.1.4 Karya dosen dan atau mahasiswa Program Studi yang telah memperoleh/sedang memproses perlindungan Hak atas Kekayaan Intelektual (HaKI) selama tiga tahun terakhir", $this->load->view("tables/7.1.4.php", array("rows"=>$rows3),true))
+					_content("7.1.4 Karya dosen dan atau mahasiswa Program Studi yang telah memperoleh/sedang memproses perlindungan Hak atas Kekayaan Intelektual (HaKI) selama tiga tahun terakhir", $this->load->view("tables/7.1.4.php", array("rows"=>$rows3),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.1.4")))
 				)
 			)
 		);
@@ -958,10 +942,7 @@ class Guest extends CI_Controller {
 				"pengabdian-dosen-tetap", 
 				array(
 					_content("7.2.1 Jumlah kegiatan Pelayanan/Pengabdian kepada Masyarakat (*) yang sesuai dengan bidang keilmuan PS selama tiga tahun terakhir yang dilakukan oleh dosen tetap yang bidang keahliannya sesuai dengan PS", $this->load->view("tables/7.2.1.php", array("rows"=>$rows1),true)),
-					_content("7.2.1 Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.2.1")))
 				)
 			),
 			card(
@@ -970,11 +951,7 @@ class Guest extends CI_Controller {
 					_content(
 						"7.2.2 Penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian", 
 						"penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian"
-					),
-					_content("7.2.2 Dokumen Pendukung", _links(array(
-						_link("Google", "http://google.com"),
-						_link("Youtube", "http://youtube.com")
-					)))
+					)
 				)
 			),
 		);
@@ -992,13 +969,15 @@ class Guest extends CI_Controller {
 			card(
 				"kerjasama-dalam", 
 				array(
-					_content("7.3.1 Kerjasama Dalam Negeri", $this->load->view("tables/7.3.1.php", array("rows"=>$rows1),true))
+					_content("7.3.1 Kerjasama Dalam Negeri", $this->load->view("tables/7.3.1.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.1")))
 				)
 			),
 			card(
 				"kerjasama-luar", 
 				array(
-					_content("7.3.2 Kerjasama Luar Negeri", $this->load->view("tables/7.3.1.php", array("rows"=>$rows2),true))
+					_content("7.3.2 Kerjasama Luar Negeri", $this->load->view("tables/7.3.1.php", array("rows"=>$rows2),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.2")))
 				)
 			),
 		);

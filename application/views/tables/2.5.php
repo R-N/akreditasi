@@ -17,9 +17,9 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row["dari"];?></td>
+				<td class=""><?=$row["isi"];?></td>
+				<td class=""><?=$row["tindak_lanjut"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

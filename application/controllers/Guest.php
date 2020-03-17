@@ -247,6 +247,10 @@ class Guest extends CI_Controller {
 			card(
 				"jumlah-mhs-reguler", 
 				array(
+					_paragraph(
+						"3.1.4 Notice [TODO]",
+						"Pada template borang 3A bagian 3.1.4, ada keterangan huruf abcdef harus tetap ada pada tabel, tapi pada dokumen borang 3A dihilangkan, bagaimana?"
+					),
 					_content(
 						"3.1.4 Jumlah mahasiswa reguler", 
 						$this->load->view(
@@ -265,20 +269,28 @@ class Guest extends CI_Controller {
 	}
 	public function page_3_2(){
 		$data = base_data("3.2");
-		$rows = array(
-			"Bimbingan dan konseling", 
-			"Minat dan bakat (ekstra kurikuler)", 
-			"Pembinaan soft skills", 
-			"Beasiswa", 
-			"Kesehatan"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_3_2");
+		$rows2= $this->M_Guest->fetch_table("tabel_3_2_2_1");
 		$data["contents"] = array(
 			card(
 				"layanan-mhs", 
 				array(
-					_content("3.2 Layanan kepada Mahasiswa", $this->load->view("tables/3.2.php", array("rows"=>$rows),true))
-				),
-				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.2")))
+					_paragraph("3.2 Notice [TODO]", "Isi tabel sangat panjang, apa bisa diringkas?"),
+					_content("3.2 Layanan kepada Mahasiswa [TODO]", $this->load->view("tables/3.2.php", array("rows"=>$rows1),true)),
+					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.2")))
+				)
+			),
+			card(
+				"kualitas-layanan", 
+				array(
+					_content("3.2.2.1 Kualitas Layanan", $this->load->view("tables/3.2.2.1.php", array("rows"=>$rows2),true))
+				)
+			),
+			card(
+				"usaha-kualitas-layanan", 
+				array(
+					_content("3.2.2.2 Usaha-usaha program studi/jurusan mencarikan tempat kerja bagi lulusannya", $this->load->view("tables/3.2.2.2.php", array(), true))
+				)
 			)
 		);
 		$this->load->view("page.php", $data);

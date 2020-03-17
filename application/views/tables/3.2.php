@@ -18,8 +18,8 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class=""><?=$row;?></td>
-				<td class=""></td>
+				<td class=""><?=$row["jenis"];?></td>
+				<td class=""><?=$row["penjelasan"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

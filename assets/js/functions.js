@@ -27,6 +27,9 @@ $(document).ready(function(){
         let option = {}
 		ordering = true;
         dom = $table0.data("dom");
+		pageLength = $table0.data("pagelength");
+		if(!pageLength) pageLength = 10;
+		option.pageLength = pageLength;
         if(!dom) dom = '<Bfr>t<ip>';
 		if($table0.is(".simple")){
 			if($table0.is(".export"))

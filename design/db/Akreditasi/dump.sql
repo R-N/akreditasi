@@ -855,6 +855,28 @@ insert  into `tabel_3_2`(`id`,`jenis`,`penjelasan`) values
 (4,'Beasiswa',''),
 (5,'Kesehatan','');
 
+/*Table structure for table `tabel_3_2_2_1` */
+
+CREATE TABLE `tabel_3_2_2_1` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `layanan` varchar(128) NOT NULL,
+  `sangat_baik` int(11) NOT NULL,
+  `baik` int(11) NOT NULL,
+  `cukup` int(11) NOT NULL,
+  `kurang` int(11) NOT NULL,
+  `rata` decimal(3,2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_3_2_2_1` */
+
+insert  into `tabel_3_2_2_1`(`id`,`layanan`,`sangat_baik`,`baik`,`cukup`,`kurang`,`rata`) values 
+(1,'Bagaimana pendapat anda tentang layanan minat dan bakat (ekstra kurikuler)?',90,31,12,0,3.59),
+(2,'Bagaimana pendapat anda tentang layanan minat dan bakat (ekstra kurikuler)?',59,65,7,2,3.36),
+(3,'Bagaimana pendapat anda tentang layanan pembinaan soft skill?',71,51,8,3,3.43),
+(4,'Bagaimana pendapat anda tentang layanan beasiswa?',78,43,11,1,3.49),
+(5,'Bagaimana pendapat anda tentang layanan kesehatan?',26,44,58,5,2.68);
+
 /*Table structure for table `tabel_3_3_1` */
 
 CREATE TABLE `tabel_3_3_1` (

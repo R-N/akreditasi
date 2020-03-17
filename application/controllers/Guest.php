@@ -34,15 +34,29 @@ class Guest extends CI_Controller {
 	}
 	public function page_1_1(){
 		$data = base_data("1.1");
+		
 		$data["contents"] = array(
 			accordion(
 				"visi-misi", 
 				array(
-					//_content("Penyusunan", "Penyusunan"),
-					fragment("1.1.2", "Visi", $this->M_Guest->get_paragraf("1.1.2")),
-					fragment("1.1.3", "Misi", array("rows"=>$this->M_Guest->fetch_list("1.1.3"))),
-					fragment("1.1.4", "Tujuan", array("rows"=>$this->M_Guest->fetch_list("1.1.4"))),
-					_content("Sasaran dan Strategi", "Sasaran dan Strategi")
+					_paragraph("1.1.1 Penyusunan", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?"),
+					_paragraph("1.1.2 Visi", 
+						$this->M_Guest->get_string("1.1.2")["text"], 
+						"Visi Program Studi Sistem Informasi berdasarkan rumusan terakhir adalah sebagai berikut:"
+					),
+					_ordered_list("1.1.3 Misi", 
+						$this->M_Guest->fetch_list("1.1.3"), 
+						"Statemen Misi Program Studi SI:"
+					),
+					fragment("1.1.4", "1.1.4 Tujuan", array("rows"=>$this->M_Guest->fetch_list("1.1.4"))),
+					_ordered_list("1.1.5.1.1 Sasaran", 
+						$this->M_Guest->fetch_list("1.1.5.1.1"), 
+						"Sasaran Program Studi SI:"
+					),
+					fragment("1.1.5.1.2", "1.1.5.1.2 Milestones", array(
+						"milestones"=>$this->M_Guest->fetch_milestones("1.1.5.1.2")
+					)),
+					_paragraph("1.1.5.1.3 Strategi", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?")
 				)
 			)
 		);
@@ -52,7 +66,23 @@ class Guest extends CI_Controller {
 	public function page_1_2(){
 		$data = base_data("1.2");
 		$data["contents"] = array(
-			paragraph("sosialisasi", "Sosialisasi", "Sosialisasi")
+			card(
+				"usaha-sosialisasi", 
+				array(
+					_content("1.2.1 Upaya Sosialisasi", $this->load->view("tables/1.2.1.php", array(
+						"rows"=>$this->M_Guest->fetch_list("1.2.1")
+					),true))
+				)
+			),
+			accordion(
+				"pemahaman-sosialisasi", 
+				array(
+					_chart("pemahaman-dosen", "1.2.2.1 Pemahaman Tenaga Pendidik (Dosen) terhadap Visi Misi", "pie", $this->M_Guest->fetch_values("1.2.2.1")),
+					_chart("pemahaman-tk", "1.2.2.2 Pemahaman Tenaga Kependidikan terhadap Visi Misi", "bar_vertical", $this->M_Guest->fetch_values("1.2.2.2")),
+					_chart("pemahaman-mhs", "1.2.2.3 Pemahaman Mahasiswa terhadap Visi Misi", "bar_vertical", $this->M_Guest->fetch_values("1.2.2.3")),
+					_chart("pemahaman-stake", "1.2.2.4 Pemahaman Stakeholder terhadap Visi Misi", "bar_vertical", $this->M_Guest->fetch_values("1.2.2.4")),
+				)
+			)
 		);
 		$this->load->view("page.php", $data);
 	}

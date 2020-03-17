@@ -1,0 +1,42 @@
+Pertanyaan standar
+
+1.1.1 panjang sekali. diringkas, tidak usah, atau bagaimana?
+1.1.5 milestone & sasaran saja?
+1.2 upaya aja? grafik dampak apa perlu?
+2.1 mungkin bagan struktur organisasi aja? Mungkin sama pemilihannya? Daftar prinsip tanpa penjelasan atau dg penjelasan singkat?
+2.2 Mungkin ringkasan tiap jenis kepemimpinan? Tabel tiap kepemimpinan apa perlu?
+2.3 Ringkasan tiap bagian (planning, organizing)? SOP anggaran? Hal2 terkait staffing? Daftar kegiatan leading? Daftar aktivitas controlling?
+2.4 Struktur organisasi LPM? Ringkasan tiap bagian? Grafik2 kepuasan? Grafik kok banyak yg item?
+2.6 ringkasan? atau full aja gk panjang2 amat sih klo tanpa gambar. Tabel kerja sama (2.10)? Tabel dana hibah (2.11)?
+3.1 Alur pendaftaran apa perlu? Tabel udah banyak sih
+3.1.4 ada keterangan huruf abcdef harus tetap ada pada tabel, tp pada dokumen borang dihilangkan, gmn?
+3.2 isi tabelnya panjang amat, 1 baris 3 halaman
+3.2.2 (baru) tabel 3.9? 3.10?
+3.3.1 Metode, proses, mekanisme pada halaman 162? Atau paragraf pertama pd hal. 155?
+3.3.2 & 3.3.3 tanpa gambar?
+3.4 Peran alumni? Hasil andil alumni bidang akademik & non? Tabel kerjasama (3.11)?
+4.1 Ringkasan bagian dr tiap jenis? Tabel 4.1 proses seleksi? Atau dokumen aja?
+4.2 Ringkasan tiap bagian terkecil?
+4.6.1 + grafik?
+4.6.2 Daftar saja? Atau sama penjelasan?
+5.1 (baru) profil lulusan? 
+5.1.1 Daftar umum keterampilan masing2? Atau perlu tabel detailnya?
+5.1.1.4 (baru) Penjelasan ringkas masing2?
+5.1.2 (baru?) Gambar 5.4?
+5.1.2.1 jd 5.1.3.5?
+5.1.2.2 jd 5.1.3.6?
+5.2. mekanisme ringkasan? gambar SOP? Gambar 5.10 hasil audit mutu internal? Tabel 5.8 hasil peninjauan ada baris2 yg kolom alasan dimerge gimana enaknya, apa tetap begitu atau gmn. Link artikel studi banding ke ipb 404. apa perlu cantumkan silabus & buku ajar?
+5.3 Diagram2 aja? Yg mana aja?
+5.3.1 Grafik monev apa perlu?
+5.4.2 tambah diagram SOP?
+5.5.2 5.75 apa 6 bulan?
+5.6 kok materi 2x? Trs apa bisa diringkas
+5.7 apa bisa diringkas, atau semua aja, jd tiap sub-sub-bab jadi accordion sendiri. tp begitu pun kyknya ada yg terlalu panjang
+6.1 awal tiap bagian bisa jd accordion sendiri, atau diringkas, atau gk usab masuk web. maunya gmn
+6.3.3  Apa gambar perlu?
+6.4.1.2 & 6.4.2 apa link berupa teks tetap harus ada
+6.5.1 gambar apa perlu? tabel software apa perlu?
+7.1.1 LPDT apa perlu?
+7.1.2 LP apa dalam tabel tidak perlu mencantumkan nama dosennya?
+7.1.2 LTA apa tidak perlu?
+7.2.2 Tabel 7.6 enaknya diikutkan nggak

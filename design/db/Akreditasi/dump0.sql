@@ -36,7 +36,6 @@ CREATE TABLE `cards` (
 CREATE TABLE `dokumen_pendukung` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent` varchar(16) NOT NULL,
-  `no` int(11) NOT NULL DEFAULT '1',
   `nama` varchar(256) NOT NULL,
   `url` varchar(256) NOT NULL,
   PRIMARY KEY (`id`),
@@ -46,9 +45,9 @@ CREATE TABLE `dokumen_pendukung` (
 
 /*Data for the table `dokumen_pendukung` */
 
-insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`nama`,`url`) values 
-(1,'0',1,'Dokumen Evaluasi Diri','https://www.google.com/'),
-(2,'0',1,'Dokumen Borang','https://www.google.com/');
+insert  into `dokumen_pendukung`(`id`,`parent`,`nama`,`url`) values 
+(1,'0','Dokumen Evaluasi Diri','https://www.google.com/'),
+(2,'0','Dokumen Borang','https://www.google.com/');
 
 /*Table structure for table `dosen` */
 
@@ -67,130 +66,99 @@ CREATE TABLE `dosen` (
 CREATE TABLE `ids` (
   `id` varchar(16) NOT NULL,
   `name` varchar(256) NOT NULL,
-  `parent` varchar(16) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `id_parent_id` (`parent`),
-  CONSTRAINT `id_parent_id` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `ids` */
 
-insert  into `ids`(`id`,`name`,`parent`) values 
-('0','Dokumen Akreditasi',NULL),
-('1','Standar 1',NULL),
-('1.1','','1'),
-('1.1.2','','1.1'),
-('1.1.3','','1.1'),
-('1.1.4','','1.1'),
-('1.1.5','','1.1'),
-('1.1.5.1','','1.1.5'),
-('1.1.5.1.1','','1.1.5.1'),
-('1.1.5.1.2','','1.1.5.1'),
-('1.1.5.1.2.1','I (2014-2019)','1.1.5.1.2'),
-('1.1.5.1.2.2','II (2020-2024)','1.1.5.1.2'),
-('1.1.5.1.2.3','III (2025-2029)','1.1.5.1.2'),
-('1.1.5.1.2.4','IV (2030-2034)','1.1.5.1.2'),
-('1.1.5.1.2.5','V (2035-2045)','1.1.5.1.2'),
-('1.2','','1'),
-('1.2.1','Upaya Sosialisasi Visi Misi','1.2'),
-('1.2.2','Pemahaman Visi Misi','1.2'),
-('1.2.2.1','Pemahaman Tenaga Pendidik (Dosen) terhadap Visi Misi','1.2.2'),
-('1.2.2.2','Pemahaman Tenaga Kependidikan terhadap Visi Misi','1.2.2'),
-('1.2.2.3','Pemahaman Mahasiswa terhadap Visi Misi','1.2.2'),
-('1.2.2.4','Pemahaman Stakeholder terhadap Visi Misi','1.2.2'),
-('2','',NULL),
-('2.1','','2'),
-('2.2','','2'),
-('2.3','','2'),
-('2.4','','2'),
-('2.5','','2'),
-('2.6','','2'),
-('3','',NULL),
-('3.3','','3'),
-('3.3.1','','3.3'),
-('3.3.2','','3.3'),
-('3.3.3','','3.3'),
-('3.4','','3'),
-('4','',NULL),
-('4.1','','4'),
-('4.2','','4'),
-('4.3','','4'),
-('4.3.1','','4.3'),
-('4.3.2','','4.3'),
-('4.3.3','','4.3'),
-('4.3.4','','4.3'),
-('4.3.5','','4.3'),
-('4.4','','4'),
-('4.4.1','','4.4'),
-('4.4.2','','4.4'),
-('4.5','','4'),
-('4.5.1','','4.5'),
-('4.5.2','','4.5'),
-('4.5.3','','4.5'),
-('4.5.4','','4.5'),
-('4.5.5','','4.5'),
-('4.6','','4'),
-('4.6.1','','4.6'),
-('4.6.2','','4.6'),
-('5','',NULL),
-('5.1','','5'),
-('5.1.1','','5.1'),
-('5.1.1.1','','5.1.1'),
-('5.1.1.2','','5.1.1'),
-('5.1.1.3','','5.1.1'),
-('5.1.2.1','','5.1.1'),
-('5.1.2.2','','5.1.1'),
-('5.1.3','','5.1'),
-('5.1.4','','5.1'),
-('5.2','','5'),
-('5.3','','5'),
-('5.3.1','','5.3'),
-('5.3.2','','5.3'),
-('5.4','','5'),
-('5.4.1','','5.4'),
-('5.4.2','','5.4'),
-('5.5','','5'),
-('5.5.1','','5.5'),
-('5.5.2','','5.5'),
-('5.5.2 A','','5.5.2'),
-('5.5.2 B','','5.5.2'),
-('5.6','','5'),
-('5.7','','5'),
-('6','',NULL),
-('6.1','','6'),
-('6.2','','6'),
-('6.2.1','','6.2'),
-('6.2.1.1','','6.2.1'),
-('6.2.1.2','','6.2.1'),
-('6.2.2','','6.2'),
-('6.2.3','','6.2'),
-('6.3','','6.3'),
-('6.3.1','','6.3'),
-('6.3.2','','6.3'),
-('6.3.3','','6.3'),
-('6.4','','6'),
-('6.4.1','','6.4'),
-('6.4.1.1','','6.4.1'),
-('6.4.1.2','','6.4.1'),
-('6.4.2','','6.4'),
-('6.4.3','','6.4'),
-('6.5','','6'),
-('6.5.1','','6.5'),
-('6.5.2','','6.5'),
-('7','',NULL),
-('7.1','','7'),
-('7.1.1','','7.1'),
-('7.1.2','','7.1'),
-('7.1.2 A','','7.1.2'),
-('7.1.2 B','','7.1.2'),
-('7.1.3','','7.1'),
-('7.1.4','','7.1'),
-('7.2','','7'),
-('7.2.1','','7.2'),
-('7.2.2','','7.2'),
-('7.3','','7'),
-('7.3.1','','7.3'),
-('7.3.2','','7.3');
+insert  into `ids`(`id`,`name`) values 
+('0',''),
+('1.1',''),
+('1.1 M',''),
+('1.1 P',''),
+('1.1 SS',''),
+('1.1 T',''),
+('1.1 V',''),
+('1.1.2',''),
+('1.1.3',''),
+('1.1.4',''),
+('1.1.5.1',''),
+('1.1.5.1.1',''),
+('1.1.5.1.2',''),
+('1.1.5.1.3',''),
+('1.1.5.1.4',''),
+('1.1.5.1.5',''),
+('1.2',''),
+('2.1',''),
+('2.2',''),
+('2.3',''),
+('2.4',''),
+('2.5',''),
+('2.6',''),
+('3.3',''),
+('3.3.1',''),
+('3.3.2',''),
+('3.3.3',''),
+('3.4',''),
+('4.1',''),
+('4.2',''),
+('4.3.1',''),
+('4.3.2',''),
+('4.3.3',''),
+('4.3.4',''),
+('4.3.5',''),
+('4.4.1',''),
+('4.4.2',''),
+('4.5.1',''),
+('4.5.2',''),
+('4.5.3',''),
+('4.5.4',''),
+('4.5.5',''),
+('4.6.1',''),
+('4.6.2',''),
+('5.1.1',''),
+('5.1.1.1',''),
+('5.1.1.2',''),
+('5.1.1.3',''),
+('5.1.2.1',''),
+('5.1.2.2',''),
+('5.1.3',''),
+('5.1.4',''),
+('5.2',''),
+('5.3.1',''),
+('5.3.2',''),
+('5.4.1',''),
+('5.4.2',''),
+('5.5',''),
+('5.5.1',''),
+('5.5.2',''),
+('5.5.2 A',''),
+('5.5.2 B',''),
+('5.6',''),
+('5.7',''),
+('6.1',''),
+('6.2.1.1',''),
+('6.2.1.2',''),
+('6.2.2',''),
+('6.2.3',''),
+('6.3.1',''),
+('6.3.2',''),
+('6.3.3',''),
+('6.4.1.1',''),
+('6.4.1.2',''),
+('6.4.2',''),
+('6.4.3',''),
+('6.5.1',''),
+('6.5.2',''),
+('7.1.1',''),
+('7.1.2 A',''),
+('7.1.2 B',''),
+('7.1.3',''),
+('7.1.4',''),
+('7.2.1',''),
+('7.2.2',''),
+('7.3.1',''),
+('7.3.2','');
 
 /*Table structure for table `jabatan_akademik` */
 
@@ -251,7 +219,7 @@ CREATE TABLE `lists` (
   PRIMARY KEY (`id`),
   KEY `parent_lists` (`parent`),
   CONSTRAINT `parent_lists` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lists` */
 
@@ -266,50 +234,68 @@ insert  into `lists`(`id`,`parent`,`no`,`text`) values
 (8,'1.1.4',5,'Mewujudkan tata kelola program studi yang bersih dan sehat'),
 (9,'1.1.4',6,'Menghasilkan karya ilmiah di tingkat nasional dan internasional'),
 (10,'1.1.4',7,'Menghasilkan lulusan sistem informasi yang memiliki akhlakul karimah, ketajaman analisis, jiwa kepemimpinan, jiwa technopreneur, kreatif dan komunikatif serta berkontribusi dalam pemanfaatan sistem informasi untuk pemberdayaan masyarakat sesuai kearifan lokal.'),
-(19,'1.1.5.1.1',1,'Sarjana Sistem Informasi yang menguasai kompetensi dibidang teknologi, manajemen dan sistem cerdas sehingga siap berkontribusi pada masyarakat.'),
-(20,'1.1.5.1.1',2,'Sarjana Sistem Informasi yang profesional dalam bidangnya dan dengan bekal keilmuan yang dimiliki mampu bersaing di tingkat regional, nasional, dan internasional.'),
-(21,'1.1.5.1.1',3,'Mendorong terwujudnya riset-riset dengan kajian terkini yang mengandung integrasi ilmu keislaman dengan kajian sistem informasi.'),
-(22,'1.1.5.1.1',4,'Program Studi Sistem Informasi yang melalui hasil risetnya dapat memberikan kontribusi pada masyarakat melalui pengabdian masyarakat berbasis riset.'),
-(23,'1.1.5.1.1',5,'Semangat integritas pada seluruh lini Program Studi Sistem Informasi sehingga mampu mewujudkan tata kelola yang bersih dan sehat.'),
-(24,'1.1.5.1.1',6,'Program Studi Sistem Informasi yang mampu menghasilkan naskah publikasi berupa karya ilmiah di tingkat nasional dan internasional.'),
-(25,'1.1.5.1.1',7,'Sarjana Sistem Informasi yang ber-akhlakul karimah, ketajaman analisis, jiwa kepemimpinan, jiwa technopreneur, kreatif dan komunikatif berdasar pada nilainilai kearifan lokal.'),
-(26,'1.1.5.1.2.1',1,'Penguatan internal Prodi.'),
-(27,'1.1.5.1.2.1',2,'Peningkatan kualitas SDM.'),
-(28,'1.1.5.1.2.1',3,'Meningkatkan mutu penelitian dan pengabdian kepada masyarakat.'),
-(29,'1.1.5.1.2.2',1,'Menjaga mutu atmostfir akademik.'),
-(30,'1.1.5.1.2.2',2,'Peningkatan akreditasi program studi.'),
-(31,'1.1.5.1.2.2',3,'Peningkatan kuantitas publikasi internasional.'),
-(32,'1.1.5.1.2.3',1,'Pengenbangan kualitas standar nasional laboratorium.'),
-(33,'1.1.5.1.2.3',2,'Menghasilkan paten.'),
-(34,'1.1.5.1.2.3',3,'Meningkatnya kerjasama nasional dan internasional.'),
-(35,'1.1.5.1.2.4',1,'Pertukaran pelajar tingkat regional asia.'),
-(36,'1.1.5.1.2.4',2,'Kerjasama penelitian dengan institusi pendidikan regional asia.'),
-(37,'1.1.5.1.2.4',3,'Menghasilkan paten komersil.'),
-(38,'1.1.5.1.2.5',1,'Membuka Program Studi magister.'),
-(39,'1.1.5.1.2.5',2,'Kerjasama penelitian dan pengabdian tingkat internasional.'),
-(40,'1.1.5.1.2.5',3,'Akreditasi internasional.'),
-(41,'1.2.1',1,'Sosialisasi kepada dosen program studi Sistem Informasi melalui kegiatan rapat persiapan perkuliahan awal semester;'),
-(42,'1.2.1',2,'Sosialisasi kepada dosen program studi Sistem Informasisecara khusus danDosen FST secara umum, melalui kegiatan Forum Diskusi Dosen FST (Tiap hari rabu);'),
-(43,'1.2.1',3,'Sosialisasi kepada mahasiswa baru secara terbuka dengan mahasiswa melalui kegiatan Orientasi Studi dan Cinta Almamater (OSCAR);'),
-(44,'1.2.1',4,'Sosialisasi kepada mahasiswa baru secara terbuka dengan mahasiswa melalui kegiatan Orientasi Mahasiswa Jurusan (OSMAJUR);'),
-(45,'1.2.1',5,'Sosialisasi kepada mahasiswa yang akan memprogram ke semester dua melalui Kegiatan Pelatihan Pengisian SIAKAD (Sistem Informasi Akademik);'),
-(46,'1.2.1',6,'Sosialisasi kepada mahasiswa prodi Sistem Informasi melalui kegiatandialog terbuka tengah semester antar dosen dan mahasiswa;'),
-(47,'1.2.1',7,'Sosialisasi kepada mahasiswa prodi Sistem Informasi melalui kegiatan sarahesan bagi mahasiswa Sistem Informasi;'),
-(48,'1.2.1',8,'Sosialisasi kepada mahasiswa prodi Sistem Informasi melalui kegiatan tatap muka perkuliahan yang dilakukan oleh dosen pengampu matakuliah;'),
-(49,'1.2.1',9,'Sosialisasi kepada wali mahasiswa melalui kegiatan temu wali mahasiswa yang diadakan setiap tahun melalui anggaran Wakil Rektor III;'),
-(50,'1.2.1',10,'Penulisan pajangan visi, misi, dan tujuan program studi Sistem Informasi dalam bentuk banner yang dipasang di ruangan program studi Sistem Informasi;'),
-(51,'1.2.1',11,'Penulisan pajangan visi, misi, dan tujuan program studi Sistem Informasi dalam bentuk banner yang dipasang di ruang kelas;'),
-(52,'1.2.1',12,'Penulisan pajangan visi, misi, dan tujuan program studi Sistem Informasi dalam bentuk banner yang dipasang di ruang laboratorium;'),
-(53,'1.2.1',13,'Penulisan pajangan visi, misi, dan tujuan program studi Sistem Informasi dalam bentuk banner yang dipasang di ruang baca program studi;'),
-(54,'1.2.1',14,'Penempelan Sticker visi, misi program studi Sistem Informasi di papan pengumuman;'),
-(55,'1.2.1',15,'Pembagian Sticker visi, misi program studi Sistem Informasi yang diberikan pada mahasiswa baru pada saat OSMAJUR;'),
-(56,'1.2.1',16,'Pembagian mug souvenir kepada dosen dan tenaga kependidikan;'),
-(57,'1.2.1',17,'Mencantumkan visi, misi, dan tujuan program studi Sistem Informasi pada website http://sinf.uinsby.ac.id;'),
-(58,'1.2.1',18,'Mencantumkan visi, misi, dan tujuan program studi SI dalam browsur Program Studi;'),
-(59,'1.2.1',19,'Mencantumkan visi, misi, dan tujuan program studi SI dalam website Fakultas Sains dan Teknologi;'),
-(60,'1.2.1',20,'Mencantumkan visi, misi, dan tujuan program studi Sistem Informasi dalam Rencana kerja Program Studi Sistem Informasi;'),
-(61,'1.2.1',21,'Penyampaian visi dan misi program studi Sistem Informasi pada pertemuan dengan pimpinan lembaga tempat KP, KL dan KKN mahasiswa program studi Sistem Informasi;'),
-(62,'1.2.1',22,'Penyampaian visi dan misi program studi Sistem Informasi pada rapatrapat persiapan dan pelaksanaan kegiatan Forum AISINDO (Asosiasi Sistem Informasi Indonesia) dan APTIKOM (Asosiasi Pendidikan Tinggi Informatika dan Komputer)');
+(16,'1.1.5.1.1',1,'Penguatan internal prodi.'),
+(17,'1.1.5.1.1',2,'Peningkatan kualitas SDM.'),
+(18,'1.1.5.1.1',3,'Meningkatkan mutu penelitian dan pengabdian kepada masyarakat.');
+
+/*Table structure for table `paragraf` */
+
+CREATE TABLE `paragraf` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent` varchar(16) NOT NULL,
+  `title` varchar(256) NOT NULL,
+  `text` varchar(1024) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `parent_paragraph` (`parent`),
+  CONSTRAINT `parent_paragraph` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
+
+/*Data for the table `paragraf` */
+
+insert  into `paragraf`(`id`,`parent`,`title`,`text`) values 
+(2,'1.1.2','Visi','\"Menjadi Program Studi Sistem Informasi yang unggul dan kompetitif\"'),
+(3,'1.1','Misi','Misi'),
+(4,'1.1','Tujuan','Tujuan'),
+(5,'1.1','Sasaran dan Strategi','Sasaran dan Strategi'),
+(6,'1.2','Sosialisasi','Sosialisasi'),
+(7,'2.1','Sistem Tata Pamong','Sistem Tata Pamong'),
+(9,'2.2','Kepemimpinan','Kepemimpinan'),
+(10,'2.3','Pengelolaan','Pengelolaan'),
+(11,'2.4','Penjaminan Mutu','Penjaminan Mutu'),
+(12,'2.6','Upaya untuk peningkatan animo calon mahasiswa','Upaya untuk peningkatan animo calon mahasiswa'),
+(13,'2.6','Upaya peningkatan mutu manajemen','Upaya peningkatan mutu manajemen'),
+(14,'2.6','Upaya untuk peningkatan mutu lulusan','Upaya untuk peningkatan mutu lulusan'),
+(15,'2.6','Upaya untuk pelaksanaan dan hasil kerjasama kemitraan','Upaya untuk pelaksanaan dan hasil kerjasama kemitraan'),
+(16,'2.6','Upaya dan prestasi memperoleh dana hibah kompetitif','Upaya dan prestasi memperoleh dana hibah kompetitif'),
+(17,'3.3','Uraian metode, proses, dan mekanisme studi pelacakan lulusan','uraian metode, proses, dan mekanisme studi pelacakan lulusan'),
+(18,'3.3.2','Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama','Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama'),
+(19,'3.3.3','Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya','Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya'),
+(21,'3.4','Uraian himpunan alumni','Uraian himpunan alumni'),
+(23,'4.1','Sistem Seleksi dan Pengembangan','Sistem Seleksi dan Pengembangan'),
+(25,'4.2','Monitoring dan Evaluasi','Monitoring dan Evaluasi'),
+(26,'4.6.2','Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan','Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan'),
+(27,'5.1.1','5.1.1.1 Uraian kompetensi utama lulusan','Uraian kompetensi utama lulusan'),
+(28,'5.1.1','5.1.1.2 Uraian kompetensi pendukung lulusan','Uraian kompetensi pendukung lulusan'),
+(29,'5.1.1','5.1.1.3 Uraian kompetensi lainnya/pilihan lulusan','Uraian kompetensi lainnya/pilihan lulusan'),
+(30,'5.2','Mekanisme','Mekanisme'),
+(31,'5.2','Pihak yang dilibatkan','Pihak yang dilibatkan'),
+(32,'5.3.1','Mekanisme penyusunan materi','Mekanisme penyusunan materi'),
+(33,'5.3.1','Mekanisme monitoring kehadiran dosen dan mahasiswa','Mekanisme monitoring kehadiran dosen dan mahasiswa'),
+(34,'5.3.1','Mekanisme monitoring materi kuliah','Mekanisme monitoring materi kuliah'),
+(35,'5.5','Rata-rata banyaknya mahasiswa per dosen pembimbing TA: 0\r\nRata-rata jumlah pertemuan dosen-mahasiswa untuk menyelesaiakan TA: 0','Rata-rata banyaknya mahasiswa per dosen pembimbing TA: 0\r\nRata-rata jumlah pertemuan dosen-mahasiswa untuk menyelesaiakan TA: 0'),
+(36,'5.5.1','Panduan pembimbingan TA','Panduan pembimbingan TA'),
+(37,'5.5.2 A','PENYELESAIAN TUGAS AKHIR ATAU SKRIPSI','Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir'),
+(38,'5.5.2 B','','Menurut kurikulum tugas akhir direncanakan (semester): '),
+(39,'5.7','Kebijakan tentang suasana akademik','Kebijakan tentang suasana akademik'),
+(41,'5.7','Ketersediaan dan jenis prasaran, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika','Ketersediaan dan jenis prasaran, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika'),
+(42,'5.7','Program dan kegiatan di dalam dan di luar proses pembelajaran','Program dan kegiatan di dalam dan di luar proses pembelajaran'),
+(43,'5.7','Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen','Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen'),
+(44,'5.7','Pengembangan perilaku kecendikiawanan','Pengembangan perilaku kecendikiawanan'),
+(45,'6.1','Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana\r\n','Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana\r\n'),
+(46,'6.5.1','Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran','Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran'),
+(47,'7.1.2 A','Mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun','Adakah mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun terakhir? Ada'),
+(48,'7.1.2 B','','Jika ada, banyaknya mahasiswa PS yang ikut serta dalam penelitian dosen adalah 5 orang, dari 19 mahasiswa yang menjalankan tugas akhir melalui skripsi'),
+(49,'7.2.2','Penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian','Penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian');
 
 /*Table structure for table `pendidikan` */
 
@@ -372,20 +358,6 @@ CREATE TABLE `status_tk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `status_tk` */
-
-/*Table structure for table `strings` */
-
-CREATE TABLE `strings` (
-  `parent` varchar(16) NOT NULL,
-  `text` varchar(1024) NOT NULL,
-  PRIMARY KEY (`parent`),
-  CONSTRAINT `string_parent` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `strings` */
-
-insert  into `strings`(`parent`,`text`) values 
-('1.1.2','Menjadi Program Studi Sistem Informasi yang unggul dan kompetitif bertaraf internasional berlandaskan nilai-nilai keislaman');
 
 /*Table structure for table `sumber_dana` */
 
@@ -1644,43 +1616,6 @@ CREATE TABLE `unit_tk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `unit_tk` */
-
-/*Table structure for table `values` */
-
-CREATE TABLE `values` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `parent` varchar(16) NOT NULL,
-  `no` int(11) NOT NULL DEFAULT '1',
-  `name` varchar(32) NOT NULL,
-  `value` decimal(10,0) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `value_parent_id` (`parent`),
-  CONSTRAINT `value_parent_id` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
-
-/*Data for the table `values` */
-
-insert  into `values`(`id`,`parent`,`no`,`name`,`value`) values 
-(2,'1.2.2.1',1,'Sangat Paham',6),
-(3,'1.2.2.1',2,'Paham',4),
-(4,'1.2.2.1',3,'Cukup Paham',13),
-(5,'1.2.2.1',4,'Kurang Paham',0),
-(6,'1.2.2.1',5,'Tidak Paham',0),
-(7,'1.2.2.2',1,'Sangat Paham',11),
-(8,'1.2.2.2',2,'Paham',78),
-(9,'1.2.2.2',3,'Cukup Paham',11),
-(10,'1.2.2.2',4,'Kurang Paham',0),
-(11,'1.2.2.2',5,'Tidak Paham',0),
-(12,'1.2.2.3',1,'Sangat Paham',7),
-(13,'1.2.2.3',2,'Paham',86),
-(14,'1.2.2.3',3,'Cukup Paham',6),
-(15,'1.2.2.3',4,'Kurang Paham',1),
-(16,'1.2.2.3',5,'Tidak Paham',0),
-(17,'1.2.2.4',1,'Sangat Paham',20),
-(18,'1.2.2.4',2,'Paham',70),
-(19,'1.2.2.4',3,'Cukup Paham',10),
-(20,'1.2.2.4',4,'Kurang Paham',0),
-(21,'1.2.2.4',5,'Tidak Paham',0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

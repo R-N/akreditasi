@@ -30,6 +30,7 @@
 
 
 <body id="page-top">
+	<script src="<?=base_url();?>assets/js/jquery.min.js"></script>
     <div id="wrapper">
 		<?php $this->view("sidebar", array("page_id"=>$page_id)); ?>
         <div class="d-flex flex-column" id="content-wrapper">

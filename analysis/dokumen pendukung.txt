@@ -1,0 +1,42 @@
+Dokumen
+
+2.1: di dokumen borang kyk link tp ga bisa diklik
+2.3: dokumen pendukung sistem pengelolaan prodi
+2.4
+3.1.1
+3.1.3: bukti prestasi
+3.1
+3.2
+3.3.1
+3.4
+4.1: ada di dok borang, tp yg di gambar 4.1 itu filenya sama? atau salah link? Dokumennya ada banyak sekali... apa semua dicantumkan?
+4.2.1
+4.2.2 ada banyak, tp yg mana yg bukti tentang kinerja dosen dalam pendidikan dan pengabdian?
+Ijazah & sertifikat 4.3.1, 4.3.2 (4.4.1 kosong): 4.3.2 ada link drive to kosong
+4.3.4 & 4.3.5 ada link drive untuk apa? tidak ada dokumen yg diminta
+ 
+4.5.3
+4.5.4
+4.5.5
+ijazah & sertifikasi 4.6.1 LTK
+Deskripsi 5.1.2.2: perlu gak
+Silabus 5.1.2.2
+SAP 5.1.2.2
+modul praktikum 5.1.4 
+5.2: ada banyak, tp apa sudah semua? trs banyak yg perlu akses drive
+5.3.1 
+Contoh soal & RPS 5.3.2: ada link tp perlu akses drive
+5.5.1: yg ada panduan skripsinya, bukan pembimbingannya, dan itu pun local file url
+5.5.2
+6.1
+6.2.2
+6.5.1
+7.1.1: apa perlu dipisah atau link dokumen borang aja?
+7.1.2
+[X] 7.1.2 LP
+7.1.3
+7.1.4
+7.2.1 LKPKM
+7.2.1: rekap apa perlu dipisah atau link borang aja? laporan pkm belum ada
+7.3.1
+7.3.2

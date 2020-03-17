@@ -25,20 +25,36 @@ class M_Guest extends CI_Model {
 		$query = $this->db->query($sql, array($parent));
 		return $query->result_array();
 	}
+	function fetch_child_ids($parent){
+		$sql =  "SELECT * FROM ids WHERE ids.parent=? ORDER BY ids.id ASC;";
+		$query = $this->db->query($sql, array($parent));
+		return $query->result_array();
+	}
 	function fetch_dokumen($parent){
 		$sql =  "SELECT * FROM dokumen_pendukung dp, ids WHERE dp.parent=? AND ids.id=dp.parent ORDER BY dp.id;";
 		$query = $this->db->query($sql, array($parent));
 		return $query->result_array();
 	}
-	function fetch_paragraf($parent){
-		$sql =  "SELECT * FROM paragraf p, ids WHERE p.parent=? AND ids.id=p.parent ORDER BY p.id;";
-		$query = $this->db->query($sql, array($parent));
-		return $query->result_array();
-	}
-	function get_paragraf($parent){
-		$sql =  "SELECT * FROM paragraf p, ids WHERE p.parent=? AND ids.id=p.parent ORDER BY p.id;";
+	function get_string($parent){
+		$sql =  "SELECT * FROM strings p, ids WHERE p.parent=? AND ids.id=p.parent;";
 		$query = $this->db->query($sql, array($parent));
 		if($query->num_rows() == 0) return null;
 		return $query->row_array();
+	}
+	function fetch_values($parent){
+		$sql =  "SELECT l.name, l.value FROM `values` l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
+		$query = $this->db->query($sql, array($parent));
+		return $query->result_array();
+	}
+	function fetch_milestones($id){
+		$milestones = $this->fetch_child_ids($id);
+		$i = 0;
+		foreach($milestones as $m){
+			$items = array();
+			$items = $this->fetch_list($milestones[$i]["id"]);
+			$milestones[$i]["items"] = $items;
+			++$i;
+		}
+		return $milestones;
 	}
 }

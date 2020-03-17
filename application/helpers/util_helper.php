@@ -69,9 +69,40 @@ function menu($id, $title, $items, $half=false){
 	$content = _content($title, $content);
 	return card($id, $content, false, $half);
 }
-function paragraph($id, $title, $content){
-	$content = get_instance()->load->view("paragraph", array("content"=>$content), true);
+function _ordered_list($title, $items, $caption=null){
+	$content = get_instance()->load->view("ordered_list", array(
+		"caption"=>$caption,
+		"items"=>$items
+	), true);
 	$content = _content($title, $content);
+	return $content;
+}
+function ordered_list($id, $title, $items, $caption=null){
+	$content = _ordered_list($title, $items, $caption);
+	return card($id, $content, false);
+}
+function _paragraph($title, $content, $caption=null){
+	$content = get_instance()->load->view("paragraph", array(
+		"caption"=>$caption,
+		"content"=>$content
+	), true);
+	$content = _content($title, $content);
+	return $content;
+}
+function _chart($id, $title, $type, $data){
+	$content = get_instance()->load->view("charts/{$type}.php", array(
+		"id"=>$id,
+		"data"=>$data
+	), true);
+	$content = _content($title, $content);
+	return $content;
+}
+function chart($id, $title, $type, $data){
+	$content = _chart($id, $title, $type, $data);
+	return card($id, $content);
+}
+function paragraph($id, $title, $content, $caption=null){
+	$content = _paragraph($title, $content, $caption);
 	return card($id, $content);
 }
 function accordion($id, $sections){

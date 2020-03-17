@@ -882,23 +882,24 @@ insert  into `tabel_3_2_2_1`(`id`,`layanan`,`sangat_baik`,`baik`,`cukup`,`kurang
 CREATE TABLE `tabel_3_3_1` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `kemampuan` varchar(64) NOT NULL,
-  `sangat_baik` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `baik` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `cukup` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `kurang` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `sangat_baik` int(11) NOT NULL DEFAULT '0',
+  `baik` int(11) NOT NULL DEFAULT '0',
+  `cukup` int(11) NOT NULL DEFAULT '0',
+  `kurang` int(11) NOT NULL DEFAULT '0',
+  `rencana` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_3_3_1` */
 
-insert  into `tabel_3_3_1`(`id`,`kemampuan`,`sangat_baik`,`baik`,`cukup`,`kurang`) values 
-(1,'Integritas (etika dan moral)',0.000,0.000,0.000,0.000),
-(2,'Keahlian berdasarkan bidang ilmu (profesionalisme)',0.000,0.000,0.000,0.000),
-(3,'Bahasa Inggris',0.000,0.000,0.000,0.000),
-(4,'Penggunaan Teknologi Informasi',0.000,0.000,0.000,0.000),
-(5,'Komunikasi',0.000,0.000,0.000,0.000),
-(6,'Kerjasama Tim',0.000,0.000,0.000,0.000),
-(7,'Pengembangan Diri',0.000,0.000,0.000,0.000);
+insert  into `tabel_3_3_1`(`id`,`kemampuan`,`sangat_baik`,`baik`,`cukup`,`kurang`,`rencana`) values 
+(1,'Integritas (etika dan moral)',87,13,0,0,'Etika mahasiswa akan diperkuat kembali melalui perkuliahan etika profesi\r\n'),
+(2,'Keahlian berdasarkan bidang ilmu (profesionalisme)',70,30,0,0,'Keahlian sudah cukup baik akan dievaluasi kesesuaian dengan pekerjaan yang dilakukan\r\n'),
+(3,'Bahasa Inggris',63,27,10,0,'Kemampuan Bahasa perlu ditingkatkan dengan pelatihan bahasa inggris untuk komunikasi'),
+(4,'Penggunaan Teknologi Informasi',92,8,0,0,'Cukup Baik'),
+(5,'Komunikasi',85,15,0,0,'Komunikasi mahasiswa akan diperkuat kembali melalui perkuliahan komunikasi interpersonal'),
+(6,'Kerjasama Tim',83,17,0,0,'Akan banyak dibuat sistem project secara tim pada perkuliahan tertentu'),
+(7,'Pengembangan Diri',73,27,0,0,'Cukup Baik');
 
 /*Table structure for table `tabel_4_3_1` */
 

@@ -297,37 +297,45 @@ class Guest extends CI_Controller {
 	}
 	public function page_3_3(){
 		$data = base_data("3.3");
-		$rows = array(
-			"Integritas (etika dan moral)", 
-			"Keahlian berdasarkan bidang ilmu (profesionalisme)",
-			"Bahasa Inggris", 
-			"Penggunaan Teknologi Informasi", 
-			"Komunikasi",
-			"Kerjasama Tim", 
-			"Pengembangan Diri"
-		);
+		$rows = $this->M_Guest->fetch_table("tabel_3_3_1");
 		$data["contents"] = array(
-			paragraph(
+			card(
 				"uraian-pelacakan", 
-				"Uraian metode, proses, dan mekanisme studi pelacakan lulusan", 
-				"uraian metode, proses, dan mekanisme studi pelacakan lulusan"
+				array(
+					fragment(
+						"3.3", 
+						"3.3 Uraian metode, proses, dan mekanisme studi pelacakan lulusan"
+					)
+				)
 			),
 			card(
 				"umpan-balik", 
 				array(
 					_content("3.3.1 Evaluasi Kinerja lulusan oleh Pihak Pengguna Lulusan", $this->load->view("tables/3.3.1.php", array("rows"=>$rows),true)),
+					fragment(
+						"3.3.1.1", 
+						"3.3.1.1  Keahlian/kemampuan yang merupakan keunggulan lulusan program studi Sistem Informasi"
+					),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("3.3.1")))
 				)
 			),
-			paragraph(
+			card(
 				"penjelasan-waktu-tunggu", 
-				"3.3.2 Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama", 
-				"Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama"
+				array(
+					fragment(
+						"3.3.2", 
+						"3.3.2 Penjelasan Rata-rata waktu tunggu lulusan untuk memperoleh pekerjaan yang pertama"
+					)
+				)
 			),
-			paragraph(
-				"penjelasan-presentase-sesuai", 
-				"3.3.3 Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya", 
-				"Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya"
+			card(
+				"penjelasan-waktu-tunggu", 
+				array(
+					fragment(
+						"3.3.3", 
+						"3.3.3 Penjelasan Persentase lulusan yang bekerja pada bidang yang sesuai dengan keahliannya"
+					)
+				)
 			)
 		);
 		$this->load->view("page.php", $data);

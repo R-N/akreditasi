@@ -29,12 +29,12 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class=""><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row["kemampuan"];?></td>
+				<td class=""><?=$row["sangat_baik"]+0;?></td>
+				<td class=""><?=$row["baik"]+0;?></td>
+				<td class=""><?=$row["cukup"]+0;?></td>
+				<td class=""><?=$row["kurang"]+0;?></td>
+				<td class=""><?=$row["rencana"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

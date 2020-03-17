@@ -37,7 +37,7 @@ class Guest extends CI_Controller {
 			accordion(
 				"visi-misi", 
 				array(
-					_paragraph("1.1.1 Penyusunan [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?"),
+					_paragraph("1.1.1 Penyusunan [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau setidaknya tentukan mana yang perlu masuk web dan mana yang tidak."),
 					_paragraph("1.1.2 Visi", 
 						$this->M_Guest->get_string("1.1.2")["text"], 
 						"Visi Program Studi Sistem Informasi berdasarkan rumusan terakhir adalah sebagai berikut:"
@@ -54,7 +54,7 @@ class Guest extends CI_Controller {
 					fragment("1.1.5.1.2", "1.1.5.1.2 Milestones", array(
 						"milestones"=>$this->M_Guest->fetch_milestones("1.1.5.1.2")
 					)),
-					_paragraph("1.1.5.1.3 Strategi [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau mungkin tidak perlu di web?")
+					_paragraph("1.1.5.1.3 Strategi [TODO]", "Panjang sekali. Bisa minta tolong diringkas? Atau setidaknya tentukan mana yang perlu masuk web dan mana yang tidak.")
 				)
 			)
 		);
@@ -106,7 +106,7 @@ class Guest extends CI_Controller {
 			paragraph(
 				"kepemimpinan", 
 				"2.2 Kepemimpinan [TODO]", 
-				"Mungkin ringkasan tiap jenis kepemimpinan? Tabel tiap kepemimpinan apa perlu?"
+				"Apa saja yang perlu ditampilkan di web? Mungkin ringkasan tiap jenis kepemimpinan? Kalau ringkasan minta tolong diringkas. Tabel tiap kepemimpinan apa perlu?"
 			)
 		);
 		$this->load->view("page.php", $data);
@@ -119,7 +119,7 @@ class Guest extends CI_Controller {
 				array(
 					_content(
 						"2.3 Pengelolaan [TODO]", 
-						"Ringkasan tiap bagian (planning, organizing)? SOP anggaran? Hal-hal terkait staffing? Daftar kegiatan leading? Daftar aktivitas controlling?"
+						"Apa saja yang perlu ditampilkan di web? Ringkasan tiap bagian (planning, organizing)? SOP anggaran? Hal-hal terkait staffing? Daftar kegiatan leading? Daftar aktivitas controlling? Kalau ringkasan, minta tolong diringkas."
 					),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("2.3")))
 				)
@@ -135,7 +135,7 @@ class Guest extends CI_Controller {
 				array(
 					_content(
 						"Penjaminan Mutu [TODO]", 
-						"Struktur organisasi LPM? Ringkasan tiap bagian? Grafik-grafik kepuasan? Grafik kok banyak yang hitam?"
+						"Apa saja yang perlu ditampilkan di web? Struktur organisasi LPM? Ringkasan tiap bagian? Grafik-grafik kepuasan?  Kalau ringkasan, minta tolong diringkas. Selain itu, grafik kok banyak yang hitam?"
 					),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("2.4")))
 				)
@@ -166,23 +166,23 @@ class Guest extends CI_Controller {
 				array(
 					_content(
 						"a. Upaya untuk peningkatan animo calon mahasiswa [TODO]", 
-						"Ringkasan? Atau full tanpa gambar?"
+						"Ringkasan? Atau full tanpa gambar? Kalau ringkasan, minta tolong diringkas."
 					),
 					_content(
 						"b. Upaya peningkatan mutu manajemen [TODO]", 
-						"Ringkasan? Atau full tanpa gambar?"
+						"Ringkasan? Atau full tanpa gambar? Kalau ringkasan, minta tolong diringkas."
 					),
 					_content(
 						"c. Upaya untuk peningkatan mutu lulusan [TODO]", 
-						"Ringkasan? Atau full tanpa gambar?"
+						"Ringkasan? Atau full tanpa gambar? Kalau ringkasan, minta tolong diringkas."
 					),
 					_content(
 						"d. Upaya untuk pelaksanaan dan hasil kerjasama kemitraan [TODO]", 
-						"Ringkasan? Atau full tanpa gambar? Tabel kerja sama (2.10)?"
+						"Ringkasan? Atau full tanpa gambar? Kalau ringkasan, minta tolong diringkas. Tabel kerja sama (2.10)?"
 					),
 					_content(
 						"e. Upaya dan prestasi memperoleh dana hibah kompetitif [TODO]", 
-						"Ringkasan? Atau full tanpa gambar? Tabel dana hibah (2.11)?"
+						"Ringkasan? Atau full tanpa gambar? Kalau ringkasan, minta tolong diringkas. Tabel dana hibah (2.11)?"
 					)
 				)
 			)
@@ -275,7 +275,7 @@ class Guest extends CI_Controller {
 			card(
 				"layanan-mhs", 
 				array(
-					_paragraph("3.2 Notice [TODO]", "Isi tabel sangat panjang, apa bisa diringkas?"),
+					_paragraph("3.2 Notice [TODO]", "Isi tabel sangat panjang, minta tolong diringkas."),
 					_content("3.2 Layanan kepada Mahasiswa [TODO]", $this->load->view("tables/3.2.php", array("rows"=>$rows1),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.3.2")))
 				)
@@ -386,8 +386,8 @@ class Guest extends CI_Controller {
 			card(
 				"seleksi-pengembangan", 
 				array(
-					_content("Sistem Seleksi dan Pengembangan", "Sistem Seleksi dan Pengembangan"),
-					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.1")))
+					_content("4.1 Sistem Seleksi dan Pengembangan [TODO]", "Minta tolong meringkas sistem seleksi/perekrutan, penempatan, pengembangan, retensi, dan pemberhentian dari: dosen dan tenaga kependidikan, atau setidaknya tentukan mana yang perlu masuk web dan mana yang tidak."),
+					_content("4.1 Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.1")))
 				)
 			)
 		);
@@ -399,8 +399,8 @@ class Guest extends CI_Controller {
 			card(
 				"monitoring-eval", 
 				array(
-					_content("Monitoring dan Evaluasi", "Monitoring dan Evaluasi"),
-					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.2")))
+					_content("4.2 Monitoring dan Evaluasi", "Minta tolong meringkas sistem monitoring dan evaluasi, serta rekam jejak kinerja akademik dosen dan kinerja tenaga kependidikan, atau setidaknya tentukan mana yang perlu masuk web dan mana yang tidak."),
+					_content("4.2 Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.2")))
 				)
 			)
 		);

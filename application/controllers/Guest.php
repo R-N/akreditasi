@@ -203,6 +203,7 @@ class Guest extends CI_Controller {
 			++$i;
 		}
 		$data["contents"] = array(
+			paragraph("notice", "Notice [TODO]", "Alur pendaftaran apa perlu? Tabel sudah banyak, sih"),
 			card(
 				"mhs-reguler", 
 				array(

@@ -621,12 +621,10 @@ class Guest extends CI_Controller {
 		);
 		$data["contents"] = array(
 			accordion("mekan-materi", array(
-				_content("5.3.1 Mekanisme penyusunan materi", "Mekanisme penyusunan materi"),
-				_content("5.3.1 Mekanisme monitoring kehadiran dosen dan mahasiswa", "Mekanisme monitoring kehadiran dosen dan mahasiswa"),
-				_content("5.3.1 Mekanisme monitoring materi kuliah", "Mekanisme monitoring materi kuliah"),
+				_content("5.3.1 Mekanisme Penyusunan Materi Kuliah dan Monitoring Perkuliahan [TODO]", "Panjang sekali. Yang mana saja ya? Diagram2 aja?"),
 				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.3.1")))
 			)),
-			menu("menu", "5.3.2 Lampiran contoh soal ujian", _link_db($this->M_Guest->fetch_dokumen("5.3.2")))
+			menu("menu", "5.3.2 Lampiran contoh soal ujian [TODO]", _link_db($this->M_Guest->fetch_dokumen("5.3.2")))
 		);
 		$this->load->view("page.php", $data);
 	}

@@ -200,8 +200,13 @@ insert  into `ids`(`id`,`name`,`parent`) values
 ('5.1','','5'),
 ('5.1.1','','5.1'),
 ('5.1.1.1','','5.1.1'),
+('5.1.1.1.1','','5.1.1.1'),
+('5.1.1.1.2','','5.1.1.1'),
 ('5.1.1.2','','5.1.1'),
+('5.1.1.2.1','','5.1.1.2'),
+('5.1.1.2.2','','5.1.1.2'),
 ('5.1.1.3','','5.1.1'),
+('5.1.1.4','','5.1.1'),
 ('5.1.2.1','','5.1.1'),
 ('5.1.2.2','','5.1.1'),
 ('5.1.3','','5.1'),
@@ -1519,6 +1524,58 @@ CREATE TABLE `tabel_4_6_1_ltk` (
 
 /*Data for the table `tabel_4_6_1_ltk` */
 
+/*Table structure for table `tabel_5_1_1` */
+
+CREATE TABLE `tabel_5_1_1` (
+  `kode` char(5) NOT NULL,
+  `parent` varchar(16) NOT NULL,
+  `uraian` varchar(512) NOT NULL,
+  PRIMARY KEY (`kode`,`parent`),
+  KEY `parent_5_1` (`parent`),
+  CONSTRAINT `parent_5_1` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_5_1_1` */
+
+insert  into `tabel_5_1_1`(`kode`,`parent`,`uraian`) values 
+('KK-01','5.1.1.1.2','Memiliki kemampuan dalam merancang, membuat, menguji, mengevaluasi, membuat aturan bisnis, hingga menyiapkan sumber daya pendukung sistem informasi agar tujuan/ permasalahan bisnis organisasi dapat tercapai/diselesaikan secara arif, efektif dan efisien melalui bantuan Sistem Informasi'),
+('KK-01','5.1.1.3','Memiliki kemampuan dalam merancang, membuat, menguji, mengevaluasi, membuat aturan bisnis, hingga menyiapkan sumber daya pendukung sistem informasi agar tujuan/ permasalahan bisnis organisasi dapat tercapai/diselesaikan secara arif, efektif dan efisien melalui bantuan Sistem Informasi'),
+('KK-02','5.1.1.1.2','Memiliki kemampuan dalam merancang, membangun, menyediakan, mengolah dan menganalisa data secara profesional untuk menghasilkan informasi dan pengetahuan.'),
+('KK-02','5.1.1.3','Memiliki kemampuan dalam merancang, membangun, menyediakan, mengolah dan menganalisa data secara profesional untuk menghasilkan informasi dan pengetahuan.'),
+('KK-03','5.1.1.3','Memiliki kemampuan dalam supervisi, evaluasi dan konsultasi solusi teknologi informasi, serta integrasi berbagai proses bisnis yang difasilitasi dengan SI/T termasuk di level enterprise.'),
+('KK-04','5.1.1.3','Memiliki kemampuan sebagai agent of change dalam menerapkan pengetahuan dan ketrampilan berkomunikasi, manajerial, dan internet marketing.'),
+('KU-01','5.1.1.1.1','Mampu menerapkan pemikiran logis, kritis, sistematis, dan inovatif dalam konteks pengembangan atau implementasi ilmu pengetahuan dan teknologi yang memperhatikan dan menerapkan nilai humaniora yang sesuai dengan bidang keahliannya;'),
+('KU-03','5.1.1.1.1','Mampu mengkaji implikasi pengembangan atau implementasi ilmu pengetahuan teknologi yang memperhatikan dan menerapkan nilai humaniora sesuai dengan keahliannya berdasarkan kaidah, tata cara dan etika ilmiah dalam rangka menghasilkan solusi, gagasan, desain atau kritik seni, menyusun deskripsi saintifik hasil kajiannya dalam bentuk skripsi atau laporan tugas akhir, dan mengunggahnya dalam laman perguruan tinggi.'),
+('KU-04','5.1.1.1.1','Menyusun deskripsi saintifik hasil kajian tersebut di atas dalam bentuk skripsi atau laporan tugas akhir, dan mengunggahnya dalam laman perguruan tinggi.'),
+('KU-05','5.1.1.1.1','Mampu mengambil keputusan secara tepat dalam konteks penyelesaian masalah di bidang keahliannya, berdasarkan hasil analisis informasi dan data.'),
+('KU-06','5.1.1.1.1','Mampu memelihara dan mengembangkan jaringan kerja dengan pembimbing, kolega, sejawat baik di dalam maupun di luar lembaganya. '),
+('KU-07','5.1.1.1.1','Mampu bertanggungjawab atas pencapaian hasil kerja kelompok dan melakukan supervisi dan evaluasi terhadap penyelesaian pekerjaan yang ditugaskan kepada pekerja yang berada di bawah tanggungjawabnya.'),
+('KU-08','5.1.1.1.1','Mampu melakukan proses evaluasi diri terhadap kelompok kerja yang berada dibawah tanggung jawabnya, dan mampu mengelola pembelajaran secara mandiri.'),
+('KU-09','5.1.1.1.1','Mampu mendokumentasikan, menyimpan, mengamankan, dan menemukan kembali data untuk menjamin kesahihan dan mencegah plagiasi.'),
+('KU-10','5.1.1.1.1','Memiliki etos kerja yang berbasis mutu dan integritas yang didasari keikhlasan karena Allah'),
+('KU-11','5.1.1.1.1','Memiliki kemampuan untuk menjadi tenaga professional untuk pengolahan basis data, rekayasa perangkat lunak, jaringan komputer, komputer grafis, dan aplikasi multimedia serta memiliki kemampuan menulis laporan penelitian dengan baik serta mengelola proyek Sistem Informasi, mempresentasikan karya tersebut.'),
+('KU-12','5.1.1.1.1','Memiliki keterampilan dalam memahami dan membuat model proses dan model data organisasi, mendefinisikan dan menerapkan solusi dan proses secara teknis, mengelola proyek, dan mengintegrasikan sistem dalam organisasi'),
+('KU-13','5.1.1.1.1','Mampu melakukan analisis & desain dengan menggunakan kaidah rekayasa software dan hardware serta algorithma dengan cara menggunakan tools dan dapat menunjukkan hasil dan kondisi yang maksimal untuk aplikasi bisnis.'),
+('KU-14','5.1.1.1.1','Memiliki kecakapan hidup level 1 program S-1 Sistem Informasi\r'),
+('P-01','5.1.1.2.1','Mempunyai pengetahuan dalam penyusunan algorithma pemrograman yang efektif dan efisien serta dapat merancang, membangun dan mengelola aplikasi sistem informasi secara tepat dan akurat untuk pendukung pengambilan keputusan.'),
+('P-02','5.1.1.2.1','Menguasai konsep teoritis yang mengkaji, menerapkan dan mengembangkan serta mampu memformulasikan dan mampu mengambil keputusan yang tepat dalam penyelesaian masalah'),
+('P-03','5.1.1.2.1','Menguasai konsep teoritis bidang pengetahuan Sistem Informasi secara umum dan konsep teoritis bagian khusus dalam bidang pengetahuan tersebut secara mendalam, serta mampu memformulasikan penyelesaian masalah prosedural'),
+('P-04','5.1.1.2.1','Memiliki pengetahuan sesuai capaian pembelajaran spesifik prodi Sistem Informasi '),
+('P-05','5.1.1.2.1','Memahami prinsip kewirausahaan untuk mengembangkan bisnis di bidang IT (technopreneur) dengan berprinsip pada nilai-nilai Islam.'),
+('P-06','5.1.1.2.1','Menguasai sumber-sumber ilmu agama islam , metode pendekatan integratif studi islam , sains dan humaniora serta mengaplikasikannya dalam menyelesaikan masalah-masalah kontekstual dalam kehidupan nyata'),
+('S-01','5.1.1.2.2','Bertakwa kepada Tuhan Yang Maha Esa dan mampu menunjukkan sikap religius; dengan menerima, menghayati, mengolah, menalar dan mengamalkan keseimbangan dzikir dan pikir terhadap nilai-nilai Islam serta nilai-nilai kearifan lokal Indonesia'),
+('S-02','5.1.1.2.2','Menjunjung tinggi nilai kemanusiaan dalam menjalankan tugas berdasarkan agama, moral, dan etika, menunjukkan kedewasaan bersikap seperti jujur, disiplin, bertanggungjawab, peduli, santun, '),
+('S-03','5.1.1.2.2','Berkontribusi dalam peningkatan mutu kehidupan bermasyarakat, berbangsa, bernegara, dan kemajuan peradaban berdasarkan Pancasila; solutif atas berbagai masalah baik dengan lingkungan atau alam.'),
+('S-04','5.1.1.2.2','Berperan sebagai warga negara yang bangga dan cinta tanah air, memiliki nasionalisme serta rasa tanggungjawab pada negara dan bangsa; serta menjadi teladan dan cerminan bangsa dalam pergaulan internasional'),
+('S-05','5.1.1.2.2','Menghargai keanekaragaman budaya, pandangan, agama, dan kepercayaan, serta pendapat atau temuan orisinal orang lain;'),
+('S-06','5.1.1.2.2','Bekerja sama dan memiliki kepekaan sosial serta kepedulian terhadap masyarakat dan lingkungan;'),
+('S-07','5.1.1.2.2','Taat hukum dan disiplin dalam kehidupan bermasyarakat dan bernegara;'),
+('S-08','5.1.1.2.2','Menginternalisasi nilai, norma, dan etika akademik;\r'),
+('S-09','5.1.1.2.2','menunjukkan sikap bertanggungjawab atas pekerjaan dibidang keahliannya secara mandiri;'),
+('S-10','5.1.1.2.2','Menginternalisasi semangat kemandirian, kejuangan, dan kewirausahaan'),
+('S-11','5.1.1.2.2','Menerima, menghayati, mengolah, menalar dan mengamalkan keseimbangan dzikir dan pikir terhadap nilai-nilai Islam serta nilai-nilai kearifan lokal Indonesia'),
+('S-12','5.1.1.2.2','Menunjukkan kedewasaan bersikap seperti jujur, disiplin, bertanggungjawab, peduli, santun, solutif atas berbagai masalah baik dengan lingkungan atau alam, serta menjadi teladan dan cerminan bangsa dalam pergaulan internasional');
+
 /*Table structure for table `tabel_5_1_2_1` */
 
 CREATE TABLE `tabel_5_1_2_1` (
@@ -1545,9 +1602,16 @@ CREATE TABLE `tabel_5_1_2_1_sjmk` (
   PRIMARY KEY (`id`),
   KEY `jenis_5_1_2_1_sjmk` (`jenis`),
   CONSTRAINT `jenis_5_1_2_1_sjmk` FOREIGN KEY (`jenis`) REFERENCES `tabel_5_1_2_1` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_1_2_1_sjmk` */
+
+insert  into `tabel_5_1_2_1_sjmk`(`id`,`jenis`,`sub_jenis`,`sks`) values 
+(1,1,'Mata Kuliah Kompetensi Dasar',26),
+(2,1,'Mata Kuliah Kompetensi Utama',91),
+(3,1,'Mata Kuliah Kompetensi Pendukung',31),
+(4,1,'Mata Kuliah Kompetensi Lainnya',0),
+(5,2,'Mata Kuliah Pilihan',48);
 
 /*Table structure for table `tabel_5_1_2_2` */
 
@@ -1555,10 +1619,16 @@ CREATE TABLE `tabel_5_1_2_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `smt` tinyint(4) NOT NULL,
   `kode_mk` char(8) NOT NULL,
-  `nama_mk` varchar(32) NOT NULL,
+  `nama_mk` varchar(50) NOT NULL,
   `sks` tinyint(4) NOT NULL DEFAULT '0',
   `mk_inti` tinyint(4) NOT NULL DEFAULT '1',
   `tugas` tinyint(4) NOT NULL DEFAULT '0',
+  `desk` tinyint(1) NOT NULL DEFAULT '0',
+  `sil` tinyint(1) NOT NULL DEFAULT '0',
+  `sap` tinyint(1) NOT NULL DEFAULT '0',
+  `url_desk` varchar(512) NOT NULL,
+  `url_sil` varchar(512) NOT NULL,
+  `url_sap` varchar(512) NOT NULL,
   `unit` varchar(32) NOT NULL,
   `sub_jenis` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -1566,9 +1636,58 @@ CREATE TABLE `tabel_5_1_2_2` (
   KEY `unit_mk_kurikulum` (`unit`),
   CONSTRAINT `subjenis_mk` FOREIGN KEY (`sub_jenis`) REFERENCES `tabel_5_1_2_1_sjmk` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `unit_mk_kurikulum` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`unit`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_1_2_2` */
+
+insert  into `tabel_5_1_2_2`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`mk_inti`,`tugas`,`desk`,`sil`,`sap`,`url_desk`,`url_sil`,`url_sap`,`unit`,`sub_jenis`) values 
+(1,1,'A0016001','Bahasa Indonesia',3,0,0,1,1,1,'','','','Universitas',NULL),
+(2,1,'A0016002','IAD/IBD/ISD',3,0,0,1,1,1,'','','','Universitas',NULL),
+(3,1,'A0016003','Pancasila dan Kewarganegaraan',3,0,0,1,1,1,'','','','Universitas',NULL),
+(4,1,'A0016004','Pengantar Studi Islam',3,0,0,1,1,1,'','','','Universitas',NULL),
+(5,1,'BH616007','Algoritma & Pemrograman',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(6,1,'BH616008','Manajemen dan Organisasi',3,0,1,1,1,1,'','','','Program Studi',NULL),
+(7,1,'BH616009','Pengantar Teknologi Informasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(8,2,'A0016005','Studi Hadis',3,0,0,1,1,1,'','','','Universitas',NULL),
+(9,2,'A0016006','Studi al Qur`an',3,0,0,1,1,1,'','','','Universitas',NULL),
+(10,2,'BH616016','Kalkulus dan Aljabar Linear',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(11,2,'BH616020','Konsep Sistem Informasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(12,2,'BH616033','Pengantar Basis Data',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(13,2,'BH616044','Statistika',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(14,2,'BH616046','Teknik Pemrograman',4,1,1,1,1,1,'','','','Program Studi',NULL),
+(15,3,'BH616011','Desain Basis Data + Prakt',4,1,1,1,1,1,'','','','Program Studi',NULL),
+(16,3,'BH616028','Manajemen Sains',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(17,3,'BH616031','Pemrog. Berorientasi Obyek + Prakt',4,1,1,1,1,1,'','','','Program Studi',NULL),
+(18,3,'BH616040','Rekayasa Perangkat Lunak',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(19,3,'BH616042','Sistem Informasi Manajemen',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(20,3,'BH616043','Sistem Operasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(21,4,'BH616010','Analisa & Perancangan SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(22,4,'BH616014','Interaksi Manusia & Komputer',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(23,4,'BH616015','Jaringan Keamanan Komputer',4,1,1,1,1,1,'','','','Program Studi',NULL),
+(24,4,'BH616021','Manajemen & Administrasi Basis Data',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(25,4,'BH616024','Manajemen Proses Bisnis',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(26,4,'BH616032','Pemrograman Web',4,1,1,1,1,1,'','','','Program Studi',NULL),
+(27,5,'BH616012','Enterprise Architect',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(28,5,'BH616019','Komunikasi Interpersonal',2,1,1,1,1,1,'','','','Program Studi',NULL),
+(29,5,'BH616022','Manajemen Hub. Pelanggan',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(30,5,'BH616025','Manajemen Proyek SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(31,5,'BH616026','Manajemen Rantai Pasok',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(32,5,'BH616030','Pemodelan dan Simulasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(33,5,'BH616034','Pengembangan dan Implementasi SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(34,6,'BH616013','Etika Profesi',2,0,0,1,1,1,'','','','Program Studi',NULL),
+(35,6,'BH616017','Kerja Praktek',3,0,0,1,0,0,'','','','Program Studi',NULL),
+(36,6,'BH616029','Metodologi Penelitian',3,0,1,1,1,1,'','','','Program Studi',NULL),
+(37,6,'BH616035','Pengujian Sistem Informasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(38,6,'BH616039','Proteksi Aset Informasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(39,6,'BH616041','Sistem Cerdas',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(40,6,'BH616045','Tata Kelola IT',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(41,7,'BH616018','Kuliah Kerja Nyata (KKN)',4,0,0,1,0,0,'','','','Universitas',NULL),
+(42,7,'BH616023','Manajemen Investasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(43,7,'BH616027','Manajemen Resiko',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(44,7,'BH616036','Perenc. Sumber Daya Perush.',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(45,7,'BH616037','Perencanaan Strategis SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(46,8,'BH616047','Teknopreneurship',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(47,8,'BH616048','Tugas Akhir/Skripsi',6,0,0,1,0,0,'','','','Program Studi',NULL);
 
 /*Table structure for table `tabel_5_1_3` */
 
@@ -1586,9 +1705,27 @@ CREATE TABLE `tabel_5_1_3` (
   KEY `unit_mk_pil` (`unit`),
   CONSTRAINT `sub_jenis_mk_pil` FOREIGN KEY (`sub_jenis`) REFERENCES `tabel_5_1_2_1_sjmk` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `unit_mk_pil` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`unit`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_1_3` */
+
+insert  into `tabel_5_1_3`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`tugas`,`unit`,`sub_jenis`) values 
+(1,6,'CH616049','Mobile Technology',3,1,'Program Studi',NULL),
+(2,6,'CH616050','Pengemb. Aplikasi Berbasis Web',3,1,'Program Studi',NULL),
+(3,6,'CH616051','Audit IT',3,1,'Program Studi',NULL),
+(4,6,'CH616052','Data Warehouse',3,1,'Program Studi',NULL),
+(5,6,'CH616053','Sistem Temu Kembali Informasi',3,1,'Program Studi',NULL),
+(6,6,'CH616056','Digital Forensik',3,1,'Program Studi',NULL),
+(7,7,'CH616060','E-Government',3,1,'Program Studi',NULL),
+(8,7,'CH616063','Sistem Informasi Akuntansi',3,1,'Program Studi',NULL),
+(9,7,'CH616054','Sistem Informasi Geografis',3,1,'Program Studi',NULL),
+(10,7,'CH616055','Manajemen Layanan TI',3,1,'Program Studi',NULL),
+(11,7,'CH616057','Socio Informatics',3,1,'Program Studi',NULL),
+(12,7,'CH616058','Integrasi Aplikasi Korporasi',3,1,'Program Studi',NULL),
+(13,7,'CH616059','Bisnis Cerdas',3,1,'Program Studi',NULL),
+(14,7,'CH616061','Teknik Peramalan',3,1,'Program Studi',NULL),
+(15,7,'CH616062','Sistem Pendukung Keputusan',3,1,'Program Studi',NULL),
+(16,7,'CH616064','Data Mining',3,1,'Program Studi',NULL);
 
 /*Table structure for table `tabel_5_1_4` */
 

@@ -698,11 +698,12 @@ class Guest extends CI_Controller {
 		$data = base_data("5.7");
 		$data["contents"] = array(
 			accordion("peningkatan-suasana-akademik", array(
-				_content("Kebijakan tentang suasana akademik", "Kebijakan tentang suasana akademik"),
-				_content("Ketersediaan dan jenis prasaran, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika", "Ketersediaan dan jenis prasaran, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika"),
-				_content("Program dan kegiatan di dalam dan di luar proses pembelajaran", "Program dan kegiatan di dalam dan di luar proses pembelajaran"),
-				_content("Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen", "Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen"),
-				_content("Pengembangan perilaku kecendikiawanan", "Pengembangan perilaku kecendikiawanan")
+				fragment("5.7.1.1", "5.7.1.1 Kebijakan tentang suasana akademik: Kebijakan", array()),
+				fragment("5.7.1.2", "5.7.1.2 Kebijakan tentang suasana akademik: Peraturan", array()),
+				fragment("5.7.2", "5.7.2 Ketersediaan dan jenis prasarana, sarana dan dana yang memungkinkan terciptanya interaksi akademik antara sivitas akademika", array()),
+				fragment("5.7.3", "5.7.3 Program dan kegiatan di dalam dan di luar proses pembelajaran, yang dilaksanakan baik di dalam maupun di luar kelas, untuk menciptakan suasana akademik yang kondusif (misalnya seminar, simposium, lokakarya, bedah buku, penelitian bersama, pengenalan kehidupan kampus, dan temu dosen-mahasiswaalumni).", array()),
+				fragment("5.7.4", "5.7.4 Interaksi akademik antara dosen-mahasiswa, antar mahasiswa, serta antar dosen.", array()),
+				_content("5.7.5 Pengembangan perilaku kecendekiawanan.", $this->load->view("tables/5.7.5.php", array(),true))
 			))
 		);
 		$this->load->view("page.php", $data);

@@ -46,17 +46,17 @@
 				<td class="text-center shrink"><?=$row["tugas"]?"V":"";?></td>
 				<td class="text-center shrink">
 					<?php if(empty($row["url_desk"])){ echo $row["desk"]?"V":""; } else { ?>
-					<a href="#"><?=$row["desk"]?"V":"";?></a>
+					<a href="<?=$row["url_desk"];?>"><?=$row["desk"]?"V":"";?></a>
 					<?php } ?>
 				</td>
 				<td class="text-center shrink">
 					<?php if(empty($row["url_sil"])){ echo $row["sil"]?"V":""; } else { ?>
-					<a href="#"><?=$row["sil"]?"V":"";?></a>
+					<a href="<?=$row["url_sil"];?>"><?=$row["sil"]?"V":"";?></a>
 					<?php } ?>
 				</td>
 				<td class="text-center shrink">
 					<?php if(empty($row["url_sap"])){ echo $row["sap"]?"V":""; } else { ?>
-					<a href="#"><?=$row["sap"]?"V":"";?></a>
+					<a href="<?=$row["url_sap"];?>"><?=$row["sap"]?"V":"";?></a>
 					<?php } ?>
 				</td>
 				<td class=""><?=$row["unit"];?></td>

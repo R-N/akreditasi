@@ -599,13 +599,10 @@ class Guest extends CI_Controller {
 	
 	public function page_5_2(){
 		$data = base_data("5.2");
-		$rows1 = array(
-			"asd"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_5_2");
 		$data["contents"] = array(
 			accordion("kompetensi", array(
-				_content("Mekanisme", "Mekanisme"),
-				_content("Pihak yang dilibatkan", "Pihak yang dilibatkan"),
+				_content("5.2 Mekanisme peninjauan kurikulum dan pihak-pihak yang dilibatkan dalam proses peninjauan tersebut [TODO]", "Apa aja ya? Mekanisme ringkasan? gambar SOP? Gambar 5.10 hasil audit mutu internal? Tabel 5.8 hasil peninjauan ada baris2 yg kolom alasan dimerge gimana enaknya, apa tetap begitu atau gmn. Link artikel studi banding ke ipb 404. apa perlu cantumkan silabus & buku ajar?"),
 				_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.2")))
 			)),
 			card(

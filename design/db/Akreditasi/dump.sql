@@ -1744,17 +1744,32 @@ CREATE TABLE `tabel_5_1_4` (
 
 CREATE TABLE `tabel_5_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `no_mk` char(8) NOT NULL,
-  `status_mk` varchar(5) NOT NULL,
-  `perubahan_silabus` tinyint(4) NOT NULL DEFAULT '0',
+  `kode_mk` char(8) NOT NULL,
+  `nama_mk` varchar(50) NOT NULL,
+  `status_mk` varchar(8) NOT NULL,
+  `perubahan_silabus` tinyint(1) NOT NULL DEFAULT '0',
   `perubahan_buku` tinyint(1) NOT NULL DEFAULT '0',
-  `alasan_peninjauan` varchar(50) NOT NULL,
+  `perubahan_sks` tinyint(1) NOT NULL DEFAULT '0',
+  `alasan_peninjauan` varchar(200) NOT NULL,
   `atas_usulan` varchar(50) NOT NULL,
   `berlaku` varchar(32) NOT NULL,
+  `url_silabus` varchar(512) NOT NULL,
+  `url_buku` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_2` */
+
+insert  into `tabel_5_2`(`id`,`kode_mk`,`nama_mk`,`status_mk`,`perubahan_silabus`,`perubahan_buku`,`perubahan_sks`,`alasan_peninjauan`,`atas_usulan`,`berlaku`,`url_silabus`,`url_buku`) values 
+(1,'A0016004','Pengantar Studi Islam','MK lama',1,1,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(2,'A0016001','Bahasa Indonesia (TPKI)','MK lama',1,0,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(3,'A0016002','IAD/IBD/ISD','MK lama',1,1,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(4,'A0016003','Civic Education','MK lama',1,1,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(5,'A0016005','Studi Hadits','MK lama',1,1,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(6,'A0016006','Studi Alquran','MK lama',1,1,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(7,'BH616018','KKN','MK lama',1,0,1,'Penyesuaian tematema/materi yang dipakai agar lebih kontektual.<br>Instruksi rector tentang pemberlaku an KKNI dan capaian pembelajaran penciri Universitas untuk tercapainya visi misi Universitas','Institusi','I/2016','',''),
+(8,'BH616009','Pengantar Teknologi Informasi','MK Baru',1,1,1,'Optimalisasi kompetensi (ketrampilan umum dan pengetahuan) untuk ketercapaian profil lulusan','Dosen','I/2016','',''),
+(9,'EH613058','Metodologi Penelitian','MK lama',1,1,1,'Optimalisasi kompetensi (ketrampilan umum dan pengetahuan) untuk ketercapaian profil lulusan','Dosen','I/2016','','');
 
 /*Table structure for table `tabel_5_4_1` */
 

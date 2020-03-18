@@ -104,8 +104,8 @@ $(document).ready(function(){
                     
                     strVal = val;
                     format = $el.data("format");
-                    if(!format) format = "0";
-                    strVal = numeral(val).format(format);
+                    if(format) //format = "0";
+						strVal = numeral(val).format(format);
                     
                     $el.html(strVal);
                 });

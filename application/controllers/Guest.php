@@ -408,21 +408,11 @@ class Guest extends CI_Controller {
 	}
 	public function page_4_3(){
 		$data = base_data("4.3");
-		$rows1 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows2 = array(
-			"Titik Triwulan Tutik"
-		);
-		$rows3 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows4 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows5 = array(
-			"Prof. Dr. Titik Triwulan Tutik, SH.,MH."
-		);
+		$rows1 = $this->M_Guest->fetch_table_dosen("tabel_4_3_1", "nidn");
+		$rows2 = $this->M_Guest->fetch_table_dosen("tabel_4_3_2", "nidn");
+		$rows3 = $this->M_Guest->fetch_tabel_4_3_3();
+		$rows4 = $this->M_Guest->fetch_table_dosen("tabel_4_3_4", "nama_dosen", "nama");
+		$rows5 = $this->M_Guest->fetch_table_dosen("tabel_4_3_5", "nama_dosen", "nama");
 		$data["contents"] = array(
 			card(
 				"dosen-tetap-sesuai", 
@@ -434,7 +424,7 @@ class Guest extends CI_Controller {
 			card(
 				"dosen-tetap-luar", 
 				array(
-					_content("4.3.2 Dosen tetap yang bidang keahliannya di luar bidang PS", $this->load->view("tables/4.3.1.php", array("rows"=>$rows2),true)),
+					_content("4.3.2 Dosen tetap yang bidang keahliannya di luar bidang PS", $this->load->view("tables/4.3.2.php", array("rows"=>$rows2),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.3.2")))
 				)
 			),

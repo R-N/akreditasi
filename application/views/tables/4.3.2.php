@@ -13,7 +13,6 @@
 				<th class="" colspan="3">S3</th>
 			</tr>
 			<tr>
-				<th class="">Gelar</th>
 				<th class="">PT Asal</th>
 				<th class="">Bidang Keahlian</th>
 				<th class="">Gelar</th>
@@ -22,6 +21,7 @@
 				<th class="">Gelar</th>
 				<th class="">PT Asal</th>
 				<th class="">Bidang Keahlian</th>
+				<th class="">Gelar</th>
 			</tr>
 			<tr>
 				<th class="">(1)</th>
@@ -56,28 +56,27 @@
 					<a href="<?=$row["url_sert"];?>"><?=$row["sertifikasi"]?"Ya":"Tidak";?></a>
 				<?php } ?>
 				</td>
+				<td class=""><?=$row["s1_pt"];?></td>
+				<td class=""><?=$row["s1_bidang"];?></td>
 				<td class="">
 				<?php if(empty($row["url_s1"])){ echo $row["s1_gelar"]; } else { ?>
 					<a href="<?=$row["url_s1"];?>"><?=$row["s1_gelar"];?></a>
 				<?php } ?>
 				</td>
-				<td class=""><?=$row["s1_pt"];?></td>
-				<td class=""><?=$row["s1_bidang"];?></td>
+				<td class=""><?=$row["s2_pt"];?></td>
+				<td class=""><?=$row["s2_bidang"];?></td>
 				<td class="">
 				<?php if(empty($row["url_s2"])){ echo $row["s2_gelar"]; } else { ?>
 					<a href="<?=$row["url_s2"];?>"><?=$row["s2_gelar"];?></a>
 				<?php } ?>
 				</td>
-				<td class=""><?=$row["s2_pt"];?></td>
-				<td class=""><?=$row["s2_bidang"];?></td>
+				<td class=""><?=$row["s3_pt"];?></td>
+				<td class=""><?=$row["s3_bidang"];?></td>
 				<td class="">
 				<?php if(empty($row["url_s3"])){ echo $row["s3_gelar"]; } else { ?>
 					<a href="<?=$row["url_s3"];?>"><?=$row["s3_gelar"];?></a>
 				<?php } ?>
 				</td>
-				<td class=""><?=$row["s3_pt"];?></td>
-				<td class=""><?=$row["s3_bidang"];?></td>
-			</tr>
 			<?php } ?>
 		</tbody>
 	</table>

@@ -27,6 +27,37 @@ class M_Guest extends CI_Model {
 		return $query->result_array();
 	}
 
+	function fetch_table_dosen($table_name, $lect_column='nama', $lect_column_2=null, $orderby = 'id', $ordertype="ASC"){
+		if(empty($lect_column_2)) $lect_column_2 = $lect_column;
+		$sql =  "
+			SELECT t.*, d.id_lecturer FROM {$table_name} t
+			LEFT JOIN dosen d
+			ON t.{$lect_column}=d.{$lect_column_2} 
+				OR t.{$lect_column} LIKE CONCAT(\"%\",d.{$lect_column_2},\"%\") 
+				OR d.{$lect_column_2} LIKE CONCAT(\"%\",t.{$lect_column},\"%\")
+			ORDER BY t.{$orderby} {$ordertype}";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+	
+	function fetch_tabel_4_3_3($table_name="tabel_4_3_3", $orderby = 'id', $ordertype="ASC"){
+		$lect_column = "nama";
+		$sql =  "
+			SELECT t.*, d.id_lecturer,
+				(t.sks_ps_sendiri + t.sks_ps_lain + t.sks_pt_lain
+					+ t.sks_penelitian + t.sks_pengabdian 
+					+ t.sks_man_sendiri + t.sks_man_lain
+				) AS jumlah_sks
+			FROM {$table_name} t
+			LEFT JOIN dosen d
+			ON t.{$lect_column}=d.{$lect_column} 
+				OR t.{$lect_column} LIKE CONCAT(\"%\",d.{$lect_column},\"%\") 
+				OR d.{$lect_column} LIKE CONCAT(\"%\",t.{$lect_column},\"%\")
+			ORDER BY t.{$orderby} {$ordertype}";
+		$query = $this->db->query($sql);
+		return $query->result_array();
+	}
+
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

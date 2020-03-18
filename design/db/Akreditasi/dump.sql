@@ -91,14 +91,34 @@ insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`name`,`url`) values
 /*Table structure for table `dosen` */
 
 CREATE TABLE `dosen` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
   `nidn` char(10) DEFAULT NULL,
-  `id_lecturer` int(11) NOT NULL,
+  `id_lecturer` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 /*Data for the table `dosen` */
+
+insert  into `dosen`(`id`,`nama`,`nidn`,`id_lecturer`) values 
+(1,'Achmad Teguh Wibowo','2026108801',0),
+(2,'Ahmad Yusuf\r\n','2020019001',0),
+(3,'Anang Kunaefi\r\n','2013117902',0),
+(4,'Asep Saepul  Hamdani\r\n','2031076501',0),
+(5,'Bayu Adhi Nugroho\r\n','0718057902',0),
+(6,'Dwi Rolliawati\r\n','2027097901',0),
+(7,'Faris Muslihul Amin\r\n','9907146569',0),
+(8,'Ilham\r\n','0708118003',0),
+(9,'Imas Maesaroh\r\n','2014056601',0),
+(10,'Indri Sudanawati Rozas\r\n','2021078201',0),
+(11,'Khalid\r\n','2009067902',0),
+(12,'Kusaeri\r\n','2006077202',0),
+(13,'Moch. Yasin\r\n','2030088801',0),
+(14,'Muhammad Andik Izzuddin\r\n','2007038402',0),
+(15,'Mujib Ridwan\r\n','2027048602',0),
+(16,'Yusuf Amrozi\r\n','2003077601',0),
+(17,'Titik Triwulan Tutik\r\n','2029036801',0),
+(18,'Asep Abbas Abdullah\r\n','2229076301',0);
 
 /*Table structure for table `ids` */
 
@@ -239,25 +259,23 @@ insert  into `ids`(`id`,`name`,`parent`) values
 /*Table structure for table `jabatan_akademik` */
 
 CREATE TABLE `jabatan_akademik` (
-  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `jabatan` varchar(16) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`jabatan`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `jabatan_akademik` */
 
-insert  into `jabatan_akademik`(`id`,`jabatan`) values 
-(1,'Asisten Ahli'),
-(2,'Lektor'),
-(3,'Lektor Kepala'),
-(4,'Guru Besar');
+insert  into `jabatan_akademik`(`jabatan`) values 
+('Asisten Ahli\r\n'),
+('Guru Besar\r\n'),
+('Lektor\r\n'),
+('Lektor Kepala\r\n');
 
 /*Table structure for table `jabatan_tk` */
 
 CREATE TABLE `jabatan_tk` (
-  `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `jabatan` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`jabatan`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `jabatan_tk` */
@@ -395,24 +413,22 @@ insert  into `pengolahan_data`(`id`,`pengolahan`) values
 /*Table structure for table `status_mk` */
 
 CREATE TABLE `status_mk` (
-  `id` tinyint(1) NOT NULL AUTO_INCREMENT,
   `status` varchar(5) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `status_mk` */
 
-insert  into `status_mk`(`id`,`status`) values 
-(1,'Baru'),
-(2,'Lama'),
-(3,'Hapus');
+insert  into `status_mk`(`status`) values 
+('Baru'),
+('Hapus'),
+('Lama');
 
 /*Table structure for table `status_tk` */
 
 CREATE TABLE `status_tk` (
-  `id` tinyint(1) NOT NULL AUTO_INCREMENT,
   `status` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `status_tk` */
@@ -908,21 +924,45 @@ CREATE TABLE `tabel_4_3_1` (
   `nama` varchar(50) NOT NULL,
   `nidn` char(10) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `jabatan_akademik` tinyint(1) NOT NULL,
+  `jabatan_akademik` varchar(16) NOT NULL,
   `sertifikasi` tinyint(1) NOT NULL DEFAULT '0',
   `s1_gelar` varchar(5) NOT NULL,
   `s1_pt` varchar(128) NOT NULL,
   `s1_bidang` varchar(128) NOT NULL,
-  `s2_gelar` varchar(5) DEFAULT NULL,
-  `s2_pt` varchar(128) DEFAULT NULL,
-  `s2_bidang` varchar(128) DEFAULT NULL,
-  `s3_gelar` varchar(5) DEFAULT NULL,
-  `s3_pt` varchar(128) DEFAULT NULL,
-  `s3_bidang` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `s2_gelar` varchar(5) NOT NULL,
+  `s2_pt` varchar(128) NOT NULL,
+  `s2_bidang` varchar(128) NOT NULL,
+  `s3_gelar` varchar(5) NOT NULL,
+  `s3_pt` varchar(128) NOT NULL,
+  `s3_bidang` varchar(128) NOT NULL,
+  `url_sert` varchar(512) DEFAULT NULL,
+  `url_s1` varchar(512) NOT NULL,
+  `url_s2` varchar(512) DEFAULT NULL,
+  `url_s3` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jabatan_4_3_1` (`jabatan_akademik`),
+  CONSTRAINT `jabatan_4_3_1` FOREIGN KEY (`jabatan_akademik`) REFERENCES `jabatan_akademik` (`jabatan`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_1` */
+
+insert  into `tabel_4_3_1`(`id`,`nama`,`nidn`,`tanggal_lahir`,`jabatan_akademik`,`sertifikasi`,`s1_gelar`,`s1_pt`,`s1_bidang`,`s2_gelar`,`s2_pt`,`s2_bidang`,`s3_gelar`,`s3_pt`,`s3_bidang`,`url_sert`,`url_s1`,`url_s2`,`url_s3`) values 
+(1,'Achmad Teguh Wibowo','2026108801','1988-10-20','Lektor\r\n',1,'S.Kom','STIKOM Surabaya\r\n','Sistem Informasi\r\n','M.T\r\n','Univ. Brawijaya Malang\r\n','Teknik Elektro\r\n','','','',NULL,'',NULL,NULL),
+(2,'Ahmad Yusuf','2020019001','1990-01-20','Asisten Ahli\r\n',1,'S.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(3,'Anang Kunaefi\r\n','2013117902','1979-11-13','Asisten Ahli\r\n',1,'S.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(4,'Asep Saepul  Hamdani\r\n','2031076501','1965-07-31','Lektor Kepala\r\n',1,'Drs.\r','Univ. Muhammadiyah Surabaya\r\n','Pendidikan Matematika\r\n','M.Pd.','IKIP Surabaya\r\n','Pendidikan Matematika\r\n','Dr\r\n','Univ. Negeri Surabaya\r\n','Pendidikan Matematika\r\n',NULL,'',NULL,NULL),
+(5,'Bayu Adhi Nugroho\r\n','0718057902','1975-05-18','Asisten Ahli\r\n',1,'S.T.\r','UGM Jogjakarta\r\n','Sistem Komputer Informatika  \r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(6,'Dwi Rolliawati\r\n','2027097901','1979-09-27','Lektor\r\n',1,'S.T.\r','ITATS Surabaya\r\n','Teknik Informatika\r\n','M.T\r\n','ITS Surabaya\r\n','Teknik Elektro\r\n','','','',NULL,'',NULL,NULL),
+(7,'Faris Muslihul Amin\r\n','9907146569','1988-08-13','Lektor\r\n',1,'S.Kom','STT Nurul Jadid Probolinggo\r\n','Teknik Informatika\r\n','M.Kom','UDINUS Semarang\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(8,'Ilham','0708118003','1980-11-08','Lektor\r\n',1,'S.Kom','UGM Jogjakarta\r\n','Ilmu Komputer\r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(9,'Imas Maesaroh\r\n','2014056601','1966-05-14','Lektor Kepala\r\n',1,'Dra\r\n','Institut Agama Islam Negeri (IAIN) Walisongo\r\n','Penyiaran dan Penerangan Agama Islam\r\n','M.Lib','University of New South Wales\r\n','School of Information, Library, and Archive Studies\r\n','Ph.D\r','Curtin University\r\n','Media and Information\r\n',NULL,'',NULL,NULL),
+(10,'Indri Sudanawati Rozas\r\n','2021078201','1982-07-21','Lektor\r\n',1,'S.Kom','IPB Bogor\r\n','Ilmu Komputer\r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(11,'Khalid\r\n','2009067902','1979-06-09','Asisten Ahli\r\n',1,'S.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','M.Kom','ITS Surabaya\r\n','Teknik Informatika\r\n','','','',NULL,'',NULL,NULL),
+(12,'Kusaeri\r\n','2006077202','1972-07-06','Lektor Kepala\r\n',1,'S.Pd\r','IKIP Negeri Malang\r\n','Pendidikan Matematika\r\n','M.Pd.','Univ. Negeri Surabaya\r\n','Pendidikan Matematika\r\n','Dr\r\n','Univ. Negeri Yogyakarta\r\n','Penelitian dan Evaluasi Pendidikan\r\n',NULL,'',NULL,NULL),
+(13,'Moch. Yasin\r\n','2030088801','1988-08-30','Lektor\r\n',1,'S.Kom','ITS Surabaya\r\n','Sistem Informasi\r\n','M.Kom','ITS Surabaya; NTUST Taiwan\r\n','Sistem Informasi; Industrial Management\r\n','','','',NULL,'',NULL,NULL),
+(14,'Muhammad Andik Izzuddin\r\n','2007038402','1984-03-07','Lektor\r\n',1,'S.T.\r','Univ. Negeri Malang\r\n','Pendidikan Teknik Informatika\r\n','M.T\r\n','ITB Bandung\r\n','Teknik Media Digital dan Game \r\n','','','',NULL,'',NULL,NULL),
+(15,'Mujib Ridwan\r\n','2027048602','1986-04-27','Lektor\r\n',1,'S.Kom','UIN Maulana Malik Ibrahim Malang \r\n','Teknik Informatika\r\n','M.T\r\n','Univ. Brawijaya Malang\r\n','Teknik Elektro\r\n','','','',NULL,'',NULL,NULL),
+(16,'Yusuf Amrozi\r\n','2003077601','1976-07-03','Lektor\r\n',1,'S.T.\r','UNISMA Malang\r\n','Teknik Elektro\r\n','M.MT\r','ITS Surabaya\r\n','Manajemen Teknologi Informasi\r\n','','','',NULL,'',NULL,NULL);
 
 /*Table structure for table `tabel_4_3_2` */
 
@@ -931,28 +971,37 @@ CREATE TABLE `tabel_4_3_2` (
   `nama` varchar(50) NOT NULL,
   `nidn` char(10) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `jabatan_akademik` tinyint(1) NOT NULL,
+  `jabatan_akademik` varchar(16) NOT NULL,
   `sertifikasi` tinyint(1) NOT NULL DEFAULT '0',
-  `s1_gelar` varchar(5) NOT NULL,
   `s1_pt` varchar(128) NOT NULL,
   `s1_bidang` varchar(128) NOT NULL,
-  `s2_gelar` varchar(5) DEFAULT NULL,
-  `s2_pt` varchar(128) DEFAULT NULL,
-  `s2_bidang` varchar(128) DEFAULT NULL,
-  `s3_gelar` varchar(5) DEFAULT NULL,
-  `s3_pt` varchar(128) DEFAULT NULL,
-  `s3_bidang` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `s1_gelar` varchar(5) NOT NULL,
+  `s2_pt` varchar(128) NOT NULL,
+  `s2_bidang` varchar(128) NOT NULL,
+  `s2_gelar` varchar(5) NOT NULL,
+  `s3_pt` varchar(128) NOT NULL,
+  `s3_bidang` varchar(128) NOT NULL,
+  `s3_gelar` varchar(5) NOT NULL,
+  `url_sert` varchar(512) DEFAULT NULL,
+  `url_s1` varchar(512) NOT NULL,
+  `url_s2` varchar(512) DEFAULT NULL,
+  `url_s3` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `jabatan_4_3_2` (`jabatan_akademik`),
+  CONSTRAINT `jabatan_4_3_2` FOREIGN KEY (`jabatan_akademik`) REFERENCES `jabatan_akademik` (`jabatan`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_2` */
+
+insert  into `tabel_4_3_2`(`id`,`nama`,`nidn`,`tanggal_lahir`,`jabatan_akademik`,`sertifikasi`,`s1_pt`,`s1_bidang`,`s1_gelar`,`s2_pt`,`s2_bidang`,`s2_gelar`,`s3_pt`,`s3_bidang`,`s3_gelar`,`url_sert`,`url_s1`,`url_s2`,`url_s3`) values 
+(1,'Titik Triwulan Tutik','2029036801','1968-03-29','Guru Besar\r\n',1,'Universitas Dr. Soetomo\r\n','Ilmu Hukum\r\n','SH\r\n','Universitas Airlangga\r\n','Ilmu Hukum\r\n','MH\r\n','Universitas Airlangga','Ilmu Hukum\r\n','Dr.\r\n',NULL,'',NULL,NULL),
+(2,'Asep Abbas Abdullah\r\n','2229076301','1963-07-29','Lektor Kepala\r\n',1,'Universitas Padjadjaran Bandung\r\n','Bahasa dan Sastra Arab\r\n','Drs.\r','Universitas Surabaya\r\n','Pendidikan Bahasa dan Sastra\r\n','M.Pd.','Universitas Sebelas Maret','Linguistik\r\n','Dr.\r\n',NULL,'',NULL,NULL);
 
 /*Table structure for table `tabel_4_3_3` */
 
 CREATE TABLE `tabel_4_3_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
-  `id_lecturer` int(11) NOT NULL,
   `sks_ps_sendiri` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sks_ps_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sks_pt_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
@@ -961,9 +1010,27 @@ CREATE TABLE `tabel_4_3_3` (
   `sks_man_sendiri` decimal(6,3) NOT NULL DEFAULT '0.000',
   `sks_man_lain` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_3` */
+
+insert  into `tabel_4_3_3`(`id`,`nama`,`sks_ps_sendiri`,`sks_ps_lain`,`sks_pt_lain`,`sks_penelitian`,`sks_pengabdian`,`sks_man_sendiri`,`sks_man_lain`) values 
+(1,'Achmad Teguh Wibowo\r\n',8.000,0.000,0.000,4.000,0.700,0.000,0.000),
+(2,'Ahmad Yusuf',8.000,0.000,0.000,3.000,1.000,0.000,0.000),
+(3,'Anang Kunaefi\r\n',6.000,0.000,0.000,2.500,0.750,4.000,0.000),
+(4,'Asep Saepul  Hamdani\r\n',3.000,4.000,0.000,1.500,0.700,6.000,0.000),
+(5,'Bayu Adhi Nugroho\r\n',12.000,0.000,0.000,0.000,0.000,0.000,0.000),
+(6,'Dwi Rolliawati\r\n',9.000,0.000,0.000,3.000,1.750,0.000,0.000),
+(7,'Faris Muslihul Amin\r\n',9.000,0.000,0.000,3.000,1.750,0.000,0.000),
+(8,'Ilham\r\n',6.000,0.000,0.000,2.500,0.000,5.000,0.000),
+(9,'Imas Maesaroh\r\n',3.000,6.000,0.000,3.500,0.860,0.000,0.000),
+(10,'Indri Sudanawati Rozas\r\n',8.000,0.000,0.000,3.500,1.500,0.000,0.000),
+(11,'Khalid\r\n',9.000,0.000,0.000,3.000,1.000,0.000,0.000),
+(12,'Kusaeri\r\n',3.000,6.000,0.000,2.500,2.000,0.000,0.000),
+(13,'Moch. Yasin\r\n',8.000,0.000,0.000,3.000,1.000,0.000,0.000),
+(14,'Muhammad Andik Izzuddin\r\n',9.000,0.000,0.000,3.000,1.500,0.000,0.000),
+(15,'Mujib Ridwan\r\n',6.000,0.000,0.000,2.000,1.500,5.000,0.000),
+(16,'Yusuf Amrozi\r\n',6.000,0.000,0.000,1.525,0.750,6.000,0.000);
 
 /*Table structure for table `tabel_4_3_4` */
 
@@ -976,9 +1043,62 @@ CREATE TABLE `tabel_4_3_4` (
   `pertemuan_direncanakan` int(11) NOT NULL,
   `pertemuan_dilaksanakan` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_4` */
+
+insert  into `tabel_4_3_4`(`id`,`nama_dosen`,`kode_mk`,`nama_mk`,`sks`,`pertemuan_direncanakan`,`pertemuan_dilaksanakan`) values 
+(1,'Achmad Teguh Wibowo\r\n','FH613074','Sistem Informasi Geografis\r\n',3,14,14),
+(2,'Achmad Teguh Wibowo\r\n','BH616014','Interaksi Manusia & Komputer\r\n',3,14,14),
+(3,'Achmad Teguh Wibowo\r\n','BH616032','Pemrograman Web\r\n',4,14,14),
+(4,'Achmad Teguh Wibowo\r\n','BH616033','Pengantar Basis Data\r\n',3,14,14),
+(5,'Achmad Teguh Wibowo\r\n','BH613027','Pengujian Sistem Informasi\r\n',3,14,14),
+(6,'Ahmad Yusuf\r\n','BH616028','Manajemen Sains\r\n',3,14,14),
+(7,'Ahmad Yusuf\r\n','BH616031','Pemrog. Berorientasi Obyek + Prakt',4,14,14),
+(8,'Mujib Ridwan\r\n','BH613028','Sistem Cerdas\r\n',3,14,14),
+(9,'Ahmad Yusuf\r\n','BH616019','Komunikasi Interpersonal\r\n',2,14,14),
+(10,'Khalid\r\n','BH616007','Algoritma & Pemrograman\r\n',3,14,14),
+(11,'Ilham\r\n','CH613043','Enterprise Architecture\r\n',3,14,14),
+(12,'Khalid\r\n','BH616021','Manajemen & Administrasi Basis Data\r\n',3,14,14),
+(13,'Dwi Rolliawati\r\n','CH613049','Perencanaan Strategis SI\r\n',3,14,14),
+(14,'Asep Saepul  Hamdani\r\n','BH616044','Statistika\r\n',3,14,14),
+(15,'Dwi Rolliawati\r\n','BH613029','Pemodelan dan Simulasi\r\n',3,14,14),
+(16,'Dwi Rolliawati\r\n','BH616031','Pemrog. Berorientasi Obyek + Prakt\r\n',4,14,14),
+(17,'Dwi Rolliawati\r\n','BH616014','Interaksi Manusia & Komputer\r\n',3,14,14),
+(18,'Ahmad Yusuf\r\n','BH616046','Teknik Pemrograman\r\n',4,14,14),
+(19,'Faris Muslihul Amin\r\n','CH613042','Manajemen Hubungan Pelanggan\r\n',3,14,14),
+(20,'Faris Muslihul Amin\r\n','CH613052','Manajemen Investasi\r\n',3,14,14),
+(21,'Faris Muslihul Amin\r\n','BH613026','Technopreneurship\r\n',3,14,14),
+(22,'Ilham\r\n','BH616009','Pengantar Teknologi Informasi\r\n',3,14,14),
+(23,'Ilham\r\n','BH616043','Sistem Operasi\r\n',3,14,14),
+(24,'Ilham\r\n','CH613054','Proteksi Aset Informasi\r\n',3,14,14),
+(25,'Ilham\r\n','DH613055','Etika Profesi\r\n',2,14,14),
+(26,'Imas Maesaroh\r\n','BH616024','Manajemen Proses Bisnis\r\n',3,14,14),
+(27,'Imas Maesaroh\r\n','BH616008','Manajemen dan Organisasi\r\n',3,14,14),
+(28,'Indri Sudanawati Rozas\r\n','FH613061','Audit TI\r\n',3,14,14),
+(29,'Indri Sudanawati Rozas\r\n','CH613040','Manajemen Resiko\r\n',3,14,14),
+(30,'Indri Sudanawati Rozas\r\n','BH616029','Metodologi Penelitian\r\n',3,14,14),
+(31,'Indri Sudanawati Rozas\r\n','CH613053','Tata Kelola TI\r\n',3,14,14),
+(32,'Khalid\r\n','FH613085','Data Warehouse\r\n',3,14,14),
+(33,'Khalid\r\n','BH616011','Desain Basis Data + Prakt\r\n',4,14,14),
+(34,'Khalid\r\n','BH616021','Manajemen & Administrasi Basis Data\r\n',3,14,14),
+(35,'Kusaeri\r\n','BH616016','Kalkulus dan Aljabar Linear\r\n',3,14,14),
+(36,'Moch Yasin\r\n','FH613073','Integrasi Aplikasi Korporasi\r\n',3,14,14),
+(37,'Moch Yasin\r\n','CH613033','Manajemen Rantai Pasok\r\n',3,14,14),
+(38,'Moch Yasin\r\n','CH613044','Perencanaan Sumberdaya Perusahaan\r\n',3,14,14),
+(39,'Moch Yasin\r\n','BH616032','Pemrograman Web\r\n',4,14,14),
+(40,'Muhammad Andik Izzuddin\r\n','BH616011','Desain Basis Data + Prakt\r\n',4,14,14),
+(41,'Muhammad Andik Izzuddin\r\n','FH613065','Digital Forensic\r\n',3,14,14),
+(42,'Muhammad Andik Izzuddin\r\n','CH613045','Manajemen Proyek Sistem Informasi\r\n',3,14,14),
+(43,'Muhammad Andik Izzuddin\r\n','BH616015','Jaringan Keamanan Komputer\r\n',4,14,14),
+(44,'Muhammad Andik Izzuddin\r\n','FH613071','Mobile Technology\r\n',3,14,14),
+(45,'Mujib Ridwan\r\n','CH613041','Pengembangan dan Implementasi SI\r\n',3,14,14),
+(46,'Indri Sudanawati Rozas\r\n','BH616040','Rekayasa Perangkat Lunak\r\n',3,14,14),
+(47,'Mujib Ridwan\r\n','FH613066','Sistem Pendukung Keputusan\r\n',3,14,14),
+(48,'Mujib Ridwan\r\n','BH616010','Analisa & Perancangan SI\r\n',3,14,14),
+(49,'Yusuf Amrozi\r\n','BH616042','Sistem Informasi Manajemen\r\n',3,14,14),
+(50,'Yusuf Amrozi\r\n','BH616020','Konsep Sistem Informasi\r\n',3,14,14),
+(51,'Yusuf Amrozi\r\n','FH613066','Sistem Pendukung Keputusan\r\n',3,14,14);
 
 /*Table structure for table `tabel_4_3_5` */
 
@@ -991,9 +1111,14 @@ CREATE TABLE `tabel_4_3_5` (
   `pertemuan_direncanakan` int(11) NOT NULL,
   `pertemuan_dilaksanakan` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_5` */
+
+insert  into `tabel_4_3_5`(`id`,`nama_dosen`,`kode_mk`,`nama_mk`,`sks`,`pertemuan_direncanakan`,`pertemuan_dilaksanakan`) values 
+(1,'Prof. Dr. Titik Triwulan Tutik, SH.,MH.\r\n','A0016003','Pancasila dan Kewarganegaraan\r\n',3,14,14),
+(2,'Prof. Dr. Titik Triwulan Tutik, SH.,MH.','A0016002','IAD/IBD/ISD\r\n',3,14,14),
+(3,'Asep Abbas Abdullah\r\n','A0016001','Bahasa Indonesia\r\n',3,14,14);
 
 /*Table structure for table `tabel_4_4_1` */
 
@@ -1002,7 +1127,7 @@ CREATE TABLE `tabel_4_4_1` (
   `nama` varchar(50) NOT NULL,
   `nidn` char(10) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `jabatan_akademik` tinyint(1) NOT NULL,
+  `jabatan_akademik` varchar(16) NOT NULL,
   `sertifikasi` tinyint(1) NOT NULL DEFAULT '0',
   `s1_gelar` varchar(5) NOT NULL,
   `s1_pt` varchar(128) NOT NULL,
@@ -1141,20 +1266,20 @@ CREATE TABLE `tabel_4_6_1_ltk` (
   `pendidikan` char(3) NOT NULL,
   `nip` varchar(18) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jabatan` tinyint(2) NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `unit` tinyint(2) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `unit` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jabatan_4_6_1_ltk` (`jabatan`),
   KEY `status_4_6_1_ltk` (`status`),
   KEY `unit_4_6_1_ltk` (`unit`),
   KEY `jenis_4_6_1_ltk` (`jenis`),
   KEY `pend_4_6_1_ltk` (`pendidikan`),
-  CONSTRAINT `jabatan_4_6_1_ltk` FOREIGN KEY (`jabatan`) REFERENCES `jabatan_tk` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `jabatan_4_6_1_ltk` FOREIGN KEY (`jabatan`) REFERENCES `jabatan_tk` (`jabatan`) ON UPDATE CASCADE,
   CONSTRAINT `jenis_4_6_1_ltk` FOREIGN KEY (`jenis`) REFERENCES `tabel_4_6_1` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `pend_4_6_1_ltk` FOREIGN KEY (`pendidikan`) REFERENCES `pendidikan` (`pendidikan`) ON UPDATE CASCADE,
-  CONSTRAINT `status_4_6_1_ltk` FOREIGN KEY (`status`) REFERENCES `status_tk` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `unit_4_6_1_ltk` FOREIGN KEY (`unit`) REFERENCES `unit_tk` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `status_4_6_1_ltk` FOREIGN KEY (`status`) REFERENCES `status_tk` (`status`) ON UPDATE CASCADE,
+  CONSTRAINT `unit_4_6_1_ltk` FOREIGN KEY (`unit`) REFERENCES `unit_tk` (`unit`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_6_1_ltk` */
@@ -1199,13 +1324,13 @@ CREATE TABLE `tabel_5_1_2_2` (
   `sks` tinyint(4) NOT NULL DEFAULT '0',
   `mk_inti` tinyint(4) NOT NULL DEFAULT '1',
   `tugas` tinyint(4) NOT NULL DEFAULT '0',
-  `unit` tinyint(1) NOT NULL,
+  `unit` varchar(32) NOT NULL,
   `sub_jenis` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `subjenis_mk` (`sub_jenis`),
   KEY `unit_mk_kurikulum` (`unit`),
   CONSTRAINT `subjenis_mk` FOREIGN KEY (`sub_jenis`) REFERENCES `tabel_5_1_2_1_sjmk` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `unit_mk_kurikulum` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `unit_mk_kurikulum` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`unit`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_1_2_2` */
@@ -1219,13 +1344,13 @@ CREATE TABLE `tabel_5_1_3` (
   `nama_mk` varchar(50) NOT NULL,
   `sks` tinyint(1) NOT NULL DEFAULT '0',
   `tugas` tinyint(1) NOT NULL DEFAULT '0',
-  `unit` tinyint(1) NOT NULL DEFAULT '1',
+  `unit` varchar(32) NOT NULL DEFAULT '1',
   `sub_jenis` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sub_jenis_mk_pil` (`sub_jenis`),
   KEY `unit_mk_pil` (`unit`),
   CONSTRAINT `sub_jenis_mk_pil` FOREIGN KEY (`sub_jenis`) REFERENCES `tabel_5_1_2_1_sjmk` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `unit_mk_pil` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`id`) ON UPDATE CASCADE
+  CONSTRAINT `unit_mk_pil` FOREIGN KEY (`unit`) REFERENCES `unit_mk` (`unit`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_1_3` */
@@ -1248,7 +1373,7 @@ CREATE TABLE `tabel_5_1_4` (
 CREATE TABLE `tabel_5_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `no_mk` char(8) NOT NULL,
-  `status_mk` tinyint(1) NOT NULL,
+  `status_mk` varchar(5) NOT NULL,
   `perubahan_silabus` tinyint(4) NOT NULL DEFAULT '0',
   `perubahan_buku` tinyint(1) NOT NULL DEFAULT '0',
   `alasan_peninjauan` varchar(50) NOT NULL,
@@ -1794,25 +1919,23 @@ insert  into `tingkat_kegiatan`(`tingkat`) values
 /*Table structure for table `unit_mk` */
 
 CREATE TABLE `unit_mk` (
-  `id` tinyint(1) NOT NULL AUTO_INCREMENT,
   `unit` varchar(32) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`unit`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `unit_mk` */
 
-insert  into `unit_mk`(`id`,`unit`) values 
-(1,'Program Studi'),
-(2,'Jurusan'),
-(3,'Fakultas'),
-(4,'Universitas');
+insert  into `unit_mk`(`unit`) values 
+('Fakultas'),
+('Jurusan'),
+('Program Studi'),
+('Universitas');
 
 /*Table structure for table `unit_tk` */
 
 CREATE TABLE `unit_tk` (
-  `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `unit` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`unit`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `unit_tk` */

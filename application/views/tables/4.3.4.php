@@ -29,12 +29,12 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink"><a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_dosen"];?></a></td>
+				<td class=""><?=$row["kode_mk"];?></td>
+				<td class=""><?=$row["nama_mk"];?></td>
+				<td class=""><?=$row["sks"];?></td>
+				<td class=""><?=$row["pertemuan_direncanakan"];?></td>
+				<td class=""><?=$row["pertemuan_dilaksanakan"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

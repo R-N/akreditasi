@@ -471,21 +471,11 @@ class Guest extends CI_Controller {
 	}
 	public function page_4_5(){
 		$data = base_data("4.5");
-		$rows1 = array(
-			"Tony D Susanto, S.T., M.T.,Ph.D, ITIL"
-		);
-		$rows2 = array(
-			"Anang Kunaefi"
-		);
-		$rows3 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows4 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows5 = array(
-			"Achmad Teguh Wibowo"
-		);
+		$rows1 = $this->M_Guest->fetch_table_pakar("tabel_4_5_1");
+		$rows2 = $this->M_Guest->fetch_table_dosen("tabel_4_5_2", "nama_dosen", "nama");
+		$rows3 = $this->M_Guest->fetch_table_dosen("tabel_4_5_3", "nama_dosen", "nama");
+		$rows4 = $this->M_Guest->fetch_table_dosen("tabel_4_5_4", "nama_dosen", "nama");
+		$rows5 = $this->M_Guest->fetch_table_dosen("tabel_4_5_5", "nama_dosen", "nama");
 		$data["contents"] = array(
 			card(
 				"pembinaan-tenaga-ahli", 

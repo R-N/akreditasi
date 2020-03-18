@@ -40,6 +40,9 @@ class M_Guest extends CI_Model {
 		return $query->result_array();
 	}
 	
+	function fetch_table_pakar($table_name, $pakar_column='nama', $pakar_column_2=null, $orderby = 'id', $ordertype="ASC"){
+		return $this->fetch_table($table_name, $orderby, $ordertype);
+	}
 	function fetch_tabel_4_3_3($table_name="tabel_4_3_3", $orderby = 'id', $ordertype="ASC"){
 		$lect_column = "nama";
 		$sql =  "

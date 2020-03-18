@@ -31,14 +31,22 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="#">Kegiatan</a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink"></td>
+				<td class="shrink"><a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_dosen"];?></a></td>
+				<td class="">
+				<?php if(empty($row["url_organisasi"])){ echo $row["organisasi"]; } else { ?>
+					<a href="<?=$row["url_organisasi"];?>"><?=$row["organisasi"];?></a>
+				<?php } ?>
+				</td>
+				<td class="shrink"><?=$row["tahun_awal"];?></td>
+				<td class="">
+				<?php if(empty($row["url_bukti"])){ echo $row["tahun_akhir"]; } else { ?>
+					<a href="<?=$row["url_bukti"];?>"><?=$row["tahun_akhir"];?></a>
+				<?php } ?>
+				</td>
+				<td class="shrink text-center"><?=$row["tingkat"]=="Internasional"?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["tingkat"]=="Nasional"?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["tingkat"]=="Lokal"?"V":"";?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

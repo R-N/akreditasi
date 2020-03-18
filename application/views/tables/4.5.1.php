@@ -22,10 +22,14 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink">
+				<?php if(true){ echo $row["nama_pakar"]; } else { ?>
+					<a href="#"><?=$row;?></a>
+				<?php } ?>
+				</td>
+				<td class=""><?=$row["instansi_jabatan"];?></td>
+				<td class=""><?=$row["kegiatan"];?></td>
+				<td class=""><?=$row["tahun"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

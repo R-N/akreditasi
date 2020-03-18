@@ -390,7 +390,7 @@ insert  into `pendidikan`(`pendidikan`,`tingkat`) values
 ('D4',5),
 ('S1',5),
 ('S2',6),
-('S3',7),
+('S3\r',7),
 ('SMA',1),
 ('SMK',1);
 
@@ -1163,13 +1163,57 @@ CREATE TABLE `tabel_4_4_2` (
 CREATE TABLE `tabel_4_5_1` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_pakar` varchar(50) NOT NULL,
-  `instansi_jabatan` varchar(128) NOT NULL,
-  `kegiatan` varchar(128) NOT NULL,
+  `instansi_jabatan` varchar(150) NOT NULL,
+  `kegiatan` varchar(150) NOT NULL,
   `tahun` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_1` */
+
+insert  into `tabel_4_5_1`(`id`,`nama_pakar`,`instansi_jabatan`,`kegiatan`,`tahun`) values 
+(1,'Dr. Silvy Dewayani','UGM','Workshop KKNI',2016),
+(2,'Aryo Nugroho\r\n','Founder CATFIZ','Talkshow : \"Social Media Technopreneur\", Information System Festival (I-Fest 1)',2016),
+(3,'Wahyudi Agustiono, P.hD \r\n',' Universitas Trunojoyo Madura / Mentor tim solid studio pemenang 2 dunia game developer di kompetisi Imagine Cup 2013 tingkat Internasional','Talkshow : \"Youtechpreneur\", Information System Festival (I-Fest 2)',2016),
+(4,'Anwar Fuadi, S.Kom\r\n','Founder None Developers, Pemenang lomba tingkat Dunia Imagine Cup di Amerika Serikat','Talkshow : \"Youtechpreneur\", Information System Festival (I-Fest 2)',2016),
+(5,'Tyo Avianto\r\n','Founder Cubeacon','Talkshow : \"Youtechpreneur\", Information System Festival (I-Fest 2)',2016),
+(6,'Dr. Hamidul haque \r\n','Expert dari Senior Experten Service Jerman','Seminar \"Renewable Energy for Sustainable Development\"',2016),
+(7,'Tim Inixindo\r\n','Inixindo','Pelatihan WEB programming',2016),
+(8,'Tim Inixindo\r\n','Inixindo','Workshop Programming With Android',2016),
+(9,'Prof. Dr. Abdul. Mujib, M.Ag., M.Si \r\n','Dekan Psikologi UIN jakarta','Majelis Hikmah, Implementasi Integrasi Sains dan Islam',2016),
+(10,'Taufik Kasturi, M.Si., Ph.D \r\n','Dekan Psikologi UMS','Majelis Hikmah, Implementasi Integrasi Sains dan Islam',2016),
+(11,'dr, Mukhtar Ikhsan, Sp.P(k),MARS \r\n','FKUI','Majelis Hikmah, Implementasi Integrasi Sains dan Islam',2016),
+(12,'Dr, Ir, Hasan Ikhwani, MSc \r\n','ITS','Majelis Hikmah, Implementasi Integrasi Sains dan Islam',2016),
+(13,'Hangga Nuarta \r\n','Traveloka','Traveloka Digital Marketing Seminar : Search Engine Optimization',2016),
+(14,'Dr. Cahyo Crysdian\r\n','UIN Maulana Malik Ibrahim, Malang','Kuliah Tamu : Virtual Reality For Field Combat Simulation and Research For University',2016),
+(15,'Budi Hermawan\r\n','UPI','Kuliah Tamu IT Governance',2017),
+(16,'Agus Zainal Arifin\r\n','ITS','Pembekalan Mahasiswa Baru',2018),
+(17,'Prof Ali Ramdhani\r\n','UIN SGD Bandung','Penulisan publikasi ilmiah',2018),
+(18,'Dr Yusuf Durrahman\r\n','UIN Jakarta','Integrasi dalam Tridharma',2018),
+(19,'Achmad Holil Nur Ali\r\n','ITS','Kurikulum Sistem Informasi',2018),
+(20,'Setyo Deny Hudaya\r\n','PGN','Kuliah tamu Manajemen Resiko',2017),
+(21,'Prof. Hendro wicaksono\r\n','Jacobs University, Bremen, Jerman','Kuliah Tamu “Integrasi riset dalam pembelajaran menyongsong revolusi indistri 4.0.”',2019),
+(22,'Dra. Dede Mia Yusantri\r\n','Lembaga Ilmu Pengetahuan Indonesia','Workshop Pembinaan Drafting Paten',2019),
+(23,'Prio Adi Ramadhani, ST\r\n','Lembaga Ilmu Pengetahuan Indonesia','Workshop Pembinaan Drafting Paten',2019),
+(24,'Adi Ankafia, SE\r\n','Lembaga Ilmu Pengetahuan Indonesia','Workshop Pembinaan Drafting Paten',2019),
+(25,'Yunifa Miftahul A, M.T\r\n','UIN Maulana Malik Ibrahim, Malang','Membangun Serious Game Sebagai Media Digital Marketing Smart Tourism Indonesia',2019),
+(26,'Dr. M.Faisal, MT\r\n','UIN Maulana Malik Ibrahim, Malang','Rancang Bangun mesin Virtual Mendeteksi Plagiasi Karya Tulis Dosen dan Mahasiswa',2019),
+(27,'Prio Adi Ramadhani, ST\r\n','Lembaga Ilmu Pengetahuan Indonesia (LIPI) Jakarta','Pelatihan Drafting Paten Tingkat Lanjut ',2019),
+(28,'Dr. Ahmad Taufiq, M.Si\r\n','Universitas Negeri Malang','Pelatihan Drafting Paten Tingkat Lanjut ',2019),
+(29,'Ita Yukimartati, M.Si\r\n','DJKI Kemenkum HAM','Pelatihan Drafting Paten Tingkat Lanjut ',2019),
+(30,'drh. Sirin Wahyu Nugroho\r\n','Ristek Dikti','Workshop Peningkatan Kualitas Pembelajaran Berbasis Integrasi Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(31,'Prof. Dr. Suwito, MA\r\n','UIN Jakarta','Workshop Peningkatan Kualitas Pembelajaran Berbasis Integrasi Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(32,'Moh. Zikky, S.ST, M.T\r\n','Politeknik Elektronika Negeri Surabaya','Workshop Peningkatan Kualitas Pembelajaran Berbasis Integrasi Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(33,'Syahiduz Zaman, M.Kom\r\n','UIN Maulana Malik Ibrahim, Malang','Strategi Pemilihan Topik Penelitian Mahasiswa Sistem Informasi',2019),
+(34,'M. Ainul Yaqin, M.Kom\r\n','UIN Maulana Malik Ibrahim, Malang','Strategi Pemilihan Topik Penelitian Mahasiswa Sistem Informasi',2019),
+(35,'Dr. Ary Mazharuddin Shiddiqi, S.Kom, M.Kom.Sc\r\n','ITS','Workshop Penyusunan Modul Praktikum Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(36,'Citrawati Dyah Kencono Wungu, dr., M.Si\r\n','Universitas Airlangga ','Workshop Penyusunan Modul Praktikum Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(37,'Muhammad Browijoyo Santanumurti, S.Pi, M.Sc\r\n','Universitas Airlangga ','Workshop Penyusunan Modul Praktikum Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(38,'Alfian Pramudita Putra, M.Sc\r\n','Universitas Airlangga ','Workshop Penyusunan Modul Praktikum Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(39,'Prof. H. Mas\'ud Said, MA. PhD\r\n','Universitas Islam Malang','FGD : Kependudukan dan Lingkungan Hidup Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(40,'H. Yenrizal Makmur, SP, MM\r\n','BKKBN','FGD : Kependudukan dan Lingkungan Hidup Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya',2019),
+(41,'KH. Abdul Ghaffarrozin, M.Ed\r\n','Robithoh Maahid Islamiyah (RMI) PBNU','Simposium Nasional pondok Pesantren \"Sinergi dan Kolaborasi Pengembangan Sarana dan Prasarana Pondok Pesantren dalam Mendukung Pencapaian Sustainable ',2019),
+(42,'Ruchman Basori, S.Ag, M.Ag\r\n','Direktorat Jenderal Pendidikan Islam Kementerian Agama ','Simposium Nasional pondok Pesantren \"Sinergi dan Kolaborasi Pengembangan Sarana dan Prasarana Pondok Pesantren dalam Mendukung Pencapaian Sustainable ',2019);
 
 /*Table structure for table `tabel_4_5_2` */
 
@@ -1181,41 +1225,209 @@ CREATE TABLE `tabel_4_5_2` (
   `pt` varchar(32) NOT NULL,
   `negara` varchar(32) NOT NULL,
   `tahun` int(11) NOT NULL,
+  `url_pendidikan` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `pend_4_5_2` (`pendidikan`),
   CONSTRAINT `pend_4_5_2` FOREIGN KEY (`pendidikan`) REFERENCES `pendidikan` (`pendidikan`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_2` */
+
+insert  into `tabel_4_5_2`(`id`,`nama_dosen`,`pendidikan`,`bidang`,`pt`,`negara`,`tahun`,`url_pendidikan`) values 
+(1,'Anang Kunaefi','S3\r','Computer Science\r\n','Kumamoto Univesity\r\n','Jepang\r\n',2018,''),
+(2,'Bayu Adhi Nugroho','S3\r','Computer Science','University of Western Australia','Australia',2017,''),
+(3,'Moch. Yasin\r\n','S3\r','Teknik Informatika\r\n','Institut Teknologi Sepuluh Nopem','Indonesia\r\n',2018,''),
+(5,'Yusuf Amrozi\r\n','S3\r','Manajemen\r\n','Universitas Airlangga\r\n','Indonesia\r\n',2016,''),
+(6,'Ilham\r\n','S3\r','Manajemen\r\n','Universitas Airlangga\r\n','Indonesia\r\n',2019,''),
+(7,'Achmad Teguh Wibowo\r\n','S3\r','Teknik Elektro\r\n','Institut Teknologi Sepuluh Nopem','Indonesia\r\n',2019,'');
 
 /*Table structure for table `tabel_4_5_3` */
 
 CREATE TABLE `tabel_4_5_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_dosen` varchar(50) NOT NULL,
-  `kegiatan` varchar(128) NOT NULL,
+  `kegiatan` varchar(200) NOT NULL,
   `tempat` varchar(50) NOT NULL,
   `tahun` int(11) NOT NULL,
   `penyaji` tinyint(1) NOT NULL DEFAULT '0',
+  `url_kegiatan` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_3` */
+
+insert  into `tabel_4_5_3`(`id`,`nama_dosen`,`kegiatan`,`tempat`,`tahun`,`penyaji`,`url_kegiatan`) values 
+(1,'Achmad Teguh Wibowo','FGD Perakitan dan Layout Soal UM-PTKIN 2016','Surya Hotel dan Cottages ',2016,1,''),
+(2,'Achmad Teguh Wibowo','Talk Show UM-PTKIN di TVRI Senayan Jakarta','TVRI Senayan Jakarta',2016,1,''),
+(3,'Achmad Teguh Wibowo','Press Conference SPAN PTKIN','Agis Restaurant',2016,1,''),
+(4,'Achmad Teguh Wibowo','FGD Penetapan Kelulusan UM-PTKIN ','Hotel Inna Grand Bali Beach',2016,1,''),
+(5,'Achmad Teguh Wibowo','FGD Setting Host to Host dengan tim it bank mitra UM-PTKIN','GreenSa Inn',2016,1,''),
+(6,'Achmad Teguh Wibowo','FGD Penyusunan Soal Kompetisi Sains dan Madrasah','Surabaya',2018,1,''),
+(7,'Achmad Teguh Wibowo','Pembicara pada BEST ICON','Surabaya',2018,1,''),
+(8,'Ahmad Yusuf','Requierement Analisys dan Manajemen Basis Data CBT UM PTKIN 2017','Jakarta',2017,1,''),
+(9,'Ahmad Yusuf','BENCHMARKING Computer Based Test','Surabaya',2017,1,''),
+(10,'Ahmad Yusuf','Narasumber dalam kurikulum KKNI tingkat Fakultas','Surabaya',2017,1,''),
+(11,'Ahmad Yusuf','Membangun Jaringan Knowledge Antar PTKI','UIN Jakarta',2016,0,''),
+(12,'Ahmad Yusuf','FGD Aplikasi SPAN-UM PTKIN Tahun 2018','Makassar',2018,1,''),
+(13,'Ahmad Yusuf','FGD Infrastruktur dan Proses Bisnis Aplikasi PSAN-UM PTKIN 2018','Makassar',2018,1,''),
+(14,'Ahmad Yusuf','FGD Pembahasan Seleksi SPAN dan Bimtek UMPTKIN','Makassar',2018,1,''),
+(15,'Ahmad Yusuf','Narasumber kegiatan Pemutakhiran Data BOS, BOP RA dan PIP','Surabaya',2018,1,''),
+(16,'Ahmad Yusuf','FGD Teknik Pelaksanaan CBT UM-PTKIN','Surabaya',2018,1,''),
+(17,'Ahmad Yusuf','FGD Sinkronisasi Data Skoring','Makassar',2018,1,''),
+(18,'Ahmad Yusuf','FGD Pembahasan dan Penetapan Kelulusan UM-PTKIN 2018','Padang',2018,1,''),
+(19,'Ahmad Yusuf','FGD Simulasi Kelulusan UM-PTKIN 2018','Padang',2018,1,''),
+(20,'Ahmad Yusuf','Peserta Workshop Pengelolaan Jaringan UTBK-Desktop PTN','Jakarta',2018,0,''),
+(21,'Anang Kunaefi','Requierement Analisys dan Manajemen Basis Data CBT UM PTKIN 2017','Jakarta',2017,1,''),
+(22,'Anang Kunaefi','BENCHMARKING Computer Based Test','Surabaya',2017,1,''),
+(23,'Anang Kunaefi','Juri dalam MTQ Mahasiswa Regional IV Jawa Timur Bidang Aplikasi Alquran','Bangkalan Madura',2016,1,''),
+(24,'Anang Kunaefi','Workshop \"Optimalisasi potensi psikologi siswa berbasis manajemen data\"','Surabaya',2016,1,''),
+(25,'Bayu Adhi Nugroho','IIFAS 2017','Yogyakarta - Kampus UGM',2017,1,''),
+(26,'Bayu Adhi Nugroho','INDONESIA ANDROID KEJAR 2.0 - GOOGLE','UNIVERSITAS BRAWIJAYA',2016,0,''),
+(27,'Bayu Adhi Nugroho','Workshop Pedagogi Pemrograman dan Penilaian Otomatis','Politeknik Negeri Malang - Polinema',2015,0,''),
+(28,'Dwi Rolliawati','Internasional conference of Quality Assurance','UIN Sunan Ampel surabaya',2016,0,''),
+(29,'Faris Mushlihul Amin, M.Kom','Seminar \"Pesantren BerbasisTeknologi \"','PP. Nurul Jadid Probolinggo',2016,1,''),
+(30,'Faris Mushlihul Amin, M.Kom','ANCOMS 2nd KOPERTAIS 4 Jawa Timur','Surabaya',2018,1,''),
+(31,'Faris Mushlihul Amin, M.Kom','Pembicara pada BEST ICON( Integrated Science and technolology towards suistainable built environment)','Surabaya',2018,1,''),
+(32,'Faris Mushlihul Amin, M.Kom','Perancangan dan Pelatihan Website dan Database Anggota Ikatan Keluarga Alumni Pergerakan Mahasiswa Islam Indonesia Jawa Timur','Surabaya',2018,1,''),
+(33,'Ilham, M.Kom','Seminar Penulisan Jurnal Ilmiah Pengelolaan Jurnal Online prodi Arsitek Fak,Saintek UIN Sunan Ampel Sby','UIN Sunan Ampel Surabaya',2016,0,''),
+(34,'Ilham, M.Kom','Peserta dalam Seminar Nasional Promoting Renewable Energy For Sustainanble Development','UIN Sunan Ampel Surabaya',2016,0,''),
+(35,'Ilham, M.Kom','Menjadi Peserta IS Coffee Forum di ITS','SI ITS',2016,0,''),
+(36,'Ilham, M.Kom','Pemateri dalam acara Pelatihan Peningkatan Kompetensi Mhs Prodi SI di Lab Komputer UIN Sunan Ampel Sby','UIN Sunan Ampel Surabaya',2016,0,''),
+(37,'Ilham, M.Kom','Peserta Workshop Kisi-kisi butiran soal SPMB Mandiri','UIN Jakarta',2016,0,''),
+(38,'Ilham, M.Kom','Menjadi Pengawas SBMPTN','UIN Sunan Ampel Surabaya',2016,0,''),
+(39,'Ilham, M.Kom','Menjadi Narasumber siaran Radio Pro 2 RRI  Surabaya Teknologi dan Gadget','UIN Sunan Ampel Surabaya',2016,0,''),
+(40,'Ilham, M.Kom','Monev Tim SPAN dan UM PTKIN Nasional Uin Sunan Ampel','UIN Sunan Ampel Surabaya',2016,0,''),
+(41,'Dra. Imas Maesaroh, Dip.IM-Lib., M.Lib., Ph.D.','Menjadi Narasumber pada seminar nasional di Universitas Udayana dengan judul: Pustakawan dan Literasi Digital Menuju Indonesia Anti Hoax','Jakarta',2016,1,''),
+(42,'Dra. Imas Maesaroh, Dip.IM-Lib., M.Lib., Ph.D.','Menjadi Nara sumber Penyusunan Juknis Bantuan Pengembangan Karir Pustakawan dengan judul \"Pengembangan Karir Pustakawan\" ','Jakarta',2016,1,''),
+(43,'Dra. Imas Maesaroh, Dip.IM-Lib., M.Lib., Ph.D.','Nara sumber pada kegiatan \"Peningkatan Manajemen Pengelola Perpustakaan PTKI\" ','Semarang',2018,1,''),
+(44,'Dra. Imas Maesaroh, Dip.IM-Lib., M.Lib., Ph.D.',' \"Strategi Meminimalisir Plagiasi Bagi Akademisi\" ','Tulungagung',2018,1,''),
+(45,'Indri Sudanawati Rozas, M.Kom','Seminar Nasional Sistem Informasi Indonesia 2015','ITS Surabaya',2015,0,''),
+(46,'Indri Sudanawati Rozas, M.Kom','AISINDO Annual Meeting','ITS Surabaya',2015,0,''),
+(47,'Indri Sudanawati Rozas, M.Kom','Training intensif profesional CISA','ITS Surabaya',2015,0,''),
+(48,'Indri Sudanawati Rozas, M.Kom','Temu Ilmiah Nasional Badan Penelitian dan Pengembangan Provinsi Jawa Timur Tahun 2016','Balitbang Prov Jatim',2016,0,''),
+(49,'Indri Sudanawati Rozas, M.Kom','Temu Ilmiah Balitbang Prov Jawa Timur 2018','Surabaya',2018,1,''),
+(50,'Indri Sudanawati Rozas, M.Kom',' Pertemuan dan Presentasi Ilmiah Standarisasi (PPIS) 2018 Badan Standarisasi Nasional Surabaya, 26 Oktober 2018','Surabaya',2018,1,''),
+(51,'Khalid, M.Kom','AISINDO Annual Meeting','ITS Surabaya',2015,0,''),
+(52,'Khalid, M.Kom','Seminar \"Penulisan Jurnal Ilmiah dan Pengelolaan Jurnal Online\"','UIN Sunan Ampel Surabaya',2016,0,''),
+(53,'Khalid, M.Kom','Seminar Internasional Renewable Energy','UIN Sunan Ampel',2016,0,''),
+(54,'Khalid, M.Kom','Workshop Integrasi gender dalam pengabdian masyarakat','UIN Sunan Ampel',2016,0,''),
+(55,'Khalid, M.Kom','seminar \"Manajemen Resiko dan Peluang pada Keamanan Informasi Cyber\" oleh AISINDO','ITS',2016,0,''),
+(56,'Khalid, M.Kom','Training Database Design & Programming with SQL oleh Oracle Academy','Unair Surabaya',2015,0,''),
+(57,'Khalid, M.Kom','Pelatihan program Peningkatan Keterampilan Dasar Teknik Instruksional (PEKERTI)','GreenSA Inn',2015,0,''),
+(58,'Khalid, M.Kom','FOCUS GROUP DISCUSSION FIELDWORK RESEARCH MENTOR TRAINING PROGRAM PADA KOMUNITAS DAMPINGAN DI SURABAYA DAN SIDOARJO','Surabaya',0,1,''),
+(59,'Khalid, M.Kom','Presenter di ICONQUHAS 2018 Bandung','Bandung',0,1,''),
+(60,'Dr. Kusaeri, M.Pd','Narasumber Kuliah Umum di Prodi Matematika Saintek UIN Sunan Kalijaga Yogyakarta','Yogyakarta',2018,1,''),
+(61,'Dr. Kusaeri, M.Pd','Sebagai pemakalah dalam ICRIEM ke-5 di UNY Yogyakarta','Yogyakarta',2018,1,''),
+(62,'Muhammad Andik Izzuddin, MT','Requierement Analisys dan Manajemen Server CBT UM PTKIN 2017','Jakarta',2017,1,''),
+(63,'Muhammad Andik Izzuddin, MT','BENCHMARKING Computer Based Test','Surabaya',2017,1,''),
+(64,'Muhammad Andik Izzuddin, MT','Membangun Jaringan Knowledge Antar PTKI','UIN Jakarta',2016,0,''),
+(65,'Mujib Ridwan, M.T','Pelatihan program Peningkatan Keterampilan Dasar Teknik Instruksional (PEKERTI)','GreenSA Inn',2015,0,''),
+(66,'Mujib Ridwan, M.T','Workshop \"Penulisan Artikel Ilmiah untuk Jurnal Terakreditasi\"','RS Rektorat UINSA',2016,0,''),
+(67,'Mujib Ridwan, M.T','Workshop \"Gender Integration in Curriculum\"','Ibis Hotel Surabaya',2016,0,''),
+(68,'Mujib Ridwan, M.T','Workshop \"Pengembangan Rencana Pembelajaran Semester (RPS) Kurikulum Perguruan Tinggi UIN Sunan Ampel Sby\"','Twin Towers Lt.9',2016,0,''),
+(69,'Mujib Ridwan, M.T','Workshop \"Metodologi ABCD bagi Dosen UIN Sunan Ampel Surabaya\"','Twin Towers Lt.9',2016,0,''),
+(70,'Mujib Ridwan, M.T','Workshop \"Penyususnan Rencana Pembelajaran Semester bagi Dosen Pengampu Matakuliah Universitas\"','Twin Towers Lt.9',2016,0,''),
+(71,'Mujib Ridwan, M.T','Bimbingan Teknis Sistem Penjaminan Mutu Internal (SPMI)','UNU Sidoarjo',2016,0,''),
+(72,'Mujib Ridwan, M.T','Workshop \"Pengelolaan Open Journal Sustem Teosofi: Jurnal Tasawuf dan Pemikiran Islam\"','Hotel Bidakara Surabaya',2015,0,''),
+(73,'Mujib Ridwan, M.T','Lokakarya \"Urgensi Integrasi Gender di UIN Sunan Ampel Surabaya\"','Hotel Tunjungan',2016,0,''),
+(74,'Mujib Ridwan, M.T','Seminar \"Penulisan Jurnal Ilmiah dan Pengelolaan Jurnal Online\"','UINSA Surabaya',2016,0,''),
+(75,'Mujib Ridwan, M.T','Seminar internasional dengan tema \"The Role Of Steel Constructionin Archkitecture Design\"','UINSA Surabaya',2016,0,''),
+(76,'Mujib Ridwan, M.T','International Conference On Entrepreneurship (ICOEN) ke-3 tahun 2016 di Universitas Ciputra Surabaya','Kampus Ciputra Surabaya',2016,0,''),
+(77,'Mujib Ridwan, M.T','Seminar nasional dengan tema \"Green Building Untuk Eksistensi Lingkungan Berkelanjutan\"','UINSA Surabaya',2016,0,''),
+(78,'Mujib Ridwan, M.T','IS Coffee Forum dengan topik \"Merintis E-Government Terintegrasii DAN CIO & Struktur DINKOMINFO\"','ITS Surabaya',2016,0,''),
+(79,'Mujib Ridwan, M.T','Klinik Akreditasi dalam rangka pengisian borang akreditasi perguruan tinggi dan prodi oleh BAN PT','UNU Surabaya',2016,0,''),
+(80,'Mujib Ridwan, M.T','Workshop perencanaan audit','GreenSA Inn',2015,0,''),
+(81,'Mujib Ridwan, M.T','Seminar dan workshop pedagogi pemrograman dan pengenalan sistem penilaian tugas pemrograman secara otomatis','Polinema',2015,0,''),
+(82,'Mujib Ridwan, M.T','Seminar kesehatan \"gizi sehat seimbang menuju hidup berkualitas\"','UINSA Surabaya',2015,0,''),
+(83,'Yusuf Amrozi','Workshop Penjaminan Mutu','IAIN Tulungagung',2016,1,''),
+(84,'Yusuf Amrozi','Seminar Ilmiah di forum Majelis Hikmah','UIN Sunan Ampel',2016,1,''),
+(85,'Yusuf Amrozi','Seminar Internasional Renewable Energy','UIN Sunan Ampel',2016,0,''),
+(86,'Yusuf Amrozi','Seminar Nasional Teknologi Informasi oleh AISINDO','ITS',2016,0,''),
+(87,'Yusuf Amrozi','Workshop Audit Sistem Informasi','ITS',2016,0,''),
+(88,'Yusuf Amrozi','Peningkatan Akses Perguruan Tinggi NU (PTNU) di Jawa Timur melalui Teknologi Tepat Guna di Bidang Sistem Informasi (Rancang Bangun dan Pelatihan Content Management System Website Ptnu di Jawa Timur)','Surabaya',2018,1,''),
+(89,'Mujib Ridwan, M.T','Pemateri Seminar Nasional: ASWAJA dan Polemik Kemanusiaan di Auditorium MA Nurul Jadid','Probolinggo',2019,1,''),
+(90,'Achmad Teguh Wibowo','pendampingan dan sosialisasi pengunaan aplikasi informasi jasa konstruksi kota malang di dinas pekerjaan kota malang','Malang',2019,1,''),
+(91,'Mujib Ridwan, M.T','Pendampingan dan Sosialisasi penggunaan aplikasi SIPJAKON di PUPR Kota Malang','Malang',2019,1,''),
+(92,'Mujib Ridwan, M.T','Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri Berbasis E-Commerce di Pondok Pesantren Nurul Huda Yayasan Cendekia Insani Situbondo','Situbondo',2019,1,''),
+(93,'Moch. Yasin','presenter di International Conference on Record Library','Surabaya',2019,1,''),
+(94,'Muhammad Andik Izzuddin, MT','Narasumber Kegiatan Pengabdian Kepada Masyarakat di SMK Nurul Huda Situbondo','Situbondo',2019,1,''),
+(95,'Indri Sudanawati Rozas, M.Kom','Penyuluhan gadget warning system di SMP 62','Surabaya',2019,1,''),
+(96,'Indri Sudanawati Rozas, M.Kom','presenter di International Conference on Social Science','Surabaya',2019,1,'');
 
 /*Table structure for table `tabel_4_5_4` */
 
 CREATE TABLE `tabel_4_5_4` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_dosen` varchar(50) NOT NULL,
-  `prestasi` varchar(128) NOT NULL,
+  `prestasi` varchar(200) NOT NULL,
   `tahun` int(4) NOT NULL,
   `tingkat` varchar(16) NOT NULL,
+  `url_prestasi` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tingkat prestasi` (`tingkat`),
   CONSTRAINT `tingkat_kegiatan_4_5_4` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`tingkat`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_4` */
+
+insert  into `tabel_4_5_4`(`id`,`nama_dosen`,`prestasi`,`tahun`,`tingkat`,`url_prestasi`) values 
+(1,'Achmad Teguh Wibowo','Panitia SPAN UM PTKIN 2016',2016,'Nasional',''),
+(2,'Achmad Teguh Wibowo','Panitia SPAN UM PTKIN 2017',2017,'Nasional',''),
+(3,'Achmad Teguh Wibowo','Presenter BEST ICON 2018',2018,'Internasional',''),
+(4,'Ahmad Yusuf, M.Kom.','Panitia SPAN UM PTKIN 2016',2016,'Nasional',''),
+(5,'Ahmad Yusuf, M.Kom.','Panitia SPAN UM PTKIN 2017',2017,'Nasional',''),
+(6,'Ahmad Yusuf, M.Kom.','Panitia SPAN UM PTKIN 2018',2018,'Nasional',''),
+(7,'Ahmad Yusuf, M.Kom.','Kajian Integrasi Sains dan Teknologi dengan Keislaman',2016,'Lokal',''),
+(8,'Ahmad Yusuf, M.Kom.','Dosen Terbaik Prodi Sistem Informasi',2016,'Lokal',''),
+(9,'Ahmad Yusuf, M.Kom.','Dosen Terbaik Prodi Sistem Informasi',2017,'Lokal',''),
+(10,'Anang Kunaefi, M.Kom','Program Penunjang 5000 Doktor',2017,'Internasional',''),
+(11,'Bayu Adhi Nugroho','Menulis artikel di muat Prosiding ICNERE-ECCIS 2016',2016,'Internasional',''),
+(12,'Bayu Adhi Nugroho','IIFAS 2017 - International Indonesian Forum for Asian Studies',2017,'Internasional',''),
+(13,'Bayu Adhi Nugroho','Kursus Intensif Bahasa Asing',2015,'Nasional',''),
+(14,'Bayu Adhi Nugroho','Program Penunjang 5000 Doktor',2017,'Internasional',''),
+(15,'Dwi Rolliawati','Ketua Konsorsum keilmuan Teknologi',2015,'Lokal',''),
+(16,'Dwi Rolliawati','Review Redesign Curiculum KKNI',2016,'Nasional',''),
+(17,'Dwi Rolliawati','Moderator BEST ICON 2018',2018,'Internasional',''),
+(18,'Faris Mushlihul Amin, M.Kom','Pembina PC PMII Probolinggo',2015,'Nasional',''),
+(19,'Faris Mushlihul Amin, M.Kom','Pengurus Wilayah GP Ansor Jawa Timur',2015,'Nasional',''),
+(20,'Faris Mushlihul Amin, M.Kom','Wakil Ketua Gerakan Pemuda Jawa Timur',2015,'Nasional',''),
+(21,'Faris Mushlihul Amin, M.Kom','Presenter BEST ICON 2018',2018,'Internasional',''),
+(22,'Faris Mushlihul Amin, M.Kom','JPPR Jawa Timur',2018,'Lokal',''),
+(23,'Ilham M.Kom','Hibah Bersaing 2013-2015 DIKTI',2015,'Nasional',''),
+(24,'Ilham M.Kom','Pemateri dalam acara Pelatihan Peningkatan Kompetensi Mhs Prodi SI di Lab Komputer UIN Sunan Ampel Sby',2016,'Lokal',''),
+(25,'Ilham, M.Kom','Seminar rekayasa perangkat lunak deteksi dini kecenderungan gangguan kesehatan masyarakat tertinggal dan pesisir dengan bayesian network',2015,'Nasional',''),
+(26,'Indri Sudanawati Rozas, M.Kom','reviewer jurnal nasional JTIIK Universitas Brawijaya',2016,'Nasional',''),
+(27,'Khalid, M.Kom','Kursus : English Language Training (Pre-Intermediate 1) di IALF Surabaya',2015,'Nasional',''),
+(28,'Khalid, M.Kom','Presenter ICON QUHAS di Bandung',2018,'Internasional',''),
+(29,'Moch Yasin, S.Kom., M.Kom., MBA','reviewer jurnal Register UNIPDU',2016,'Nasional',''),
+(30,'Moch Yasin, S.Kom., M.Kom., MBA','Tim editorial jurnal NJCA(Nusantara Journal of Computer and Applications)',2016,'Nasional',''),
+(31,'Moch Yasin, S.Kom., M.Kom., MBA','Pemakalah dalam konferensi Internasional (ber ISSN) \'International Conference on Record and Library - Reinventing Information Professionals\'',2015,'Internasional',''),
+(32,'Moch Yasin, S.Kom., M.Kom., MBA','Pemakalah dalam konferensi Internasional (ber ISSN) \'International Conference on Record and Library - Transforming Information in the New Media\'',2016,'Nasional',''),
+(33,'Moch Yasin, S.Kom., M.Kom., MBA','Pemakalan dalam konferensi Internasional \'The 16th Annual International Conference on Islamic Studies - The Contribution of Indonesian Islam to The World Civilization\'',2016,'Internasional',''),
+(34,'Moch Yasin, S.Kom., M.Kom., MBA','Menerbitkan karya ilmiah Prototype Sistem Informasi Manajemen Keselamatan dan Kesehatan Kerja E-K3 Menggunakan Peta Digital Berbasis Web dan Mobile',2016,'Nasional',''),
+(35,'Moch Yasin, S.Kom., M.Kom., MBA','Memberi pelatihan kepada SDIT Al Mukminun Ngrambe, Ngawi, Jawa Timur',2015,'Lokal',''),
+(36,'Moch Yasin, S.Kom., M.Kom., MBA','Memberi pelatihan kepada SMA Darul Mukhlasin',2016,'Lokal',''),
+(37,'Moch Yasin, S.Kom., M.Kom., MBA','Memberi pelatihan kepada Ma\'had Aly As\'adiah, Sengkang, Sulawesi Selatan',2016,'Lokal',''),
+(38,'Moch Yasin, S.Kom., M.Kom., MBA','Memberi pelatihan kepada SMK Bilingual Al-Yasini',2016,'Lokal',''),
+(39,'Muhammad Andik Izzuddin, MT','Panitia SPAN UM PTKIN 2016',2016,'Nasional',''),
+(40,'Muhammad Andik Izzuddin, MT','Panitia SPAN UM PTKIN 2017',2017,'Nasional',''),
+(41,'Muhammad Andik Izzuddin, MT','Kursus : English Language Training (Pre-Intermediate 1) di IALF Surabaya',2015,'Nasional',''),
+(42,'Muhammad Andik Izzuddin, MT','Presenter BEST ICON 2018',2018,'Internasional',''),
+(43,'Mujib Ridwan, M.T','Bidang Pengembangan SDM LPTNU PW Jatim',2015,'Nasional',''),
+(44,'Mujib Ridwan, M.T','Editor Jurnal Systemic',2015,'Lokal',''),
+(45,'Mujib Ridwan, M.T','Redaktur Jurnal Systemic',2016,'Lokal',''),
+(46,'Mujib Ridwan, M.T','Workshop \"Optimalisasi potensi psikologi siswa berbasis manajemen data\"',2016,'Lokal',''),
+(47,'Mujib Ridwan, M.T','Pelatihan Sistem Informasi Sekolah dengan tema \"Penataan Manajemen Sekolah Berbasis Teknologi dan Kesehatan\"',2016,'Lokal',''),
+(48,'Mujib Ridwan, M.T','Pelatihan Sistem Informasi Sekolah dengan tema \"Peningkatan SDM dan Penggunaan Teknologi\"',2016,'Lokal',''),
+(49,'Mujib Ridwan, M.T','Workshop \"Writing Interest Upgrading: Strategi Publikasi Karya Ilmiah\"',2017,'Lokal',''),
+(50,'Mujib Ridwan, M.T','Kursus: General English for adults level 2 di IALF Surabaya',2015,'Lokal',''),
+(51,'Mujib Ridwan, M.T','Presenter BEST ICON 2018',2018,'Internasional',''),
+(52,'Yusuf Amrozim MMT','Dosen Terbaik Prodi Sistem Informasi',2016,'Lokal',''),
+(53,'Yusuf Amrozi, MMT','Penerimaan Bantuan Penelitian LPPM UINSA',2015,'Lokal',''),
+(54,'Mujib Ridwan, M.T','Pemateri Seminar Nasional: ASWAJA dan Polemik Kemanusiaan di Auditorium MA Nurul Jadid',2019,'Nasional',''),
+(55,'Moch. Yasin','presenter di International Conference on Record Library',2019,'Internasional',''),
+(56,'Indri Sudanawati Rozas, M.Kom','Penyuluhan gadget warning system di SMP 62',2019,'',''),
+(57,'Indri Sudanawati Rozas, M.Kom','presenter di International Conference on Social Science',2019,'Internasional','');
 
 /*Table structure for table `tabel_4_5_5` */
 
@@ -1226,12 +1438,35 @@ CREATE TABLE `tabel_4_5_5` (
   `tahun_awal` int(4) NOT NULL,
   `tahun_akhir` int(4) NOT NULL,
   `tingkat` varchar(16) NOT NULL,
+  `url_organisasi` varchar(512) NOT NULL,
+  `url_bukti` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `tingkat_organisasi_dosen_tetap` (`tingkat`),
   CONSTRAINT `tingkat_kegiatan_4_5_5` FOREIGN KEY (`tingkat`) REFERENCES `tingkat_kegiatan` (`tingkat`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_5_5` */
+
+insert  into `tabel_4_5_5`(`id`,`nama_dosen`,`organisasi`,`tahun_awal`,`tahun_akhir`,`tingkat`,`url_organisasi`,`url_bukti`) values 
+(1,'Achmad Teguh Wibowo','ADRI',2016,2019,'Nasional','',''),
+(2,'Ahmad Yusuf','APTIKOM',2015,2019,'Nasional','',''),
+(3,'Anang Kunaefi','AISINDO',2015,2019,'Nasional','',''),
+(4,'Anang Kunaefi','APTIKOM',2016,2019,'Nasional','',''),
+(5,'Andik Izzudin, M.T','Oracle Academy members',2015,2019,'Internasional','',''),
+(6,'Bayu Adhi Nugroho, M.Kom','AISINDO',2015,2019,'Nasional','',''),
+(7,'Bayu Adhi Nugroho, M.Kom','APTIKOM',2015,2019,'Nasional','',''),
+(8,'Dwi Rolliawati','APTIKOM',2014,2019,'Nasional','',''),
+(9,'Faris Mushlihul Amin, M.Kom','ADRI',2015,2019,'Nasional','',''),
+(10,'Ilham M.Kom','AISINDO',2015,2019,'Nasional','',''),
+(11,'Ilham M.Kom','APTIKOM',2013,2019,'Nasional','',''),
+(12,'Indri Sudanawati Rozas, M.Kom','AISINDO',2015,2019,'Nasional','',''),
+(13,'Khalid, M.Kom','AISINDO',2015,2019,'Nasional','',''),
+(14,'Khalid, M.Kom','APTIKOM',2013,2019,'Nasional','',''),
+(15,'Khalid, M.Kom','Oracle Academy members',2015,2019,'Internasional','',''),
+(16,'Mujib Ridwan, M.T','ADRI',2016,2019,'Nasional','',''),
+(17,'Mujib Ridwan, M.T','APTIKOM',2015,2019,'Nasional','',''),
+(18,'Yusuf Amrozi','ADRI',2015,2019,'Nasional','',''),
+(19,'Yusuf Amrozi','AISINDO',2015,2019,'Nasional','','');
 
 /*Table structure for table `tabel_4_6_1` */
 
@@ -1910,6 +2145,7 @@ CREATE TABLE `tingkat_kegiatan` (
 /*Data for the table `tingkat_kegiatan` */
 
 insert  into `tingkat_kegiatan`(`tingkat`) values 
+(''),
 ('Internasional'),
 ('Lokal'),
 ('Nasional'),

@@ -28,13 +28,17 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="#">Kegiatan</a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink"></td>
+				<td class="shrink"><a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_dosen"];?></a></td>
+				<td class="">
+				<?php if(empty($row["url_kegiatan"])){ echo $row["kegiatan"]; } else { ?>
+					<a href="<?=$row["url_kegiatan"];?>"><?=$row["kegiatan"];?></a>
+				<?php } ?>
+				</td>
+				<td class=""><?=$row["tempat"];?></td>
+				<td class="shrink"><?=$row["tahun"];?></td>
+				<td class="shrink text-center"><?=$row["penyaji"]?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["penyaji"]?"":"V";?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

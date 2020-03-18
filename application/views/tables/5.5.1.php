@@ -18,8 +18,8 @@
 			?>
 			<tr>
 				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="<?=base_url();?>5/5/1/LTA/1">0</a></td>
+				<td class=""><a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_dosen"];?></a></td></a></td>
+				<td class=""><a href="<?=base_url();?>5/5/1/LTA/<?=$row["id"];?>"><?=$row["jumlah_mhs"];?></a></td>
 			</tr>
 			<?php } ?>
 		</tbody>

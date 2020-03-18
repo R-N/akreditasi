@@ -1837,9 +1837,24 @@ CREATE TABLE `tabel_5_5_1` (
   `nama_dosen` varchar(50) NOT NULL,
   `jumlah_mhs` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_5_1` */
+
+insert  into `tabel_5_5_1`(`id`,`nama_dosen`,`jumlah_mhs`) values 
+(1,'Achmad Teguh Wibowo',7),
+(2,'Ahmad Yusuf',5),
+(3,'Asep Saepul Hamdani',2),
+(4,'Dwi Rolliawati',6),
+(5,'Faris Muslihul Amin',7),
+(6,'Ilham',6),
+(7,'Imas Maesaroh',3),
+(8,'Indri Sudanawati Rozas',4),
+(9,'Khalid',5),
+(10,'Kusaeri',3),
+(11,'Muhammad Andik Izzuddin',6),
+(12,'Mujib Ridwan',7),
+(13,'Yusuf Amrozi',4);
 
 /*Table structure for table `tabel_5_5_1_lta` */
 

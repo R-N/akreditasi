@@ -26,5 +26,11 @@
 			</tr>
 			<?php } ?>
 		</tbody>
+			<tr>
+				<td colspan="2">Total</td>
+				<td class="footer-callback" data-operation="sum" data-column="2"></td>
+				<td class="footer-callback" data-operation="sum" data-column="3"></td>
+			</tr>
+		</tfoot>
 	</table>
 </div>

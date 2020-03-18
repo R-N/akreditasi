@@ -1,0 +1,1 @@
+<p>Rata-rata lama penyelesaian tugas akhir/skripsi mahasiswa Sistem Informasi adalah <b>5,75 bulan</b> terhitung mulai dilakukannya Seminar Proposal Tugas Akhir/Skripsi.</p>

@@ -650,14 +650,13 @@ class Guest extends CI_Controller {
 	}
 	public function page_5_5(){
 		$data = base_data("5.5");
-		$rows1 = array(
-			"Achmad Teguh Wibowo"
-		);
+		$rows1 = $this->M_Guest->fetch_table_dosen("tabel_5_5_1", "nama_dosen", "nama");
 		$data["contents"] = array(
-			paragraph(
+			card(
 				"rata-bimbingan", 
-				"Rata-rata Bimbingan", 
-				"Rata-rata banyaknya mahasiswa per dosen pembimbing TA: 0<br>Rata-rata jumlah pertemuan dosen-mahasiswa untuk menyelesaiakan TA: 0"
+				array(
+					fragment("5.5.1.1", "5.5.1 Rata-Rata Bimbingan", array())
+				)
 			),
 			card(
 				"dosen-pembimbing", 
@@ -665,17 +664,18 @@ class Guest extends CI_Controller {
 					_content("5.5.1 Daftar nama dosen pembimbing dan jumlah mahasiswa", $this->load->view("tables/5.5.1.php", array("rows"=>$rows1),true))
 				)
 			),
-			card(
+			accordion(
 				"panduan-bimbingan", 
 				array(
-					_content("5.5.1 Panduan pembimbingan TA", "Panduan pembimbingan TA"),
+					fragment("5.5.1.3", "5.5.1 Cara Sosialisasi Panduan pembimbingan TA", array()),
+					fragment("5.5.1.4", "5.5.1 Pelaksanaan TA", array()),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.5.1")))
 				)
 			),
 			card(
 				"penyelesaian-ta", 
 				array(
-					_content("5.5.2 PENYELESAIAN TUGAS AKHIR ATAU SKRIPSI", "Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir: 0<br>Menurut kurikulum tugas akhir direncanakan (semester): 0"),
+					fragment("5.5.2", "5.5.2 Rata-rata lama penyelesaian tugas akhir/skripsi pada tiga tahun terakhir", array()),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.5.2")))
 				)
 			),

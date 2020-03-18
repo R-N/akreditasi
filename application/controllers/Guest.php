@@ -451,12 +451,8 @@ class Guest extends CI_Controller {
 	}
 	public function page_4_4(){
 		$data = base_data("4.4");
-		$rows1 = array(
-			"asd"
-		);
-		$rows2 = array(
-			"asd"
-		);
+		$rows1 = $this->M_Guest->fetch_table_dosen("tabel_4_4_1", "nidn");
+		$rows2 = $this->M_Guest->fetch_table_dosen("tabel_4_4_2", "nama_dosen", "nama");
 		$data["contents"] = array(
 			card(
 				"dosen-tidak-tetap", 

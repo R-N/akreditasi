@@ -684,17 +684,11 @@ class Guest extends CI_Controller {
 	}
 	public function page_5_6(){
 		$data = base_data("5.6");
-		$rows1 = array(
-			"Materi",
-			"Metode Pembelajaran",
-			"Penggunaan Teknologi Pembelajaran",
-			"Cara-cara evaluasi"
-		);
 		$data["contents"] = array(
 			card(
 				"perbaikan-pembelajaran", 
 				array(
-					_content("5.6 Upaya perbaikan pembelajaran serta hasil yang telah dilakukan dan dicapai dalam tiga tahun terakhir dan hasilnya", $this->load->view("tables/5.6.php", array("rows"=>$rows1),true))
+					_content("5.6 Upaya perbaikan pembelajaran serta hasil yang telah dilakukan dan dicapai dalam tiga tahun terakhir dan hasilnya", $this->load->view("tables/5.6.php", array(),true))
 				)
 			)
 		);

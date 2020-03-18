@@ -313,7 +313,7 @@ CREATE TABLE `lists` (
   PRIMARY KEY (`id`),
   KEY `parent_lists` (`parent`),
   CONSTRAINT `parent_lists` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lists` */
 
@@ -989,7 +989,7 @@ CREATE TABLE `tabel_4_3_2` (
   PRIMARY KEY (`id`),
   KEY `jabatan_4_3_2` (`jabatan_akademik`),
   CONSTRAINT `jabatan_4_3_2` FOREIGN KEY (`jabatan_akademik`) REFERENCES `jabatan_akademik` (`jabatan`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_3_2` */
 
@@ -1473,7 +1473,6 @@ insert  into `tabel_4_5_5`(`id`,`nama_dosen`,`organisasi`,`tahun_awal`,`tahun_ak
 CREATE TABLE `tabel_4_6_1` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `jenis_tk` varchar(50) NOT NULL,
-  `unit` varchar(64) NOT NULL,
   `S3` int(11) NOT NULL DEFAULT '0',
   `S2` int(11) NOT NULL DEFAULT '0',
   `S1` int(11) NOT NULL DEFAULT '0',
@@ -1481,17 +1480,18 @@ CREATE TABLE `tabel_4_6_1` (
   `D3` int(11) NOT NULL DEFAULT '0',
   `D2` int(11) NOT NULL DEFAULT '0',
   `D1` int(11) NOT NULL DEFAULT '0',
-  `SMA/SMK` int(11) NOT NULL DEFAULT '0',
+  `SMA_SMK` int(11) NOT NULL DEFAULT '0',
+  `unit` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_4_6_1` */
 
-insert  into `tabel_4_6_1`(`id`,`jenis_tk`,`unit`,`S3`,`S2`,`S1`,`D4`,`D3`,`D2`,`D1`,`SMA/SMK`) values 
-(1,'Pustakawan','Perpustakaan',0,0,0,0,0,0,0,0),
-(2,'Laboran/ Teknisi/ Analis/ Operator/ Programer','Fakultas Sains dan Teknologi/ UIN Sunan Ampel Surabaya',0,0,0,0,0,0,0,0),
-(3,'Administrasi','Fakultas Sains dan Teknologi',0,0,0,0,0,0,0,0),
-(4,'Lainnya','0',0,0,0,0,0,0,0,0);
+insert  into `tabel_4_6_1`(`id`,`jenis_tk`,`S3`,`S2`,`S1`,`D4`,`D3`,`D2`,`D1`,`SMA_SMK`,`unit`) values 
+(1,'Pustakawan',0,6,6,0,0,0,0,0,'Perpustakaan'),
+(2,'Laboran/ Teknisi/ Analis/ Operator/ Programer',0,2,6,1,1,0,0,0,'Fakultas Sains dan Teknologi/ UIN Sunan Ampel Surabaya'),
+(3,'Administrasi',0,6,1,0,0,0,0,2,'Fakultas Sains dan Teknologi'),
+(4,'Lainnya',0,0,0,0,0,0,0,0,'0');
 
 /*Table structure for table `tabel_4_6_1_ltk` */
 

@@ -57,6 +57,7 @@ $route['(:num)/(:num)/(:num)/(:num)/'] = 'Guest/page_$1_$2_$3_$4';
 $route['(:num)/(:num)/(:num)/(:num)/([A-Z]+)/(:num)'] = 'Guest/page_$1_$2_$3_$4_$5/$6';
 $route['(:num)/(:num)/(:num)/([A-Z]+)/(:num)/(:num)/(:num)'] = 'Guest/page_$1_$2_$3_$4/$5/$6/$7';
 $route['(:num)/(:num)/(:num)/([A-Z]+)/(:num)/(:num)'] = 'Guest/page_$1_$2_$3_$4/$5/$6';
+$route['(:num)/(:num)/(:num)/([A-Z]+)/(:num)/(:any)'] = 'Guest/page_$1_$2_$3_$4/$5/$6';
 $route['(:num)/(:num)/(:num)/([A-Z]+)/(:any)/(:num)'] = 'Guest/page_$1_$2_$3_$4/$5/$6';
 $route['(:num)/(:num)/(:num)/([A-Z]+)/(:num)'] = 'Guest/page_$1_$2_$3_$4/$5';
 $route['(:num)/(:num)/(:num)/([A-Z]+)'] = 'Guest/page_$1_$2_$3_$4';

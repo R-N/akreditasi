@@ -60,7 +60,26 @@ class M_Guest extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
-
+	
+	function get_tabel_4_6_1_stats(){
+		$sql = "
+			SELECT SUM(S3) AS S3, SUM(S2) AS S2, SUM(S1) AS S1,
+				SUM(D4) AS D4, SUM(D3) AS D3, SUM(D2) AS D2, SUM(D1) AS D1,
+				SUM(SMA_SMK) AS SMA_SMK
+			FROM tabel_4_6_1";
+		$query = $this->db->query($sql);
+		$result = $query->row_array();
+		$jenjang = array("S3", "S2", "S1", "D4", "D3", "D2", "D1", "SMA_SMK");
+		$ret = array();
+		foreach($jenjang as $j){
+			if($result[$j] == 0) continue;
+			array_push($ret, array(
+				"name"=>$j, 
+				"value"=>$result[$j]
+			));
+		}
+		return $ret;
+	}
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

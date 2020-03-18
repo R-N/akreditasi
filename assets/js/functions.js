@@ -11,10 +11,17 @@ function getDataTable($table){
 }
 
 function intVal( i ) {
-    return typeof i === 'string' ?
-        i.replace(/[\$,]/g, '')*1 :
-        typeof i === 'number' ?
-            i : 0;
+	if(typeof i === 'string'){
+		let ret = i.replace(/[\$,]/g, '')*1;
+		if (!isNaN(ret)) return ret;
+		ret = $($.parseHTML(i));
+		i = ret.text();
+		return i.replace(/[\$,]/g, '')*1;
+	}else if (typeof i === 'number'){
+		return i;
+	}else{
+		throw Exception("Invalid value: " + i);
+	}
 };
 
 function footSum(a, b){

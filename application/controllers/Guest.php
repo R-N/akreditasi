@@ -515,24 +515,24 @@ class Guest extends CI_Controller {
 	}
 	public function page_4_6(){
 		$data = base_data("4.6");
-		$rows1 = array(
-			"Pustakawan",
-			"Laboran/ Teknisi/ Analis/ Operator/ Programer",
-			"Administrasi",
-			"Lainnya"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_4_6_1");
+		$stats1 = $this->M_Guest->get_tabel_4_6_1_stats();
 		$data["contents"] = array(
 			card(
 				"statistik-tenaga-kependidikan", 
 				array(
 					_content("4.6.1 Tenaga kependidikan  yang ada di PS, Jurusan, Fakultas atau PT yang melayani mahasiswa PS", $this->load->view("tables/4.6.1.php", array("rows"=>$rows1),true)),
+					_chart("rekap-kualifikasi-tk", "4.6.1 Grafik Rekapitulasi Kualifikasi Akademik Tenaga Kependidikan", "pie", $stats1),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("4.6.1")))
 				)
 			),
-			paragraph(
-				"peningkatan-tenaga-kependidikan",
-				"4.6.2 Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan",
-				"Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan"
+			accordion(
+				"visi-misi", 
+				array(
+					fragment("4.6.2.1", "4.6.2.A Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan: Kesempatan/Pelatihan", array("rows"=>$this->M_Guest->fetch_list("4.6.2.1"))),
+					fragment("4.6.2.2", "4.6.2.B Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan: Pemberian Fasilitas (termasuk dana)", array("rows"=>$this->M_Guest->fetch_list("4.6.2.2"))),
+					fragment("4.6.2.3", "4.6.2.C Upaya Meningkatkan Kualifikasi dan Kompetensi Tenaga Kependidikan: Jenjang Karier", array("rows"=>$this->M_Guest->fetch_list("4.6.2.3"))),
+				)
 			)
 		);
 		$this->load->view("page.php", $data);

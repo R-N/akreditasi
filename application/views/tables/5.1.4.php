@@ -85,7 +85,7 @@
 				<td class="">4</td>
 				<td class="">Modul Praktikum Pemrograman Web</td>
 				<td class="">
-					<p>asdf</p>
+					<p>Modul Praktikum Pemrograman Web</p>
 					<p>
 						<ol>
 							<li>HTML</li>

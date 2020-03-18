@@ -96,7 +96,7 @@ CREATE TABLE `dosen` (
   `nidn` char(10) DEFAULT NULL,
   `id_lecturer` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 /*Data for the table `dosen` */
 
@@ -118,7 +118,8 @@ insert  into `dosen`(`id`,`nama`,`nidn`,`id_lecturer`) values
 (15,'Mujib Ridwan\r\n','2027048602',0),
 (16,'Yusuf Amrozi\r\n','2003077601',0),
 (17,'Titik Triwulan Tutik\r\n','2029036801',0),
-(18,'Asep Abbas Abdullah\r\n','2229076301',0);
+(18,'Asep Abbas Abdullah\r\n','2229076301',0),
+(19,'Evi Fatimatur Rusdiyah',NULL,0);
 
 /*Table structure for table `ids` */
 
@@ -1779,9 +1780,22 @@ CREATE TABLE `tabel_5_4_1` (
   `jumlah_mhs` int(11) NOT NULL DEFAULT '0',
   `rata_pertemuan` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_5_4_1` */
+
+insert  into `tabel_5_4_1`(`id`,`nama_pembimbing`,`jumlah_mhs`,`rata_pertemuan`) values 
+(1,'Achmad Teguh Wibowo',24,3.000),
+(2,'Ahmad Yusuf',26,3.000),
+(3,'Evi Fatimatur Rusdiyah ',1,4.000),
+(4,'Dwi Rolliawati',24,3.000),
+(5,'Faris Muslihul Amin',25,4.000),
+(6,'Ilham',26,3.000),
+(7,'Indri Sudanawati Rozas',27,3.000),
+(8,'Khalid',26,3.000),
+(9,'Muhammad Andik Izzuddin',26,3.000),
+(10,'Mujib Ridwan',26,4.000),
+(11,'Yusuf Amrozi',24,4.000);
 
 /*Table structure for table `tabel_5_4_1_lm` */
 

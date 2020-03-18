@@ -630,16 +630,7 @@ class Guest extends CI_Controller {
 	}
 	public function page_5_4(){
 		$data = base_data("5.4");
-		$rows1 = array(
-			"Achmad Teguh Wibowo"
-		);
-		$rows2 = array(
-			"Tujuan Pembimbingan",
-			"Pelaksanaan pembimbingan",
-			"Masalah yang dibicarakan dalam pembimbingan",
-			"Kesultian dalam pembimbingan dan upaya untuk mengatasinya",
-			"Manfaat yang diperoleh mahasiswa dari pembimbingan"
-		);
+		$rows1 = $this->M_Guest->fetch_table_dosen("tabel_5_4_1", "nama_pembimbing", "nama");
 		$data["contents"] = array(
 			card(
 				"dosen-pembimbing", 
@@ -650,7 +641,8 @@ class Guest extends CI_Controller {
 			card(
 				"proses-bimbingan", 
 				array(
-					_content("5.4.2 Proses pembimbingan akademik", $this->load->view("tables/5.4.2.php", array("rows"=>$rows2),true))
+					_paragraph("Notice [TODO]", "Tambah diagram SOP?"),
+					_content("5.4.2 Proses pembimbingan akademik", $this->load->view("tables/5.4.2.php", array(),true))
 				)
 			)
 		);

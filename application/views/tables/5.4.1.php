@@ -19,10 +19,10 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="<?=base_url();?>5/4/1/LM/1">0</a></td>
-				<td class=""></td>
+				<td class="shrink"></td>
+				<td class=""><a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_pembimbing"];?></a></td></a></td>
+				<td class="shrink"><a href="<?=base_url();?>5/4/1/LM/<?=$row["id"];?>"><?=$row["jumlah_mhs"];?></a></td>
+				<td class="shrink"><?=$row["rata_pertemuan"]+0;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

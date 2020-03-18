@@ -15,21 +15,35 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php 
-			foreach($rows as $row){
-			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""><a href="<?=base_url();?>5/1/2/1/SJMK/1">0</a></td>
-				<td class=""></td>
+				<td class="shrink"></td>
+				<td class="">Mata Kuliah Wajib</td>
+				<td class="shrink">148 sks</td>
+				<td class="">
+					<p>Mata Kuliah Wajib terdiri dari :</p>
+					<p>
+						<ol>
+							<li>Mata Kuliah Kompetensi Dasar 26 sks</li>
+							<li>Mata Kuliah Kompetensi Utama 91 sks</li>
+							<li>Mata Kuliah Kompetensi Pendukung 31 sks</li>
+							<li>Mata Kuliah Kompetensi Lainnya 0 sks</li>
+						</ol>
+					</p>
+				</td>
 			</tr>
-			<?php } ?>
+			<tr>
+				<td class="shrink"></td>
+				<td class="">Mata Kuliah Pilihan</td>
+				<td class="shrink">9 sks</td>
+				<td class="">
+					<p>Mata Kuliah Pilihan terdiri dari 48 sks</p>
+				</td>
+			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="2">Total</td>
-				<td class="footer-callback" data-operation="sum" data-column="2"></td>
+				<td colspan="2">Jumlah Total</td>
+				<td class="shrink">157 sks</td>
 			</tr>
 		</tfoot>
 	</table>

@@ -539,24 +539,33 @@ class Guest extends CI_Controller {
 	}
 	public function page_5_1(){
 		$data = base_data("5.1");
+		$rows01 = $this->M_Guest->fetch_tabel_5_1_1("5.1.1.1.1");
+		$rows02 = $this->M_Guest->fetch_tabel_5_1_1("5.1.1.1.2");
+		$rows03 = $this->M_Guest->fetch_tabel_5_1_1("5.1.1.2.1");
+		$rows04 = $this->M_Guest->fetch_tabel_5_1_1("5.1.1.2.2");
+		$rows05 = $this->M_Guest->fetch_tabel_5_1_1("5.1.1.3");
 		$rows1 = array(
 			"Mata Kuliah Wajib",
 			"Mata Kuliah Pilihan"
 		);
-		$rows2 = array(
-			"Bahasa Indonesia"
-		);
-		$rows3 = array(
-			"Mobile Technology"
-		);
+		$rows2 = $this->M_Guest->fetch_table("tabel_5_1_2_2");
+		$rows3 = $this->M_Guest->fetch_table("tabel_5_1_3");
 		$rows4 = array(
 			 "asd"
 		);
 		$data["contents"] = array(
+			accordion(
+				"profil-lulusan", 
+				array(
+					_content("Profil Lulusan", $this->load->view("tables/5.1.php", array(),true))
+				)
+			),
 			accordion("kompetensi", array(
-				_content("5.1.1.1 Uraian kompetensi utama lulusan", "Uraian kompetensi utama lulusan"),
-				_content("5.1.1.2 Uraian kompetensi pendukung lulusan", "Uraian kompetensi pendukung lulusan"),
-				_content("5.1.1.3 Uraian kompetensi lainnya/pilihan lulusan", "Uraian kompetensi lainnya/pilihan lulusan")
+				_content("5.1.1.1.KU Uraian kompetensi utama lulusan: Keterampilan Umum", $this->load->view("tables/5.1.1.php", array("rows"=>$rows01),true)),
+				_content("5.1.1.1.KK Uraian kompetensi utama lulusan: Keterampilan Khusus", $this->load->view("tables/5.1.1.php", array("rows"=>$rows02),true)),
+				_content("5.1.1.2.P Uraian kompetensi pendukung lulusan: Pengetahuan", $this->load->view("tables/5.1.1.php", array("rows"=>$rows03),true)),
+				_content("5.1.1.2.S Uraian kompetensi pendukung lulusan: Sikap", $this->load->view("tables/5.1.1.php", array("rows"=>$rows04),true)),
+				_content("5.1.1.3 Uraian kompetensi pendukung lulusan: Kompetensi Pilihan", $this->load->view("tables/5.1.1.php", array("rows"=>$rows05),true))
 			)),
 			card(
 				"jumlah-sks-ps", 
@@ -580,7 +589,7 @@ class Guest extends CI_Controller {
 			card(
 				"praktek", 
 				array(
-					_content("5.1.4 Substansi praktikum/praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu ", $this->load->view("tables/5.1.4.php", array("rows"=>$rows3),true)),
+					_content("5.1.4 Substansi praktikum/praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu ", $this->load->view("tables/5.1.4.php", array("rows"=>$rows4),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("5.1.4")))
 				)
 			)

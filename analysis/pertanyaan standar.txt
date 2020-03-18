@@ -20,7 +20,6 @@ Pertanyaan standar
 4.6.1 + grafik?
 4.6.2 Daftar saja? Atau sama penjelasan?
 5.1 (baru) profil lulusan? 
-5.1.1 Daftar umum keterampilan masing2? Atau perlu tabel detailnya?
 5.1.1.4 (baru) Penjelasan ringkas masing2?
 5.1.2 (baru?) Gambar 5.4?
 5.1.2.1 jd 5.1.3.5?

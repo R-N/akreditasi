@@ -37,19 +37,39 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""><a href="#">v</a></td>
-				<td class=""><a href="#">v</a></td>
-				<td class=""><a href="#">v</a></td>
-				<td class=""></td>
+				<td class=""><?=$row["smt"];?></td>
+				<td class=""><?=$row["kode_mk"];?></td>
+				<td class=""><?=$row["nama_mk"];?></td>
+				<td class=""><?=$row["sks"];?></td>
+				<td class="text-center shrink"><?=$row["mk_inti"]?"V":"";?></td>
+				<td class="text-center shrink"><?=!$row["mk_inti"]?"V":"";?></td>
+				<td class="text-center shrink"><?=$row["tugas"]?"V":"";?></td>
+				<td class="text-center shrink">
+					<?php if(empty($row["url_desk"])){ echo $row["desk"]?"V":""; } else { ?>
+					<a href="#"><?=$row["desk"]?"V":"";?></a>
+					<?php } ?>
+				</td>
+				<td class="text-center shrink">
+					<?php if(empty($row["url_sil"])){ echo $row["sil"]?"V":""; } else { ?>
+					<a href="#"><?=$row["sil"]?"V":"";?></a>
+					<?php } ?>
+				</td>
+				<td class="text-center shrink">
+					<?php if(empty($row["url_sap"])){ echo $row["sap"]?"V":""; } else { ?>
+					<a href="#"><?=$row["sap"]?"V":"";?></a>
+					<?php } ?>
+				</td>
+				<td class=""><?=$row["unit"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Jumlah</td>
+				<td class="footer-callback" data-operation="sum" data-column="3">157</td>
+				<td>130</td>
+				<td>27</td>
+			</tr>
+		</tfoot>
 	</table>
 </div>

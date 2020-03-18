@@ -61,6 +61,12 @@ class M_Guest extends CI_Model {
 		return $query->result_array();
 	}
 	
+	function fetch_tabel_5_1_1($parent){
+		$sql = "SELECT kode, uraian FROM tabel_5_1_1 WHERE parent=? ORDER BY kode";
+		$query = $this->db->query($sql, array($parent));
+		return $query->result_array();
+	}
+	
 	function get_tabel_4_6_1_stats(){
 		$sql = "
 			SELECT SUM(S3) AS S3, SUM(S2) AS S2, SUM(S1) AS S1,

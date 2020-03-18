@@ -1,4 +1,4 @@
-<div class="table-responsive datatable fixed export auto-number simple">
+<div class="table-responsive datatable fixed export auto-number ">
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
@@ -23,14 +23,20 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row["smt"];?></td>
+				<td class=""><?=$row["kode_mk"];?></td>
+				<td class=""><?=$row["nama_mk"];?></td>
+				<td class=""><?=$row["sks"];?></td>
+				<td class=""><?=$row["tugas"]?"V":"";?></td>
+				<td class=""><?=$row["unit"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Jumlah</td>
+				<td class="footer-callback" data-operation="sum" data-column="3"></td>
+			</tr>
+		</tfoot>
 	</table>
 </div>

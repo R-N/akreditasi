@@ -844,19 +844,9 @@ class Guest extends CI_Controller {
 	}
 	public function page_7_1(){
 		$data = base_data("7.1");
-		$rows1 = array(
-			"Pembiayaan sendiri oleh peneliti",
-			"PT yang bersangkutan",
-			"Depdiknas",
-			"Institusi dalam negeri di luar Depdiknas",
-			"Institusi luar negeri"
-		);
-		$rows2 = array(
-			"Skema Basis Data Sistem Informasi Aset Barang"
-		);
-		$rows3 = array(
-			"Paten NUI Menggunakan Kinect FIS-TSK"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_7_1_1");
+		$rows2 = $this->M_Guest->fetch_table_dosen("tabel_7_1_3", "nama_dosen", "nama");
+		$rows3 = $this->M_Guest->fetch_table("tabel_7_1_4");
 		$data["contents"] = array(
 			card(
 				"penelitian-dosen-tetap", 
@@ -868,11 +858,7 @@ class Guest extends CI_Controller {
 			card(
 				"mhs-penelitian", 
 				array(
-					_content(
-						"7.1.2 Mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun", 
-						"Adakah mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun terakhir? Ada"
-						. '<br>Jika ada, banyaknya mahasiswa PS yang ikut serta dalam penelitian dosen adalah <a href="' . base_url("7/1/2/LP") . '">5</a> orang, dari <a href="' . base_url("7/1/2/LTA") . '">19</a> mahasiswa yang menjalankan tugas akhir melalui skripsi'
-					),
+					fragment("7.1.2", "7.1.2 Mahasiswa tugas akhir yang dilibatkan dalam penelitian dosen dalam tiga tahun", array()),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.1.2")))
 				)
 			),

@@ -2478,10 +2478,10 @@ CREATE TABLE `tabel_7_1_1` (
 /*Data for the table `tabel_7_1_1` */
 
 insert  into `tabel_7_1_1`(`id`,`sumber_pembiayaan`,`ts_2`,`ts_1`,`ts`) values 
-(1,'Pembiayaan sendiri oleh peneliti',0,0,0),
-(2,'PT yang bersangkutan',0,0,0),
+(1,'Pembiayaan sendiri oleh peneliti',10,13,12),
+(2,'PT yang bersangkutan',7,5,6),
 (3,'Depdiknas',0,0,0),
-(4,'Institusi dalam negeri di luar Depdiknas',0,0,0),
+(4,'Institusi dalam negeri di luar Depdiknas',2,1,0),
 (5,'Institusi luar negeri',0,0,0);
 
 /*Table structure for table `tabel_7_1_1_lpdt` */
@@ -2539,26 +2539,119 @@ CREATE TABLE `tabel_7_1_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `judul` varchar(256) NOT NULL,
   `nama_dosen` varchar(256) NOT NULL,
-  `jurnal` varchar(128) NOT NULL,
-  `url` varchar(128) NOT NULL,
+  `jurnal` varchar(200) NOT NULL,
   `tahun` int(4) NOT NULL,
-  `lokal` tinyint(1) NOT NULL DEFAULT '0',
-  `nasional` tinyint(1) NOT NULL DEFAULT '0',
-  `internasional` tinyint(1) NOT NULL DEFAULT '0',
+  `tingkat` tinyint(1) NOT NULL,
+  `url_dok` varchar(512) NOT NULL,
+  `url_jurnal` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_1_3` */
+
+insert  into `tabel_7_1_3`(`id`,`judul`,`nama_dosen`,`jurnal`,`tahun`,`tingkat`,`url_dok`,`url_jurnal`) values 
+(1,'Prototype Sistem Informasi Manajemen Keselamatan dan Kesehatan Kerja E-K3 Menggunakan Peta Digital Berbasis Web dan Mobile','Achmad Teguh Wibowo, S.Kom, M.T,','Seminar Nasional BALITBANG JATIM',2016,2,'',NULL),
+(2,'Prototype Sistem Informasi Deteksi Masjid Terdekat Menggunakan Peta Digital Berbasis Multi-Platform Device(Mobile and Web) Sebagai Pendukung Pelaksanaan Ibadah Sholat Tepat Waktu','Achmad Teguh Wibowo, S.Kom, M.T,','AICIS, Diktis Kemenag RI',2016,3,'',NULL),
+(3,'Super Smart Optimized Round Robin','Achmad Teguh Wibowo, S.Kom, M.T,','Jurnal Systemic, Vol. 1, No. 3',2016,1,'',NULL),
+(4,'Optimalisasi Potensi Psikologi Siswa Berbasis Manajemen Data','Anang Kunaefi, M.Kom','Digital Library UIN Sunan Ampel',2016,1,'',NULL),
+(5,'Undang-Undang Informasi Dan Transaksi Elektronik Dalam Perspektif It Security, Privasi, Dan Etika Dalam Islam','Anang Kunaefi, M.Kom','Seminar Nasional Politeknik Banjarmasin',2016,2,'',NULL),
+(6,'A Framework for Optimum Contour Detection','Bayu Adhi Nugroho, M.Kom.','EECCIS-ICNERE 2016',2016,2,'',NULL),
+(7,'Perancangan Robotik Boat Pemantauan Sedimen Sungai Sebagai  Data Analisis Kebijakan Pengelolaan Air DAS Brantas','Bayu Adhi Nugroho, M.Kom.','Seminar Nasional',2016,2,'',NULL),
+(8,'Integrasi Sains dan Teknologi dengan keIslaman pada Majelis Hikmah Fakultas Saintek UIN Sby','Ilham, M.Kom','Forum Fakultas',2016,1,'',NULL),
+(9,'Analisis Dan Desain Penempatan Antrian Pemakaman Yang Aman Serta Ramah Lingkungan','Indri Sudanawati Rozas, M.Kom','Seminar Lokal',2016,1,'',NULL),
+(10,'Seleksi Fitur Dua Tahap Menggunakan Information Gain dan Artificial Bee Colony untuk Kategorisasi Teks Berbasis Support Vector Machine','Khalid, M.Kom','Jurnal Systemic, Vol. 1, No. 2',2016,2,'',NULL),
+(11,'Relevansi Swarm intelligence (Particle Swarm Optimisation) dalam Al-Quran','Khalid, M.Kom','Forum Fakultas',2016,1,'',NULL),
+(12,'Pembuatan program Reservasi Ruangan di Perpustakaan berbasis web','Moch Yasin, S.Kom., M.Kom., MBA','Konferensi Internasional',2016,3,'',NULL),
+(13,'Prototipe Sistem Informasi Deteksi Masjid Terdekat Berbasis Peta Multi Platform Sebagai Pendukung Pelaksanaan Ibadah Tepat Waktu','Moch Yasin, S.Kom., M.Kom., MBA','AICIS, Diktis Kemenag RI',2016,3,'',NULL),
+(14,'Prototype Sistem Pendukung Keputusan Untuk Penetapan Jadwal Kuliah Menggunakan Algoritma Genetika','Mujib Ridwan, M.T','Jurnal Systemic, Vol. 2, No. 2',2016,2,'',NULL),
+(15,'NORMATIVE THEOLOGICAL REASONING OF BIOMETRIC SYSTEMS: Analyze the Uniqueness of Fingerprint Pattern in Information Technology Implementation','Mujib Ridwan, M.T','Konferensi Internasional',2016,3,'',NULL),
+(16,'“Upaya Pencegahan Penyakit Demam Berdarah Dengue (DBD) Berbasis Pondok Pesantren\" Di Desa Puton Kabupaten Jombang Jawa Timur','Mujib Ridwan, M.T','Digital Library UIN Sunan Ampel',2016,1,'',NULL),
+(17,'\"SIG (Sistem Informasi Geografis) Pemetaan Pondok Pesantren Kota Surabaya\"','Mujib Ridwan, M.T','http://sby-ponpes.esy.es/index.php',2016,1,'http://sby-ponpes.esy.es/index.php',NULL),
+(18,'\"SIM (Sistem Informasi Manajemen) Potensi Psikologi Siswa\"','Mujib Ridwan, M.T','http://sipopsiuinsa.eu5.org',2016,1,'http://sipopsiuinsa.eu5.org',NULL),
+(19,'Ekonomi Lumbung dan Konstruksi Keberdayaan Petani Muslim Madiun','Muhammad Andik Izzuddin, MT','Jurnal Inferensi Vol. 10, No. 1',2016,2,'',NULL),
+(20,'Smart Home berbasis IoT','Muhammad Andik Izzuddin, MT','Pameran Produk SI pada i-Fest 2016',2016,1,'',NULL),
+(21,'Optimalisasi Akses Internet Lembaga, dan peluangnya','Muhammad Andik Izzuddin, MT','Forum Fakultas',2016,1,'',NULL),
+(22,'Desain Prototype Sistem Informasi Hafalan Al Quran Berbasis Perspektif HCI','Dwi Rolliawati, MT','http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/189',2016,2,'http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/189',NULL),
+(23,'Desain Framework Kebijakan Internet Perguruan Tinggi Dalam Membangun University Social Responsibility (USR)','Muhammad Andik Izzuddin, MT','Seminar Nasional Pendidikan Sains PPs Unesa',2016,2,'',NULL),
+(24,'Prosiding  Seminar Nasional (SENIATI) 2018 Fakultas Teknologi Industri - ITN Malang','Ahmad Yusuf, M. Kom','http://ejournal.itn.ac.id/index.php/seniati/article/view/1589',2017,2,'http://ejournal.itn.ac.id/index.php/seniati/article/view/1589',NULL),
+(25,'Presenter pada Seminar Nasional Teknologi Informasi dan Multimedia (Semnasteknomedia) 2018','Anang Kunaefi, M. Kom','https://drive.google.com/drive/folders/18Ua8rBWYFZX_7iDp7sBSvBp6V5a214zp?usp=sharing',2017,2,'https://drive.google.com/drive/folders/18Ua8rBWYFZX_7iDp7sBSvBp6V5a214zp?usp=sharing',NULL),
+(26,'Karakteristik Instrumen Penilaian Hasil Belajar Matematika Ranah Kognitif yang Dikembangkan Mengacu pada Model PISA','Dr. Kusaeri, M.Pd','http://ejournal.uin-suska.ac.id/index.php/SJME/article/view/3897',2017,2,'http://ejournal.uin-suska.ac.id/index.php/SJME/article/view/3897',NULL),
+(27,'Studi Perilaku Cheating Siswa Madrasah dan Sekolah Islam Ketika Ujian Nasional','Dr. Kusaeri, M.Pd','http://journal.stainkudus.ac.id/index.php/Edukasia/article/view/1727',2017,2,'http://journal.stainkudus.ac.id/index.php/Edukasia/article/view/1727',NULL),
+(28,'Terbentuknya Konsepsi Matematika pada Diri Anak dari Perspektif Teori Reifikasi dan APOS','Dr. Kusaeri, M.Pd','http://riset.unisma.ac.id/index.php/jpm/article/view/244',2017,2,'http://riset.unisma.ac.id/index.php/jpm/article/view/244',NULL),
+(29,'Merawat Kebhinekaan demi Terwujudnya Indonesia bermartabat','Faris Mushlihul Amin, M. Kom','SEMINAR KEBANGSAAN oleh BAKESBANGPOL PROVINSI JAWA TIMUR BEKERJASAMA DENGAN GEPI JAWA TIMUR',2017,1,'',NULL),
+(30,'Peran Organisasi Intra Kampus dalam Menciptakan Lulusan Berkualitas','Faris Mushlihul Amin, M. Kom','SEMINAR KEORGANISASIAN BEM STT NURUL JADID PROBOLINGGO',2017,1,'',NULL),
+(31,'Implementasi Pengenalan Pola Untuk Mengevaluasi Hasil Pembelajaran Dengan Metode Fuzzy C-means','Ilham, M. Kom','5aaf78927ef1f.doc,http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/111',2017,2,'http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/111',NULL),
+(32,'A algorithm hybrid model of Bayesian for detection performance in unhealthy lifestyle','Ilham, M. Kom','5aaf785900f8d.pdf,http://ieeexplore.ieee.org/document/8304119/ dan https://drive.google.com/file/d/1JLHHLWyRTohIpZL7sfD6AbaWDSacLAbY/view?usp=sharing',2017,3,'https://drive.google.com/file/d/1JLHHLWyRTohIpZL7sfD6AbaWDSacLAbY/view?usp=sharing',NULL),
+(33,'MENGUKUR PERSEPSI TERHADAP KONSEP GREEN COMPUTING DI PERGURUAN TINGGI BERBASIS ISLAM ELINVO, UNY 2017','Indri Sudanawati Rozas, M. Kom','5a94e53bd6902.pdf,http://elinvo.uny.ac.id/content/media/proceeding/PROSIDING%20SEMNAS%20ELINVO_14%20September%202017.pdf',2017,2,'http://elinvo.uny.ac.id/content/media/proceeding/PROSIDING%20SEMNAS%20ELINVO_14%20September%202017.pdf',NULL),
+(34,'ISLAMIC GREEN COMPUTING IMPLEMENTASI KONSEP RAHMATAN LIL ALAMINDI ERA TEKNOLOGI INFORMASI','Indri Sudanawati Rozas, M. Kom','5a94e5d1481d4.pdf,http://ejournal.itn.ac.id/index.php/seniati/issue/view/119',2017,2,'http://ejournal.itn.ac.id/index.php/seniati/issue/view/119',NULL),
+(35,'MENGKAJI KONSEP GREEN COMPUTING BERDASARKAN PERSPEKTIF UMAT ISLAM','Indri Sudanawati Rozas, M. Kom','5a96421e11e49.pdf,https://drive.google.com/open?id=11pYEkOfnvVnHQmUa3clH6mNCp2X9BTVC',2017,2,'https://drive.google.com/open?id=11pYEkOfnvVnHQmUa3clH6mNCp2X9BTVC',NULL),
+(36,'Analisis Sentimen Twitter untuk Teks Berbahasa Indonesia Mengenai Peran Ormas Islam  dalam Penanganan Isu Radikalisme dengan Metode Support Vector Machine','Khalid, M. Kom','https://drive.google.com/drive/folders/1B3tB543MXuxS4-7t4Z5LnvDngfqQibPl?usp=sharing',2017,2,'https://drive.google.com/drive/folders/1B3tB543MXuxS4-7t4Z5LnvDngfqQibPl?usp=sharing',NULL),
+(37,'Hadits Inspired Software Development Methodology.','Moch Yasin, S.Kom., M. Kom, M.B.A.','http://digilib.uinsby.ac.id/23616/1/Moch%20Yasin%2C%20Maisyatus%20Suadaa%20Irfana_Hadith%20inspired%20software.pdf',2017,3,'http://digilib.uinsby.ac.id/23616/1/Moch%20Yasin%2C%20Maisyatus%20Suadaa%20Irfana_Hadith%20inspired%20software.pdf',NULL),
+(38,'Penerima Bantuan Penelitian Tahun 2017 UIN Sunan Ampel Surabaya pada kluster Pemula Kolektif','Muhammad Andik Izzuddin, MT','https://drive.google.com/file/d/1tIMTzOVvYwvX2Fljh0fsoEPc5fvncWGu/view?usp=sharing',2017,2,'https://drive.google.com/file/d/1tIMTzOVvYwvX2Fljh0fsoEPc5fvncWGu/view?usp=sharing',NULL),
+(39,'Penelitian \"Robot Line Follower Berbasis Mikrokontroler untuk Kompetisi\"','Muhammad Andik Izzuddin, MT','https://drive.google.com/file/d/10A5z6w2h9sDztjLoMjDq7msIVBgo2/view?usp=sharing',2017,2,'https://drive.google.com/file/d/10A5z6w2h9sDztjLoMjDq7msIVBgo2/view?usp=sharing',NULL),
+(40,'Teknologi Live Streaming sebagai Media Penunjang Dakwah dan Kegiatan Belajar Mengajar untuk Mendukung Cyber University','Achmad Teguh Wibowo, MT','http://proceedings.kopertais4.or.id/index.php/ancoms/article/view/133',2018,2,'http://proceedings.kopertais4.or.id/index.php/ancoms/article/view/133',NULL),
+(41,'Developing an Assessment Instrument of Higher Order Thinking Skills in Mathematics with in Islamic Context','Dr. Kusaeri, M.Pd','https://iopscience.iop.org/article/10.1088/1742-6596/1097/1/012151/meta',2018,3,'https://iopscience.iop.org/article/10.1088/1742-6596/1097/1/012151/meta',NULL),
+(42,'Menulis di Jurnal Systemic berjudul \"Prototipe Aplikasi Penghitungan Matrik menggunakan Java\" Vol. 4 No.1 Tahun 2018','Dwi Rolliawati, MT','https://drive.google.com/drive/u/1/folders/1yqGoEf6l9q05zp8sRSyKLqvPpY7I8ZWj?ogsrc=32',2018,2,'https://drive.google.com/drive/u/1/folders/1yqGoEf6l9q05zp8sRSyKLqvPpY7I8ZWj?ogsrc=32',NULL),
+(43,'Prediksi Penerimaan Besasiswa Santri Pada Lembaga Pendidikan di Pesantren Nurul Huda Menggunakan Algoritma J48','Faris Mushlihul Amin, M. Kom','https://drive.google.com/open?id=130e6zgVFJZWh1TPzGW64ihp7rtsULkoz',2018,2,'https://drive.google.com/open?id=130e6zgVFJZWh1TPzGW64ihp7rtsULkoz',NULL),
+(44,'Identifikasi Citra Daging Ayam Berformalin Menggunakan Metode Fitur Tekstur dan K-Nearest Neighbor (K-NN)','Faris Mushlihul Amin, M. Kom','http://jurnalsaintek.uinsby.ac.id/index.php/mantik/article/view/318',2018,2,'http://jurnalsaintek.uinsby.ac.id/index.php/mantik/article/view/318',NULL),
+(45,'Analisis Dampak Perubahan Perangkat Lunak Menggunakan Graf Relasi Fungsi-Atribut','Ahmad Yusuf, M. Kom','http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/385',2018,2,'http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/385',NULL),
+(46,'PERANGKAT LUNAK PERHITUNGAN PERUBAHAN JABATAN DENGAN MENGGUNAKAN FUZZY ANALYTICAL HIERARCHY PROCESS','Ilham, M. Kom','http://jurnal.uinsu.ac.id/index.php/query/article/view/634',2018,2,'http://jurnal.uinsu.ac.id/index.php/query/article/view/634',NULL),
+(47,'IMPLEMENTASI TEXT MINING UNTUK MENGUKUR CONCORDANCE KONSEP TATA KELOLA TEKNOLOGI INFORMASI DI INDONESIA','Indri Sudanawati Rozas, M. Kom','https://drive.google.com/open?id=18JlotBkx4qhGSFybj1kp0nGkXoyy2fLb',2018,2,'https://drive.google.com/open?id=18JlotBkx4qhGSFybj1kp0nGkXoyy2fLb',NULL),
+(48,'International Conference on Record and Library','Moch Yasin, S.Kom., M. Kom, M.B.A.','https://drive.google.com/drive/folders/1vl6XK6Q6ikaL_vwrhcVx5ws7jc-lNF_v?usp=sharing',2018,3,'https://drive.google.com/drive/folders/1vl6XK6Q6ikaL_vwrhcVx5ws7jc-lNF_v?usp=sharing',NULL),
+(49,'Penerima Bantuan Penelitian Tahun 2017 UIN Sunan Ampel Surabaya pada kluster Pemula Kolektif','Muhammad Andik Izzuddin, MT','https://drive.google.com/file/d/1tIMTzOVvYwvX2Fljh0fsoEPc5fvncWGu/view?usp=sharing',2018,1,'https://drive.google.com/file/d/1tIMTzOVvYwvX2Fljh0fsoEPc5fvncWGu/view?usp=sharing',NULL),
+(50,'Menjadi Ketua Peneliti (dengan 1 anggota) dengan judul Adopsi Teknologi Informasi pada PTKIS di Jawa Timur','Yusuf Amrozi, M.MT','https://drive.google.com/open?id=1D5HsVPmpnlH8hLV_Hczwc40wb_IN97DQ',2018,1,'https://drive.google.com/open?id=1D5HsVPmpnlH8hLV_Hczwc40wb_IN97DQ',NULL),
+(51,'Perancangan dan Pelatihan Website dan Database Anggota Ikatan Keluarga Alumni Pergerakan Mahasiswa Islam Indonesia Jawa Timur','Faris Mushlihul Amin, M. Kom','http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/98',2018,2,'http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/98',NULL),
+(52,'ISLAMIC GREEN COMPUTING: INTEGRASI ISLAM DAN SAINS UNTUK MENGHADAPI REVOLUSI INDUSTRI 4.0','Indri Sudanawati Rozas, M.Kom','Pertemuan Ilmiah BSNI',2018,2,'',NULL),
+(53,'MANAJEMEN LAYANAN TEKNOLOGI INFROMASI: TANTANGAN DALAM KURIKULUM PERGURUAN TINGGI DI ERA REVOLUSI INDUSTRI 4.0','Indri Sudanawati Rozas, M.Kom','Seminar Nasional SNRT Poliban',2018,2,'',NULL),
+(54,'KOMPARASI KREDIBILITAS PENYELENGGARAAN  UNBK DAN UNKP PADA PELAJARAN MATEMATIKA (Dimuat di Jurnal Ilmu Pendidikan Volume 24 No. 1 Tahun 2018)','Dr. A. Saepul Hamdani, M.Pd','http://journal2.um.ac.id/index.php/jip/article/view/5336',2018,2,'http://journal2.um.ac.id/index.php/jip/article/view/5336',NULL),
+(55,'Profil berpikir analitis masalah aljabar siswa ditinjau dari gaya kognitif visualizer dan verbalizer','Dr. A. Saepul Hamdani, M.Pd','http://jrpm.uinsby.ac.id/index.php/jrpm/article/view/28/29',2018,1,'http://jrpm.uinsby.ac.id/index.php/jrpm/article/view/28/29',NULL),
+(56,'Text Mining Approach for Topic Modelling of Corpus Alqur\'an in Indonesian Translation','Khalid, M. Kom','https://drive.google.com/drive/folders/1uMfKRee1OwlWuoPvA27JaRBvDxnGHmjO?usp=sharing',2018,3,'https://drive.google.com/drive/folders/1uMfKRee1OwlWuoPvA27JaRBvDxnGHmjO?usp=sharing',NULL),
+(57,'Metode Hibridasi Artificial Bee Colony dan Fuzzy K-Modes untuk Klasterisasi Data Kategorikal','Khalid, M. Kom','https://drive.google.com/drive/folders/1i-3JslSJBPbtNjXj9S5-kqeFvLiQhDm2',2018,2,'https://drive.google.com/drive/folders/1i-3JslSJBPbtNjXj9S5-kqeFvLiQhDm2',NULL),
+(58,'Pedagogical Beliefs about Critical Thinking among Indonesian Mathematics Pre-service Teachers','Dr. Kusaeri, M.Pd','https://www.e-iji.net/dosyalar/iji_2019_1_37.pdf',2018,3,'https://www.e-iji.net/dosyalar/iji_2019_1_37.pdf',NULL),
+(59,'SOCIOECONOMIC STATUS, PARENTAL INVOLVEMENT IN LEARNING AND STUDENT’ MATHEMATICS ACHIEVEMENT IN INDONESIAN SENIOR HIGH SCHOOL','Dr. Kusaeri, M.Pd','https://journal.uny.ac.id/index.php/cp/article/view/21100',2018,3,'https://journal.uny.ac.id/index.php/cp/article/view/21100',NULL),
+(60,'DESAIN TATA KELOLA TEKNOLOGI INFORMASI RAMAH LINGKUNGAN BERBASIS ITIL VERSI 3 (STUDI KASUS: PUSTIPD UIN SUNAN AMPEL SURABAYA)','Indri Sudanawati Rozas, M. Kom','https://jurnal.kominfo.go.id/index.php/komunika/article/view/1641/930',2018,2,'https://jurnal.kominfo.go.id/index.php/komunika/article/view/1641/930',NULL),
+(61,'Perancangan dan Pelatihan Website dan Database Anggota Ikatan Keluarga Alumni Pergerakan Mahasiswa Islam Indonesia Jawa Timur','Faris Mushlihul Amin, M. Kom','http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/56',2019,2,'http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/56',NULL),
+(62,'Peningkatan Akses Perguruan Tinggi NU (PTNU) di Jawa Timur melalui Teknologi Tepat Guna di Bidang Sistem Informasi (Rancang Bangun dan Pelatihan Content Management System Website Ptnu di Jawa Timur)','Faris Mushlihul Amin, M. Kom, Achmad Teguh Wibowo, MT, Mujib Ridwan, S.Kom., M.T','http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/98',2019,2,'http://proceedings.uinsby.ac.id/index.php/ACCE/article/view/98',NULL),
+(63,'Analisa Kebutuhan Sistem Hubungan Konsumsi (Energi dan Protein) Terhadap IMT Mahasiswa Fakultas Sains Teknologi Uin Sunan Ampel Surabaya','Ilham, M. Kom','https://drive.google.com/drive/folders/1pcUsbYY6eHw7UGl8btyvHVTjH6m1TEPr',2019,2,'https://drive.google.com/drive/folders/1pcUsbYY6eHw7UGl8btyvHVTjH6m1TEPr',NULL),
+(64,'ANALISIS DAN DESAIN ALGORITMA HYBRID KRIPTOGRAFI UNTUK MANAJEMEN STRATEGI PENGAMANAN DATA PERUSAHAAN','Ilham, M. Kom','https://drive.google.com/drive/folders/1pcUsbYY6eHw7UGl8btyvHVTjH6m1TEPr',2019,2,'https://drive.google.com/drive/folders/1pcUsbYY6eHw7UGl8btyvHVTjH6m1TEPr',NULL),
+(65,'International Journal of Instruction','Dr. Kusaeri, M.Pd','https://www.e-iji.net/dosyalar/iji_2019_1_37.pdf',2019,3,'https://www.e-iji.net/dosyalar/iji_2019_1_37.pdf',NULL),
+(66,'Student Readiness and Challence in Completing Higher Order Thinking Skills Test Type for Mathematics (Infinity Journal Volume 8 Nomor 1 STKIP Siliwangi)','Dr. A. Saepul Hamdani, M.Pd','http://e-journal.stkipsiliwangi.ac.id/index.php/infinity/article/view/1125',2019,2,'http://e-journal.stkipsiliwangi.ac.id/index.php/infinity/article/view/1125',NULL),
+(67,'Learning outcome of mathematics and science: Features of Indonesian madrasah students','Dr. Kusaeri, M.Pd','https://journal.uny.ac.id/index.php/jpep/article/view/24881',2019,3,'https://journal.uny.ac.id/index.php/jpep/article/view/24881',NULL),
+(68,'Metode Hibridasi Artificial Bee Colony dan Fuzzy K-Modes untuk Klasterisasi Data Kategorikal','Khalid','https://drive.google.com/drive/folders/1i-3JslSJBPbtNjXj9S5-kqeFvLiQhDm2',2019,2,'https://drive.google.com/drive/folders/1i-3JslSJBPbtNjXj9S5-kqeFvLiQhDm2',NULL),
+(69,'Pemanfaatan Teknologi Single Page Application (SPA) dalam Pembuatan Aplikasi Feedback Dosen dari Mahasiswa Sebagai Bentuk Pengawasan Lembaga Terhadap Kinerja Dosen di Bidang Pengajaran','Achmad Teguh Wibowo, MT','http://ejournal.unikama.ac.id/index.php/jst/article/view/3327',2019,2,'http://ejournal.unikama.ac.id/index.php/jst/article/view/3327',NULL),
+(70,'pemnfaatan open erp (dollibar) untuk agenda dan member sebagai penunjang program ukm melek teknologi','Achmad Teguh Wibowo, MT','https://drive.google.com/file/d/1fsY4y1gCErReSumkoX4lJX0ejEUodUQ8/view?usp=sharing',2019,2,'https://drive.google.com/file/d/1fsY4y1gCErReSumkoX4lJX0ejEUodUQ8/view?usp=sharing',NULL),
+(71,'Proceding Best ICON','Muhammad Andik Izzuddin, MT','https://drive.google.com/open?id=1LrNVM4NczKXfk4kqFt7OAGBln_C83U4y',2019,3,'https://drive.google.com/open?id=1LrNVM4NczKXfk4kqFt7OAGBln_C83U4y',NULL),
+(72,'Pengembangan Model Usaha Tanaman Hidroponik Melalui Pemanfaatan Teknologi Tepat Guna Berbasis Media Informasi Pada Komunitas UMKM Pertanian Perkotaan','Muhammad Andik Izzuddin, MT','http://engagement.fkdp.or.id/index.php/engagement/article/view/53',2019,2,'http://engagement.fkdp.or.id/index.php/engagement/article/view/53',NULL),
+(73,'DETEKSI PLAGIASI DOKUMEN SKRIPSI MAHASISWA MENGGUNAKAN METODE N-GRAMS DAN WINNOWING','Andhy Permadi, M.Kom','https://doi.org/10.24176/simet.v9i2.2535',2019,2,'https://doi.org/10.24176/simet.v9i2.2535',NULL),
+(74,'Prosiding di Prosiding SNST Fakultas Teknik Universitas Wahid Hasyim Semarang','Indri Sudanawati Rozas, M. Kom','https://publikasiilmiah.unwahas.ac.id/index.php/PROSIDING_SNST_FT/article/view/2404',2019,2,'https://publikasiilmiah.unwahas.ac.id/index.php/PROSIDING_SNST_FT/article/view/2404',NULL),
+(75,'International Conference On Quran-Hadith, Information Technology and Media: Challenges and Opportunities (ICONQUHAS) UIN Bandung','Indri Sudanawati Rozas, M. Kom','https://osf.io/preprints/inarxiv/b4z76/download',2019,3,'https://osf.io/preprints/inarxiv/b4z76/download',NULL),
+(76,'Proceeding of Seminar Riset Terapan Nasional Politeknik Negeri Banjarmasin','Indri Sudanawati Rozas, M. Kom','http://e-prosiding.poliban.ac.id/index.php/snrt/article/view/272',2019,2,'http://e-prosiding.poliban.ac.id/index.php/snrt/article/view/272',NULL),
+(77,'Prototipe Aplikasi Penghitung Matrik Berbasis Java','Dwi Rolliawati, MT','http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/312/305',2019,2,'http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC/article/view/312/305',NULL),
+(78,'EVALUASI USABILITY SISTEM INFORMASI MANAJEMEN KEPEGAWAIAN BERBASIS ISO 9241-11','Dwi Rolliawati, MT','https://jurnal.kominfo.go.id/index.php/komunika/article/view/1702/991',2019,2,'https://jurnal.kominfo.go.id/index.php/komunika/article/view/1702/991',NULL),
+(79,'Text Mining Approach for Topic Modelling of Corpus Al Qur\'an in Indonesian Translation','Dwi Rolliawati, MT','https://osf.io/preprints/inarxiv/b4z76/download',2019,3,'https://osf.io/preprints/inarxiv/b4z76/download',NULL);
 
 /*Table structure for table `tabel_7_1_4` */
 
 CREATE TABLE `tabel_7_1_4` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `karya` varchar(256) NOT NULL,
+  `url` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_1_4` */
+
+insert  into `tabel_7_1_4`(`id`,`karya`,`url`) values 
+(1,'Paten NUI Menggunakan Kinect FIS-TSK',''),
+(2,'PROTOTIPE SISTEM INFORMASI DETEKSI MASJID TERDEKAT MENGGUNAKAN PETA DIGITAL BERBASIS MULTI-PLATFORM DEVICE (MOBILE AND WEB) SEBAGAI PENDUKUNG PELAKSANAAN BADAH SHOLAT TEPAT WAKTU',''),
+(3,'Hak Cipta Atas Judul Ciptaan : \"PERANCANGAN ROBOTIK BOAT PEMANTAUAN Tanggal dan tempat diumumkan SEDIMEN SUNGAI SEBAGAI DATA ANALISIS KEBIJAKAN PENGELOLAAN AIR DAS BRANTAS\" dari Kemnterian Hukum dan HAM',''),
+(4,'Sertifikat HAKI atas \"Aplikasi Literasi dan Buku Berjenjang\" di Laboratorium Fakultas Tarbiyah',''),
+(5,'Sertifikat HAKI atas Makalah \" Islamic Green Computing\"',''),
+(6,'Buku KRIPTOGRAFI & KEAMANAN KOMPUTER : “Prinsip,Teoritis Dan Praktis\" ',''),
+(7,'Teknologi Live Streaming: Media Penunjang Dakwah Dan Kegiatan Belajar Mengajar Untuk Mendukung Cyber University',''),
+(8,'Sistem Pendukung Keputusan Untuk Proses Kelulusan Dan Evaluasi Kinerja Akademik Mahasiswa Menggunakan Teknik Data Mining',''),
+(9,'Penerapan Data Mining Untuk Evaluasi Kinerja Akademik Mahasiswa Menggunakan Algoritma Naive Bayes Classifier',''),
+(10,'Pedoman KKN Literasi dengan Pendekatan ABCD','');
 
 /*Table structure for table `tabel_7_2_1` */
 

@@ -16,7 +16,11 @@
 			?>
 			<tr>
 				<td class="shrink"></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
+				<td class="">
+					<?php if(empty($row["url"])){ echo $row["karya"]; } else { ?>
+					<a href="<?=$row["url"];?>"><?=$row["karya"];?></a>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>

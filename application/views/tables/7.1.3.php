@@ -27,17 +27,37 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
-				<td class=""><a href="#">Dosen</a></td>
-				<td class=""><a href="#">Jurnal</a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$i;?></td>
+				<td class="">
+					<?php if(empty($row["url_dok"])){ echo $row["judul"]; } else { ?>
+					<a href="<?=$row["url_dok"];?>"><?=$row["judul"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<a href="https://lecturer.uinsby.ac.id/index.php/example/detaildosen/<?=$row["id_lecturer"];?>"><?=$row["nama_dosen"];?></a>
+				</td>
+				<td class="">
+					<?php 
+					if(empty($row["url_jurnal"])){ 
+						if(empty($row["url_dok"])){ 
+							echo $row["jurnal"]; 
+						} else { ?>
+					<a href="<?=$row["url_dok"];?>"><?=$row["jurnal"];?></a>
+					<?php 
+						}
+					} else { ?>
+					<a href="<?=$row["url_jurnal"];?>"><?=$row["jurnal"];?></a>
+					<?php } ?>
+				</td>
+				<td class="shrink text-center"><?=$row["tahun"];?></td>
+				<td class="shrink text-center"><?=$row["tingkat"]==1?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["tingkat"]==2?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["tingkat"]==3?"V":"";?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

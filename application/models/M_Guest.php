@@ -177,6 +177,12 @@ class M_Guest extends CI_Model {
 		}
 		return $ret;
 	}
+	function fetch_tabel_7_2_1_lkpkm($sumber, $ts){
+		$sql = "SELECT * FROM tabel_7_2_1_lkpkm WHERE sumber_dana=? AND ts=? ORDER BY id";
+		$query = $this->db->query($sql, array($sumber, $ts));
+		$ret = $query->result_array();
+		return $ret;
+	}
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

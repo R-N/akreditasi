@@ -2691,35 +2691,129 @@ CREATE TABLE `tabel_7_2_1` (
   `ts_2` int(11) NOT NULL DEFAULT '0',
   `ts_1` int(11) NOT NULL DEFAULT '0',
   `ts` int(11) NOT NULL DEFAULT '0',
+  `short_sumber` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_2_1` */
 
-insert  into `tabel_7_2_1`(`id`,`sumber_dana`,`ts_2`,`ts_1`,`ts`) values 
-(1,'Pembiayaan sendiri oleh dosen',8,16,18),
-(2,'PT yang bersangkutan',4,0,4),
-(3,'Depdiknas',0,0,0),
-(4,'Institusi dalam negeri di luar Depdiknas',2,2,3),
-(5,'Institusi luar negeri',0,0,0);
+insert  into `tabel_7_2_1`(`id`,`sumber_dana`,`ts_2`,`ts_1`,`ts`,`short_sumber`) values 
+(1,'Pembiayaan sendiri oleh dosen',8,16,18,'Mandiri'),
+(2,'PT yang bersangkutan',4,0,4,'PT'),
+(3,'Depdiknas',0,0,0,''),
+(4,'Institusi dalam negeri di luar Depdiknas',2,2,3,''),
+(5,'Institusi luar negeri',0,0,0,'');
 
 /*Table structure for table `tabel_7_2_1_lkpkm` */
 
 CREATE TABLE `tabel_7_2_1_lkpkm` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sumber_dana` int(11) NOT NULL,
-  `ts` int(4) NOT NULL,
-  `judul` varchar(200) NOT NULL,
   `tahun` int(4) NOT NULL,
+  `judul` varchar(200) NOT NULL,
+  `short_sumber` varchar(32) NOT NULL,
+  `sumber_dana` int(11) DEFAULT NULL,
+  `ts` int(1) NOT NULL,
   `nip` char(18) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `peran` varchar(100) NOT NULL,
+  `url` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sumber_7_1_1_lpdt` (`sumber_dana`),
   CONSTRAINT `sumber_7_2_1_lkpkm` FOREIGN KEY (`sumber_dana`) REFERENCES `tabel_7_2_1` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_2_1_lkpkm` */
+
+insert  into `tabel_7_2_1_lkpkm`(`id`,`tahun`,`judul`,`short_sumber`,`sumber_dana`,`ts`,`nip`,`nama`,`peran`,`url`) values 
+(1,2017,'Pelatihan pembuatan website dan Seminar tentang Teknologi serta dampaknya Terhadap Perilaku Hidup Sehat Santri Di pondok pesantren Nurul Huda','Mandiri',1,1,'','','',''),
+(2,2017,'Narasumber Radio RRI','PT',2,1,'','','',''),
+(3,2017,'Siaran RRI Pro 2 Tema Gadget','PT',2,1,'','','',''),
+(4,2017,'Pelatihan internet sehat pada Remaja Masjid Bukit Palma Surabaya','PT',2,1,'','','',''),
+(5,2017,'Penyuluhan\" Gadget dan Teknologi\" dengan tema Digital Literasi ','Mandiri',1,1,'','','',''),
+(6,2017,'Narasumber pada Pelatihan Pengelolaan Data untuk Penertiban Sistem Administrasi Desa di Ds. Srirande','Mandiri',1,1,'','','',''),
+(7,2017,'Pengabdian Di RRI Surabaya Tema Gadget ','Mandiri',1,1,'','','',''),
+(8,2017,'Pengabdian Masyarakat di SMK Nurul Huda Situbondo','Mandiri',1,1,'','','',''),
+(9,2017,'Pengabdian di PP Al Hidayah Mojosari','Mandiri',1,1,'','','',''),
+(10,2017,'Kelas Inspirasi Tuban 2 ','Mandiri',1,1,'','','',''),
+(11,2017,'RRI : Membumikan Literasi Informasi Digital Untuk Memerangi Hoax','Lembaga Lain',NULL,1,'','','',''),
+(12,2017,'Pelatihan Manajemen Berbasis Sekolah di SMA Darul Mukhlasin','PT',2,1,'','','',''),
+(13,2017,'Pengabdian Kepada Masyarakat \"Social Enterprise of Bambooland Maximizing the Role of Rural Communication towards Sustainable Economic Creative\" di Desa Purwobinangun, Kec. Pakem Sleman, DIY','Mandiri',1,1,'','','',''),
+(14,2017,'Melakukan Pendampingan Masyarakat melalui menjadi reviewer Beasiswa LPDP pada Bulan September 2017','Lembaga Lain',NULL,1,'','','',''),
+(15,2018,'Pengabdian Desain dan Pembuatan Website PT NU di Jawa Timur','Mandiri',1,0,'','','',''),
+(16,2018,'Narasumber BOS Madrasah Kementrian Agama ','Mandiri',1,0,'','','',''),
+(17,2018,'Kegiatan silaturahmi Yayasan Muslim Bukit Palma dengan tema \"Cerdas menjaga ukhuwah dalam era informasi berbasis digital\"','Mandiri',1,0,'','','',''),
+(18,2018,'Kegiatan pengabdian masyarakat Play Mathematics di Taman Bacaan Masyarakat','Mandiri',1,0,'','','',''),
+(19,2018,'Program\'Kegiatan\'Pengembangan\"Mutu\"Pendidikan\"Matematika\"di\" Madrasah\"Sekolah(Pedesaan','Mandiri',1,0,'','','',''),
+(20,2018,'Pelatihan kepada Wali murid : sebagai narasumber pada \"Parenting Edukasi Penggunaan Gadget (HP) untuk anak-anak\" PAUD Jawaahirul Hikmah Ponpes Jawaahirul Hikmah tanggal 20 Juli 2018','Mandiri',1,0,'','','',''),
+(21,2018,'Pembuatan Media Informasi LPTNU Jawa Timur','Luar PT',NULL,0,'','','',''),
+(22,2018,'Menjadi pembicara dalam Seminar Parenting dengan tema “Bagaimana Peran Gadget dalam Pendidikan Anak”','Mandiri',1,0,'','','',''),
+(23,2018,'Nara Sumber \"Parenting Edukasi penggunaan Gadget (HP) untuk anak anak\"','Mandiri',1,0,'','','',''),
+(24,2018,'Pendamping Program KP-KAS Kota Surabaya','Lembaga Lain',NULL,0,'','','',''),
+(25,2018,'Pengabdian Kepada Masyarakat Melalui Pembimbingan Mahasiswa KKN Reguler Gelombang II Tahun 2018 di Desa Kuwu, Kecamatan Balerejo, Kabupaten Madiun','Mandiri',1,0,'','','',''),
+(26,2018,'Diseminasi dan Alih Teknologi dan Perangkat Otomasi Pertanian\" di KRPL RW 04 Kelurahan Jemursari, Wonocolo Surabaya','Mandiri',1,0,'','','',''),
+(27,2018,'Pemetaan aset warga menggunakan teknologi GIS untuk menunjang kampung melek teknologi (study kasus kecamatan wonocolo surabaya)','Mandiri',1,0,'','','',''),
+(28,2018,'Pengabdian Masyarakat di Gedung Juang 45 Medan tentang Digital Literasi','Mandiri',1,0,'','','',''),
+(29,2018,'Workshop penguatan kinerja tenaga kependidikan madrasah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 19-21 November 2018','Mandiri',1,0,'','','',''),
+(30,2018,'Workshop Peningkatan Kompetensi Pustakawan Madrasah Aliyah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 2-4 Oktober 2018','Mandiri',1,0,'','','',''),
+(31,2018,'Workshop Penguatan Kompetensi Kepala Perpustakaan dan Kepala Laboratorium , Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 16-18 November 2018','Mandiri',1,0,'','','',''),
+(32,2018,'Narasumber Bantuan Pengembangan Karir Pustakawan, yang diselenggarakan oleh Direktorat Jenderal Pendidikan Tinggi Islam, Kementerian Agama RI, pada tanggal 21-26 November 2018','Mandiri',1,0,'','','',''),
+(33,2019,'Melakukan pengabdian masyarakat bersama FST Uinsa dan FT Univ Nurul Jadid tentang pesantren tanggap informasi di Ponpes Nurul Huda Situbondo','PT',2,-1,'','','',''),
+(34,2019,'Melakukan Pengmas melalui menjadi pembicara sistem penjaminan mutu di kampus Umaha Sidoarjo','Mandiri',1,-1,'','','',''),
+(35,2019,'\"Diseminasi dan Alih Teknologi dan Perangkat Otomasi Pertanian\" di KRPL RW 04 Kelurahan Jemursari, Wonocolo Surabaya','Mandiri',1,-1,'','','',''),
+(36,2019,'Pemetaan Aset warga menggunkan Teknologi GIS Untuk menunjang program kampung melek teknologi (studi kasus kecamatan wonocolo surabaya)','Mandiri',1,-1,'','','',''),
+(37,2019,'Sosialisasi Hasil Karya Perangkat Lunak Bersama Mahasiswa pada Masyarakat UKM','Mandiri',1,-1,'','','',''),
+(38,2019,'Pendampingan Sekolah SDN Baturetnno 1 Tuban','Mandiri',1,-1,'','','',''),
+(39,2019,'Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri berbasi E-commerce','PT',2,-1,'','','',''),
+(40,2019,'Diseminasi dan Alih Teknologi Perangkat Otomasi Pertanian','Mandiri',1,-1,'','','',''),
+(41,2019,'Melakukan Kegiatan Pengabdian Bersama Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya dengan Fakultas Teknik Universitas Nurul Jadid Di SMK dan Pondok Pesantren Nurul Huda Situbondo','Mandiri',1,-1,'','','',''),
+(42,2019,'pendampingan dan sosialisasi pengunaan aplikasi informasi jasa konstruksi kota malang di dinas pekerjaan kota malang','Mandiri',1,-1,'','','',''),
+(43,2019,'\"Diseminasi dan Alih Teknologi Perangkat Otomasi Pertanian\" di KRPL RW 04 Kelurahan Jemurwonosari Kecamatan Wonocolo Kota Surabaya','Mandiri',1,-1,'','','',''),
+(44,2019,'Pemetaan Aset Warga Menggunakan Teknologi GIS Untuk Menunjang Program Kampung Melek Teknologi (Studi Kasus Kec. Wonocolo Surabaya)','Mandiri',1,-1,'','','',''),
+(45,2019,'Pengisi Acara Saintek Bersholawat','PT',2,-1,'','','',''),
+(46,2019,'Pendampingan IT bagi Guru-guru MTsN 1 Surabaya','PT',2,-1,'','','',''),
+(47,2019,'Pendampingan dan Sosialisasi penggunaan aplikasi SIPJAKON di PUPR Kota Malang','Mandiri',1,-1,'','','',''),
+(48,2019,'Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri Berbasis E-Commerce di Pondok Pesantren Nurul Huda Yayasan Cendekia Insani Situbondo','Mandiri',1,-1,'','','',''),
+(49,2019,'Kegiatan Pengabdian Kepada Masyarakat di SMK Nurul Huda Situbondo','Mandiri',1,-1,'','','',''),
+(50,2019,'Pengabdian di Desa Wisata Gosari Kabupaten Gresik','Mandiri',1,-1,'','','',''),
+(51,2019,'Penyuluhan gadget warning system di SMP 62','Mandiri',1,-1,'','','',''),
+(52,2019,'Melaksanakan Pengabdian Masyarakat di Gedung Juang 45 Medan tentang Digital Literasi','Mandiri',1,-1,'','','',''),
+(53,2019,'Pendampingan Pengabdian di SMK Probolinggo','Mandiri',1,-1,'','','',''),
+(54,2019,'Melaksanakan Kegiatan Pengabdian Masyarakat Math4rural dengan Kegiatan Pelatihan Evalausi Pembelajaran Matematika bagi Guru SMP/MTs. di Panggungrejo 194 Gondanglegi Malang tanggal 01 sd 02 Desember 20','Mandiri',1,-1,'','','',''),
+(55,2019,'penguatan kinerja tenaga kependidikan madrasah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 19-21 November 2018','Luar PT',NULL,-1,'','','',''),
+(56,2019,'Peningkatan Kompetensi Pustakawan Madrasah Aliyah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 2-4 Oktober 2018','Luar PT',NULL,-1,'','','',''),
+(57,2019,'Penguatan Kompetensi Kepala Perpustakaan dan Kepala Laboratorium , Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 16-18 November 2018','Luar PT',NULL,-1,'','','','');
+
+/*Table structure for table `tabel_7_2_2` */
+
+CREATE TABLE `tabel_7_2_2` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tahun` int(4) NOT NULL,
+  `kegiatan` varchar(256) NOT NULL,
+  `url` varchar(512) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_7_2_2` */
+
+insert  into `tabel_7_2_2`(`id`,`tahun`,`kegiatan`,`url`) values 
+(1,2016,'Pembimbingan mahasiswa website Badan Wakaf Islam',''),
+(2,2016,'Pendamping mahasiswa program literasi',''),
+(3,2016,'Pelatihan anak sekolah di Taman Pinang Sidoarjo',''),
+(4,2016,'Pelatihan Workshop peningkatan SDM Teknologi Informasi, SDIT Al Firdaus, Mojokerto',''),
+(5,2016,'Memberi pelatihan kepada SMA Darul Mukhlasin Probolinggo',''),
+(6,2016,'Pembuatan website Fakultas Sains dan Teknologi, UIN Sunan Ampel Surabaya',''),
+(7,2016,'Pembuatan website Prodi Sistem Informasi, UIN Sunan Ampel Surabaya\r',''),
+(8,2016,'Pembuatan aplikasi remunerasi UIN Sunan Ampel Surabaya ',''),
+(9,2017,'Pelatihan pembuatan website dan Seminar tentang Teknologi serta dampaknya Terhadap Perilaku Hidup Sehat Santri Di pondok pesantren Nurul Huda',''),
+(10,2017,'Pelatihan internet sehat pada Remaja Masjid Bukit Palma Surabaya',''),
+(11,2017,'Penyuluhan\" Gadget dan Teknologi\" dengan tema Digital Literasi',''),
+(12,2017,'Narasumber pada Pelatihan Pengelolaan Data untuk Penertiban Sistem Administrasi Desa di Ds. Srirande',''),
+(13,2017,'Pelatihan Manajemen Berbasis Sekolah di SMA Darul Mukhlasin',''),
+(14,2017,'Pengabdian Kepada Masyarakat \"Social Enterprise of Bambooland Maximizing the Role of Rural Communication towards Sustainable Economic Creative\" di Desa Purwobinangun, Kec. Pakem Sleman, DIY',''),
+(15,2018,'Pengabdian Desain dan Pembuatan Website PT NU di Jawa Timur\r',''),
+(16,2018,'Kegiatan silaturahmi Yayasan Muslim Bukit Palma dengan tema \"Cerdas menjaga ukhuwah dalam era informasi berbasis digital\"',''),
+(17,2019,'Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri berbasi E-commerce',''),
+(18,2019,'Melakukan Kegiatan Pengabdian Bersama Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya dengan Fakultas Teknik Universitas Nurul Jadid Di SMK dan Pondok Pesantren Nurul Huda Situbondo','');
 
 /*Table structure for table `tabel_7_3_1` */
 

@@ -5,6 +5,7 @@
 				<th class="">No</th>
 				<th class="">Tahun</th>
 				<th class="">Judul Kegiatan Pelayanan/Pengabdian kepada Masyarakat</th>
+				<th class="">Sumber dan Jenis Dana</th>
 				<!--
 				<th class="">Judul</th>
 				<th class="">Peran</th>
@@ -28,6 +29,7 @@
 					<a href="<?=$row["url"];?>"><?=$row["judul"];?></a>
 					<?php } ?>
 				</td>
+				<td class=""><?=$row["short_sumber"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

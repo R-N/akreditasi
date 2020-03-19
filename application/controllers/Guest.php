@@ -881,27 +881,22 @@ class Guest extends CI_Controller {
 	public function page_7_2(){
 		$data = base_data("7.2");
 		$rows1 = $this->M_Guest->fetch_table("tabel_7_2_1");
-		$rows2 = array(
-			"Skema Basis Data Sistem Informasi Aset Barang"
-		);
-		$rows3 = array(
-			"Paten NUI Menggunakan Kinect FIS-TSK"
-		);
+		$rows2 = $this->M_Guest->fetch_table("tabel_7_2_1_lkpkm");
+		$rows3 = $this->M_Guest->fetch_table("tabel_7_2_2");
 		$data["contents"] = array(
-			card(
+			accordion(
 				"pengabdian-dosen-tetap", 
 				array(
 					_content("7.2.1 Jumlah kegiatan Pelayanan/Pengabdian kepada Masyarakat (*) yang sesuai dengan bidang keilmuan PS selama tiga tahun terakhir yang dilakukan oleh dosen tetap yang bidang keahliannya sesuai dengan PS", $this->load->view("tables/7.2.1.php", array("rows"=>$rows1),true)),
+					_content("7.2.1 Rincian Kegiatan Pelayanan/Pengabdian Kepada Masyarakat", $this->load->view("tables/7.2.1 LKPKM0.php", array("rows"=>$rows2),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("7.2.1")))
 				)
 			),
-			card(
+			accordion(
 				"partisipasi-mhs", 
 				array(
-					_content(
-						"7.2.2 Penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian", 
-						"penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian"
-					)
+					fragment("7.2.2", "7.2.2 Penjelasan tingkat partisipasi dan bentuk keterlibatan mahasiswa dalam kegiatan pengabdian", array()),
+					_content("7.2.2 Kegiatan Pengabdian Masyarakat Bersama Mahasiswa", $this->load->view("tables/7.2.2.php", array("rows"=>$rows3),true))
 				)
 			),
 		);
@@ -1323,7 +1318,7 @@ class Guest extends CI_Controller {
 		$data["page_title"] = "List Kegiatan PKM";
 		$data["page_id"] = "7.2.1";
 		array_push($data["breadcrumbs"], _link($data["page_title"], "#"));
-		$rows = array("asd");
+		$rows = $this->M_Guest->fetch_tabel_7_2_1_lkpkm($sumber, $ts);
 		$data["contents"] = array(
 			card("tabel", _content("Tabel", $this->load->view("tables/7.2.1 LKPKM.php", array("rows"=>$rows), true)))
 		);

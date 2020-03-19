@@ -16,20 +16,26 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row["tahun"];?></td>
+				<td class="">
+					<?php if(empty($row["url_penelitian"])){ echo $row["judul_penelitian"]; } else { ?>
+					<a href="<?=$row["url_penelitian"];?>"><?=$row["judul_penelitian"];?></a>
+					<?php } ?>
+				</td>
+				<td class=""><?=$row["sumber_dana"];?></td>
+				<td class=""><?=$row["jumlah_dana"]+0;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>
 		<tfoot>
 			<tr>
 				<td colspan="3">Jumlah (TODO)</td>
-				<td class="footer-callback" data-operation="sum" data-column="3"></td>
+				<td class="footer-callback" data-operation="sum" data-column="3">1357.5</td>
 			</tr>
 		</tfoot>
 	</table>

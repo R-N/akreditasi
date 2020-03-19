@@ -457,16 +457,18 @@ insert  into `strings`(`parent`,`text`) values
 
 CREATE TABLE `sumber_dana` (
   `sumber_dana` varchar(16) NOT NULL,
-  PRIMARY KEY (`sumber_dana`)
+  `no` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`sumber_dana`),
+  UNIQUE KEY `UNIQUE_NO` (`no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `sumber_dana` */
 
-insert  into `sumber_dana`(`sumber_dana`) values 
-('Diknas'),
-('PT Sendiri'),
-('Sumber Lain'),
-('Yayasan');
+insert  into `sumber_dana`(`sumber_dana`,`no`) values 
+('PT Sendiri',1),
+('Yayasan',2),
+('Diknas',3),
+('Sumber Lain',4);
 
 /*Table structure for table `sumber_dana_penelitian` */
 
@@ -495,6 +497,7 @@ CREATE TABLE `sumber_dana_pengabdian` (
 
 insert  into `sumber_dana_pengabdian`(`sumber`) values 
 ('Lembaga Lain'),
+('Luar PT'),
 ('Mandiri'),
 ('PT');
 
@@ -1900,9 +1903,9 @@ CREATE TABLE `tabel_6_2_1_1` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sumber_dana` varchar(16) NOT NULL,
   `jenis_dana` varchar(32) NOT NULL,
-  `jumlah_ts_2` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `jumlah_ts_1` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `jumlah_ts` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `jumlah_ts_2` decimal(7,3) NOT NULL DEFAULT '0.000',
+  `jumlah_ts_1` decimal(7,3) NOT NULL DEFAULT '0.000',
+  `jumlah_ts` decimal(7,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`),
   KEY `sumber_dana_diperoleh` (`sumber_dana`),
   CONSTRAINT `sumber_dana_diperoleh` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana` (`sumber_dana`) ON UPDATE CASCADE
@@ -1911,49 +1914,108 @@ CREATE TABLE `tabel_6_2_1_1` (
 /*Data for the table `tabel_6_2_1_1` */
 
 insert  into `tabel_6_2_1_1`(`id`,`sumber_dana`,`jenis_dana`,`jumlah_ts_2`,`jumlah_ts_1`,`jumlah_ts`) values 
-(1,'PT Sendiri','Rupiah Murni',0.000,0.000,0.000),
-(2,'PT Sendiri','Penerimaan Negara Bukan Pajak (P',0.000,0.000,0.000),
-(3,'Sumber Lain','Bantuan Penelitian',0.000,0.000,0.000),
-(6,'Sumber Lain','Bantuan Pengabdian Masyarakat',0.000,0.000,0.000),
-(7,'Sumber Lain','IDB (Lab Integrasi)',0.000,0.000,0.000),
-(8,'Sumber Lain','Hibah Pendampingan Jurnal (DIKTI',0.000,0.000,0.000);
+(1,'PT Sendiri','Rupiah Murni',3297.000,3522.000,4334.000),
+(2,'PT Sendiri','Penerimaan Negara Bukan Pajak (P',1489.000,1574.000,1544.000),
+(3,'Sumber Lain','Bantuan Penelitian',420.000,395.000,543.000),
+(6,'Sumber Lain','Bantuan Pengabdian Masyarakat',88.000,117.600,116.600),
+(7,'Sumber Lain','IDB (Lab Integrasi)',2674.300,0.000,0.000),
+(8,'Sumber Lain','Hibah Pendampingan Jurnal (DIKTI',0.000,40.000,0.000);
 
 /*Table structure for table `tabel_6_2_1_2` */
 
 CREATE TABLE `tabel_6_2_1_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis_penggunaan` varchar(32) NOT NULL,
-  `penggunaan_ts_2` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `penggunaan_ts_1` decimal(6,3) NOT NULL DEFAULT '0.000',
-  `penggunaan_ts` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `penggunaan_ts_2` decimal(7,3) NOT NULL DEFAULT '0.000',
+  `penggunaan_ts_1` decimal(7,3) NOT NULL DEFAULT '0.000',
+  `penggunaan_ts` decimal(7,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_2_1_2` */
 
 insert  into `tabel_6_2_1_2`(`id`,`jenis_penggunaan`,`penggunaan_ts_2`,`penggunaan_ts_1`,`penggunaan_ts`) values 
-(1,'Pendidikan',0.000,0.000,0.000),
-(2,'Penelitian',0.000,0.000,0.000),
-(3,'Pengabdian kepada Masyarakat',0.000,0.000,0.000),
-(4,'Investasi Prasarana',0.000,0.000,0.000),
-(5,'Investasi Sarana',0.000,0.000,0.000),
-(6,'Investasi SDM',0.000,0.000,0.000),
+(1,'Pendidikan',4627.000,4949.858,4730.000),
+(2,'Penelitian',420.000,395.000,543.000),
+(3,'Pengabdian kepada Masyarakat',88.000,117.600,116.600),
+(4,'Investasi Prasarana',2674.300,0.000,928.333),
+(5,'Investasi Sarana',158.666,168.166,208.203),
+(6,'Investasi SDM',0.000,0.000,12.000),
 (7,'Lain-lain',0.000,0.000,0.000);
 
 /*Table structure for table `tabel_6_2_2` */
 
 CREATE TABLE `tabel_6_2_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tahun` int(11) NOT NULL,
-  `judul_penelitian` varchar(256) NOT NULL,
+  `tahun` int(4) NOT NULL,
+  `judul_penelitian` varchar(300) NOT NULL,
   `sumber_dana` varchar(8) NOT NULL,
-  `jumlah_dana` decimal(6,3) NOT NULL,
+  `jumlah_dana` decimal(7,3) NOT NULL,
+  `url_penelitian` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sumber_dana_6_2_2` (`sumber_dana`),
   CONSTRAINT `sumber_dana_6_2_2` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana_penelitian` (`sumber`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_2_2` */
+
+insert  into `tabel_6_2_2`(`id`,`tahun`,`judul_penelitian`,`sumber_dana`,`jumlah_dana`,`url_penelitian`) values 
+(1,2017,'Prototype Sistem Informasi Deteksi Masjid Terdekat Menggunakan Peta Digital Berbasis Multi-Platform Device(Mobile and Web) Sebagai Pendukung Pelaksanaan Ibadah Sholat Tepat Waktu','Sendiri',15.000,''),
+(2,2017,'Optimalisasi Potensi Psikologi Siswa Berbasis Manajemen Data','PT',60.000,''),
+(3,2017,'Aplikasi Sistem Manajemen Mutu Lembaga Penjaminan Mutu UIN Sunan Ampel Surabaya','PT',110.000,''),
+(4,2017,'Implementasi Pengenalan Pola Untuk Mengevaluasi Hasil Pembelajaran Dengan Metode Fuzzy C-means','DIKTIS',10.000,''),
+(5,2017,'Analisis Dan Desain Penempatan Antrian Pemakaman Yang Aman Serta Ramah Lingkungan','Sendiri',15.000,''),
+(6,2017,'Mengkaji Konsep Green Computing Berdasarkan Perspektif Umat Islam','PT',10.000,''),
+(7,2017,'Seleksi Fitur Dua Tahap Menggunakan Information Gain dan Artificial Bee Colony untuk Kategorisasi Teks Berbasis Support Vector Machine','Sendiri',10.000,''),
+(8,2017,'Prototype Sistem Pendukung Keputusan Untuk Penetapan Jadwal Kuliah Menggunakan Algoritma Genetika','Sendiri',10.000,''),
+(9,2017,'NORMATIVE THEOLOGICAL REASONING OF BIOMETRIC SYSTEMS: Analyze the Uniqueness of Fingerprint Pattern in Information Technology Implementation','Sendiri',10.000,''),
+(10,2017,'“Upaya Pencegahan Penyakit Demam Berdarah Dengue (DBD) Berbasis Pondok Pesantren\" Di Desa Puton Kabupaten Jombang Jawa Timur','PT',10.000,''),
+(11,2017,'Ekonomi Lumbung dan Konstruksi Keberdayaan Petani Muslim Madiun','Sendiri',10.000,''),
+(12,2017,'Perancangan Robotik Boat Pemantauan Sedimen Sungai Sebagai  Data Analisis Kebijakan Pengelolaan Air DAS Brantas','Sendiri',10.000,''),
+(13,2017,'Desain Framework Kebijakan Internet Perguruan Tinggi Dalam Membangun University Social Responsibility (USR)','Sendiri',10.000,''),
+(14,2017,'Pengembangan Digital Signage Sebagai Display Interaktif Produk Pada Pusat Pengembangan Bisnis UIN Sunan Ampel Surabaya','PT',15.000,''),
+(15,2017,'Pemetaan Potensi Psikologis Siswa Mtsn di Surabaya','PT',60.000,''),
+(16,2017,'Prediksi Penerimaan Besasiswa Santri Pada Lembaga Pendidikan di Pesantren Nurul Huda Menggunakan Algoritma J48','Luar',17.500,''),
+(17,2017,'Strategy Development in University Academic Quality Related to Academic Library Services','PT',17.500,''),
+(18,2017,'A algorithm hybrid model of Bayesian for detection performance in unhealthy lifestyle','Sendiri',10.000,''),
+(19,2017,'Analisis Sentimen Twitter untuk Teks Berbahasa Indonesia Mengenai Peran Ormas Islam  dalam Penanganan Isu Radikalisme dengan Metode Support Vector Machine','Sendiri',10.000,''),
+(20,2018,'Pengembangan Sistem Informasi Akademik Dalam Mendukung Efisiensi Kurikulum 2013 Di Sekolah Dasar Islam Terpadu Firdaus','Sendiri',60.000,''),
+(21,2018,'Disparitas Status Sosial Ekonomi Intensitas Keterlibatan Orang Tua dalam Belajar dan Prestasi Belajar Matematika Siswa Indonesia','Sendiri',30.000,''),
+(22,2018,'menjadi ketua Tim Peneliti pada penelitian kolektiv madya dengan mahasiswa yg berjudul: Desain Sistem Informasi Pemasaran E Commercepada Usaha Mikro, Kecil  dan  Menengah  (UMKM)  “Bandeng  Mentari”  UD.  Multi  Sarana  Niaga  Gresik  untuk  Meningkatkan  Pemasaran','Sendiri',30.000,''),
+(23,2018,'ISLAMIC GREEN COMPUTING IMPLEMENTASI KONSEP RAHMATAN LIL ALAMINDI ERA TEKNOLOGI INFORMASI','PT',10.000,''),
+(24,2018,'RENCANA PENGEMBANGAN AKADEMIK UNIVERSITAS ISLAM NEGERI SUNAN AMPEL SURABAYA 2020-2025 MENGGUNAKAN TEKNIK KARTU KENDALI KOMUNITAS (Community Score Card)','PT',65.000,''),
+(25,2018,'Membuat Karya Penelitian dalam kluster PPK Individual dengan judul \"Teknologi Opinion Mining sebagai Strategic Planning menuju World Class University\"','PT',18.000,''),
+(26,2018,'Identifikasi Citra Daging Ayam Berformalin Menggunakan Metode Fitur Tekstur dan K-Nearest Neighbor (K-NN)','Sendiri',10.000,''),
+(27,2018,'MODEL SISTEM DETEKSI DINI KECENDERUNGAN PENYAKIT MASYARAKAT DESA TERTINGGAL DAN PESISIR AKIBAT POLA HIDUP YANG TIDAK SEHAT DENGAN ALGORITMA HYBRID BAYESIAN NETWORK BERDASARKAN DATA TERSEBAR (STUDI KASUS : DI KABUPATEN GRESIK DAN TUBAN)','Sendiri',10.000,''),
+(28,2018,' Adopsi Teknologi Informasi pada PTKIS di Jawa Timur','PT',24.000,''),
+(29,2018,'SOFTWARE DETEKSI HUBUNGAN POLA KONSUMSI (ENERGI DAN PROTEIN) TERHADAP INDEKS MASSA TUBUH MAHASISWA FAKULTAS SAINS TEKNOLOGI UIN SUNAN AMPEL SURABAYA TAHUN 2017','PT',30.000,''),
+(30,2018,'SISTEM INFORMASI PENENTUAN UANG KULIAH TUNGGAL DENGAN MENGGUNAKAN METODE FUZZY SUGENO DI UIN SUNAN AMPEL SURABAYA','Sendiri',10.000,''),
+(31,2018,'Perencanaan dan Analisis Papan Informasi Digital Berwawasan Green Campus Berbasis Internet of Things (IoT)','Sendiri',15.000,''),
+(32,2018,'Rancang Bangun Smart Urban Farming Surabaya Berbasis Internet of Things (IoT) Guna Memperkokoh Identitas Surabaya Green City:','Sendiri',15.000,''),
+(33,2018,'Peningkatan Akses Perguruan Tinggi NU (PTNU) di Jawa Timur melalui Teknologi Tepat Guna di Bidang Sistem Informasi (Rancang Bangun dan Pelatihan Content Management System Website Ptnu di Jawa Timur)','PTNU',17.500,''),
+(34,2018,'Pengembangan Instrumen Asesmen Higher Order Thinking Skills (HOTS) Mata Pelajaran Matematika Diintegrasikan dengan Nilai-nilai Islami','Sendiri',10.000,''),
+(35,2018,'Realitas Sosiologi Komunikasi Komunitas Pesantren Dalam Ruang Masyarakat Informasi (Studi Qualitative Inquiry Kyai dan Santri di Pondok Pesantren Al-Falah Ploso Kediri)','Sendiri',10.000,''),
+(36,2018,'\"Forecasts marine weather on Java sea using hybrid methods: TS-ANFIS\" yang diterbitkan dalam International Conference on Electrical Engineering, Computer Science and Informatics (EECSI)','Sendiri',10.000,''),
+(37,2018,'STUDENT READINESS AND CHALLENGE IN COMPLETING HIGHER ORDER THINKING SKILL TEST TYPE FOR MATHEMATICS','Sendiri',10.000,''),
+(38,2018,'EVALUASI USABILITY SISTEM INFORMASI MANAJEMEN\nKEPEGAWAIAN BERBASIS ISO 9241-11 MENGGUNAKAN METODE PARTIAL LEAST SQUARE','Sendiri',10.000,''),
+(39,2019,'Potensi Green City Berwawasan Industri 4.0 melalui Smart Urban Farming through IOT (SUFI)','PT',100.000,''),
+(40,2019,'Rekomendasi Pencocokan Pasangan berdasarkan kriteria Alquran Hadis dengan K-Means Clustering','PT',18.000,''),
+(41,2019,'Pengembangan Sistem Manajemen Penetapan Anggran Program Studi UINSA menuju WCU','PT',18.000,''),
+(42,2019,'Penerapan Software Peningkatan Kapasitas Kinerja Pelayanan','PT',24.000,''),
+(43,2019,'Implementasi Sistem Pakar untuk Mendiagnosa Paham Radikalisme pada Mahasiswa dengan Fuzzy Logic','PT',43.000,''),
+(44,2019,'Manajemen Aset Wakaf berbasis SIG sebagai media informasi publik','PT',100.000,''),
+(45,2019,'Peningkatan Akses Perguruan Tinggi NU (PTNU) di Jawa Timur melalui Teknologi Tepat Guna di Bidang Sistem Informasi (Rancang Bangun dan Pelatihan Content Management System Website Ptnu di Jawa Timur)','Sendiri',18.000,''),
+(46,2019,'Analisa Kebutuhan Sistem Hubungan Konsumsi (Energi dan Protein) Terhadap IMT Mahasiswa Fakultas Sains Teknologi Uin Sunan Ampel Surabaya','Sendiri',18.000,''),
+(47,2019,'ANALISIS DAN DESAIN ALGORITMA HYBRID KRIPTOGRAFI UNTUK MANAJEMEN STRATEGI PENGAMANAN DATA PERUSAHAAN','Sendiri',18.000,''),
+(48,2019,'Student Readiness and Challence in Completing Higher Order Thinking Skills Test Type for Mathematics (Infinity Journal Volume 8 Nomor 1 STKIP Siliwangi)','Sendiri',18.000,''),
+(49,2019,'Learning outcome of mathematics and science: Features of Indonesian madrasah students','Sendiri',24.000,''),
+(50,2019,'Metode Hibridasi Artificial Bee Colony dan Fuzzy K-Modes untuk Klasterisasi Data Kategorikal','Sendiri',18.000,''),
+(51,2019,'Pemanfaatan Teknologi Single Page Application (SPA) dalam Pembuatan Aplikasi Feedback Dosen dari Mahasiswa Sebagai Bentuk Pengawasan Lembaga Terhadap Kinerja Dosen di Bidang Pengajaran','Sendiri',18.000,''),
+(52,2019,'pemnfaatan open erp (dollibar) untuk agenda dan member sebagai penunjang program ukm melek teknologi','Sendiri',18.000,''),
+(53,2019,'Pengembangan Model Usaha Tanaman Hidroponik Melalui Pemanfaatan Teknologi Tepat Guna Berbasis Media Informasi Pada Komunitas UMKM Pertanian Perkotaan','Sendiri',24.000,''),
+(54,2019,'DETEKSI PLAGIASI DOKUMEN SKRIPSI MAHASISWA MENGGUNAKAN METODE N-GRAMS DAN WINNOWING','Sendiri',24.000,''),
+(55,2019,'EVALUASI USABILITY SISTEM INFORMASI MANAJEMEN KEPEGAWAIAN BERBASIS ISO 9241-11','Sendiri',18.000,''),
+(56,2019,'Text Mining Approach for Topic Modelling of Corpus Al Qur\'an in Indonesian Translation','Sendiri',24.000,'');
 
 /*Table structure for table `tabel_6_2_3` */
 
@@ -1963,12 +2025,72 @@ CREATE TABLE `tabel_6_2_3` (
   `judul_pengabdian` varchar(256) NOT NULL,
   `sumber_dana` varchar(16) NOT NULL,
   `jumlah_dana` decimal(6,3) NOT NULL,
+  `url_pengabdian` varchar(512) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sumber_dana_6_2_3` (`sumber_dana`),
   CONSTRAINT `sumber_dana_6_2_3` FOREIGN KEY (`sumber_dana`) REFERENCES `sumber_dana_pengabdian` (`sumber`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_2_3` */
+
+insert  into `tabel_6_2_3`(`id`,`tahun`,`judul_pengabdian`,`sumber_dana`,`jumlah_dana`,`url_pengabdian`) values 
+(1,2017,'Pelatihan pembuatan website dan  Seminar tentang Teknologi serta dampaknya Terhadap Perilaku Hidup Sehat Santri Di pondok pesantren Nurul Huda','Mandiri',9.000,NULL),
+(2,2017,'Narasumber Radio RRI','PT',1.800,NULL),
+(3,2017,'Siaran RRI Pro 2 Tema Gadget','PT',1.800,NULL),
+(4,2017,'Pelatihan internet sehat pada Remaja Masjid Bukit Palma Surabaya','PT',6.000,NULL),
+(5,2017,'Penyuluhan\" Gadget dan Teknologi\" dengan tema Digital Literasi','Mandiri',6.000,NULL),
+(6,2017,'Narasumber pada Pelatihan Pengelolaan Data untuk Penertiban Sistem Administrasi Desa di Ds. Srirande','Mandiri',6.000,NULL),
+(7,2017,'Pengabdian Di RRI Surabaya Tema Gadget ','Mandiri',1.800,NULL),
+(8,2017,'Pengabdian Masyarakat di SMK Nurul Huda Situbondo','Mandiri',9.000,NULL),
+(9,2017,'Pengabdian  di PP Al Hidayah Mojosari','Mandiri',9.000,NULL),
+(10,2017,'Kelas Inspirasi Tuban 2','Mandiri',9.000,NULL),
+(11,2017,'RRI : Membumikan Literasi Informasi Digital Untuk Memerangi Hoax','Lembaga Lain',9.000,NULL),
+(12,2017,'Pelatihan Manajemen Berbasis Sekolah di SMA Darul Mukhlasin','PT',9.000,NULL),
+(13,2017,'Pengabdian Kepada Masyarakat \"Social Enterprise of Bambooland Maximizing the Role of Rural Communication towards Sustainable Economic Creative\" di Desa Purwobinangun, Kec. Pakem Sleman, DIY','Mandiri',9.000,NULL),
+(14,2017,'Melakukan Pendampingan Masyarakat melalui menjadi reviewer Beasiswa LPDP pada Bulan September 2017','Lembaga Lain',1.800,NULL),
+(15,2018,'Pengabdian Desain dan Pembuatan Website PT NU di Jawa Timur','Mandiri',9.000,NULL),
+(16,2018,'Narasumber BOS Madrasah Kementrian Agama','Mandiri',3.000,NULL),
+(17,2018,'Kegiatan silaturahmi Yayasan Muslim  Bukit Palma dengan tema \"Cerdas menjaga ukhuwah dalam era informasi berbasis digital\"','Mandiri',3.000,NULL),
+(18,2018,'Kegiatan pengabdian masyarakat  Play Mathematics di Taman Bacaan Masyarakat','Mandiri',9.000,NULL),
+(19,2018,'Program \'Kegiatan\'Pengembangan\"\"Mutu\"\"Pendidikan\"\"Matematika\"\"di\"\" Madrasah\"\"Sekolah(Pedesaan','Mandiri',9.000,NULL),
+(20,2018,'Pelatihan kepada Wali murid : sebagai narasumber pada \"Parenting Edukasi Penggunaan Gadget (HP) untuk anak-anak\"  PAUD Jawaahirul Hikmah Ponpes Jawaahirul Hikmah tanggal 20 Juli 2018','Mandiri',9.000,NULL),
+(21,2018,'Pembuatan Media Informasi LPTNU Jawa Timur','Luar PT',12.000,NULL),
+(22,2018,'Menjadi pembicara dalam Seminar Parenting dengan tema “Bagaimana Peran Gadget dalam Pendidikan Anak”','Mandiri',1.800,NULL),
+(23,2018,'Nara Sumber \"Parenting Edukasi penggunaan Gadget (HP) untuk anak anak\"','Mandiri',1.800,NULL),
+(24,2018,'Pendamping Program KP-KAS Kota Surabaya','Lembaga Lain',6.000,NULL),
+(25,2018,'Pengabdian Kepada Masyarakat Melalui Pembimbingan Mahasiswa KKN Reguler Gelombang II Tahun 2018 di Desa Kuwu, Kecamatan Balerejo, Kabupaten Madiun','Mandiri',3.000,NULL),
+(26,2018,'Diseminasi dan Alih Teknologi dan Perangkat Otomasi Pertanian\" di KRPL RW 04 Kelurahan Jemursari, Wonocolo Surabaya','Mandiri',9.000,NULL),
+(27,2018,'Pemetaan aset warga menggunakan teknologi GIS untuk menunjang kampung melek teknologi (study kasus kecamatan wonocolo surabaya)','Mandiri',15.000,NULL),
+(28,2018,'Pengabdian Masyarakat di Gedung Juang 45 Medan  tentang Digital Literasi','Mandiri',6.000,NULL),
+(29,2018,'Workshop penguatan kinerja tenaga kependidikan madrasah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 19-21 November 2018','Mandiri',6.000,NULL),
+(30,2018,'Workshop Peningkatan Kompetensi Pustakawan Madrasah Aliyah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 2-4 Oktober 2018','Mandiri',6.000,NULL),
+(31,2018,'Workshop Penguatan Kompetensi Kepala Perpustakaan dan Kepala Laboratorium , Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 16-18 November 2018','Mandiri',6.000,NULL),
+(32,2018,'Narasumber Bantuan Pengembangan Karir Pustakawan, yang diselenggarakan oleh Direktorat Jenderal Pendidikan Tinggi Islam, Kementerian Agama RI, pada tanggal 21-26 November 2018','Mandiri',3.000,NULL),
+(33,2019,'Melakukan pengabdian masyarakat bersama FST Uinsa dan FT Univ Nurul Jadid tentang pesantren tanggap informasi di Ponpes Nurul Huda Situbondo','PT',5.000,NULL),
+(34,2019,'Melakukan Pengmas melalui menjadi pembicara sistem penjaminan mutu di kampus Umaha Sidoarjo','Mandiri',1.500,NULL),
+(35,2019,'\"Diseminasi dan Alih Teknologi dan Perangkat Otomasi Pertanian\" di KRPL RW 04 Kelurahan Jemursari, Wonocolo Surabaya','Mandiri',1.500,NULL),
+(36,2019,'Pemetaan Aset warga menggunkan Teknologi GIS Untuk menunjang program kampung melek teknologi (studi kasus  kecamatan wonocolo surabaya)','Mandiri',1.500,NULL),
+(37,2019,'Sosialisasi Hasil Karya Perangkat Lunak Bersama Mahasiswa pada Masyarakat UKM','Mandiri',1.500,NULL),
+(38,2019,'Pendampingan Sekolah SDN Baturetnno 1 Tuban','Mandiri',2.000,NULL),
+(39,2019,'Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri berbasi E-commerce','PT',60.000,NULL),
+(40,2019,'Diseminasi dan Alih Teknologi Perangkat Otomasi Pertanian','Mandiri',2.000,NULL),
+(41,2019,'Melakukan Kegiatan Pengabdian Bersama Fakultas Sains dan Teknologi UIN Sunan Ampel Surabaya dengan Fakultas Teknik Universitas Nurul Jadid Di SMK dan Pondok Pesantren Nurul Huda Situbondo','Mandiri',2.000,NULL),
+(42,2019,'pendampingan dan sosialisasi pengunaan aplikasi informasi jasa konstruksi kota malang di dinas pekerjaan kota malang','Mandiri',2.000,NULL),
+(43,2019,'\"\"Diseminasi dan Alih Teknologi Perangkat Otomasi Pertanian\"\" di KRPL RW 04 Kelurahan Jemurwonosari Kecamatan Wonocolo Kota Surabaya','Mandiri',1.500,NULL),
+(44,2019,'Pemetaan Aset Warga Menggunakan Teknologi GIS Untuk Menunjang Program Kampung Melek Teknologi (Studi Kasus Kec. Wonocolo Surabaya)','Mandiri',1.500,NULL),
+(45,2019,'Pengisi Acara Saintek Bersholawat','PT',5.000,NULL),
+(46,2019,'Pendampingan IT bagi Guru-guru MTsN 1 Surabaya','PT',5.000,NULL),
+(47,2019,'Pendampingan dan Sosialisasi penggunaan aplikasi SIPJAKON di PUPR Kota Malang','Mandiri',2.000,NULL),
+(48,2019,'Pengembangan Ekonomi Kreatif Pesantren Produk Batik Tulis Santri Berbasis E-Commerce di Pondok Pesantren Nurul Huda Yayasan Cendekia Insani Situbondo','Mandiri',2.000,NULL),
+(49,2019,' Kegiatan Pengabdian Kepada Masyarakat di SMK Nurul Huda Situbondo','Mandiri',2.000,NULL),
+(50,2019,'Pengabdian di Desa Wisata Gosari Kabupaten Gresik','Mandiri',2.000,NULL),
+(51,2019,'Penyuluhan gadget warning system di SMP 62','Mandiri',1.800,NULL),
+(52,2019,'Melaksanakan Pengabdian Masyarakat di Gedung Juang 45 Medan  tentang Digital Literasi','Mandiri',2.000,NULL),
+(53,2019,'Pendampingan Pengabdian di SMK Probolinggo','Mandiri',2.000,NULL),
+(54,2019,'Melaksanakan Kegiatan Pengabdian Masyarakat Math4rural dengan Kegiatan Pelatihan Evalausi Pembelajaran Matematika bagi Guru SMP/MTs. di Panggungrejo 194 Gondanglegi Malang tanggal 01 sd 02 Desember 2018','Mandiri',1.800,NULL),
+(55,2019,'penguatan kinerja tenaga kependidikan madrasah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 19-21 November 2018','Luar PT',3.000,NULL),
+(56,2019,'Peningkatan Kompetensi Pustakawan Madrasah Aliyah, Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 2-4 Oktober 2018','Luar PT',3.000,NULL),
+(57,2019,'Penguatan Kompetensi Kepala Perpustakaan dan Kepala Laboratorium , Yang diselenggarakan oleh Direktorat GTK Madrasah, Dirjen Pendis Kementerian Agama, Tanggal 16-18 November 2018','Luar PT',3.000,NULL);
 
 /*Table structure for table `tabel_6_3_1` */
 

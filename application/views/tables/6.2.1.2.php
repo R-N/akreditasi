@@ -21,14 +21,16 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$i;?></td>
+				<td class="shrink"><?=$row["jenis_penggunaan"];?></td>
+				<td class=""><?=$row["penggunaan_ts_2"]+0;?></td>
+				<td class=""><?=$row["penggunaan_ts_1"]+0;?></td>
+				<td class=""><?=$row["penggunaan_ts"]+0;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

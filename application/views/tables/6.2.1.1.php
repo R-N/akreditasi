@@ -29,10 +29,10 @@
 				<?php if ($i == 0){ ?>
 				<td class="shrink" rowspan="<?=count($group["rows"]);?>"><?=$group["name"];?></td>
 				<?php } ?>
-				<td class=""><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink"><?=$row["jenis_dana"];?></td>
+				<td class="shrink"><?=$row["jumlah_ts_2"]+0;?></td>
+				<td class="shrink"><?=$row["jumlah_ts_1"]+0;?></td>
+				<td class="shrink"><?=$row["jumlah_ts"]+0;?></td>
 			</tr>
 			<?php 
 					++$i;
@@ -43,9 +43,9 @@
 		<tfoot>
 			<tr>
 				<td colspan="2">Jumlah (TODO)</td>
-				<td class="footer-callback" data-operation="sum" data-column="2"></td>
-				<td class="footer-callback" data-operation="sum" data-column="3"></td>
-				<td class="footer-callback" data-operation="sum" data-column="4"></td>
+				<td class="footer-callback" data-operation="sum" data-column="2">7967.826</td>
+				<td class="footer-callback" data-operation="sum" data-column="3">5648.124</td>
+				<td class="footer-callback" data-operation="sum" data-column="4">6538.005</td>
 			</tr>
 		</tfoot>
 	</table>

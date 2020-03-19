@@ -19,10 +19,14 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""></td>
-				<td class="shrink"><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$row["tahun"];?></td>
+				<td class="">
+					<?php if(empty($row["url_pengabdian"])){ echo $row["judul_pengabdian"]; } else { ?>
+					<a href="<?=$row["url_pengabdian"];?>"><?=$row["judul_pengabdian"];?></a>
+					<?php } ?>
+				</td>
+				<td class=""><?=$row["sumber_dana"];?></td>
+				<td class=""><?=$row["jumlah_dana"]+0;?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

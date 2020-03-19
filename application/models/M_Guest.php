@@ -86,6 +86,31 @@ class M_Guest extends CI_Model {
 		}
 		return $ret;
 	}
+	
+	function fetch_tabel_6_2_1_1(){
+		$sql = "SELECT sd.sumber_dana as name FROM sumber_dana sd ORDER BY sd.no";
+		$query = $this->db->query($sql);
+		$ret = $query->result_array();
+		$i = 0;
+		foreach($ret as $r){
+			$sql = "SELECT * FROM tabel_6_2_1_1 t WHERE t.sumber_dana=?";
+			$query1 = $this->db->query($sql, array($r["name"]));
+			$ret1 = $query1->result_array();
+			if(count($ret1) == 0){
+				array_push($ret1, array(
+					"id"=>"",
+					"sumber_dana"=>"",
+					"jenis_dana"=>"",
+					"jumlah_ts_2"=>"",
+					"jumlah_ts_1"=>"",
+					"jumlah_ts"=>""
+				));
+			}
+			$ret[$i]["rows"] = $ret1;
+			++$i;
+		}
+		return $ret;
+	}
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

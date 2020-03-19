@@ -724,49 +724,10 @@ class Guest extends CI_Controller {
 	}
 	public function page_6_2(){
 		$data = base_data("6.2");
-		$groups1 = array(
-			array(
-				"name"=>"PT Sendiri",
-				"rows"=>array(
-					"Rupiah Murni",
-					"Penerimaan Negara Bukan Pajak (PNBP)"
-				)
-			),
-			array(
-				"name"=>"Yayasan",
-				"rows"=>array(
-					""
-				)
-			),
-			array(
-				"name"=>"Diknas",
-				"rows"=>array(
-					""
-				)
-			),
-			array(
-				"name"=>"Sumber Lain",
-				"rows"=>array(
-					"Bantuan Penelitian",
-					"Bantuan Pengabdian Masyarakat"
-				)
-			)
-		);
-		$rows2 = array(
-			"Pendidikan",
-			"Penelitian",
-			"Pengabdian kepada Masyarakat",
-			"Investasi Prasarana",
-			"Investasi Sarana",
-			"Investasi SDM",
-			"Lain-lain"
-		);
-		$rows3 = array(
-			"Analisis Software Hybrid Untuk Deteksi Gejala Penyakit"
-		);
-		$rows4 = array(
-			"Pelatihan Dekstop Application Training I Yayasan Mitra Arofah Surabaya"
-		);
+		$groups1 = $this->M_Guest->fetch_tabel_6_2_1_1();
+		$rows2 = $this->M_Guest->fetch_table("tabel_6_2_1_2");
+		$rows3 = $this->M_Guest->fetch_table("tabel_6_2_2");
+		$rows4 = $this->M_Guest->fetch_table("tabel_6_2_3");
 		$data["contents"] = array(
 			card(
 				"perolehan-dana", 
@@ -783,14 +744,14 @@ class Guest extends CI_Controller {
 			card(
 				"dana-penelitian", 
 				array(
-					_content("6.2.2 Dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahliannya sesuai dengan program studi", $this->load->view("tables/6.2.2.php", array("rows"=>$rows3),true)),
+					_content("6.2.2 Dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahliannya sesuai dengan program studi [TODO]", $this->load->view("tables/6.2.2.php", array("rows"=>$rows3),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.2.2")))
 				)
 			),
 			card(
 				"dana-pengabdian", 
 				array(
-					_content("6.2.3 Dana yang diperoleh dari/untuk kegiatan pelayanan/pengabdian kepada masyarakat pada tiga tahun terakhir", $this->load->view("tables/6.2.3.php", array("rows"=>$rows4),true))
+					_content("6.2.3 Dana yang diperoleh dari/untuk kegiatan pelayanan/pengabdian kepada masyarakat pada tiga tahun terakhir [TODO]", $this->load->view("tables/6.2.3.php", array("rows"=>$rows4),true))
 				)
 			)
 		);

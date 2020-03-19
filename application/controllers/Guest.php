@@ -711,10 +711,11 @@ class Guest extends CI_Controller {
 	public function page_6_1(){
 		$data = base_data("6.1");
 		$data["contents"] = array(
-			card(
+			accordion(
 				"pengelolaan-dana", 
 				array(
-					_content("6.1.1 Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana [TODO]", "Panjang sekali. Apa saja yang perlu masuk web? Atau mungkin bisa tolong diringkas?"),
+					fragment("6.1.1.1", "6.1.1.A Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana: Perencanaan [TODO]", array()),
+					fragment("6.1.1.2", "6.1.1.B Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana: Pengelolaan Dana [TODO]", array()),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.1")))
 				)
 			),

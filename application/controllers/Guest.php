@@ -714,7 +714,7 @@ class Guest extends CI_Controller {
 			card(
 				"pengelolaan-dana", 
 				array(
-					_content("Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana", "Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana"),
+					_content("6.1.1 Keterlibatan ps dalam perencanaan anggaran dan pengelolaan dana [TODO]", "Panjang sekali. Apa saja yang perlu masuk web? Atau mungkin bisa tolong diringkas?"),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.1")))
 				)
 			),

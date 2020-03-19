@@ -19,10 +19,22 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
-				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
-				<td class=""><a href="<?=base_url();?>7/2/1/LKPKM/1/1">0</a></td>
+				<td class=""><?=$row["sumber_dana"];?></td>
+				<td class="">
+					<?php if($row["ts_2"]==0){ echo 0; } else { ?>
+					<a href="<?=base_url();?>7/2/1/LKPKM/<?=$row["id"];?>/2"><?=$row["ts_2"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if($row["ts_1"]==0){ echo 0; } else { ?>
+					<a href="<?=base_url();?>7/2/1/LKPKM/<?=$row["id"];?>/1"><?=$row["ts_1"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if($row["ts"]==0){ echo 0; } else { ?>
+					<a href="<?=base_url();?>7/2/1/LKPKM/<?=$row["id"];?>/0"><?=$row["ts"];?></a>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>

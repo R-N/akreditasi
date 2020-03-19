@@ -152,6 +152,31 @@ class M_Guest extends CI_Model {
 		$ret12 = $query2->result_array();
 		return $ret12;
 	}
+	function fetch_tabel_7_1_4(){
+		$sql = "SELECT * FROM tabel_7_1_4 ORDER BY id";
+		$query = $this->db->query($sql, array());
+		$ret = $query->result_array();
+		$i = 0;
+		$lect_column = "nama_dosen";
+		$lect_column_2 = "nama";
+		$lect_column_2 = "nama";
+		foreach($ret as $r){
+			$sql1 = "
+				SELECT t.*, d.id_lecturer
+				FROM tabel_7_1_4_d t
+				LEFT JOIN dosen d
+				ON t.{$lect_column}=d.{$lect_column_2} 
+					OR t.{$lect_column} LIKE CONCAT(\"%\",d.{$lect_column_2},\"%\") 
+					OR d.{$lect_column_2} LIKE CONCAT(\"%\",t.{$lect_column},\"%\")
+				WHERE karya=? 
+				ORDER BY id";
+			$query1 = $this->db->query($sql1, array($r["id"]));
+			$ret1 = $query1->result_array();
+			$ret[$i]["rows"] = $ret1;
+			++$i;
+		}
+		return $ret;
+	}
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

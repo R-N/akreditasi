@@ -846,7 +846,7 @@ class Guest extends CI_Controller {
 		$data = base_data("7.1");
 		$rows1 = $this->M_Guest->fetch_table("tabel_7_1_1");
 		$rows2 = $this->M_Guest->fetch_table_dosen("tabel_7_1_3", "nama_dosen", "nama");
-		$rows3 = $this->M_Guest->fetch_table("tabel_7_1_4");
+		$rows3 = $this->M_Guest->fetch_tabel_7_1_4();
 		$data["contents"] = array(
 			card(
 				"penelitian-dosen-tetap", 
@@ -880,13 +880,7 @@ class Guest extends CI_Controller {
 	}
 	public function page_7_2(){
 		$data = base_data("7.2");
-		$rows1 = array(
-			"Pembiayaan sendiri oleh peneliti",
-			"PT yang bersangkutan",
-			"Depdiknas",
-			"Institusi dalam negeri di luar Depdiknas",
-			"Institusi luar negeri"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_7_2_1");
 		$rows2 = array(
 			"Skema Basis Data Sistem Informasi Aset Barang"
 		);

@@ -2653,6 +2653,36 @@ insert  into `tabel_7_1_4`(`id`,`karya`,`url`) values
 (9,'Penerapan Data Mining Untuk Evaluasi Kinerja Akademik Mahasiswa Menggunakan Algoritma Naive Bayes Classifier',''),
 (10,'Pedoman KKN Literasi dengan Pendekatan ABCD','');
 
+/*Table structure for table `tabel_7_1_4_d` */
+
+CREATE TABLE `tabel_7_1_4_d` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `karya` int(11) NOT NULL,
+  `nama_dosen` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `KARYA_DOSEN` (`karya`),
+  CONSTRAINT `KARYA_DOSEN` FOREIGN KEY (`karya`) REFERENCES `tabel_7_1_4` (`id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_7_1_4_d` */
+
+insert  into `tabel_7_1_4_d`(`id`,`karya`,`nama_dosen`) values 
+(1,1,'Achmad Teguh Wibowo, MT'),
+(2,2,'Achmad Teguh Wibowo, MT'),
+(3,2,'Faris Muslihul Amin, M.Kom'),
+(4,2,'Moch Yasin, M. Kom'),
+(5,2,'Muhammad Andik\r\nIzzuddin, MT'),
+(6,2,'Dkk.'),
+(7,3,'Muhammad Andik Izzuddin, MT'),
+(8,4,'Muhammad Andik Izzuddin, MT'),
+(9,5,'Indri Sudanawati Rozas, M.Kom'),
+(10,6,'Dwi Rolliawati, MT'),
+(11,7,'Achmad Teguh Wibowo, MT'),
+(12,7,'Faris Muslihul Amin, M.Kom'),
+(13,8,'Mujib Ridwan, MT'),
+(14,9,'Mujib Ridwan, MT'),
+(15,10,'Andik Izzudin, MT');
+
 /*Table structure for table `tabel_7_2_1` */
 
 CREATE TABLE `tabel_7_2_1` (
@@ -2667,10 +2697,10 @@ CREATE TABLE `tabel_7_2_1` (
 /*Data for the table `tabel_7_2_1` */
 
 insert  into `tabel_7_2_1`(`id`,`sumber_dana`,`ts_2`,`ts_1`,`ts`) values 
-(1,'Pembiayaan sendiri oleh dosen',0,0,0),
-(2,'PT yang bersangkutan',0,0,0),
+(1,'Pembiayaan sendiri oleh dosen',8,16,18),
+(2,'PT yang bersangkutan',4,0,4),
 (3,'Depdiknas',0,0,0),
-(4,'Institusi dalam negeri di luar Depdiknas',0,0,0),
+(4,'Institusi dalam negeri di luar Depdiknas',2,2,3),
 (5,'Institusi luar negeri',0,0,0);
 
 /*Table structure for table `tabel_7_2_1_lkpkm` */

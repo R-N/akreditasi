@@ -23,15 +23,21 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""><a href="#"><?=$row;?></a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$i;?></td>
+				<td class="">
+					<?php if(empty($row["url"])){ echo $row["jenis_data"]; } else { ?>
+					<a href="<?=$row["url"];?>"><?=$row["jenis_data"];?></a>
+					<?php } ?>
+				</td>
+				<td class="shrink text-center"><?=$row["pengolahan_data"]==1?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["pengolahan_data"]==2?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["pengolahan_data"]==3?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["pengolahan_data"]==4?"V":"";?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

@@ -152,5 +152,10 @@ $(document).ready(function(){
             } ).draw();
         }
     });
-    
+    $('table').each(function(){
+		let width = $(this).css("width");
+		if(width == 0 || width == "0px" || width <= $(this).parent().width()){
+			$(this).css("width", "100%");
+		}
+	});
 });

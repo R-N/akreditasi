@@ -821,24 +821,15 @@ class Guest extends CI_Controller {
 	}
 	public function page_6_5(){
 		$data = base_data("6.5");
-		$rows1 = array(
-			"Mahasiswa",
-			"Kartu Rencana Studi (KRS)",
-			"Jadwal Mata Kuliah",
-			"Nilai Mata Kuliah",
-			"Transkrip Akademik",
-			"Lulusan",
-			"Dosen",
-			"Pegawai",
-			"Keuangan",
-			"Inventaris",
-			"Perpustakaan"
-		);
+		$rows0 = $this->M_Guest->fetch_table("tabel_6_5_1_3");
+		$rows1 = $this->M_Guest->fetch_table("tabel_6_5_2");
 		$data["contents"] = array(
-			card(
+			accordion(
 				"sistem-informasi", 
 				array(
-					_content("6.5.1 Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran", "Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran"),
+					fragment("6.5.1.1", "6.5.1.1 Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran: Perangkat teknologi yang digunakan dalam pembelajaran", array()),
+					fragment("6.5.1.2", "6.5.1.2 Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran: Perangkat Hardware", array()),
+					_content("6.5.1.3 Penjelasan sistem informasi dari fasilitas yang digunakan prodi untuk pembelajaran: Perangkat Software", $this->load->view("tables/6.5.1.3.php", array("rows"=>$rows0),true)),
 					_content("Dokumen Pendukung [TODO]",  _links_db($this->M_Guest->fetch_dokumen("6.5.1")))
 				)
 			),

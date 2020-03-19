@@ -2415,13 +2415,36 @@ insert  into `tabel_6_4_3`(`id`,`nama_lab`,`jenis_peralatan`,`jumlah_peralatan`,
 (46,'Laboratorium Jaringan dan Hardware','Whiteboard',1,'Unit',0,1,30.000),
 (47,'Laboratorium Jaringan dan Hardware','Audio',1,'Set',0,1,30.000);
 
+/*Table structure for table `tabel_6_5_1_3` */
+
+CREATE TABLE `tabel_6_5_1_3` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `software` varchar(50) NOT NULL,
+  `lisensi` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tabel_6_5_1_3` */
+
+insert  into `tabel_6_5_1_3`(`id`,`software`,`lisensi`) values 
+(1,'Windows',1),
+(2,'Ms Office',1),
+(3,'Netbeans',3),
+(4,'Orange',3),
+(5,'Packet Tracer',3),
+(6,'Any Logic Community',3),
+(7,'Oracle',1),
+(8,'Arcgis',1),
+(9,'Visual Paradigm Community',3),
+(10,'Sparx Enterprise Architect Community',3);
+
 /*Table structure for table `tabel_6_5_2` */
 
 CREATE TABLE `tabel_6_5_2` (
   `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `jenis_data` varchar(32) NOT NULL,
   `pengolahan_data` tinyint(1) NOT NULL,
-  `url` varchar(128) DEFAULT NULL,
+  `url` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `pengolahan_data` (`pengolahan_data`),
   CONSTRAINT `pengolahan_data` FOREIGN KEY (`pengolahan_data`) REFERENCES `pengolahan_data` (`id`)

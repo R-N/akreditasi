@@ -58,3 +58,7 @@ table .shrink {
 .clickable {
   cursor: pointer;
 }
+
+.datatable,.datatable table{
+	width: 100%;
+}

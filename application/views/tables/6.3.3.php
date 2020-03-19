@@ -30,18 +30,28 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""><a href="<?=base_url();?>6/3/3/LP/1"><?=$row;?></a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class="shrink"><?=$i;?></td>
+				<td class="">
+					<?php if($row["jumlah"]==0){ echo $row["jenis"]; } else { ?>
+					<a href="<?=base_url();?>6/3/3/LP/<?=$row["id"];?>"><?=$row["jenis"];?></a>
+					<?php } ?>
+				</td>
+				<td class="shrink">
+					<?php if($row["jumlah"]==0){ echo $row["jumlah"]; } else { ?>
+					<a href="<?=base_url();?>6/3/3/LP/<?=$row["id"];?>"><?=$row["jumlah"];?></a>
+					<?php } ?>
+				</td>
+				<td class="shrink"><?=$row["luas"]+0;?></td>
+				<td class="shrink text-center"><?=!$row["sewa"]?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["sewa"]?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["terawat"]?"V":"";?></td>
+				<td class="shrink text-center"><?=!$row["terawat"]?"V":"";?></td>
+				<td class=""><?=$row["unit"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

@@ -2098,7 +2098,7 @@ CREATE TABLE `tabel_6_3_1` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `ruang` varchar(64) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `luas` decimal(7,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -2108,7 +2108,7 @@ insert  into `tabel_6_3_1`(`id`,`ruang`,`jumlah`,`luas`) values
 (1,'Satu ruang untuk 1 dosen (bukan pejabat struktural)',0,0.000),
 (2,'Satu ruang untuk 2 dosen',0,0.000),
 (3,'Satu ruang untuk 3-4 dosen',0,0.000),
-(4,'Satu ruang untuk lebih dari 4 dosen',0,0.000);
+(4,'Satu ruang untuk lebih dari 4 dosen',8,80.000);
 
 /*Table structure for table `tabel_6_3_2` */
 
@@ -2116,14 +2116,28 @@ CREATE TABLE `tabel_6_3_2` (
   `id` tinyint(2) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `luas` decimal(7,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(1) NOT NULL DEFAULT '0',
   `terawat` tinyint(1) NOT NULL DEFAULT '1',
   `utilisasi` decimal(6,3) NOT NULL DEFAULT '0.000',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_3_2` */
+
+insert  into `tabel_6_3_2`(`id`,`jenis`,`jumlah`,`luas`,`sewa`,`terawat`,`utilisasi`) values 
+(1,'Ruang kelas',5,320.000,0,1,50.000),
+(2,'Laboratorium',3,64.000,0,1,30.000),
+(3,'Laboratorium Manajemen',1,64.000,0,1,30.000),
+(4,'Laboratorium Sistem Cerdas',1,64.000,0,1,30.000),
+(5,'Laboratorium Teknologi',1,64.000,0,1,30.000),
+(6,'Laboratorium Jaringan dan Hardware',1,150.000,0,1,30.000),
+(7,'Perpustakaan',1,2800.000,0,1,35.000),
+(8,'Ruang Baca',1,16.000,0,1,35.000),
+(9,'Ruang Prodi ',1,20.000,0,1,35.000),
+(10,'Ruang',1,14.000,0,1,12.000),
+(11,'Ruang Ujian',1,18.000,0,1,2.000),
+(12,'Ruang',1,32.000,0,1,35.000);
 
 /*Table structure for table `tabel_6_3_2_lp` */
 
@@ -2151,14 +2165,21 @@ CREATE TABLE `tabel_6_3_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(50) NOT NULL,
   `jumlah` int(11) NOT NULL DEFAULT '0',
-  `luas` decimal(6,3) NOT NULL DEFAULT '0.000',
+  `luas` decimal(7,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(4) NOT NULL DEFAULT '0',
   `terawat` tinyint(4) NOT NULL DEFAULT '1',
   `unit` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_3_3` */
+
+insert  into `tabel_6_3_3`(`id`,`jenis`,`jumlah`,`luas`,`sewa`,`terawat`,`unit`) values 
+(1,'Sport Center and Multi Purpose',1,2325.000,0,1,'Universitas'),
+(2,'Laboratorium Terintegrasi',1,944.000,0,1,'Universitas'),
+(3,'Ruang Auditorium',1,0.000,0,1,'Universitas'),
+(4,'Self Acces Center (SAC)',1,576.000,0,1,'Universitas'),
+(5,'Lapangan Serbaguna',1,3500.000,0,1,'Universitas');
 
 /*Table structure for table `tabel_6_4_1_1` */
 

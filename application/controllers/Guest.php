@@ -759,18 +759,9 @@ class Guest extends CI_Controller {
 	}
 	public function page_6_3(){
 		$data = base_data("6.3");
-		$rows1 = array(
-			"Satu ruang untuk lebih dari 4 dosen",
-			"Satu ruang untuk 3-4 dosen",
-			"Satu ruang untuk 2 dosen",
-			"Satu ruang untuk 1 dosen (bukan pejabat struktural)"
-		);
-		$rows2 = array(
-			"asd"
-		);
-		$rows3 = array(
-			"asd"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_6_3_1");
+		$rows2 = $this->M_Guest->fetch_table("tabel_6_3_2");
+		$rows3 = $this->M_Guest->fetch_table("tabel_6_3_3");
 		$data["contents"] = array(
 			card(
 				"ruang-dosen", 

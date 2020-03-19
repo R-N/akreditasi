@@ -8,11 +8,17 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class="shrink">1</td>
-				<td class=""><?=$row;?></td>
+				<td class="shrink"><?=$i;?></td>
+				<td class="">
+					<?php if(empty($row["url_sumber"])){ echo $row["sumber"]; } else { ?>
+					<a href="<?=$row["url_sumber"];?>"><?=$row["sumber"];?></a>
+					<?php } ?>
+				</td>
 			</tr>
 			<?php } ?>
 		</tbody>

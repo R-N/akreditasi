@@ -300,14 +300,34 @@ CREATE TABLE `jalur_seleksi` (
 
 CREATE TABLE `jenis_jurnal` (
   `jenis` varchar(32) NOT NULL,
-  PRIMARY KEY (`jenis`)
+  `no` tinyint(1) NOT NULL,
+  PRIMARY KEY (`jenis`),
+  UNIQUE KEY `UNIQUE_NO_JJ` (`no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `jenis_jurnal` */
 
-insert  into `jenis_jurnal`(`jenis`) values 
-('Jurnal Internasional'),
-('Jurnal Terakreditasi DIKTI');
+insert  into `jenis_jurnal`(`jenis`,`no`) values 
+('Jurnal Terakreditasi DIKTI',1),
+('Jurnal Internasional',2);
+
+/*Table structure for table `laboratorium` */
+
+CREATE TABLE `laboratorium` (
+  `laboratorium` varchar(50) NOT NULL,
+  `no` tinyint(1) NOT NULL,
+  PRIMARY KEY (`laboratorium`),
+  UNIQUE KEY `UNIQUE_NO_L` (`no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `laboratorium` */
+
+insert  into `laboratorium`(`laboratorium`,`no`) values 
+('Laboratorium Komputer',1),
+('Laboratorium Tata Kelola',2),
+('Laboratorium Sistem Cerdas',3),
+('Laboratorium Teknologi',4),
+('Laboratorium Jaringan dan Hardware',5);
 
 /*Table structure for table `lists` */
 
@@ -2194,12 +2214,12 @@ CREATE TABLE `tabel_6_4_1_1` (
 /*Data for the table `tabel_6_4_1_1` */
 
 insert  into `tabel_6_4_1_1`(`id`,`jenis`,`jumlah_judul`,`jumlah_copy`) values 
-(1,'Buku Teks',0,0),
-(2,'Jurnal Nasional yang terakreditasi',0,0),
-(3,'Jurnal Internasional',0,0),
-(4,'Prosiding',0,0),
-(5,'Skripsi',0,0),
-(6,'Tesis',0,0),
+(1,'Buku Teks',425,425),
+(2,'Jurnal Nasional yang terakreditasi',5,5),
+(3,'Jurnal Internasional',2,2),
+(4,'Prosiding',10,15),
+(5,'Skripsi',30,30),
+(6,'Tesis',30,30),
 (7,'Disertasi',0,0);
 
 /*Table structure for table `tabel_6_4_1_1_lp` */
@@ -2221,41 +2241,116 @@ CREATE TABLE `tabel_6_4_1_1_lp` (
 CREATE TABLE `tabel_6_4_1_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(32) NOT NULL,
-  `jurnal` varchar(100) NOT NULL,
-  `url_jurnal` varchar(128) NOT NULL,
+  `jurnal` varchar(128) NOT NULL,
+  `url_jurnal` varchar(512) NOT NULL,
   `nomor_tahun` varchar(1024) NOT NULL,
   `jumlah` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jenis_jurnal_6_4_1_2` (`jenis`),
   CONSTRAINT `jenis_jurnal_6_4_1_2` FOREIGN KEY (`jenis`) REFERENCES `jenis_jurnal` (`jenis`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_4_1_2` */
+
+insert  into `tabel_6_4_1_2`(`id`,`jenis`,`jurnal`,`url_jurnal`,`nomor_tahun`,`jumlah`) values 
+(1,'Jurnal Terakreditasi DIKTI','KURSOR Journal','https://kursorjournal.org/','Vol 10 No 1 (2019): Vol 10 No 1 (2019) <br>Vol 9 No 4 (2018) <br>Vol 9 No 3 (2018) <br>Vol 9 No 2 (Desember 2017) <br>Vol 9 No 1 (Juli 2017) <br>Vol 8 No. 4 (Desember 2016) <br>Vol 8 No. 3 (Juli 2016)',7),
+(2,'Jurnal Terakreditasi DIKTI','Systemic','http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC','Desember Vol 4 No 2 (2018) <br>Agustus Vol 4 No 1 (2018) <br>Desember Vol 3 No 2 (2017) <br>Agustus Vol 3 No 1 (2017) <br>Desember Vol 2 No 2 (2016) <br>Agustus Vol 2 No 1 (2016)',6),
+(3,'Jurnal Terakreditasi DIKTI','Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI)','http://jnteti.te.ugm.ac.id/','Vol 8, No 4 (2019) <br>Vol 8, No 3 (2019) <br>Vol 8, No 2 (2019) <br>Vol 8, No 1 (2019) <br>Vol 7, No 4 (2018) <br>Vol 7, No 3 (2018) <br>Vol 7, No 2 (2018) <br>Vol 7, No 1 (2018) <br>Vol 6, No 4 (2017) <br>Vol 6, No 3 (2017)',9),
+(4,'Jurnal Internasional','Telkomnika','http://journal.uad.ac.id/index.php/TELKOMNIKA','Vol 17, No 3: June 2019 <br>Vol 17, No 2: April 2019 <br>Vol 17, No 1: February 2019 <br>Vol 16, No 6: December 2018 <br>Vol 16, No 5: October 2018 <br>Vol 16, No 4: August 2018 <br>Vol 16, No 3: June 2018 <br>Vol 16, No 2: April 2018 <br>Vol 16, No 1: February 2018 <br>Vol 15, No 4: December 2017 <br>Vol 15, No 3: September 2017',3),
+(5,'Jurnal Internasional','Computer Science and Information Systems','http://www.comsis.org/','Volume 16, Issue 2 (June 2019) <br>Volume 16, Issue 1 (January 2019) <br>Volume 15, Issue 3 (October 2018) <br>Volume 15, Issue 2 (June 2018) <br>Volume 15, Issue 1 (January 2018)',5);
 
 /*Table structure for table `tabel_6_4_1_2_lj` */
 
 CREATE TABLE `tabel_6_4_1_2_lj` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `jurnal` int(11) NOT NULL,
-  `judul` varchar(128) NOT NULL,
   `nomor_tahun` varchar(50) NOT NULL,
+  `url_jurnal` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jurnal_6_4_1_2_lj` (`jurnal`),
   CONSTRAINT `jurnal_6_4_1_2_lj` FOREIGN KEY (`jurnal`) REFERENCES `tabel_6_4_1_2` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_4_1_2_lj` */
+
+insert  into `tabel_6_4_1_2_lj`(`id`,`jurnal`,`nomor_tahun`,`url_jurnal`) values 
+(1,1,'Vol 10 No 1 (2019): Vol 10 No 1 (2019)',''),
+(2,1,'Vol 9 No 4 (2018)',''),
+(3,1,'Vol 9 No 3 (2018)',''),
+(4,1,'Vol 9 No 2 (Desember 2017)',''),
+(5,1,'Vol 9 No 1 (Juli 2017)',''),
+(6,1,'Vol 8 No. 4 (Desember 2016)',''),
+(7,1,'Vol 8 No. 3 (Juli 2016)',''),
+(8,2,'Desember Vol 4 No 2 (2018)',''),
+(9,2,'Agustus Vol 4 No 1 (2018)',''),
+(10,2,'Desember Vol 3 No 2 (2017)',''),
+(11,2,'Agustus Vol 3 No 1 (2017)',''),
+(12,2,'Desember Vol 2 No 2 (2016)',''),
+(13,2,'Agustus Vol 2 No 1 (2016)',''),
+(14,3,'Vol 8, No 4 (2019)',''),
+(15,3,'Vol 8, No 3 (2019)',''),
+(16,3,'Vol 8, No 2 (2019)',''),
+(17,3,'Vol 8, No 1 (2019)',''),
+(18,3,'Vol 7, No 4 (2018)',''),
+(19,3,'Vol 7, No 3 (2018)',''),
+(20,3,'Vol 7, No 2 (2018)',''),
+(21,3,'Vol 7, No 1 (2018)',''),
+(22,3,'Vol 6, No 4 (2017)',''),
+(24,3,'Vol 6, No 3 (2017)',''),
+(25,4,'Vol 17, No 3: June 2019',''),
+(26,4,'Vol 17, No 2: April 2019',''),
+(27,4,'Vol 17, No 1: February 2019',''),
+(28,4,'Vol 16, No 6: December 2018',''),
+(29,4,'Vol 16, No 5: October 2018',''),
+(30,4,'Vol 16, No 4: August 2018',''),
+(31,4,'Vol 16, No 3: June 2018',''),
+(32,4,'Vol 16, No 2: April 2018',''),
+(33,4,'Vol 16, No 1: February 2018',''),
+(34,4,'Vol 15, No 4: December 2017',''),
+(35,4,'Vol 15, No 3: September 2017',''),
+(36,5,'Volume 16, Issue 2 (June 2019)',''),
+(37,5,'Volume 16, Issue 1 (January 2019)',''),
+(38,5,'Volume 15, Issue 3 (October 2018)',''),
+(39,5,'Volume 15, Issue 2 (June 2018)',''),
+(40,5,'Volume 15, Issue 1 (January 2018)','');
 
 /*Table structure for table `tabel_6_4_2` */
 
 CREATE TABLE `tabel_6_4_2` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `sumber` varchar(100) NOT NULL,
   `url_sumber` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_4_2` */
+
+insert  into `tabel_6_4_2`(`id`,`sumber`,`url_sumber`) values 
+(1,'Perpustakaan Daerah Surabaya',NULL),
+(2,'SAGE Publisher','http://www.methods.sagepub.com/'),
+(3,'EBSCO','http://www.search.ebscohost.com/'),
+(4,'Indonesian One Search','http://onesearch.id/'),
+(5,'BookFi','http://www.bookfi.org/'),
+(6,'Directory of Open Access Journal (DOAJ)','http://doaj.org/'),
+(7,'Open Access Journals Search Engine (OAJSE)','http://www.oajse.com/'),
+(8,'Buku Elektronik Bidang Teknik','http://www.ebookteknik.com/'),
+(9,'MORAREF','http://moraref.or.id/'),
+(10,'Springer','https://link.springer.com/'),
+(11,'Iglibrary','http://portal.igpublish.com/iglibrary/'),
+(12,'Emerald','https://www.emerald.com/insight/'),
+(13,'Google Scholar','https://scholar.google.com/'),
+(14,'Perpustakaan Nasional Republik Indonesia','http://perpusnas.go.id/'),
+(15,'Perpustakaan Universitas Negeri Surabaya','http://digilibunesa.org/'),
+(16,'Perpustakaan Universitas Pendidikan Indonesia','http://repository.upi.edu/'),
+(17,'Perpustakaan Universitas Diponegoro','http://eprints.undip.ac.id/'),
+(18,'Perpustakaan Universitas Muhammadiyah Surakarta','http://eprints.ums.ac.id/'),
+(19,'Perpustakaan Universitas Airlangga Surabaya','http://lib.unair.ac.id/'),
+(20,'Perpustakaan Institut Teknologi Sepuluh November Surabaya','http://digilib.its.ac.id/'),
+(21,'Perpustakaan Universitas Negeri Malang','http://library.um.ac.id/'),
+(22,'Perpustakaan UIN Maulana Malik Ibrahim','http://libcat.uin-malang.ac.id/'),
+(23,'Perpustakaan Universitas Indonesia','http://digilib.ui.ac.id'),
+(24,'Garuda (Garba Rujukan Digital)','http://garuda.ristekdikti.go.id/'),
+(25,'IEEE Xplore Digital Library','http://ieeexplore.ieee.org/Xplore/home.jsp');
 
 /*Table structure for table `tabel_6_4_3` */
 
@@ -2264,12 +2359,61 @@ CREATE TABLE `tabel_6_4_3` (
   `nama_lab` varchar(50) NOT NULL,
   `jenis_peralatan` varchar(50) NOT NULL,
   `jumlah_peralatan` int(11) NOT NULL,
+  `unit` varchar(8) NOT NULL,
   `sewa` tinyint(1) NOT NULL DEFAULT '0',
   `terawat` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `rata_penggunaan` decimal(6,3) NOT NULL DEFAULT '30.000',
+  PRIMARY KEY (`id`),
+  KEY `laboratorium_6_4_3` (`nama_lab`),
+  CONSTRAINT `laboratorium_6_4_3` FOREIGN KEY (`nama_lab`) REFERENCES `laboratorium` (`laboratorium`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_4_3` */
+
+insert  into `tabel_6_4_3`(`id`,`nama_lab`,`jenis_peralatan`,`jumlah_peralatan`,`unit`,`sewa`,`terawat`,`rata_penggunaan`) values 
+(1,'Laboratorium Komputer','Komputer',25,'Set',0,1,30.000),
+(2,'Laboratorium Komputer','Server',1,'Set',0,1,30.000),
+(3,'Laboratorium Komputer','Software (netbeans, office)',1,'Pack',0,1,30.000),
+(4,'Laboratorium Komputer','LCD Projector + Bracket + Screen 70”',1,'Set',0,1,30.000),
+(5,'Laboratorium Komputer','Network Printer',1,'Unit',0,1,30.000),
+(6,'Laboratorium Komputer','Scanner',1,'Unit',0,1,30.000),
+(7,'Laboratorium Komputer','Interactive Whiteboard',1,'Unit',0,1,30.000),
+(8,'Laboratorium Komputer','LAN Connection and Material',1,'Lot',0,1,30.000),
+(9,'Laboratorium Tata Kelola','AC',2,'Unit',0,1,30.000),
+(10,'Laboratorium Tata Kelola','Komputer',25,'Set',0,1,30.000),
+(11,'Laboratorium Tata Kelola','Server',1,'Set',0,1,30.000),
+(12,'Laboratorium Tata Kelola','Software (office)',1,'Pack',0,1,30.000),
+(13,'Laboratorium Tata Kelola','LCD Projector + Bracket + Screen 70”',1,'Set',0,1,30.000),
+(14,'Laboratorium Tata Kelola','Network Printer',1,'Unit',0,1,30.000),
+(15,'Laboratorium Tata Kelola','Scanner',1,'Unit',0,1,30.000),
+(16,'Laboratorium Tata Kelola','Interactive Whiteboard',1,'Unit',0,1,30.000),
+(17,'Laboratorium Tata Kelola','LAN Connection and Material',1,'Lot',0,1,30.000),
+(18,'Laboratorium Tata Kelola','AC',1,'Unit',0,1,30.000),
+(19,'Laboratorium Sistem Cerdas','Komputer',25,'Set',0,1,30.000),
+(20,'Laboratorium Sistem Cerdas','Server',1,'Set',0,1,30.000),
+(21,'Laboratorium Sistem Cerdas','Software (anaconda, office, orange)',1,'Pack',0,1,30.000),
+(22,'Laboratorium Sistem Cerdas','LCD Projector + Bracket + Screen 70”',1,'Set',0,1,30.000),
+(23,'Laboratorium Sistem Cerdas','Network Printer',1,'Unit',0,1,30.000),
+(24,'Laboratorium Sistem Cerdas','Scanner',1,'Unit',0,1,30.000),
+(25,'Laboratorium Sistem Cerdas','Interactive Whiteboard',1,'Unit',0,1,30.000),
+(26,'Laboratorium Sistem Cerdas','LAN Connection and Material',1,'Lot',0,1,30.000),
+(27,'Laboratorium Sistem Cerdas','AC',2,'Unit',0,1,30.000),
+(28,'Laboratorium Teknologi','Komputer',25,'Set',0,1,30.000),
+(29,'Laboratorium Teknologi','Server',1,'Set',0,1,30.000),
+(30,'Laboratorium Teknologi','Software (anaconda, office, orange)',1,'Pack',0,1,30.000),
+(31,'Laboratorium Teknologi','LCD Projector + Bracket + Screen 70”',1,'Set',0,1,30.000),
+(32,'Laboratorium Teknologi','Network Printer',1,'Unit',0,1,30.000),
+(33,'Laboratorium Teknologi','Scanner',1,'Unit',0,1,30.000),
+(34,'Laboratorium Teknologi','Interactive Whiteboard',1,'Unit',0,1,30.000),
+(35,'Laboratorium Teknologi','LAN Connection and Material',1,'Lot',0,1,30.000),
+(36,'Laboratorium Teknologi','AC',2,'Unit',0,1,30.000),
+(41,'Laboratorium Jaringan dan Hardware','Komputer',30,'Set',0,1,30.000),
+(42,'Laboratorium Jaringan dan Hardware','Smartboard',1,'Unit',0,1,30.000),
+(43,'Laboratorium Jaringan dan Hardware','AC',4,'Unit',0,1,30.000),
+(44,'Laboratorium Jaringan dan Hardware','Layar LCD',2,'Unit',0,1,30.000),
+(45,'Laboratorium Jaringan dan Hardware','Server',1,'Set',0,1,30.000),
+(46,'Laboratorium Jaringan dan Hardware','Whiteboard',1,'Unit',0,1,30.000),
+(47,'Laboratorium Jaringan dan Hardware','Audio',1,'Set',0,1,30.000);
 
 /*Table structure for table `tabel_6_5_2` */
 

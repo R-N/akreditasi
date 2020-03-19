@@ -32,6 +32,7 @@ $(document).ready(function(){
         let $table0 = $(this);
         let $table = getTable($table0);
         let option = {}
+		option.order = [];
 		ordering = true;
         dom = $table0.data("dom");
 		pageLength = $table0.data("pagelength");

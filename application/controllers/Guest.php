@@ -786,38 +786,10 @@ class Guest extends CI_Controller {
 	}
 	public function page_6_4(){
 		$data = base_data("6.4");
-		$rows1 = array(
-			"Buku Teks",
-			"Jurnal nasional yang terakreditasi",
-			"Jurnal internasional",
-			"Jurnal internasional",
-			"Prosiding",
-			"Skripsi",
-			"Tesis",
-			"Disertasi"
-		);
-		$groups2 = array(
-			array(
-				"name"=>"Jurnal Terakreditasi DIKTI",
-				"rows"=>array(
-					"KURSOR Journal (http://kursor.trunojoyo.ac.id/)",
-					"Systemic (http://jurnalsaintek.uinsby.ac.id/index.php/SYSTEMIC)"
-				)
-			),
-			array(
-				"name"=>"Jurnal Internasional",
-				"rows"=>array(
-					"Information Systems Research (https://pubsonline.informs.org/journal/isre)",
-					"Information Systems Journal (https://onlinelibrary.wiley.com/journal/13652575)"
-				)
-			)
-		);
-		$rows3 = array(
-			"Halo"
-		);
-		$rows4 = array(
-			"Halo"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_6_4_1_1");
+		$groups2 = $this->M_Guest->fetch_tabel_6_4_1_2();
+		$rows3 = $this->M_Guest->fetch_table("tabel_6_4_2");
+		$groups4 = $this->M_Guest->fetch_tabel_6_4_3();
 		$data["contents"] = array(
 			card(
 				"jumlah-pustaka", 
@@ -835,13 +807,13 @@ class Guest extends CI_Controller {
 			card(
 				"sumber-pustaka", 
 				array(
-					_content("6.4.2 Sumber pustaka di lembaga lain yang bisa diakses dosen/mhs PS (TODO)", $this->load->view("tables/6.4.2.php", array("rows"=>$rows3),true))
+					_content("6.4.2 Sumber pustaka di lembaga lain yang bisa diakses dosen/mhs PS [TODO]", $this->load->view("tables/6.4.2.php", array("rows"=>$rows3),true))
 				)
 			),
 			card(
 				"peralatan-lab", 
 				array(
-					_content("6.4.3 peralatan utama yang digunakan di laboratorium untuk proses pembelajaran (TODO)", $this->load->view("tables/6.4.3.php", array("rows"=>$rows4),true))
+					_content("6.4.3 peralatan utama yang digunakan di laboratorium untuk proses pembelajaran [TODO]", $this->load->view("tables/6.4.3.php", array("groups"=>$groups4),true))
 				)
 			)
 		);

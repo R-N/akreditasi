@@ -1,4 +1,4 @@
-<div class="table-responsive datatable fixed export auto-number">
+<div class="table-responsive  fixed export auto-number">
 	<table class="table  table-hover">
 		<thead>
 			<tr>
@@ -28,19 +28,30 @@
 		</thead>
 		<tbody>
 			<?php 
-			foreach($rows as $row){
+			$j = 0;
+			foreach($groups as $group){
+				++$j;
+				$i = 0;
+				foreach($group["rows"] as $row){
 			?>
 			<tr>
-				<td class=""><?=$row;?></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<?php if ($i == 0){ ?>
+				<td class="" rowspan="<?=count($group["rows"]);?>"><?=$j;?></td>
+				<td class="" rowspan="<?=count($group["rows"]);?>"><?=$group["name"];?></td>
+				<?php } ?>
+				<td class=""><?=$row["jenis_peralatan"];?></td>
+				<td class="shrink"><?=$row["jumlah_peralatan"];?> <?=$row["unit"];?></td>
+				<td class="shrink text-center"><?=!$row["sewa"]?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["sewa"]?"V":"";?></td>
+				<td class="shrink text-center"><?=$row["terawat"]?"V":"";?></td>
+				<td class="shrink text-center"><?=!$row["terawat"]?"V":"";?></td>
+				<td class="shrink "><?=$row["rata_penggunaan"]+0;?></td>
 			</tr>
-			<?php } ?>
+			<?php 
+					++$i;
+				} 
+			}
+			?>
 		</tbody>
 	</table>
 </div>

@@ -111,6 +111,47 @@ class M_Guest extends CI_Model {
 		}
 		return $ret;
 	}
+	
+	function fetch_tabel_6_4_1_2(){
+		$sql = "SELECT jenis AS name FROM jenis_jurnal ORDER BY no";
+		$query = $this->db->query($sql);
+		$ret = $query->result_array();
+		$j = 0;
+		foreach($ret as $r){
+			$sql1 = "SELECT * FROM tabel_6_4_1_2 WHERE jenis=?";
+			$query1 = $this->db->query($sql1, array($r["name"]));
+			$ret1 = $query1->result_array();
+			
+			$i = 0;
+			foreach($ret1 as $r1){
+				$ret1[$i]["rows"] = $this->fetch_tabel_6_4_1_2_lj($r1["id"]);
+				++$i;
+			}
+			$ret[$j]["rows"] = $ret1;
+			++$j;
+		}
+		return $ret;
+	}
+	function fetch_tabel_6_4_3(){
+		$sql = "SELECT laboratorium AS name FROM laboratorium ORDER BY no";
+		$query = $this->db->query($sql);
+		$ret = $query->result_array();
+		$j = 0;
+		foreach($ret as $r){
+			$sql1 = "SELECT * FROM tabel_6_4_3 WHERE nama_lab=?";
+			$query1 = $this->db->query($sql1, array($r["name"]));
+			$ret1 = $query1->result_array();
+			$ret[$j]["rows"] = $ret1;
+			++$j;
+		}
+		return $ret;
+	}
+	function fetch_tabel_6_4_1_2_lj($id_jurnal){
+		$sql2 = "SELECT * FROM tabel_6_4_1_2_lj WHERE jurnal=?";
+		$query2 = $this->db->query($sql2, array($id_jurnal));
+		$ret12 = $query2->result_array();
+		return $ret12;
+	}
 	function fetch_list($parent){
 		$sql =  "SELECT * FROM lists l, ids WHERE l.parent=? AND ids.id=l.parent ORDER BY l.no ASC;";
 		$query = $this->db->query($sql, array($parent));

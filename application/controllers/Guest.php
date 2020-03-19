@@ -904,12 +904,8 @@ class Guest extends CI_Controller {
 	}
 	public function page_7_3(){
 		$data = base_data("7.3");
-		$rows1 = array(
-			"asd"
-		);
-		$rows2 = array(
-			"asd"
-		);
+		$rows1 = $this->M_Guest->fetch_table("tabel_7_3_1");
+		$rows2 = $this->M_Guest->fetch_table("tabel_7_3_2");
 		$data["contents"] = array(
 			card(
 				"kerjasama-dalam", 

@@ -2821,9 +2821,11 @@ CREATE TABLE `tabel_7_3_1` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_instansi` varchar(128) NOT NULL,
   `jenis_kegiatan` varchar(256) NOT NULL,
-  `mulai` int(11) NOT NULL,
-  `berakhir` int(11) NOT NULL,
+  `mulai` varchar(32) NOT NULL,
+  `berakhir` varchar(32) NOT NULL,
   `manfaat` varchar(1024) NOT NULL,
+  `url_instansi` varchar(256) NOT NULL,
+  `url_kegiatan` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2835,13 +2837,24 @@ CREATE TABLE `tabel_7_3_2` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_instansi` varchar(128) NOT NULL,
   `jenis_kegiatan` varchar(256) NOT NULL,
-  `mulai` int(11) NOT NULL,
-  `berakhir` int(11) NOT NULL,
+  `mulai` varchar(32) NOT NULL,
+  `berakhir` varchar(32) NOT NULL DEFAULT 'Sekarang',
   `manfaat` varchar(1024) NOT NULL,
+  `url_instansi` varchar(256) NOT NULL,
+  `url_kegiatan` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_3_2` */
+
+insert  into `tabel_7_3_2`(`id`,`nama_instansi`,`jenis_kegiatan`,`mulai`,`berakhir`,`manfaat`,`url_instansi`,`url_kegiatan`) values 
+(1,'SES (Senior Experten Services) Jerman','Kuliah tamu dan pendampingan','Maret','Sekarang','Updating keilmuan di bidang sistem informasi dan teknologi informasi','',''),
+(2,'Oracle Academy','Peningkatan kompetensi dosen dan mahasiswa','September 2014','Sekarang','Peningkatan kompetensi dosen dan mahasiswa serta sertifikasi bidang keahlian sistem informasi','',''),
+(3,'MORA','Beasiswa kursus serta kuliah luar negeri','April 2015','Sekarang','Peningkatan kompetensi dan kemampuan dosen serta mahasiswa','',''),
+(4,'Fukuoka University','Kerjasama di bidang penelitian','Oktober 2016','Sekarang','Kesempatan untuk berkolaborasi penelitian di bidang sistem informasi','',''),
+(5,'Hiroshima University','Kerjasama di bidang penelitian','Oktober 2016','Sekarang','Kesempatan untuk berkolaborasi penelitian di bidang sistem informasi','',''),
+(6,'SILE (Supporting Islamic Leadership in Indonesia)','Kerjasama di bidang penguatan leadership','Januari 2016','Sekarang','Penguatan kapasitas leadership untuk dosen maupun tenaga kependidikan','',''),
+(7,'IDB (Islamic Development Bank)','Kerjasama di bidang pendanaan sarana dan prasarana','Januari 2016','Sekarang','Pendanaan gedung serta sarana laboratorium integrasi UIN Sunan Ampel Surabaya','','');
 
 /*Table structure for table `tingkat_kegiatan` */
 

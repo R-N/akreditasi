@@ -23,15 +23,33 @@
 		</thead>
 		<tbody>
 			<?php 
+			$i = 0;
 			foreach($rows as $row){
+				++$i;
 			?>
 			<tr>
-				<td class=""></td>
-				<td class=""><?=$row;?></td>
-				<td class=""><a href="#">Kegiatan</a></td>
-				<td class=""></td>
-				<td class=""></td>
-				<td class=""></td>
+				<td class=""><?=$i;?></td>
+				<td class="">
+					<?php if(empty($row["url_instansi"])){ echo $row["nama_instansi"]; } else{ ?>
+					<a href="<?=$row["url_instansi"]?>"><?=$row["nama_instansi"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if(empty($row["url_kegiatan"])){ echo $row["jenis_kegiatan"]; } else{ ?>
+					<a href="<?=$row["url_kegiatan"]?>"><?=$row["jenis_kegiatan"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if(empty($row["url_kegiatan"])){ echo $row["mulai"]; } else{ ?>
+					<a href="<?=$row["url_kegiatan"]?>"><?=$row["mulai"];?></a>
+					<?php } ?>
+				</td>
+				<td class="">
+					<?php if(empty($row["url_kegiatan"])){ echo $row["berakhir"]; } else{ ?>
+					<a href="<?=$row["url_kegiatan"]?>"><?=$row["berakhir"];?></a>
+					<?php } ?>
+				</td>
+				<td class=""><?=$row["manfaat"];?></td>
 			</tr>
 			<?php } ?>
 		</tbody>

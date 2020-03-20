@@ -2851,9 +2851,50 @@ CREATE TABLE `tabel_7_3_1` (
   `url_instansi` varchar(256) NOT NULL,
   `url_kegiatan` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_7_3_1` */
+
+insert  into `tabel_7_3_1`(`id`,`nama_instansi`,`jenis_kegiatan`,`mulai`,`berakhir`,`manfaat`,`url_instansi`,`url_kegiatan`) values 
+(1,'Radio RRI Pro2','Talkshow Dunia Gadget','Januari 2015','Desember 2015','Sarana mengenalkan PS kepada masyarakat serta memberikan pemahaman yang benar tentang pemanfaatan Teknologi Informasi bagi masyarakat','',''),
+(2,'AISINDO (Association of Information System Indonesia)','Pendampingan penyusunan kurikulum KKNI Program Studi','Desember 2014','Desember 2015','Tim kurikulum mendapatkan benchmark dari asosiasi profesi sistem informasi','',''),
+(3,'LSP INIXINDO','Sertifikasi kompetensi mahasiswa (bidang: programming)','Nopember 2016','Desember 2016','Penyelenggaraan penguatan praktikum dan ujian sertifikasi profesi BNSP (Badan Nasional Sertifikasi Profesi)','',''),
+(4,'RRI Pro2 FM','Mengisi rubrik dengan tema ‘Gadget’ setiap bulan','Januari 2014','Desember 2016','Mengenalkan program studi sistem informasi kepada khalayak, serta menyebarkan keilmuan kepada masyarakat.','',''),
+(5,'Prodi Sistem Informasi UIN Maulana Malik Ibrahim Malang','Penyelenggaraan kuliah tamu untuk mahasiswa','Desember 2016','Sekarang','Updating keilmuan di bidang sistem informasi dan teknologi informasi','',''),
+(6,'Traveloka','Penyelenggaraan kuliah tamu untuk mahasiswa','Desember 2016','Sekarang','Updating keilmuan di bidang sistem informasi dan teknologi informasi','',''),
+(7,'Bank Indonesia','Pemberian beasiswa mahasiswa berprestasi','Januari 2015','Desember 2016','Mendapat pendanaan sekaligus dukungan beasiswa','',''),
+(8,'Digital Sense','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(9,'Jawa Pos','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(10,'Perusahaan Gas Negara','Penyelenggaraan kuliah tamu untuk mahasiswa','Mei 2016','Sekarang','Updating keilmuan terkait bidang sistem informasi dan teknologi informasi','',''),
+(11,'Pemkab Sidoarjo','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(12,'Mitra Arofah','Penyelenggaraan pengabdian masyarakat','Agustus 2016','Sekarang','Mengenalkan program studi sistem informasi kepada khalayak, serta menyebarkan keilmuan kepada masyarakat.','',''),
+(13,'SMK Kesehatan Al Yasini Pasuruan','Penyelenggaraan pengabdian masyarakat','Agustus 2016','Sekarang','Mengenalkan program studi sistem informasi kepada khalayak, serta menyebarkan keilmuan kepada masyarakat.','',''),
+(14,'SMA Darul Mukhlasin Probolinggo','Penyelenggaraan pengabdian masyarakat','Agustus 2016','Sekarang','Mengenalkan program studi sistem informasi kepada khalayak, serta menyebarkan keilmuan kepada masyarakat.','',''),
+(15,'Semen Indonesia','Sponsorship kegiatan himpunan mahasiswa','Nopember 2016','Sekarang','Mendapat pendanaan sekaligus dukungan sponsor','',''),
+(16,'SIER','Sponsorship kegiatan himpunan mahasiswa','Nopember 2016','Sekarang','Mendapat pendanaan sekaligus dukungan sponsor','',''),
+(17,'ITS','Kerjasama himpunan mahasiswa sistem informasi','Mei 2016','Juli 2016','Mendapatkan kesempatan untuk berbagi pengalaman memanaje himpunan mahasiswa sistem informasi','',''),
+(18,'Universitas Brawijaya','Kerjasama himpunan mahasiswa sistem informasi','Mei 2016','Juli 2016','Mendapatkan kesempatan untuk berbagi pengalaman mengelola himpunan mahasiswa sistem informasi','',''),
+(19,'Catfiz','Penyelenggaraan kuliah tamu untuk mahasiswa','Nopember 2016','Sekarang','Updating keilmuan terkait bidang sistem informasi dan teknologi informasi','',''),
+(20,'PT POS Indonesia Cabang Pasuruan','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(21,'Dinas Pendidikan Dan Kebudayaan Sidoarjo','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(22,'Badan Wakaf Indonesia','Tempat magang mahasiswa (pembuatan web BWI)','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(23,'PT Indotech Infrastruktur Solution','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(24,'Dinas Perpustakaan dan Kearsipan Provinsi Jawa Timur','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(25,'PDAM Nganjuk','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(26,'MI Subulussalam Mondo','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(27,'Stand Studio','Tempat magang mahasiswa','Januari 2017','Sekarang','Mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(28,'SMKN 9 Malang','Tempat Pengabdian Masyarakat','2018','Sekarang','Memberikan kesempatan untuk lokasi pengabdian masyarakat','',''),
+(29,'XP Solution','Pengayaan kompetensi','2018','Sekarang','Dukungan sertifikasi kompetens mahasiswa','',''),
+(30,'Kominfo','Tempat Magang mahasiswa','2018','2020','mendapatkan tempat magang untuk mahasiswa sebagai sarana aplikasi keilmuan','',''),
+(31,'SMPN 62 Surabaya','Tempat Pengabdian Masyarakat','2019','2025','Mahasiswa melakukan pengajaran ekstra kurikuler komputer','',''),
+(32,'Universitas Nurul Jadid Paiton Probolinggo','Penelitian, pengabdian dan pemanfaatan sarana prasarana','2018','2023','Dosen dan mahasiswa dapat saling bersinergi dalam melakukan penelitian, dan pengabdian kepada masyarakat serta pemanfaatan sarana dan prasarana','',''),
+(33,'Pengurus Cabang Istimewa NU Jerman','Pendidikan, penelitian, pengabdian kepada masyarakat serta peningkatan kualitas sumber daya manusia','2018','2023','Dosen terbantu dalam pelaksanaan pendidikan, penelitian dan pengabdian kepada masyarakat','',''),
+(34,'Bank Indonesia','Beasiswa Prestasi Pendidikan Tinggi','2016','2023','Mahasiswa terbantu dalam pelaksanaan pendidikan','',''),
+(35,'Pena Ameen','Pengembangan peningkatan mahasiswa','2018','2019','Mahasiwa mendapatkan fasilitas magang','',''),
+(36,'Media Center PKB','Pengembangan peningkatan mahasiswa','2018','2019','Mahasiwa mendapatkan fasilitas magang','',''),
+(37,'BNN Kota Surabaya','Pengembangan peningkatan mahasiswa','2018','2020','Mahasiwa mendapatkan fasilitas magang dan riset','',''),
+(38,'Sevima','Pengembangan Prodi','2018','2020','Mahasiwa mendapatkan kuliah tamu dan prodi mendapatkan rekomendasi pengembangan kurikulum','',''),
+(39,'UIN Maliki','Kerjasama riset dan kolaborasi pendidikan','2018','2020','Dosen mendapatkan kerjasama riset, dan mahasiswa mendapatkan kuliah tamu','','');
 
 /*Table structure for table `tabel_7_3_2` */
 

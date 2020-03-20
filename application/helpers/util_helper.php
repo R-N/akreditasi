@@ -119,6 +119,14 @@ function paragraph($id, $title, $content, $caption=null){
 function accordion($id, $sections){
 	return card($id, $sections, true);
 }
+function img($source, $collapse=false, $id=null, $class=""){
+	if($collapse) $class = $class . " collapse";
+	return get_instance()->load->view("img", array(
+		"source"=>$source,
+		"class"=>$class,
+		"id"=>$id
+	), true);
+}
 function breadcrumbs($items){
 	return get_instance()->load->view("breadcrumbs", array("items"=>$items), true);
 }

@@ -4,7 +4,7 @@
 	<li>Jaringan nirkabel untuk perangkat mobile</li>
 	<li>Jaringan backbone berbasis fiber optic yang terkoneksi dengan pusat data Universitas</li>
 </ol>
-<p>ProsesPembelajaran juga ditunjang dengan system informasi yang terintegrasi dan dapat diakses melalui single sign-on UIN Sunan Ampel Surabaya melalui laman ctrl.uinsby.ac.id yang terdiri dari system antara lain:</p>
+<p>Proses Pembelajaran juga ditunjang dengan system informasi yang terintegrasi dan dapat diakses melalui single sign-on UIN Sunan Ampel Surabaya melalui laman <a href="https://ctrl.uinsby.ac.id/">https://ctrl.uinsby.ac.id/</a> yang terdiri dari system antara lain:</p>
 <ol>
 	<li>Sistem Informasi Akademik meliputi administrasi perkuliahan, perwalian, serta skripsi.</li>
 	<li>Sistem Informasi Kepegawaian meliputi manajemen sumber daya manusia</li>
@@ -19,5 +19,10 @@
 	<li>Sistem administrasi lainnya meliputi perencanaan, keuangan, UKT, dan sebagainya</li>
 	<li>Esr.uinsby.ac.id, sistem monitoring umpan balik stakeholder terhadap layanan</li>
 </ol>
-<p>Disamping itu Program Studi juga memili ki website yang dapat diakses melalui http://sinf.uinsby.ac.id yang tercantum juga pada website universitas yaitu http://uinsby.ac.id</p>
-<p>Proses pembelajaran ditunjang dengan fasilitas e-learning yang terdapat pada system akademik ataupun fasilitas dari google yaitu google classroom.</p>
+
+<p><a href="#col-6-5-1-1-1" data-toggle="collapse">Sistem Informasi Terintegrasi</a></p>
+<?php echo img(base_url("assets/img/6.5.1.1.1.tif"), true, "col-6-5-1-1-1"); ?>
+<p>Disamping itu Program Studi juga memiliki website yang dapat diakses melalui <a href="http://sinf.uinsby.ac.id">http://sinf.uinsby.ac.id</a> yang tercantum juga pada website universitas yaitu <a href="http://uinsby.ac.id">http://uinsby.ac.id</a></p>
+<p>Proses pembelajaran ditunjang dengan fasilitas e-learning yang terdapat pada <a href="#col-6-5-1-1-2" data-toggle="collapse">system akademik</a> ataupun fasilitas dari google yaitu <a href="#col-6-5-1-1-3" data-toggle="collapse">google classroom</a>.</p>
+<?php echo img(base_url("assets/img/6.5.1.1.2.tif"), true, "col-6-5-1-1-2"); ?>
+<?php echo img(base_url("assets/img/6.5.1.1.3.png"), true, "col-6-5-1-1-3"); ?>

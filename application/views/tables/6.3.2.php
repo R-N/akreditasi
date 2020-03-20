@@ -36,13 +36,9 @@
 			?>
 			<tr>
 				<td class="shrink"><?=$i;?></td>
-				<td class="">
-					<?php if($row["jumlah"] <= 0){ echo $row["jenis"]; } else { ?>
-					<a href="<?=base_url();?>6/3/2/LP/<?=$row["id"];?>"><?=$row["jenis"];?></a>
-					<?php } ?>
-				</td>
+				<td class=""><?=$row["jenis"];?></td>
 				<td class="shrink">
-					<?php if($row["jumlah"] <= 0){ echo $row["jumlah"]+0; } else { ?>
+					<?php if($row["jumlah"] <= 1){ echo $row["jumlah"]+0; } else { ?>
 					<a href="<?=base_url();?>6/3/2/LP/<?=$row["id"];?>"><?=$row["jumlah"]+0;?></a>
 					<?php } ?>
 				</td>

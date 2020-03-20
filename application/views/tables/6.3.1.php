@@ -17,11 +17,7 @@
 			foreach($rows as $row){
 			?>
 			<tr>
-				<td class="">
-					<?php if($row["jumlah"] <= 0){ echo $row["ruang"]; } else { ?>
-					<a href="<?=base_url();?>6/3/1/LR/<?=$row["id"];?>"><?=$row["ruang"];?></a>
-					<?php } ?>
-				</td>
+				<td class=""><?=$row["ruang"];?></a></td>
 				<td class="shrink">
 					<?php if($row["jumlah"] <= 0){ echo $row["jumlah"]; } else { ?>
 					<a href="<?=base_url();?>6/3/1/LR/<?=$row["id"];?>"><?=$row["jumlah"];?></a>

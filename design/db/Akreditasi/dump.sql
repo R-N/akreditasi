@@ -2186,22 +2186,44 @@ CREATE TABLE `tabel_6_3_2_lp` (
 CREATE TABLE `tabel_6_3_3` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `jenis` varchar(50) NOT NULL,
-  `jumlah` int(11) NOT NULL DEFAULT '0',
+  `jumlah` int(11) NOT NULL DEFAULT '1',
   `luas` decimal(7,3) NOT NULL DEFAULT '0.000',
   `sewa` tinyint(4) NOT NULL DEFAULT '0',
   `terawat` tinyint(4) NOT NULL DEFAULT '1',
-  `unit` varchar(50) NOT NULL,
+  `unit` varchar(50) NOT NULL DEFAULT 'Universitas',
+  `image` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tabel_6_3_3` */
 
-insert  into `tabel_6_3_3`(`id`,`jenis`,`jumlah`,`luas`,`sewa`,`terawat`,`unit`) values 
-(1,'Sport Center and Multi Purpose',1,2325.000,0,1,'Universitas'),
-(2,'Laboratorium Terintegrasi',1,944.000,0,1,'Universitas'),
-(3,'Ruang Auditorium',1,0.000,0,1,'Universitas'),
-(4,'Self Acces Center (SAC)',1,576.000,0,1,'Universitas'),
-(5,'Lapangan Serbaguna',1,3500.000,0,1,'Universitas');
+insert  into `tabel_6_3_3`(`id`,`jenis`,`jumlah`,`luas`,`sewa`,`terawat`,`unit`,`image`) values 
+(1,'Sport Center and Multi Purpose',1,2325.000,0,1,'Universitas',1),
+(2,'Laboratorium Terintegrasi',1,944.000,0,1,'Universitas',1),
+(3,'Ruang Auditorium',1,0.000,0,1,'Universitas',1),
+(4,'Self Acces Center (SAC)',1,576.000,0,1,'Universitas',1),
+(5,'Lapangan Serbaguna',1,3500.000,0,1,'Universitas',1),
+(6,'Ruang Fitness',1,240.000,0,1,'Universitas',1),
+(7,'Ruang Tenis Meja',1,240.000,0,1,'Universitas',1),
+(8,'Koperasi',1,130.000,0,1,'Universitas',1),
+(9,'Bank Mini Syariah',1,108.000,0,1,'Universitas',1),
+(10,'Poliklinik',1,99.000,0,1,'Universitas',1),
+(11,'Kantin',1,273.000,0,1,'Universitas',1),
+(12,'Pesantren mahasiswa',1,408.000,0,1,'Universitas',1),
+(13,'Masjid',1,2585.000,0,1,'Universitas',1),
+(14,'Cafe Dharmawanita',1,400.000,0,1,'Universitas',1),
+(15,'UINSA Mart',1,250.000,0,1,'Universitas',1),
+(16,'UINSA Book Store',1,250.000,0,1,'Universitas',0),
+(17,'Hotel Green Sa Inn',1,1000.000,0,1,'Universitas',1),
+(18,'ATM Center',1,54.000,0,1,'Universitas',1),
+(19,'Ruang Sidang',1,250.000,0,1,'Universitas',1),
+(20,'Bank Tabungan Negara (BTN) Cabang UINSA',1,200.000,0,1,'Universitas',1),
+(21,'Bank Mini Sampah',1,30.000,0,1,'Universitas',1),
+(22,'Kantor Lembaga Bantuan Hukum',1,60.000,0,1,'Universitas',1),
+(23,'Amphitheater Twin Tower',1,400.000,0,1,'Universitas',1),
+(24,'Halaman Parkir Mobil',1,5000.000,0,1,'Universitas',1),
+(25,'Halaman Parkir Motor',1,8000.000,0,1,'Universitas',1),
+(26,'Kantor Pusat Bisnis Universitas',1,200.000,0,1,'Universitas',1);
 
 /*Table structure for table `tabel_6_4_1_1` */
 

@@ -1,4 +1,4 @@
-<div class="table-responsive datatable fixed export simple">
+<div class="table-responsive  fixed export simple">
 	<table class="table  table-hover">
 		<thead>
 			<tr>
@@ -42,7 +42,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="2">Jumlah (TODO)</td>
+				<td colspan="2">Jumlah</td>
 				<td class="footer-callback" data-operation="sum" data-column="2">7967.826</td>
 				<td class="footer-callback" data-operation="sum" data-column="3">5648.124</td>
 				<td class="footer-callback" data-operation="sum" data-column="4">6538.005</td>

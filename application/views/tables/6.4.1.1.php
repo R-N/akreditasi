@@ -19,12 +19,12 @@
 			<tr>
 				<td class="shrink">
 					<?php if($row["jumlah_judul"] == 0){ echo $row["jenis"]; } else { ?>
-					<a href="<?=base_url();?>6/4/1/1/LP/1"><?=$row["jenis"];?></a>
+					<a href="<?=base_url();?>6/4/1/1/LP/<?=$row["id"];?>"><?=$row["jenis"];?></a>
 					<?php } ?>
 				</td>
 				<td class="">
 					<?php if($row["jumlah_judul"] == 0){ echo $row["jumlah_judul"]; } else { ?>
-					<a href="<?=base_url();?>6/4/1/1/LP/1"><?=$row["jumlah_judul"];?></a>
+					<a href="<?=base_url();?>6/4/1/1/LP/<?=$row["id"];?>"><?=$row["jumlah_judul"];?></a>
 					<?php } ?>
 				</td>
 				<td class=""><?=$row["jumlah_copy"];?></td>

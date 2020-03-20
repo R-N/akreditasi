@@ -21,3 +21,5 @@
 		<li>Setelah usulan kegiatan diterima dan masuk dalam Rencana Kegiatan Anggaran-Kelembagaan dan Lembaga (RKA-KL), prodi membuat forecast (Rencana Penarikan Dana) kegiatan dengan format yang sudah ditentukan oleh universitas.</li>
 	</ol>
 </p>
+<?php echo img(base_url("assets/img/6.1.1.1.1.jpg"), true, "col-6-1-1-1-1"); ?>
+<p><a href="#col-6-1-1-1-1" data-toggle="collapse">Hasil perencanaan penerimaan dana Program Studi tahun 2017 sampai dengan tahun 2019 tercantum <a href="https://drive.google.com/open?id=1RRLVm7_VdxkhLpa0muYvm3dypIDq6Ua3">Rencana Kegiatan Anggaran-Kelembagaan dan Lembaga (RKA-KL).</a></a></p>

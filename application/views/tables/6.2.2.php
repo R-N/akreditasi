@@ -34,7 +34,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="3">Jumlah (TODO)</td>
+				<td colspan="3">Jumlah</td>
 				<td class="footer-callback" data-operation="sum" data-column="3">1357.5</td>
 			</tr>
 		</tfoot>

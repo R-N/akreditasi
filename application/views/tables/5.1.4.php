@@ -24,7 +24,7 @@
 				<td class="">1</td>
 				<td class="">Teknik Pemrograman</td>
 				<td class="">
-					<p>Modul Praktikum Teknik Pemrograman</p>
+					<p><a href="https://drive.google.com/open?id=1jVnsBwUq4k1iuxQBxNrnIBKXdFe8Lz3x">Modul Praktikum Teknik Pemrograman</a></p>
 					<p>
 						<ol>
 							<li>Tipe Data dan variable</li>
@@ -44,7 +44,7 @@
 				<td class="">2</td>
 				<td class="">Pemrograman Berorietasi Obyek</td>
 				<td class="">
-					<p>Modul Praktikum Pemrograman Berorietasi Obyek :</p>
+					<p><a href="https://drive.google.com/open?id=1r92rz1P8QYyI-mFjC80zfn3y1TQF7it_">Modul Praktikum Pemrograman Berorietasi Obyek</a> :</p>
 					<p>
 						<ol>
 							<li>Objek &amp; Class</li>
@@ -64,7 +64,7 @@
 				<td class="">3</td>
 				<td class="">Desain Basis Data</td>
 				<td class="">
-					<p>Modul Praktikum Desain Basis Data</p>
+					<p><a href="https://drive.google.com/open?id=10F6Efqki3IYaOZk-J0SHDFQ4EAv-pyxS">Modul Praktikum Desain Basis Data</a></p>
 					<p>
 						<ol>
 							<li>Instalasi Database</li>
@@ -85,7 +85,7 @@
 				<td class="">4</td>
 				<td class="">Modul Praktikum Pemrograman Web</td>
 				<td class="">
-					<p>Modul Praktikum Pemrograman Web</p>
+					<p><a href="https://drive.google.com/open?id=1OsauXrcxgMBu8HlMqeIvkUNn6a8_vZPP">Modul Praktikum Pemrograman Web</a></p>
 					<p>
 						<ol>
 							<li>HTML</li>
@@ -102,7 +102,7 @@
 				<td class="">5</td>
 				<td class="">Jaringan Komputer</td>
 				<td class="">
-					<p>Modul Praktikum Jaringan Komputer</p>
+					<p><a href="https://drive.google.com/open?id=1gzMZcQT0QmFY_NJCL4UOqM60jZsT8BSb">Modul Praktikum Jaringan Komputer</a></p>
 					<p>
 						<ol>
 							<li>Simulasi Software Jaringan</li>

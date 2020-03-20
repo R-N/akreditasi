@@ -38,11 +38,11 @@ CREATE TABLE `dokumen_pendukung` (
   `parent` varchar(16) NOT NULL,
   `no` int(11) NOT NULL DEFAULT '1',
   `name` varchar(256) NOT NULL,
-  `url` varchar(256) NOT NULL,
+  `url` varchar(512) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_dokumen_pendukung` (`parent`),
   CONSTRAINT `parent_dokumen_pendukung` FOREIGN KEY (`parent`) REFERENCES `ids` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 /*Data for the table `dokumen_pendukung` */
 
@@ -63,16 +63,16 @@ insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`name`,`url`) values
 (25,'4.2',1,'Pedoman tertulis tentang monitoring dan evaluasi, serta rekam jejak kinerja akademik dosen dan tenaga kependidikan.',''),
 (26,'4.2',1,'Bukti tentang kinerja dosen di bidang pendidikan, penelitian, pelayanan/pengabdian kepada masyarakat',''),
 (27,'4.3.1',1,'Fotokopi ijazah dan sertifikat pendidik dosen tetap yang bidang keahliannya sesuai dengan PS.',''),
-(28,'4.3.2',1,'Fotokopi ijazah dan sertifikat pendidik dosen tetap yang bidang keahliannya di luar bidang PS.',''),
+(28,'4.3.2',1,'Fotokopi ijazah dan sertifikat pendidik dosen tetap yang bidang keahliannya di luar bidang PS.','https://drive.google.com/open?id=1zBxfjPZ_CaorSbmmMo5Tpj56FshXZmec'),
 (29,'4.4.1',1,'Fotokopi ijazah dan sertifikat pendidik dosen tidak tetap.',''),
-(30,'4.5.3',1,'Bukti kegiatan dosen tetap dalam seminar ilmiah/ lokakarya/ penataran/ workshop/ pagelaran/pameran/peragaan.',''),
-(31,'4.5.4',1,'Bukti pencapaian prestasi/reputasi dosen.',''),
-(32,'4.5.5',1,'Fotocopi bukti keikutsertaan dosen tetap dalam organisasi keilmuan/profesi.',''),
-(33,'4.6.1',1,'Fotokopi ijazah dan sertifikat tenaga kependidikan.',''),
-(34,'5.1.2.2',1,'Silabus dan SAP tiap mata kuliah.',''),
-(35,'5.1.4',1,'Modul praktikum/praktek untuk setiap kegiatan praktikum/praktek.',''),
-(36,'5.2',1,'Dokumen pendukung kegiatan peninjauan kurikulum.',''),
-(37,'5.3.1',1,'Dokumen pendukung monitoring perkuliahan.',''),
+(30,'4.5.3',1,'Bukti kegiatan dosen tetap dalam seminar ilmiah/ lokakarya/ penataran/ workshop/ pagelaran/pameran/peragaan.','https://drive.google.com/open?id=1cHLw85ZNxfyehcZJiLG-61CRSFPKMZOb'),
+(31,'4.5.4',1,'Bukti pencapaian prestasi/reputasi dosen.','https://drive.google.com/open?id=1NFRg9Z7HzJZ1G3UxqEMlTMab9h4ArGCm'),
+(32,'4.5.5',1,'Fotocopi bukti keikutsertaan dosen tetap dalam organisasi keilmuan/profesi.','https://drive.google.com/open?id=1TKwySoItfnOPmv0ZzXUvrSBTE75dsdL6'),
+(33,'4.6.1',1,'Fotokopi ijazah dan sertifikat tenaga kependidikan.','https://drive.google.com/open?id=1HTLflHyb2pOQN77ILRfzUgENZ6BsqA_h'),
+(34,'5.1.2.2',1,'Silabus dan SAP tiap mata kuliah.','https://drive.google.com/open?id=1z7AwH4Aio9a3oAs8WiNhzCAG4I772PRp'),
+(35,'5.1.4',1,'Modul praktikum/praktek untuk setiap kegiatan praktikum/praktek.','https://drive.google.com/open?id=1IyjFRwfix8ZZ7PAWotb5NsioY-PayYjd'),
+(36,'5.2',1,'Dokumen pendukung kegiatan peninjauan kurikulum.','https://drive.google.com/open?id=1cBl_pr_RvcDITIPlraHY0MotcOpQ4DcQ'),
+(37,'5.3.1',1,'Dokumen pendukung monitoring perkuliahan.','https://esr.uinsby.ac.id/'),
 (38,'5.5.1',1,'Panduan pembimbingan tugas akhir.',''),
 (39,'5.5.2',1,'Dokumen pendukung untuk memperoleh data rata-rata lama studi mahasiswa.',''),
 (40,'6.1',1,'Notulen rapat/ bukti keterlibatan PS dalam perencanaan anggaran dan pengelolaan dana.',''),
@@ -86,7 +86,8 @@ insert  into `dokumen_pendukung`(`id`,`parent`,`no`,`name`,`url`) values
 (48,'7.3.1',1,'Dokumen pendukung kegiatan kerjasama dengan instansi dalam negeri',''),
 (49,'7.3.2',1,'Dokumen pendukung kegiatan kerjasama dengan instansi luar negeri',''),
 (50,'5.3.2',1,'Lampiran contoh soal ujian',''),
-(52,'3.1.3',1,'Bukti prestasi*','');
+(52,'3.1.3',1,'Bukti prestasi*',''),
+(54,'5.1.3',1,'Silabus dan SAP tiap mata kuliah pilihan.','https://drive.google.com/open?id=1Xd0jNM4ebO-jsz-2XAuVkmOC7lc15a-V');
 
 /*Table structure for table `dosen` */
 
@@ -1669,8 +1670,8 @@ insert  into `tabel_5_1_2_2`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`mk_inti`,`tug
 (2,1,'A0016002','IAD/IBD/ISD',3,0,0,1,1,1,'','','','Universitas',NULL),
 (3,1,'A0016003','Pancasila dan Kewarganegaraan',3,0,0,1,1,1,'','','','Universitas',NULL),
 (4,1,'A0016004','Pengantar Studi Islam',3,0,0,1,1,1,'','','','Universitas',NULL),
-(5,1,'BH616007','Algoritma & Pemrograman',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(6,1,'BH616008','Manajemen dan Organisasi',3,0,1,1,1,1,'','','','Program Studi',NULL),
+(5,1,'BH616007','Algoritma & Pemrograman',3,1,1,1,1,1,'','https://drive.google.com/open?id=1FO4ztEiORo2YBBpvkZZgLM2pnuFKp7ff','','Program Studi',NULL),
+(6,1,'BH616008','Manajemen dan Organisasi',3,0,1,1,1,1,'','https://drive.google.com/open?id=1dXCqjeREKVIEhSLMMGQ4SmEW4ENahmc4','','Program Studi',NULL),
 (7,1,'BH616009','Pengantar Teknologi Informasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (8,2,'A0016005','Studi Hadis',3,0,0,1,1,1,'','','','Universitas',NULL),
 (9,2,'A0016006','Studi al Qur`an',3,0,0,1,1,1,'','','','Universitas',NULL),
@@ -1680,23 +1681,23 @@ insert  into `tabel_5_1_2_2`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`mk_inti`,`tug
 (13,2,'BH616044','Statistika',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (14,2,'BH616046','Teknik Pemrograman',4,1,1,1,1,1,'','','','Program Studi',NULL),
 (15,3,'BH616011','Desain Basis Data + Prakt',4,1,1,1,1,1,'','','','Program Studi',NULL),
-(16,3,'BH616028','Manajemen Sains',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(17,3,'BH616031','Pemrog. Berorientasi Obyek + Prakt',4,1,1,1,1,1,'','','','Program Studi',NULL),
-(18,3,'BH616040','Rekayasa Perangkat Lunak',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(16,3,'BH616028','Manajemen Sains',3,1,1,1,1,1,'','https://drive.google.com/open?id=1ChYw7fGVOM4-2-vlEzrd5k-fZ3L30UYV','','Program Studi',NULL),
+(17,3,'BH616031','Pemrog. Berorientasi Obyek + Prakt',4,1,1,1,1,1,'','https://drive.google.com/open?id=1mSZ24FiS-wdzLGwZk2GqKisojggGqOng','','Program Studi',NULL),
+(18,3,'BH616040','Rekayasa Perangkat Lunak',3,1,1,1,1,1,'','https://drive.google.com/open?id=10lfs5E2otfYvY3vidtebkFc2qHTQin1x','','Program Studi',NULL),
 (19,3,'BH616042','Sistem Informasi Manajemen',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(20,3,'BH616043','Sistem Operasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(20,3,'BH616043','Sistem Operasi',3,1,1,1,1,1,'','https://drive.google.com/open?id=1xVnlNADKCeQ5dHVy1H8knvCLEk5-GPOy','','Program Studi',NULL),
 (21,4,'BH616010','Analisa & Perancangan SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (22,4,'BH616014','Interaksi Manusia & Komputer',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (23,4,'BH616015','Jaringan Keamanan Komputer',4,1,1,1,1,1,'','','','Program Studi',NULL),
 (24,4,'BH616021','Manajemen & Administrasi Basis Data',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (25,4,'BH616024','Manajemen Proses Bisnis',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (26,4,'BH616032','Pemrograman Web',4,1,1,1,1,1,'','','','Program Studi',NULL),
-(27,5,'BH616012','Enterprise Architect',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(27,5,'BH616012','Enterprise Architect',3,1,1,1,1,1,'','https://drive.google.com/open?id=1SWIbOp4qL6sGrM_uwGimJR8klVKZZdL6','','Program Studi',NULL),
 (28,5,'BH616019','Komunikasi Interpersonal',2,1,1,1,1,1,'','','','Program Studi',NULL),
 (29,5,'BH616022','Manajemen Hub. Pelanggan',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (30,5,'BH616025','Manajemen Proyek SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (31,5,'BH616026','Manajemen Rantai Pasok',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(32,5,'BH616030','Pemodelan dan Simulasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(32,5,'BH616030','Pemodelan dan Simulasi',3,1,1,1,1,1,'','https://drive.google.com/open?id=13OgIPsmmA7q5YZSndccj1-YLB-JCW6BF','','Program Studi',NULL),
 (33,5,'BH616034','Pengembangan dan Implementasi SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (34,6,'BH616013','Etika Profesi',2,0,0,1,1,1,'','','','Program Studi',NULL),
 (35,6,'BH616017','Kerja Praktek',3,0,0,1,0,0,'','','','Program Studi',NULL),
@@ -1706,9 +1707,9 @@ insert  into `tabel_5_1_2_2`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`mk_inti`,`tug
 (39,6,'BH616041','Sistem Cerdas',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (40,6,'BH616045','Tata Kelola IT',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (41,7,'BH616018','Kuliah Kerja Nyata (KKN)',4,0,0,1,0,0,'','','','Universitas',NULL),
-(42,7,'BH616023','Manajemen Investasi',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(43,7,'BH616027','Manajemen Resiko',3,1,1,1,1,1,'','','','Program Studi',NULL),
-(44,7,'BH616036','Perenc. Sumber Daya Perush.',3,1,1,1,1,1,'','','','Program Studi',NULL),
+(42,7,'BH616023','Manajemen Investasi',3,1,1,1,1,1,'','https://drive.google.com/open?id=1ZIKdFwg3_PFMkGTG9dZYNtHt6nIzJDg6','','Program Studi',NULL),
+(43,7,'BH616027','Manajemen Resiko',3,1,1,1,1,1,'','https://drive.google.com/open?id=1m9RNdHUpXPvxLdt9XiwzieAbgHNqGDDT','','Program Studi',NULL),
+(44,7,'BH616036','Perenc. Sumber Daya Perush.',3,1,1,1,1,1,'','https://drive.google.com/open?id=1tAr01bExIBH_kwnVmRtdnwl8mnw7tWDq','','Program Studi',NULL),
 (45,7,'BH616037','Perencanaan Strategis SI',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (46,8,'BH616047','Teknopreneurship',3,1,1,1,1,1,'','','','Program Studi',NULL),
 (47,8,'BH616048','Tugas Akhir/Skripsi',6,0,0,1,0,0,'','','','Program Studi',NULL);
@@ -1723,6 +1724,7 @@ CREATE TABLE `tabel_5_1_3` (
   `sks` tinyint(1) NOT NULL DEFAULT '0',
   `tugas` tinyint(1) NOT NULL DEFAULT '0',
   `unit` varchar(32) NOT NULL DEFAULT '1',
+  `url_rps` varchar(512) NOT NULL,
   `sub_jenis` tinyint(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `sub_jenis_mk_pil` (`sub_jenis`),
@@ -1733,23 +1735,23 @@ CREATE TABLE `tabel_5_1_3` (
 
 /*Data for the table `tabel_5_1_3` */
 
-insert  into `tabel_5_1_3`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`tugas`,`unit`,`sub_jenis`) values 
-(1,6,'CH616049','Mobile Technology',3,1,'Program Studi',NULL),
-(2,6,'CH616050','Pengemb. Aplikasi Berbasis Web',3,1,'Program Studi',NULL),
-(3,6,'CH616051','Audit IT',3,1,'Program Studi',NULL),
-(4,6,'CH616052','Data Warehouse',3,1,'Program Studi',NULL),
-(5,6,'CH616053','Sistem Temu Kembali Informasi',3,1,'Program Studi',NULL),
-(6,6,'CH616056','Digital Forensik',3,1,'Program Studi',NULL),
-(7,7,'CH616060','E-Government',3,1,'Program Studi',NULL),
-(8,7,'CH616063','Sistem Informasi Akuntansi',3,1,'Program Studi',NULL),
-(9,7,'CH616054','Sistem Informasi Geografis',3,1,'Program Studi',NULL),
-(10,7,'CH616055','Manajemen Layanan TI',3,1,'Program Studi',NULL),
-(11,7,'CH616057','Socio Informatics',3,1,'Program Studi',NULL),
-(12,7,'CH616058','Integrasi Aplikasi Korporasi',3,1,'Program Studi',NULL),
-(13,7,'CH616059','Bisnis Cerdas',3,1,'Program Studi',NULL),
-(14,7,'CH616061','Teknik Peramalan',3,1,'Program Studi',NULL),
-(15,7,'CH616062','Sistem Pendukung Keputusan',3,1,'Program Studi',NULL),
-(16,7,'CH616064','Data Mining',3,1,'Program Studi',NULL);
+insert  into `tabel_5_1_3`(`id`,`smt`,`kode_mk`,`nama_mk`,`sks`,`tugas`,`unit`,`url_rps`,`sub_jenis`) values 
+(1,6,'CH616049','Mobile Technology',3,1,'Program Studi','',NULL),
+(2,6,'CH616050','Pengemb. Aplikasi Berbasis Web',3,1,'Program Studi','',NULL),
+(3,6,'CH616051','Audit IT',3,1,'Program Studi','https://drive.google.com/open?id=1_HYmfpU8oMQWT3RchFVbkB9Km784A54a',NULL),
+(4,6,'CH616052','Data Warehouse',3,1,'Program Studi','',NULL),
+(5,6,'CH616053','Sistem Temu Kembali Informasi',3,1,'Program Studi','',NULL),
+(6,6,'CH616056','Digital Forensik',3,1,'Program Studi','',NULL),
+(7,7,'CH616060','E-Government',3,1,'Program Studi','',NULL),
+(8,7,'CH616063','Sistem Informasi Akuntansi',3,1,'Program Studi','',NULL),
+(9,7,'CH616054','Sistem Informasi Geografis',3,1,'Program Studi','',NULL),
+(10,7,'CH616055','Manajemen Layanan TI',3,1,'Program Studi','',NULL),
+(11,7,'CH616057','Socio Informatics',3,1,'Program Studi','',NULL),
+(12,7,'CH616058','Integrasi Aplikasi Korporasi',3,1,'Program Studi','https://drive.google.com/open?id=19fGbayTAREMynucWEZBzVah0G5-Wzy9F',NULL),
+(13,7,'CH616059','Bisnis Cerdas',3,1,'Program Studi','',NULL),
+(14,7,'CH616061','Teknik Peramalan',3,1,'Program Studi','https://drive.google.com/open?id=1NrZQVDqHN6FcvW3uIqK-pKAQRH3tLSKL',NULL),
+(15,7,'CH616062','Sistem Pendukung Keputusan',3,1,'Program Studi','',NULL),
+(16,7,'CH616064','Data Mining',3,1,'Program Studi','',NULL);
 
 /*Table structure for table `tabel_5_1_4` */
 

@@ -1,4 +1,4 @@
-<p>Upaya sosialisasi visi, misi dan tujuan program studi Sistem Informasi
+<p class="text-justify">Upaya sosialisasi visi, misi dan tujuan program studi Sistem Informasi
 dilakukan melalui:</p>
 <div class="table-responsive datatable fixed export auto-number">
 	<table class="table table-striped table-hover">

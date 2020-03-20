@@ -20,13 +20,13 @@
 				<td class="">Mata Kuliah Wajib</td>
 				<td class="shrink">148 sks</td>
 				<td class="">
-					<p>Mata Kuliah Wajib terdiri dari :</p>
-					<p>
+					<p class="text-justify">Mata Kuliah Wajib terdiri dari :</p>
+					<p class="text-justify">
 						<ol>
-							<li>Mata Kuliah Kompetensi Dasar 26 sks</li>
-							<li>Mata Kuliah Kompetensi Utama 91 sks</li>
-							<li>Mata Kuliah Kompetensi Pendukung 31 sks</li>
-							<li>Mata Kuliah Kompetensi Lainnya 0 sks</li>
+							<li class="text-justify">Mata Kuliah Kompetensi Dasar 26 sks</li>
+							<li class="text-justify">Mata Kuliah Kompetensi Utama 91 sks</li>
+							<li class="text-justify">Mata Kuliah Kompetensi Pendukung 31 sks</li>
+							<li class="text-justify">Mata Kuliah Kompetensi Lainnya 0 sks</li>
 						</ol>
 					</p>
 				</td>
@@ -36,7 +36,7 @@
 				<td class="">Mata Kuliah Pilihan</td>
 				<td class="shrink">9 sks</td>
 				<td class="">
-					<p>Mata Kuliah Pilihan terdiri dari 48 sks</p>
+					<p class="text-justify">Mata Kuliah Pilihan terdiri dari 48 sks</p>
 				</td>
 			</tr>
 		</tbody>

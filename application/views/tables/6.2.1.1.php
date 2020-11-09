@@ -30,9 +30,9 @@
 				<td class="shrink" rowspan="<?=count($group["rows"]);?>"><?=$group["name"];?></td>
 				<?php } ?>
 				<td class="shrink"><?=$row["jenis_dana"];?></td>
-				<td class="shrink"><?=$row["jumlah_ts_2"]+0;?></td>
-				<td class="shrink"><?=$row["jumlah_ts_1"]+0;?></td>
-				<td class="shrink"><?=$row["jumlah_ts"]+0;?></td>
+				<td class="shrink"><?=$row["jumlah_ts_2"]?$row["jumlah_ts_2"]+0:"";?></td>
+				<td class="shrink"><?=$row["jumlah_ts_1"]?$row["jumlah_ts_1"]+0:"";?></td>
+				<td class="shrink"><?=$row["jumlah_ts"]?$row["jumlah_ts"]+0:"";?></td>
 			</tr>
 			<?php 
 					++$i;

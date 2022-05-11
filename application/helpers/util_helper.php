@@ -213,7 +213,21 @@ function split_page_id($page_id=null){
  function get_link($page_id=null){
 	if(!is_string($page_id)) return _get_link($page_id);
 	$arr = split_page_id($page_id);
-	$link = _get_link(...$arr);
+	switch(count($arr)){
+		case 0:
+			$link = _get_link();
+			break;
+		case 1:
+			$link = _get_link($arr[0]);
+			break;
+		case 2:
+			$link = _get_link($arr[0], $arr[1]);
+			break;
+		default:
+			$link = _get_link($arr[0], $arr[1], $arr[2]);
+			break;
+	}
+	//$link = _get_link(...$arr);
 	$link["id"] = $page_id;
 	return $link;
 }

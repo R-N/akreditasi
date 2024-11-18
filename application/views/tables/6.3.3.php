@@ -39,7 +39,7 @@
 				<td class="">
 					<?php if(!$row["image"]){ echo $row["jenis"]; } else { ?>
 					<div><a href="#col-6-3-3-<?=$row["id"];?>" data-toggle="collapse"><?=$row["jenis"];?></a></div>
-					<?php echo img(base_url("assets/img/6.3.3.{$row["id"]}.jpg"), true, "col-6-3-3-{$row["id"]}"); ?>
+					<?php echo image(base_url("assets/img/6.3.3.{$row["id"]}.jpg"), true, "col-6-3-3-{$row["id"]}"); ?>
 					<?php } ?>
 				</td>
 				<td class="shrink">

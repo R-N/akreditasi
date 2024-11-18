@@ -21,8 +21,8 @@
 </ol>
 
 <p class="text-justify"><a href="#col-6-5-1-1-1" data-toggle="collapse">Sistem Informasi Terintegrasi</a></p>
-<?php echo img(base_url("assets/img/6.5.1.1.1.tif"), true, "col-6-5-1-1-1"); ?>
+<?php echo image(base_url("assets/img/6.5.1.1.1.tif"), true, "col-6-5-1-1-1"); ?>
 <p class="text-justify">Disamping itu Program Studi juga memiliki website yang dapat diakses melalui <a href="http://sinf.uinsby.ac.id">http://sinf.uinsby.ac.id</a> yang tercantum juga pada website universitas yaitu <a href="http://uinsby.ac.id">http://uinsby.ac.id</a></p>
 <p class="text-justify">Proses pembelajaran ditunjang dengan fasilitas e-learning yang terdapat pada <a href="#col-6-5-1-1-2" data-toggle="collapse">system akademik</a> ataupun fasilitas dari google yaitu <a href="#col-6-5-1-1-3" data-toggle="collapse">google classroom</a>.</p>
-<?php echo img(base_url("assets/img/6.5.1.1.2.tif"), true, "col-6-5-1-1-2"); ?>
-<?php echo img(base_url("assets/img/6.5.1.1.3.png"), true, "col-6-5-1-1-3"); ?>
+<?php echo image(base_url("assets/img/6.5.1.1.2.tif"), true, "col-6-5-1-1-2"); ?>
+<?php echo image(base_url("assets/img/6.5.1.1.3.png"), true, "col-6-5-1-1-3"); ?>
